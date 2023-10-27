@@ -15,7 +15,8 @@ export default {
         'txtclr': '#121111',
         'bgcolor': '#FFFFFF',
         'highlight': '#EAE2B7',
-        'accent': '#FF4A52'
+        'accent': '#FF4A52', 
+        'stroke': '#D1D1D1'
       },
     },
   },
