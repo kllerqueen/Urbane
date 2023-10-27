@@ -5,7 +5,19 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'urbanist': ['Urbanist', 'sans-serif']
+      },
+      colors: {
+        'primary': '#00457D',
+        'secondary': '#707070',
+        'txtclr': '#121111',
+        'bgcolor': '#FFFFFF',
+        'highlight': '#EAE2B7',
+        'accent': '#FF4A52'
+      }
+    },
   },
   plugins: [],
 }
