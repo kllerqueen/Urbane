@@ -16,7 +16,7 @@ export default {
         'bgcolor': '#EEF7FF',
         'highlight': '#EAE2B7',
         'accent': '#FF4A52'
-      }
+      },
     },
   },
   plugins: [],
