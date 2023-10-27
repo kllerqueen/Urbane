@@ -13,7 +13,7 @@ export default {
         'primary': '#00457D',
         'secondary': '#707070',
         'txtclr': '#121111',
-        'bgcolor': '#FFFFFF',
+        'bgcolor': '#EEF7FF',
         'highlight': '#EAE2B7',
         'accent': '#FF4A52'
       }
