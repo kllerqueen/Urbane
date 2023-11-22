@@ -21,6 +21,14 @@ class DatabaseSeeder extends Seeder
 
 
         // run seeder
+        \App\Models\User::factory()->create([
+            'username' => 'test',
+            'email' => 'test@gmail.com',
+            'password' => 'test@gmail.com',
+            'phoneNumber' => '081212121212',
+            'security' => 'bola',
+        ]);
+
         $this->call(CategorySeeder::class);
         \App\Models\Item::factory(5)->create();
         \App\Models\Picture::factory(10)->create();
