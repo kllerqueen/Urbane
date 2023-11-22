@@ -19,10 +19,9 @@ return new class extends Migration
                 ->on('categories');
 
             $table->string('item_name');
-            $table->string('item_desc');
+            $table->text('item_desc');
             $table->integer('item_price');
             $table->dateTime('item_createTime');
-
             $table->timestamps();
         });
     }

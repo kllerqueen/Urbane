@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +30,19 @@ Route::get('/forget-password', function(){
 });
 
 Route::get('/home', function () {
-    return view('pages.home');
+    return view('pages.home',[
+        "user" => null
+    ]);
 });
+
+
+// sementara ges ga ngerti soalnya bkin make localstorage
+Route::get('/home/{user:id}', function (User $user) {
+    return view('pages.home',[
+        "user" => $user
+    ]);
+});
+
+Route::post('/login-user', [UserController::class, 'login']);
+
+Route::post('/register-user', [UserController::class, 'register']);
