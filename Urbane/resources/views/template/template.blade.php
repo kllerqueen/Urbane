@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     @include('partials.head')
-    <body>
+    
+    <body class="w-full mx-auto ">
+        @include('partials.navbar')
         @yield('body')
+        @include('partials.footer')
     </body>
 </html>

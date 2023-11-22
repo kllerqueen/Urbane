@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'urbanist': ['Urbanist', 'sans-serif']
+        'urbanist': ['Urbanist', 'sans-serif'],
+        'dancing': ['Dancing Script', 'cursive']
       },
       colors: {
         'primary': '#00457D',
