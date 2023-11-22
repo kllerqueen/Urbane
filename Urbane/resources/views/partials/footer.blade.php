@@ -12,11 +12,11 @@
     </div>
     <div class='container flex w-full flex-col gap-14 px-2'>
         <div class='flex items-start justify-center gap-[10%] flex-col  min-[500px]:flex-row py-2'>
-            <div class="flex flex-col w-[200px] mb-10">
+            <div class="flex flex-col  mb-10">
                 <a href='' class='flex items-center gap-2  mb-2'>
-                    <img src="{{ url('assets/Logo.png')}}" alt="" class=" ">
+                    <img src="{{ url('assets/Logo.png')}}" alt="" class=" w-[220px]">
                 </a>
-                <h1 class="regular-12 md:regular-14 text-justify">
+                <h1 class="regular-12 md:regular-14 text-justify max-w-[300px]">
                     As an online store that started from Jakarta and expanded to the whole country. It sells a wide range of women's, men's, and even accessories. 
                     <span class="font-bold">Use Urbane to be more stylish.</span> 
                     Easy delivery and payment.
