@@ -17,7 +17,7 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-phone bx-sm pl-1 pr-2'></i>
-                <input type="text" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary" 
+                <input type="text" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary"
                 placeholder="(+62) Phone Number">
             </div>
 
@@ -32,7 +32,7 @@
             </div>
             <p class="text-secondary text-sm">By registering your account, you indicate your agreement with the <span class="text-black font-bold">terms and conditions</span> that apply to our website's policy</p>
             <button class="w-full py-2 bg-primary text-lg text-highlight rounded-md mt-4">Register</button>
-            <p class="self-center text-secondary text-sm">Already have an account? <span><a href="/register" class="font-bold ">Login here</a></span></p>
+            <p class="self-center text-secondary text-sm">Already have an account? <span><a href="{{ route('loginPage') }}" class="font-bold ">Login here</a></span></p>
         </form>
     </div>
 @endsection
