@@ -58,12 +58,50 @@
         
     </div>
     <div>
-        <div class="w-[50%] mx-auto mb-4 mt-[-50px] z-50 relative overflow-hidden">
-            <img src="{{ url('assets/HeroBottomContainer.png')}}" alt="" class="absolute w-full z-[-1]">
-            <div class="flex flex-row z-50  px-8 py-8">
-                <div class="text-white flex flex-row items-center ">
-                    <h1 class="regular-12 md:regular-16 lg:regular-20">Styles</h1>
-                    <img src="{{ url('assets/HeroGroupPic.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
+        <div class="w-[90%] md:w-[720px] mx-auto mb-6 mt-0 xl:mt-[-50px] z-50 relative">
+            <img src="{{ url('assets/HeroBag1.png')}}" alt="" class="absolute bottom-[-20px] left-[-30px] w-[50px] min-[460px]:w-[65px]  md:w-[80px]">
+            <img src="{{ url('assets/HeroBag2.png')}}" alt="" class="absolute top-[-30px] right-[-30px] w-[50px] min-[460px]:w-[65px] md:w-[80px]">
+            <img src="{{ url('assets/HeroBottomContainer.png')}}" alt="" class="absolute w-full h-full z-[-1]">
+            <div class="grid grid-cols-3 min-[460px]:grid-cols-4 z-50  px-2 min-[460px]:px-8  py-4 md:py-8">
+                <div class="flex-col gap-4 md:gap-6 hidden min-[460px]:flex  border-r-2 border-white text-white px-1 min-[460px]:px-2 md:px-4">
+                    <div class=" flex flex-row items-center ">
+                        <h1 class="regular-12 md:regular-16 lg:regular-20">Styles</h1>
+                        <img src="{{ url('assets/HeroGroupPic.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
+                    </div>
+                    <h1 class="regular-10 md:regular-14 lg:regular-16">Choose What you want to buy</h1>
+                </div>
+
+                <div class="flex flex-col gap-2 text-white border-r-2 border-white px-1 min-[460px]:px-2  md:px-4">
+                    <div class=" flex flex-col">
+                        <img src="{{ url('assets/HeroMan.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
+                        <h1 class="regular-12 md:regular-16 lg:regular-20">Man</h1>
+                    </div>
+                    <a href="" class="flex flex-row items-center justify-between w-full rounded-lg shadow-2xl p-1 min-[460px]:p-2 bg-primary regular-10 md:regular-14 lg:regular-16 ">
+                        <h1>Shop Now</h1>
+                        <div class="p-1 bg-white flex flexCenter rounded-full"><i class='bx bx-right-arrow-alt text-primary'></i></div>
+                    </a>
+                </div>
+
+                <div class="flex flex-col gap-2 text-white border-r-2 border-white px-1 min-[460px]:px-2  md:px-4">
+                    <div class=" flex flex-col">
+                        <img src="{{ url('assets/HeroWoman.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
+                        <h1 class="regular-12 md:regular-16 lg:regular-20">Woman</h1>
+                    </div>
+                    <a href="" class="flex flex-row items-center justify-between w-full rounded-lg shadow-2xl p-1 min-[460px]:p-2 bg-primary regular-10 md:regular-14 lg:regular-16 ">
+                        <h1>Shop Now</h1>
+                        <div class="p-1 bg-white flex flexCenter rounded-full"><i class='bx bx-right-arrow-alt text-primary'></i></div>
+                    </a>
+                </div>
+
+                <div class="flex flex-col gap-2 text-white  px-1 min-[460px]:px-2  md:px-4">
+                    <div class=" flex flex-col">
+                        <img src="{{ url('assets/HeroGroupPic1.png')}}" alt="" class=" w-[22px] md:w-[28px] lg:w-[40px]">
+                        <h1 class="regular-12 md:regular-16 lg:regular-20">Apparel</h1>
+                    </div>
+                    <a href="" class="flex flex-row items-center justify-between w-full rounded-lg shadow-2xl p-1 min-[460px]:p-2 bg-primary regular-10 md:regular-14 lg:regular-16 ">
+                        <h1>Shop Now</h1>
+                        <div class="p-1 bg-white flex flexCenter rounded-full"><i class='bx bx-right-arrow-alt text-primary'></i></div>
+                    </a>
                 </div>
             </div>
         </div>
