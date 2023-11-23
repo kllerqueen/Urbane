@@ -27,7 +27,7 @@ Route::get('/register', function () {
 
 Route::get('/forget-password', function(){
     return view('pages.forget');
-});
+})->name('forgetPassword');
 
 Route::get('/home', function () {
     return view('pages.home',[
