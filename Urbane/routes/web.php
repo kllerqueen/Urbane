@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('pages.login');
-})->name('loginPage');
+})->name('loginPage')->middleware('guest');
 
 Route::get('/register', function () {
     return view('pages.register');
-})->name('registerPage');
+})->name('registerPage')->middleware('guest');
 
 Route::get('/forget-password', function(){
     return view('pages.forget');
