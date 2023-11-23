@@ -51,6 +51,11 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
+
+            if(auth()->user()->role == 'admin'){
+                return redirect()->intended('/dashboard');
+            }
+
             return redirect()->intended('/home');
         }
 
@@ -75,7 +80,10 @@ class UserController extends Controller
     
 
     public function logout(Request $request){
+        Auth::logout();
         $request->session()->flush();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect("/home");
     }
 }

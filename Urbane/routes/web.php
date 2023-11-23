@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/forget-password', function(){
     return view('pages.forget');
 })->name('forgetPassword');
 
-Route::get('/home', [UserController::class, 'index'])->name('homePage');
+Route::get('/home', [AdminController::class, 'index'])->name('homePage');
 
 
 
@@ -39,3 +40,6 @@ Route::post('/login-user', [UserController::class, 'login']);
 Route::post('/register-user', [UserController::class, 'register']);
 
 Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');
+
+//admin
+Route::get('/dashboard', [AdminController::class, 'index'])->name('adminPage');
