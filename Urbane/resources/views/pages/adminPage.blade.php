@@ -8,6 +8,11 @@
             <p>{{$item->item_name}}</p>
             {{-- <p>{{$item->item_desc}}</p> --}}
             <p>{{$item->item_price}}</p>
+            <form action="/delete-item/{{ $item->id }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </div>
     @endforeach
 </div>

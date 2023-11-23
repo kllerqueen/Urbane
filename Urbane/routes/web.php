@@ -33,8 +33,6 @@ Route::get('/forget-password', function(){
 
 Route::get('/home', [AdminController::class, 'index'])->name('homePage');
 
-
-
 Route::post('/login-user', [UserController::class, 'login']);
 
 Route::post('/register-user', [UserController::class, 'register']);
@@ -43,3 +41,5 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 //admin
 Route::get('/dashboard', [AdminController::class, 'index'])->name('adminPage');
+Route::post('/add-item', [AdminController::class, 'addItem']);
+Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem']);
