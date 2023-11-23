@@ -6,14 +6,31 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
 {
     //
-
+    public function index(Request $request){
+        $user = session('user');
+        // @dd($user); 
+        return view('pages.home',[
+            "user" => $user
+        ]);
+    }
+    
     public function register(Request $request){
-        // dd($request);
+        // return $request->all(); liat request json
+        $request->validate([
+            'username' => ['required', 'min:5', 'max:25','unique:users'],
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:5|max:25',
+            'phoneNumber' => 'required|min:8|max:13',
+            'con-pass' => 'required_with:password|same:password'
+        ]);
+
+        // dd("berhasil weh"); 
         $user = new User;
         $user->username = $request->input('username');
         $user->email = $request->input('email');
@@ -26,18 +43,39 @@ class UserController extends Controller
     }
     
     public function login(Request $request){
-        $email = $request->input('email');
-        $password = $request->input('password');
 
-        $user = User::where('email', $email)->first();
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
 
-        if ($user && Hash::check($password, $user->password)) {
-            // localStorage.setItem('user', JSON.stringify(user));
-            return redirect("/home/{$user->id}");
-        } else {
-            // alert error msg -> user tidak ditemukan (sementara)
-            Session::flash('error', 'User not found or incorrect password');
-            return redirect('/login');
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended('/home');
         }
+
+        return back()->with('error', 'login failed!');
+
+        // $email = $request->input('email');
+        // $password = $request->input('password');
+
+        // $user = User::where('email', $email)->first();
+
+        // if ($user && Hash::check($password, $user->password)) {
+        //     // localStorage.setItem('user', JSON.stringify(user));
+        //     Session::put('user', $user);
+        //     return redirect("/home");
+        // } else {
+        //     // alert error msg -> user tidak ditemukan (sementara)
+        //     Session::flash('error', 'User not found or incorrect password');
+        //     return redirect('/login');
+        // }
+    }
+
+    
+
+    public function logout(Request $request){
+        $request->session()->flush();
+        return redirect("/home");
     }
 }

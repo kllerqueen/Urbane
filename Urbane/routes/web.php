@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,30 +20,22 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('pages.login');
-})->name('loginPage');
+})->name('loginPage')->middleware('guest');
 
 Route::get('/register', function () {
     return view('pages.register');
-})->name('registerPage');
+})->name('registerPage')->middleware('guest');
 
 Route::get('/forget-password', function(){
     return view('pages.forget');
-});
+})->name('forgetPassword');
 
-Route::get('/home', function () {
-    return view('pages.home',[
-        "user" => null
-    ]);
-});
+Route::get('/home', [UserController::class, 'index'])->name('homePage');
 
 
-// sementara ges ga ngerti soalnya bkin make localstorage
-Route::get('/home/{user:id}', function (User $user) {
-    return view('pages.home',[
-        "user" => $user
-    ]);
-});
 
 Route::post('/login-user', [UserController::class, 'login']);
 
 Route::post('/register-user', [UserController::class, 'register']);
+
+Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');

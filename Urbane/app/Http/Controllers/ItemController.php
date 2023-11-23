@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ItemController extends Controller
 {
     public function getAllCategories() {
-        $categories = Category::whereNotIn('id', 3)->get();
+        $categories = Category::whereNotIn('category_name', 'Unisex')->get();
 
         return $categories;
     }

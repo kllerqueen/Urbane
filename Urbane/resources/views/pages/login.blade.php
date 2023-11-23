@@ -2,11 +2,18 @@
 
 @section('body')
 
-    @if(Session::has('error'))
+    {{-- @if(Session::has('error'))
         <script>
             alert('{{ Session::get("error") }}');
         </script>
+    @endif --}}
+
+    @if(session()->has('error'))
+        <script>
+            alert({{session('eror')}})
+        </script>
     @endif
+
     <div class="flex flex-col justify-center items-start w-full h-full p-4">
 
             <div>
