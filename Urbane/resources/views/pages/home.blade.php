@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('body')
-    <div class="container py-8  flex flex-col md:flex-row justify-center items-center px-2 md:px-12 gap-4 relative ">
+    <div class="container py-8  flex flex-col-reverse md:flex-row justify-center items-center px-2 md:px-12 gap-4 relative z-[-1]">
         <img src="{{ url('assets/HeroPendant.png')}}" alt="" class="w-[300px] md:w-[400px] absolute top-0 left-0 z-1">
         <div class="flex flex-col max-w-[550px] z-10">
             <p class="bold-20 lg:bold-32">Update Your Models Be</p>
@@ -54,6 +54,18 @@
                 </div>
             </div>
             <img src="{{ url('assets/HeroBG.png')}}" alt="" class="w-full">
+        </div>
+        
+    </div>
+    <div>
+        <div class="w-[50%] mx-auto mb-4 mt-[-50px] z-50 relative overflow-hidden">
+            <img src="{{ url('assets/HeroBottomContainer.png')}}" alt="" class="absolute w-full z-[-1]">
+            <div class="flex flex-row z-50  px-8 py-8">
+                <div class="text-white flex flex-row items-center ">
+                    <h1 class="regular-12 md:regular-16 lg:regular-20">Styles</h1>
+                    <img src="{{ url('assets/HeroGroupPic.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
+                </div>
+            </div>
         </div>
     </div>
 @endsection
