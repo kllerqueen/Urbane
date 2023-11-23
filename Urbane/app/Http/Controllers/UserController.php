@@ -13,7 +13,17 @@ class UserController extends Controller
     //
 
     public function register(Request $request){
-        // dd($request);
+        // return $request->all(); liat request json
+        $request->validate([
+            'username' => ['required', 'min:5', 'max:25','unique:users'],
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:5|max:25',
+            'phoneNumber' => 'required|min:8|max:13',
+            'con-pass' => 'required_with:password|same:password'
+
+        ]);
+
+        // dd("berhasil weh"); 
         $user = new User;
         $user->username = $request->input('username');
         $user->email = $request->input('email');
