@@ -3,15 +3,25 @@
         <div class="container flex items-center justify-between py-2 text-white">
             <h1 class="font-dancing bold-20 ">Urbane</h1>
             <div class=" flexCenter gap-4">
-                <button class=" rounded-md h-fit ">Login</button>
-                <button class="underline  px-0 md:px-2 ">Register</button>
+                @if($user)
+                    <button class=" rounded-md h-fit ">Welcome, {{ $user->username }}</button>
+                    <a href="{{ route('logoutPage') }}"><button class="underline text-white px-0 md:px-2 ">Logout</button></a>
+                @else
+                    <a href="{{ route('loginPage') }}"><button class="text-white px-0 md:px-2 decoration-none">Login</button></a>
+                    <a href="{{ route('registerPage') }}"><button class="underline text-white px-0 md:px-2 ">Register</button></a>
+                @endif
             </div>
         </div>
     </div>
     <div class="container w-full flex flex-row items-center justify-between gap-2 md:gap-4 px-2 py-1">
         <div class="flex-row gap-2 items-center hidden lg:flex">
-            <a href="{{ route('loginPage') }}"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Login</button></a>
-            <a href="{{ route('registerPage') }}"><button class="underline text-primary px-0 md:px-2 ">Register</button></a>
+             @if($user)
+                <a href="#"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Welcome,{{ $user->username }} </button></a>
+                <a href="{{ route('logoutPage') }}"><button class="underline text-primary px-0 md:px-2 ">Logouts</button></a>
+            @else
+                <a href="{{ route('loginPage') }}"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Login</button></a>
+                <a href="{{ route('registerPage') }}"><button class="underline text-primary px-0 md:px-2 ">Register</button></a>
+            @endif
         </div>
         <div class="flex flex-row items-center w-full md:w-3/4 lg:w-1/2 bg-white shadow-xl h-fit py-2 px-2 rounded-full border">
             <i class='bx bx-search bx-sm border-r-2 px-2 border-primary bx-primary text-primary' ></i>

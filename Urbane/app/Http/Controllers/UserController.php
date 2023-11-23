@@ -11,7 +11,14 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     //
-
+    public function index(Request $request){
+        $user = session('user');
+        // @dd($user); 
+        return view('pages.home',[
+            "user" => $user
+        ]);
+    }
+    
     public function register(Request $request){
         // return $request->all(); liat request json
         $request->validate([
@@ -20,7 +27,6 @@ class UserController extends Controller
             'password' => 'required|min:5|max:25',
             'phoneNumber' => 'required|min:8|max:13',
             'con-pass' => 'required_with:password|same:password'
-
         ]);
 
         // dd("berhasil weh"); 
@@ -43,11 +49,19 @@ class UserController extends Controller
 
         if ($user && Hash::check($password, $user->password)) {
             // localStorage.setItem('user', JSON.stringify(user));
-            return redirect("/home/{$user->id}");
+            Session::put('user', $user);
+            return redirect("/home");
         } else {
             // alert error msg -> user tidak ditemukan (sementara)
             Session::flash('error', 'User not found or incorrect password');
             return redirect('/login');
         }
+    }
+
+    
+
+    public function logout(Request $request){
+        $request->session()->flush();
+        return redirect("/home");
     }
 }

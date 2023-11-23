@@ -56,4 +56,8 @@
             <img src="{{ url('assets/HeroBG.png')}}" alt="" class="w-full">
         </div>
     </div>
+
+  
 @endsection
+
+   
