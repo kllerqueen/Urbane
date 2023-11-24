@@ -33,6 +33,15 @@ class DatabaseSeeder extends Seeder
             'security' => 'bola',
         ]);
 
+        User::factory()->create([
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin',
+            'role' => 'admin',
+            'phoneNumber' => '081212121212',
+            'security' => 'bola',
+        ]);
+
         $this->call(CategorySeeder::class);
         Item::factory(5)->create();
         Picture::factory(10)->create();
