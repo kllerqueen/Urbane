@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Item;
+use App\Models\Picture;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
 
         // run seeder
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'username' => 'test',
             'email' => 'test@gmail.com',
             'password' => 'test',
@@ -30,8 +34,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(CategorySeeder::class);
-        \App\Models\Item::factory(5)->create();
-        \App\Models\Picture::factory(10)->create();
-            
+        Item::factory(5)->create();
+        Picture::factory(10)->create();
+
     }
 }
