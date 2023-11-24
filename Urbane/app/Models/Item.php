@@ -22,6 +22,6 @@ class Item extends Model
     }
 
     public function pictures(){
-        return $this->hasMany(Picture::class);
+        return $this->belongsToMany(Picture::class);
     }
 }

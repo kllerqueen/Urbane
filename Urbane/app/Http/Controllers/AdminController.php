@@ -11,9 +11,11 @@ class AdminController extends Controller
 {
     public function index(){
         $items = Item::all();
+        $categories = Category::whereNotIn('category_name', ['Unisex'])->get();
 
-        return view('pages.adminPage', compact('items'));
+        return view('pages.adminPage', compact('items', 'categories'));
     }
+
     public function addItem(Request $request){
 
         $item = new Item;
