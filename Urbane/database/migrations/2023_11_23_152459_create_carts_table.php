@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
 
-            $table->id();
-
             $table->foreignId('user_id')
                 ->references('id')
                 ->on('users');
@@ -24,8 +22,6 @@ return new class extends Migration
                 ->on('items');
 
             $table->integer('qty');
-
-            //$table->primary(['user_id', 'item_id']);
 
             $table->timestamps();
         });
