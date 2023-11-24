@@ -24,8 +24,9 @@ class AdminController extends Controller
         $item->item_createTime = now();
         $item->save();
 
-        return redirect("/add-item");
+        return redirect();
     }
+
     public function deleteItem(Item $item){
 
         Picture::where('item_id', $item->id)->delete();

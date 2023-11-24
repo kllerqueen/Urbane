@@ -51,13 +51,13 @@ class UserController extends Controller
 
         // @dd("asd");
 
-        $request->session()->regenerate();
+        
         if(Auth::attempt($credentials)){
             
-
+            $request->session()->regenerate();
             if(auth()->user()->role == 'admin'){
                 
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/admin/dashboard');
             }else{
                 return redirect()->intended('/home');
             }
@@ -65,7 +65,7 @@ class UserController extends Controller
             
         }
 
-        return back()->with('error', 'login failed!');
+        return back()->with('error', 'User Not Found, Login Failed!');
 
         // $email = $request->input('email');
         // $password = $request->input('password');
