@@ -50,7 +50,7 @@
                     <p>{{ $item->item_name }}</p>
                     <p class="whitespace-nowrap overflow-hidden max-w-[200px] text-ellipsis">{{ $item->item_desc }}</p>
                     <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
-                    <form action="/delete-item/{{ $item->id }}" method="POST">
+                    <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -63,5 +63,10 @@
         </div>
 
     </div>
+
+    
+    <a href="{{ route('logoutAdminPage') }}">
+        <button type="button">Logout Admin</button>
+    </a>
 
 @endsection
