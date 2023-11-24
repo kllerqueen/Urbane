@@ -26,6 +26,9 @@ export default {
         '-8': '-8deg',
       }
     },
+    
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ]
 }

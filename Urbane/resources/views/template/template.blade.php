@@ -6,5 +6,6 @@
         @include('partials.navbar')
         @yield('body')
         @include('partials.footer')
+        @include('partials.AddScript')
     </body>
 </html>

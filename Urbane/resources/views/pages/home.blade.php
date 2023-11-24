@@ -110,7 +110,7 @@
 
     {{-- infinite text slide --}}
     <div class="relative block w-[100%] h-[150px] font-bold mt-14">
-        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee bg-[#47008E] rotate-first h-[50px] rotate-[-8deg] md:rotate-[-4deg]">
+        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-[#47008E] rotate-first h-[50px] rotate-[-8deg] md:rotate-[-4deg]">
             <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
                     SHOP NOW!! GET THEM FAST!
@@ -125,9 +125,74 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-[#47008E] h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
+                
             </span>
         </div>
-        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
+        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
             <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
                     SHOP NOW!! GET THEM FAST!
@@ -142,10 +207,76 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-black h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-black h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-black h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    SHOP NOW!! GET THEM FAST!
+                </h1>
+                <div class="bg-black h-full flex  items-center">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
+                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                </h1>
+                <div class="bg-black h-full flex  items-center ">
+                    <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
+                </div>
+                <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
+                
             </span>
         </div>
     </div>
     
+    {{-- Arriva --}}
     <div class="container w-full relative h-screen overflow-hidden">
         <img src="{{ url('assets/home/SecondSection/SectionBG.png')}}" alt="" class=" min-w-[650px] min-[400px]:w-full h-full rounded-lg">
         <div class="absolute top-[8%] lg:top-[5%] left-[4%] flex flex-col items-center">
@@ -154,14 +285,67 @@
                 <img src="{{ url('assets/home/SecondSection/TextFill.png')}}" alt="" class="w-[250px] md:w-[320px] lg:w-[450px] absolute top-0 arrival-animate">
             </div>
             <div class="relative mt-12 w-fit">
-                <img src="{{ url('assets/home/SecondSection/ArrivalButtonCircle.png')}}" alt="" class="absolute min-w-[170px] md:min-w-[250px] h-[75px] md:h-[95px] top-[-20px] md:top-[-30px] right-[-50px]">
-                <button class="border-2 rounded-md px-4 md:px-8 py-1 md:py-2 border-primary text-primary bold-18 md:bold-20 lg:bold-24 ">New Arrival</button> 
+                <img src="{{ url('assets/home/SecondSection/ArrivalButtonCircle.png')}}" alt="" class="absolute min-w-[170px] md:min-w-[250px] h-[75px] md:h-[95px] top-[-20px] md:top-[-30px] right-[-50px] z-1">
+                <a href="/home" class="border-2 rounded-md px-4 md:px-8 py-1 md:py-2 border-primary text-primary bold-18 md:bold-20 lg:bold-24 z-10 relative">
+                    New Arrival
+                </a> 
             </div> 
         </div>
         <div class="relative">
             <img src="{{ url('assets/home/SecondSection/Model.png')}}" alt="" class="absolute min-w-[48%] bottom-[-50px] left-[50%] translate-x-[-50%] h-[75%]">
         </div>
     </div>
+
+    {{-- Recommended Section --}}
+    <div class="container w-full relative h-screen overflow-hidden">
+        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt="" class=" min-w-[650px] min-[500px]:w-full h-full rounded-lg">
+        <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center max-w-[1000px]">
+            <div class="relative ">
+                <img src="{{ url('assets/home/ThirdSection/TextStroke.png')}}" alt="" class="min-w-[250px] md:min-w-[500px] lg:min-w-[650px]">
+                <img src="{{ url('assets/home/ThirdSection/TextFill.png')}}" alt="" class="min-w-[250px] md:min-w-[500px] lg:min-w-[650px] absolute top-0 arrival-animate">
+                <img src="{{ url('assets/home/ThirdSection/FireIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[140px] lg:w-[170px] xl:w-[200px] top-[-60px] min-[475px]:top-[-120px] lg:top-[-180px] left-[-50px] min-[475px]:left-[-90px] md:left-[-150px] z-10">
+                <img src="{{ url('assets/home/ThirdSection/StarIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[110px] lg:w-[140px] top-[-60px] min-[475px]:top-[-100px] lg:top-[-120px] right-[-60px] min-[475px]right-[-90px] md:right-[-150px] z-10">
+            </div>
+
+            <div id="Slider" class='relative flex items-center w-full h-full overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth overflow-y-hidden mt-12' >
+
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+                    <div>
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let Slider = document.getElementById('Slider')
+
+        Slider.addEventListener("click", function() {
+            var maxScroll = Slider.scrollWidth - Slider.clientWidth;
+            Slider.scrollLeft += 500;
+            if (Slider.scrollLeft >= maxScroll) {
+                Slider.scrollLeft = 0;
+            }
+        });
+
+    </script>
 </div>
 
   
