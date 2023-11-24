@@ -31,7 +31,7 @@ Route::get('/forget-password', function(){
     return view('pages.forget');
 })->name('forgetPassword');
 
-Route::get('/home', [AdminController::class, 'index'])->name('homePage');
+Route::get('/home', [UserController::class, 'index'])->name('homePage');
 
 Route::post('/login-user', [UserController::class, 'login']);
 
@@ -43,3 +43,4 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 Route::get('/dashboard', [AdminController::class, 'index'])->name('adminPage');
 Route::post('/add-item', [AdminController::class, 'addItem']);
 Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem']);
+Route::get('/logout-admin', [UserController::class, 'logout'])->name('logoutAdminPage');

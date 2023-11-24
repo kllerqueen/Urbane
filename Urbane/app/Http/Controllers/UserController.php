@@ -49,14 +49,20 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
+        // @dd("asd");
+
+        $request->session()->regenerate();
         if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
+            
 
             if(auth()->user()->role == 'admin'){
+                
                 return redirect()->intended('/dashboard');
+            }else{
+                return redirect()->intended('/home');
             }
 
-            return redirect()->intended('/home');
+            
         }
 
         return back()->with('error', 'login failed!');
@@ -86,4 +92,5 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect("/home");
     }
+
 }

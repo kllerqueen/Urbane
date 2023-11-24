@@ -21,6 +21,9 @@
     <p>No items available</p>
 @endif
 
+<div>
+    <a href="{{ route('logoutAdminPage') }}"><button class="underline text-white px-0 md:px-2 ">Logout</button></a>
+</div>
 
 <style>
     .card{
