@@ -111,8 +111,8 @@
     {{-- infinite text slide --}}
     <div class="relative block w-[100%] h-[200px] font-bold mt-12">
         <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee bg-[#47008E] rotate-first h-[50px] rotate-[-8deg] md:rotate-[-4deg]">
-            <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full ">
-                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
+            <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
+                <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
                     SHOP NOW!! GET THEM FAST!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center">
@@ -128,7 +128,7 @@
             </span>
         </div>
         <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
-            <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full ">
+            <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
                     SHOP NOW!! GET THEM FAST!
                 </h1>
