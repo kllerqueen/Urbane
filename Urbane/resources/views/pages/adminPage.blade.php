@@ -1,40 +1,29 @@
+@extends('template.adminTemplate')
 
-<button>Insert New Item</button>
 
-@if(count($items) > 0)
-<div class="card-con">
-    @foreach ($items as $item)
-        <div class="card">
-            <p>{{$item->item_name}}</p>
-            {{-- <p>{{$item->item_desc}}</p> --}}
-            <p>{{$item->item_price}}</p>
-            <form action="/delete-item/{{ $item->id }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-        </div>
-    @endforeach
-</div>
-    
-@else
-    <p>No items available</p>
-@endif
+@section('body')
 
-<div>
-    <a href="{{ route('logoutAdminPage') }}"><button class="underline text-white px-0 md:px-2 ">Logout</button></a>
-</div>
+    <button>Insert New Item</button>
 
-<style>
-    .card{
-        border: 2px solid black;
-        width: 200px;
-        margin: 5px;
-       
-    }
+    <div class="flex flex-wrap">
+        @forelse ($items as $item)
+            <div class="w-[200px] m-1 border-2 border-solid border-black">
+                <p>{{$item->item_name}}</p>
+                {{-- <p>{{$item->item_desc}}</p> --}}
+                <p>{{$item->item_price}}</p>
+                <form action="/delete-item/{{ $item->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        @empty
+            <p>No items available</p>
+        @endforelse
+    </div>
 
-    .card-con{
-        display: flex;
-        flex-wrap: wrap;
-    }
-</style>
+    <div>
+        <a href="{{ route('logoutAdminPage') }}"><button class="underline text-black px-0 md:px-2 ">Logout</button></a>
+    </div>
+
+@endsection

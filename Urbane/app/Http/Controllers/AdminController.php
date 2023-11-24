@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index(){
         $items = Item::all();
 
-        return view('pages.adminPage', ['items' => $items]);
+        return view('pages.adminPage', compact('items'));
     }
     public function addItem(Request $request){
 
@@ -27,7 +27,7 @@ class AdminController extends Controller
         return redirect("/add-item");
     }
     public function deleteItem(Item $item){
-        
+
         Picture::where('item_id', $item->id)->delete();
         $item->delete();
         return redirect()->back();
