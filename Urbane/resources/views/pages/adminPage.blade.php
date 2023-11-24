@@ -64,4 +64,9 @@
 
     </div>
 
+    
+    <a href="{{ route('logoutAdminPage') }}">
+        <button type="button">Logout Admin</button>
+    </a>
+
 @endsection
