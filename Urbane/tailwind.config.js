@@ -19,6 +19,12 @@ export default {
         'accent': '#FF4A52',
         'stroke': '#D1D1D1'
       },
+      rotate: {
+        '4': '4deg',
+        '8': '8deg',
+        '-4': '-4deg',
+        '-8': '-8deg',
+      }
     },
   },
   plugins: [],
