@@ -299,24 +299,67 @@
     {{-- Recommended Section --}}
     <div class="container w-full relative h-screen overflow-hidden">
         <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt="" class=" min-w-[650px] min-[500px]:w-full h-full rounded-lg">
-        <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center max-w-[1000px]">
-            <div class="relative ">
-                <img src="{{ url('assets/home/ThirdSection/TextStroke.png')}}" alt="" class="min-w-[250px] md:min-w-[500px] lg:min-w-[650px]">
-                <img src="{{ url('assets/home/ThirdSection/TextFill.png')}}" alt="" class="min-w-[250px] md:min-w-[500px] lg:min-w-[650px] absolute top-0 arrival-animate">
-                <img src="{{ url('assets/home/ThirdSection/FireIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[140px] lg:w-[170px] xl:w-[200px] top-[-60px] min-[475px]:top-[-120px] lg:top-[-180px] left-[-50px] min-[475px]:left-[-90px] md:left-[-150px] z-10">
-                <img src="{{ url('assets/home/ThirdSection/StarIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[110px] lg:w-[140px] top-[-60px] min-[475px]:top-[-100px] lg:top-[-120px] right-[-60px] min-[475px]right-[-90px] md:right-[-150px] z-10">
+        
+        <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center justify-center max-w-[900px] w-full px-4">
+            <div class="">
+                <img src="{{ url('assets/home/ThirdSection/TextStroke.png')}}" alt="" class="max-w-[280px] min-[550px]:max-w-[500px] lg:max-w-[650px] w-full">
+                <img src="{{ url('assets/home/ThirdSection/TextFill.png')}}" alt="" class="max-w-[280px] min-[550px]:max-w-[500px] lg:max-w-[650px] w-full absolute top-0 arrival-animate">
+                <img src="{{ url('assets/home/ThirdSection/FireIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[140px] lg:w-[170px] xl:w-[200px] top-[-60px] min-[475px]:top-[-110px] lg:top-[-150px] left-[-50px] min-[475px]:left-[-90px] md:left-[-150px] z-10 hidden md:block">
+                <img src="{{ url('assets/home/ThirdSection/StarIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[110px] lg:w-[140px] top-[-60px] min-[475px]:top-[-100px] lg:top-[-120px] right-[-60px] min-[475px]right-[-90px] md:right-[-120px] z-10 hidden md:block">
             </div>
 
-            <div id="Slider" class='relative flex items-center w-full h-full overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth overflow-y-hidden mt-12' >
+            <div id="Slider" class='relative flex items-center w-full h-full overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth overflow-y-hidden mt-12 gap-4' >
 
-                @forelse ($recommended as $item)
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                {{-- @forelse ($recommended as $item)
+                    <div class="flex flex-col">
+                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[90px] min-[450px]:min-w-[120px] md:min-w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+
                     </div>
                 @empty
 
-                @endforelse
-
+                @endforelse --}}
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
