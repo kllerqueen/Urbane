@@ -8,7 +8,7 @@
         <div class="flex flex-col max-w-[550px] z-10">
             <p class="bold-20 lg:bold-32">Update Your Models Be</p>
             <h1 class="bold-32 md:bold-52 lg:bold-80 text-primary md:leading-[50px] lg:leading-[90px]">
-                Fashionable 
+                Fashionable
                 <br>
                 and Stylish
             </h1>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="max-w-full relative ">
-            
+
             <div class="absolute top-[45%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                 <img src="{{ url('assets/home/FirstSection/HeroBag.png')}}" alt="" class=" absolute w-[40px] md:w-[65px] lg:w-[90px] bottom-0 right-[2%] z-20">
                 <img src="{{ url('assets/home/FirstSection/HeroHeadphones.png')}}" alt="" class=" absolute w-[90px] min-[475px]:w-[140px] lg:w-[170px] xl:w-[200px] top-[-30px] left-[-40px] md:left-[-90px] z-10">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <img src="{{ url('assets/home/FirstSection/HeroBm.png')}}" alt="" class="absolute left-[-40px] top-[60%] w-[65px] md:w-[80px] lg:w-[100px] z-10">
-                
+
                 <div class="relative ">
                     <img src="{{ url('assets/home/FirstSection/HeroModel.png')}}" alt="" class=" h-[200px] min-[475px]:h-[350px] md:h-[300px] lg:h-[450px]">
                     <img src="{{ url('assets/home/FirstSection/HeroStage.png')}}" alt="" class="bottom-[-10px] absolute  w-full">
@@ -58,7 +58,7 @@
             <img src="{{ url('assets/home/FirstSection/HeroBG.png')}}" alt="" class="w-full">
         </div>
     </div>
-    
+
     {{-- Category Below Hero --}}
     <div class="w-[90%] md:w-[720px] mx-auto mt-0 xl:mt-[-50px] z-50 relative">
         <img src="{{ url('assets/home/FirstSection/HeroBag1.png')}}" alt="" class="absolute bottom-[-20px] left-[-30px] w-[50px] min-[460px]:w-[65px]  md:w-[80px]">
@@ -119,7 +119,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -135,7 +135,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -151,7 +151,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -167,7 +167,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -183,13 +183,13 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-[#47008E] h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500">BE STYLISH & UNIQUE</h1>
-                
+
             </span>
         </div>
         <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
@@ -201,7 +201,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-black h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -217,7 +217,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-black h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -233,7 +233,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-black h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -249,7 +249,7 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-black h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
@@ -265,17 +265,17 @@
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center"></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
-                    LIMITED STYLE! LIMITED PRICE! FASTER!! 
+                    LIMITED STYLE! LIMITED PRICE! FASTER!!
                 </h1>
                 <div class="bg-black h-full flex  items-center ">
                     <h1 class="bg-yellow-500 p-[2px] rounded-full h-fit self-center "></h1>
                 </div>
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">BE STYLISH & UNIQUE</h1>
-                
+
             </span>
         </div>
     </div>
-    
+
     {{-- Arriva --}}
     <div class="container w-full relative h-screen overflow-hidden">
         <img src="{{ url('assets/home/SecondSection/SectionBG.png')}}" alt="" class=" min-w-[650px] min-[400px]:w-full h-full rounded-lg">
@@ -288,8 +288,8 @@
                 <img src="{{ url('assets/home/SecondSection/ArrivalButtonCircle.png')}}" alt="" class="absolute min-w-[170px] md:min-w-[250px] h-[75px] md:h-[95px] top-[-20px] md:top-[-30px] right-[-50px] z-1">
                 <a href="/home" class="border-2 rounded-md px-4 md:px-8 py-1 md:py-2 border-primary text-primary bold-18 md:bold-20 lg:bold-24 z-10 relative">
                     New Arrival
-                </a> 
-            </div> 
+                </a>
+            </div>
         </div>
         <div class="relative">
             <img src="{{ url('assets/home/SecondSection/Model.png')}}" alt="" class="absolute min-w-[48%] bottom-[-50px] left-[50%] translate-x-[-50%] h-[75%]">
@@ -309,27 +309,13 @@
 
             <div id="Slider" class='relative flex items-center w-full h-full overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth overflow-y-hidden mt-12' >
 
+                @forelse ($recommended as $item)
                     <div>
                         <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
                     </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
-                    <div>
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[220px]  inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
-                    </div>
+                @empty
+
+                @endforelse
 
             </div>
         </div>
@@ -348,7 +334,6 @@
     </script>
 </div>
 
-  
+
 @endsection
 
-   

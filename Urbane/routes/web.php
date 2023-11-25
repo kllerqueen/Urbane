@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::get('/forget-password', function(){
     return view('pages.forget');
 })->name('forgetPassword');
 
-Route::get('/home', [UserController::class, 'index'])->name('homePage')->middleware('customer');
+Route::get('/home', [ItemController::class, 'showHome'])->name('homePage')->middleware('customer');
 
 Route::post('/login-user', [UserController::class, 'login']);
 

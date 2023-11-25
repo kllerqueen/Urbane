@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ItemController extends Controller
 {
     public function getAllCategories() {
-        $categories = Category::whereNotIn('category_name', 'Unisex')->get();
+        $categories = Category::whereNotIn('category_name', ['Unisex'])->get();
 
         return $categories;
     }
@@ -43,5 +43,21 @@ class ItemController extends Controller
         $items = Item::all();
 
         return $items;
+    }
+
+    public function getUser() {
+        $user = auth()->user();
+
+        return $user;
+    }
+
+    public function showHome() {
+
+        $user = $this->getUser();
+        $categories = $this->getAllCategories();
+        $recommended = $this->showNewArrival()->slice(0, 9);
+
+        return view('pages.home', compact('user', 'categories', 'recommended'));
+
     }
 }

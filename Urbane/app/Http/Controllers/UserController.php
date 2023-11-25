@@ -14,12 +14,12 @@ class UserController extends Controller
     //
     public function index(Request $request){
         $user = session('user');
-        // @dd($user); 
+        // @dd($user);
         return view('pages.home',[
             "user" => $user
         ]);
     }
-    
+
     public function register(Request $request){
         // return $request->all(); liat request json
         $request->validate([
@@ -30,18 +30,18 @@ class UserController extends Controller
             'con-pass' => 'required_with:password|same:password'
         ]);
 
-        // dd("berhasil weh"); 
+        // dd("berhasil weh");
         $user = new User;
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->phoneNumber = $request->input('phoneNumber');
-        $user->security = ''; 
+        $user->security = '';
         $user->save();
 
         return redirect('/login');
     }
-    
+
     public function login(Request $request){
 
         $credentials = $request->validate([
@@ -51,18 +51,18 @@ class UserController extends Controller
 
         // @dd("asd");
 
-        
+
         if(Auth::attempt($credentials)){
-            
+
             $request->session()->regenerate();
             if(auth()->user()->role == 'admin'){
-                
+
                 return redirect()->intended('/admin/dashboard');
             }else{
                 return redirect()->intended('/home');
             }
 
-            
+
         }
 
         return back()->with('error', 'User Not Found, Login Failed!');
@@ -83,7 +83,7 @@ class UserController extends Controller
         // }
     }
 
-    
+
 
     public function logout(Request $request){
         Auth::logout();
