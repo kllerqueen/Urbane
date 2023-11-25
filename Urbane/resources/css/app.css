@@ -229,6 +229,7 @@
 @media only screen and (max-width: 768px) {
     .sidebar.active{
         left: -80px;
+        position: absolute;
     }
 }
 .sidebar ul li{

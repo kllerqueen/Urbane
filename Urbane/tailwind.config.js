@@ -24,6 +24,9 @@ export default {
         '8': '8deg',
         '-4': '-4deg',
         '-8': '-8deg',
+      },
+      gridTemplateColumns: {
+        '7Admin': 'repeat(7, minmax(100px, 180px))',
       }
     },
     

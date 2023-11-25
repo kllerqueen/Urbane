@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     @include('partials.head')
 
-    <body class="w-full mx-auto font-urbanist flex relative">
+    <body class="w-full font-urbanist flex relative bg-black">
         @include('partials.AdminSidebar')
         @yield('body')
     </body>
