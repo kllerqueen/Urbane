@@ -174,3 +174,111 @@
     }
 }
 
+.text{
+    font-size: 16px;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .text{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .text{
+        font-size: 20px;
+    }
+}
+.sidebar{
+    padding-left: 20px;
+}
+.sidebar ul li a{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.sidebar ul li i{
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    height:50px;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+.sidebar ul li:hover .text,.sidebar ul li:hover i{
+    color: #00457D;
+}
+.sidebar ul li {
+    width: 100%;
+}
+.sidebar.active{
+    position: relative;
+    width: 80px;
+    transition:0.5s;
+    justify-content: left;
+    padding-left: 20px;
+    overflow: hidden;
+}
+.sidebar ul li{
+    position: relative;
+}
+.sidebar ul li .text{
+    font-size: 16px;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    letter-spacing: 0.05 em;
+    transition: 0.5s; 
+}
+
+.sidebar ul li:hover, .sidebar ul li.active{
+    background-color: black;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+ .sidebar ul li.active::before{
+    content:'';
+    position:absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 5px 5px 0 5px black;
+    background-color: transparent;
+}
+.sidebar ul li.active::after{
+    content:'';
+    position:absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 5px -5px 0 5px black;
+    background-color: transparent;
+}
+.sidebar.active .logo img{
+    width:50px;
+    height:50px;
+
+}
+.sidebar.active .logo a{
+    justify-content: start;
+    align-items: start;
+}
+
+
+.sidebar.active .logo .profile-name{
+    color: transparent;
+
+
+}

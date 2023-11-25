@@ -42,14 +42,16 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 //admin
 
-Route::prefix('admin')->middleware('admin')->group(function(){
+// Route::prefix('admin')->middleware('admin')->group(function(){
 
-    Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
+//     Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
 
-    Route::post('add-item', [AdminController::class, 'addItem']);
+//     Route::post('add-item', [AdminController::class, 'addItem']);
 
-    Route::delete('delete-item/{item:id}', [AdminController::class, 'deleteItem']);
+//     Route::delete('delete-item/{item:id}', [AdminController::class, 'deleteItem']);
 
-    Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+    // Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
-});
+// });
+Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
+Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
