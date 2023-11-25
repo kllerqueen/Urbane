@@ -50,16 +50,18 @@
         
             <div class="flex flex-col">
                 @forelse ($items as $item)
-                    <div class="grid grid-cols-7Admin gap-2 items-center  px-4 border-2 border-solid border-white py-1 rounded-md w-fit">
+                    <div class="grid grid-cols-7Admin gap-2 items-center  px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
                         <p>{{ $item->id }}</p>
                         <p>Picture</p>
                         <p>{{ $item->item_name }}</p>
                         <p class="whitespace-nowrap overflow-hidden max-w-[200px] text-ellipsis">{{ $item->item_desc }}</p>
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
-                        <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST">
+                        <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="absolute top-[50%] right-1 translate-y-[-50%]">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">
+                                <i class='bx bxs-trash-alt text-red-500'></i>
+                            </button>
                         </form>
                     </div>
                 @empty
