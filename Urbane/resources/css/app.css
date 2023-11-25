@@ -239,7 +239,12 @@
     transition: 0.5s; 
 }
 
-.sidebar ul li:hover, .sidebar ul li.active{
+.sidebar ul li:hover{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: rgb(191, 191, 191);
+}
+ .sidebar ul li.active{
     background-color: black;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;

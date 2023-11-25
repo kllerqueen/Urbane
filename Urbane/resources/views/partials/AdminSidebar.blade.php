@@ -15,25 +15,25 @@
             <div class="flex flex-col gap-2">
                 {{-- active --}}
                 <li class="relative active">
-                    <a href="#" class="">
+                    <a href="#" class="nav-link">
                         <i class='bx bxs-home'></i>
                         <div class="text">Dashboard</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="nav-link">
                         <i class='bx bxs-info-circle' ></i>
                         <div class="text">Info</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="nav-link">
                         <i class='bx bxs-help-circle' ></i>
                         <div class="text">Help</div>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="nav-link">
                         <i class='bx bxs-user-circle'></i>
                         <div class="text">Profile</div>
                     </a>
@@ -41,7 +41,7 @@
             </div>
             <div class="bottom absolute bottom-0 w-full">
                 <li>
-                    <a href="#">
+                    <a href="#" class="nav-link">
                         <i class='bx bx-log-out' ></i>
                         <div class="text">Log Out</div>
                     </a>
@@ -62,4 +62,18 @@
         toggleSidebar.classList.toggle('active');
         sidebar.classList.toggle('active');
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Remove active class from all links
+                    navLinks.forEach(navLink => navLink.parentElement.classList.remove('active'));
+                    
+                    // Add active class to the clicked link's parent (li) element
+                    this.parentElement.classList.add('active');
+                });
+            });
+        });
 </script>
