@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 100%; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #4f4f4f;
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4f4f4f #f3f3f3; 
+  }
 
 *{
     margin: 0;
@@ -295,3 +308,4 @@
 
 
 }
+

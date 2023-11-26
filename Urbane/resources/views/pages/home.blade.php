@@ -308,7 +308,7 @@
                 <img src="{{ url('assets/home/ThirdSection/StarIcon.png')}}" alt="" class=" absolute w-[70px] min-[475px]:w-[110px] lg:w-[140px] top-[-60px] min-[475px]:top-[-100px] lg:top-[-120px] right-[-60px] min-[475px]right-[-90px] md:right-[-120px] z-10 hidden md:block">
             </div>
 
-            <div id="Slider" class='relative flex items-center w-full h-full overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth overflow-y-hidden mt-12 gap-4' >
+            <div id="slider-box" class='relative flex items-center w-full h-full whitespace-nowrap overflow-y-hidden overflow-x-auto mt-12 gap-4' >
 
                 {{-- @forelse ($recommended as $item)
                     <div class="flex flex-col">
@@ -318,60 +318,128 @@
                 @empty
 
                 @endforelse --}}
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px] ">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
                 </div>
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
                 </div>
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden ">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
                 </div>
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
                 </div>
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
                 </div>
-                <div class="flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
                     <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
                     <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
                         <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
                         <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
                     </div>
-                </div> 
+                </div>
+                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                            <a href="" class="w-full text-primary ">See Details</a>
+                        </div>
+                    </div>
+                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
+                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
+                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
+                    </div>
+                </div>               
             </div>
         </div>
     </div>
     <script>
-        let Slider = document.getElementById('Slider')
+        const sliderBox = document.querySelector("#slider-box"),
+        slides = sliderBox.querySelectorAll("#slide"),
+        arrowIcons = document.querySelectorAll(".icon i");
+        let isDrag = false;
 
-        Slider.addEventListener("click", function() {
-            var maxScroll = Slider.scrollWidth - Slider.clientWidth;
-            Slider.scrollLeft += 500;
-            if (Slider.scrollLeft >= maxScroll) {
-                Slider.scrollLeft = 0;
-            }
+        const dragging = (e) => {
+            if(!isDrag) return;
+            sliderBox.scrollLeft -= e.movementX;
+        }
+        const dragStop = () => {
+            isDrag = false;
+        }
+        sliderBox.addEventListener("mousedown", () => isDrag = true);
+        sliderBox.addEventListener("mouseleave", dragStop);
+        sliderBox.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+
+
+        const modals = document.querySelectorAll('#modal')
+        slides.forEach((slide, index) => {
+            slide.addEventListener('mouseenter', () => {
+                modals[index].classList.remove('hidden');
+            });
+
+            slide.addEventListener('mouseleave', () => {
+                modals[index].classList.add('hidden');
+            });
         });
 
     </script>
