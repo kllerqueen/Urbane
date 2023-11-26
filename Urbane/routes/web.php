@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
