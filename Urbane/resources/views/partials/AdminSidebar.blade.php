@@ -1,5 +1,5 @@
 
-<div class="sidebar active absolute md:relative flex w-[300px] h-screen bg-primary duration-500 py-4 overflow-hidden rounded-e-[40px]">
+<div class="sidebar active absolute md:relative flex w-[300px] h-screen bg-gradient-to-r from-primary to-emerald-600 duration-500 py-4 overflow-hidden rounded-e-[40px]">
     <ul class="relative h-full w-full">
         <div class="logo mb-6">
             <a href='' class='flex justify-center gap-2  mb-2'>

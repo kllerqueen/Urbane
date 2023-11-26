@@ -54,4 +54,7 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 // });
 Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
+Route::get('/addproduct', function () {
+    return view('pages.adminAddProduct');
+});
 Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
