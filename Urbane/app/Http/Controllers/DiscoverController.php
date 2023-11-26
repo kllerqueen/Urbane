@@ -6,15 +6,21 @@ use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class DiscoverController extends Controller
 {
+    public function getUser() {
+        $user = auth()->user();
+
+        return $user;
+    }
+
     public function getAllCategories() {
         $categories = Category::whereNotIn('category_name', ['Unisex'])->get();
 
         return $categories;
     }
 
-    public function showItemByCategory($categoryId) {
+    public function getItemByCategory($categoryId) {
 
         if($categoryId == 1 || $categoryId == 2) {
             $categoryItems = Item::where('category_id', $categoryId)
@@ -27,7 +33,7 @@ class ItemController extends Controller
         return $categoryItems;
     }
 
-    public function showNewArrival() {
+    public function getNewArrival() {
 
         $time = now()->subMonths(3);
 
@@ -38,26 +44,11 @@ class ItemController extends Controller
         return $latestItem;
     }
 
-    public function showAllItem() {
+    public function getAllItem() {
 
         $items = Item::all();
 
         return $items;
     }
 
-    public function getUser() {
-        $user = auth()->user();
-
-        return $user;
-    }
-
-    public function showHome() {
-
-        $user = $this->getUser();
-        $categories = $this->getAllCategories();
-        $recommended = $this->showNewArrival()->slice(0, 9);
-
-        return view('pages.home', compact('user', 'categories', 'recommended'));
-
-    }
 }
