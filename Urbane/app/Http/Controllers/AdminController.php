@@ -9,9 +9,23 @@ use App\Models\Picture;
 
 class AdminController extends Controller
 {
-    public function index(){
-        $items = Item::all();
+
+    public function getAllCategories() {
         $categories = Category::whereNotIn('category_name', ['Unisex'])->get();
+
+        return $categories;
+    }
+
+    public function getAllItem() {
+
+        $items = Item::all();
+
+        return $items;
+    }
+
+    public function index(){
+        $items = $this->getAllItem();
+        $categories = $this->getAllCategories();
 
         return view('pages.adminPage', compact('items', 'categories'));
     }
