@@ -56,13 +56,22 @@
                         <p>{{ $item->item_name }}</p>
                         <p class="whitespace-nowrap overflow-hidden max-w-[200px] text-ellipsis">{{ $item->item_desc }}</p>
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
-                        <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="absolute top-[50%] right-1 translate-y-[-50%]">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">
-                                <i class='bx bxs-trash-alt text-red-500'></i>
-                            </button>
-                        </form>
+                        <div class="flex items-center absolute top-[50%] right-1 translate-y-[-50%] gap-2">
+                            <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    <i class='bx bx-edit text-white'></i>
+                                </button>
+                            </form>
+                            <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    <i class='bx bxs-trash-alt text-red-500'></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 @empty
                     <p>No items available</p>

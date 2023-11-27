@@ -26,7 +26,7 @@ export default {
         '-8': '-8deg',
       },
       gridTemplateColumns: {
-        '7Admin': 'repeat(7, minmax(100px, 180px))',
+        '7Admin': '50px, repeat(6, minmax(100px, 180px))',
       }
     },
     
