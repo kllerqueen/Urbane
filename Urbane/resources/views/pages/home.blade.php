@@ -312,16 +312,16 @@
 
                 @forelse ($recommended as $item)
 
-                    <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[300px] h-[200px] md:h-[250px] lg:h-[300px] ">
+                    <div id="slide"  class=" relative flex flex-col bg-white/20 text-white min-w-[140px] min-[500px]:min-w-[200px] lg:min-w-[250px] min-h-[160px] md:min-h-[240px] lg:min-h-[300px] ">
                         <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
                             <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
                                 <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
                                 <a href="" class="w-full text-primary ">See Details</a>
                             </div>
                         </div>
-                        <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='min-w-full h-full'/>
-                        <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center">
-                            <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">{{ $item->item_name }}</p>
+                        <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
+                        <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center ">
+                            <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden">{{ $item->item_name }}</p>
                             <h2 class="regular-10 md:regular-12 lg:regular-14">Rp. {{ number_format($item->item_price, 2, '.', ',') }}</h2>
                         </div>
                     </div>
@@ -329,7 +329,7 @@
                 @empty
 
                 @endforelse
-
+                
             </div>
         </div>
     </div>
