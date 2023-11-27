@@ -26,7 +26,7 @@
                 @csrf
                 <div class="flex justify-start items-center border-b-2 py-2 border-stroke w-full">
                     <i class="bx bxs-envelope bx-sm pl-1 pr-2 text-secondary"></i>
-                    <input class="border-l-2 border-stroke bg-transparent w-full text-secondary placeholder-secondary pl-2 focus:outline-none @error('email') is-invalid @enderror" type="email" name="email" id="emailInput" placeholder="Email">
+                    <input class="border-l-2 border-stroke bg-transparent w-full text-secondary placeholder-secondary pl-2 focus:outline-none @error('email') is-invalid @enderror" type="email" name="email" id="emailInput" placeholder="Email" value="{{ old('email') }}">
                 </div>
 
                 @error('email')
