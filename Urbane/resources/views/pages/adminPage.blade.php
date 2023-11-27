@@ -26,10 +26,10 @@
             </div>
 
             <ul class="flex flex-row w-full gap-2 md:justify-between px-[20px] font-semibold text-2xl flex-wrap">
-                <li>All items</li>
-                <li>New Arrival</li>
+                <li><a href="{{ route('adminPage', "All") }}">All items</a></li>
+                <li><a href="{{ route('adminPage', "New") }}">New Arrival</a></li>
                 @forelse ($categories as $ctg)
-                    <li>{{ $ctg->category_name }}</li>
+                    <li><a href="{{ route('adminPage', $ctg->category_name) }}">{{ $ctg->category_name }}</a></li>
                 @empty
 
                 @endforelse
@@ -47,7 +47,7 @@
                 <p>Size</p>
                 <p>Total Qty</p>
             </div>
-        
+
             <div class="flex flex-col">
                 @forelse ($items as $item)
                     <div class="grid grid-cols-7Admin gap-2 items-center  px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
@@ -69,8 +69,8 @@
                 @endforelse
             </div>
         </div>
-        
-        
+
+
 
     </div>
 
@@ -78,7 +78,7 @@
 
 
     </script>
-    
+
     {{-- <a href="{{ route('logoutAdminPage') }}">
         <button type="button">Logout Admin</button>
     </a> --}}

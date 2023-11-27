@@ -57,7 +57,7 @@ Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('
 
 // });
 
-Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
+Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
 Route::get('/addproduct', function () {
     return view('pages.adminAddProduct');
 });
