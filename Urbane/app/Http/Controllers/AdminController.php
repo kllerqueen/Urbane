@@ -23,8 +23,46 @@ class AdminController extends Controller
         return $items;
     }
 
-    public function index(){
-        $items = $this->getAllItem();
+    public function getItemByCategory($categoryId) {
+
+        if($categoryId == 1 || $categoryId == 2) {
+            $categoryItems = Item::where('category_id', $categoryId)
+                ->orWhere('category_id', 3)
+                ->get();
+        } else {
+            $categoryItems = Item::where('category_id', $categoryId)->get();
+        }
+
+        return $categoryItems;
+    }
+
+    public function getNewArrival() {
+
+        $time = now()->subMonths(3);
+
+        $latestItem = Item::where('created_at', '>=', $time)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return $latestItem;
+    }
+
+    public function index($category_name){
+
+        $category_name = ucfirst(strtolower($category_name));
+
+        if($category_name == "All") {
+            $items = $this->getAllItem();
+
+        } else if($category_name == "New") {
+            $items = $this->getNewArrival();
+
+        } else {
+            $categoryId = Category::where('category_name', $category_name)->pluck('id')->first();
+
+            $items = $this->getItemByCategory($categoryId);
+        }
+
         $categories = $this->getAllCategories();
 
         return view('pages.adminPage', compact('items', 'categories'));

@@ -38,6 +38,7 @@ class HomeController extends Controller
         $latestItem = Item::where('created_at', '>=', $time)
             ->orderBy('created_at', 'desc')
             ->take(8)
+            ->orderBy('item_price', 'asc')
             ->get();
 
         return $latestItem;

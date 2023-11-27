@@ -9,23 +9,23 @@
             @csrf
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-envelope bx-sm pl-1 pr-2'></i>
-                <input type="text" name="email" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('email') is-invalid @enderror" placeholder="Email" >
+                <input type="text" name="email" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('email') bg-black @enderror" placeholder="Email" value="{{ old('email') }}">
 
                
             </div>
 
             @error('email')
-            <div class="invalid-feedback">
+            <div class="invalid-feedback text-red-600 text-sm">
                 {{$message}}
             </div>
             @enderror
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-user bx-sm pl-1 pr-2'></i>
-                <input type="text" name="username" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('username') is-invalid @enderror" placeholder="Username">
+                <input type="text" name="username" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}">
             </div>
             @error('username')
-            <div class="invalid-feedback">
+            <div class="invalid-feedback text-red-600 text-sm">
                 {{$message}}
             </div>
             @enderror
@@ -33,21 +33,21 @@
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-phone bx-sm pl-1 pr-2'></i>
                 <input type="text" name="phoneNumber" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary" 
-                placeholder="(+62) Phone Number @error('phoneNumber') is-invalid @enderror" >
+                placeholder="(+62) Phone Number" @error('phoneNumber') is-invalid @enderror value="{{ old('phoneNumber') }}">
             </div>
 
             @error('phoneNumber')
-            <div class="invalid-feedback">
+            <div class="invalid-feedback text-red-600 text-sm">
                 {{$message}}
             </div>
             @enderror
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
-                <input type="text" name="password" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password">
+                <input type="text" name="password" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" >
             </div>
             @error('password')
-            <div class="invalid-feedback">
+            <div class="invalid-feedback text-red-600 text-sm">
                 {{$message}}
             </div>
             @enderror
@@ -57,7 +57,7 @@
                 <input type="text" name="con-pass" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password">
             </div>
             @error('con-pass')
-            <div class="invalid-feedback">
+            <div class="invalid-feedback text-red-600 text-sm">
                 {{$message}}
             </div>
             @enderror

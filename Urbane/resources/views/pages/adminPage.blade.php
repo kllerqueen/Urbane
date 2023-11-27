@@ -26,10 +26,10 @@
             </div>
 
             <ul class="flex flex-row w-full gap-2 md:justify-between px-[20px] font-semibold text-2xl flex-wrap">
-                <li>All items</li>
-                <li>New Arrival</li>
+                <li><a href="{{ route('adminPage', "All") }}">All items</a></li>
+                <li><a href="{{ route('adminPage', "New") }}">New Arrival</a></li>
                 @forelse ($categories as $ctg)
-                    <li>{{ $ctg->category_name }}</li>
+                    <li><a href="{{ route('adminPage', $ctg->category_name) }}">{{ $ctg->category_name }}</a></li>
                 @empty
 
                 @endforelse
@@ -40,21 +40,19 @@
         <div class="flex flex-col gap-[10px] text-white overflow-x-auto ">
             <div class="grid grid-cols-7Admin gap-2 items-center p-4 bg-primary rounded-md w-fit">
                 <p>Id</p>
-                <p>Picture</p>
                 <p>Name</p>
                 <p>Description</p>
                 <p>Price</p>
-                <p>Size</p>
                 <p>Total Qty</p>
+                <p>Action</p>
             </div>
-        
+
             <div class="flex flex-col">
                 @forelse ($items as $item)
                     <div class="grid grid-cols-7Admin gap-2 items-center  px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
                         <p>{{ $item->id }}</p>
-                        <p>Picture</p>
                         <p>{{ $item->item_name }}</p>
-                        <p class="whitespace-nowrap overflow-hidden max-w-[200px] text-ellipsis">{{ $item->item_desc }}</p>
+                        <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $item->item_desc }}</p>
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
                         <div class="flex items-center absolute top-[50%] right-1 translate-y-[-50%] gap-2">
                             <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
@@ -78,8 +76,8 @@
                 @endforelse
             </div>
         </div>
-        
-        
+
+
 
     </div>
 
@@ -87,7 +85,7 @@
 
 
     </script>
-    
+
     {{-- <a href="{{ route('logoutAdminPage') }}">
         <button type="button">Logout Admin</button>
     </a> --}}
