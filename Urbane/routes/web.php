@@ -43,6 +43,10 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
+Route::get('/discover',function(){
+    return view('pages.discover');
+});
+
 //admin
 
 // Route::prefix('/admin')->middleware('admin')->group(function(){
