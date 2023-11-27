@@ -35,8 +35,8 @@ class HomeController extends Controller
 
         $time = now()->subMonths(3);
 
-        $latestItem = Item::where('item_createTime', '>=', $time)
-            ->orderBy('item_createTime', 'desc')
+        $latestItem = Item::where('created_at', '>=', $time)
+            ->orderBy('created_at', 'desc')
             ->take(8)
             ->get();
 

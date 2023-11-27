@@ -21,7 +21,6 @@ class ItemFactory extends Factory
             'item_name' => fake()->words(2, true),
             'item_desc' => fake()->paragraphs(5, true),
             'item_price' => fake()->randomNumber(5, true),
-            'item_createTime' => fake()->dateTime()
         ];
     }
 }

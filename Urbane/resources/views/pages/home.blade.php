@@ -299,7 +299,7 @@
     {{-- Recommended Section --}}
     <div class="container w-full relative h-screen overflow-hidden">
         <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt="" class=" min-w-[650px] min-[500px]:w-full h-full rounded-lg">
-        
+
         <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex flex-col items-center justify-center max-w-[900px] w-full px-4">
             <div class="">
                 <img src="{{ url('assets/home/ThirdSection/TextStroke.png')}}" alt="" class="max-w-[280px] min-[550px]:max-w-[500px] lg:max-w-[650px] w-full">
@@ -310,105 +310,26 @@
 
             <div id="slider-box" class='relative flex items-center w-full h-full whitespace-nowrap overflow-y-hidden overflow-x-auto mt-12 gap-4' >
 
-                {{-- @forelse ($recommended as $item)
-                    <div class="flex flex-col">
-                        <img src="{{ url('assets/home/ThirdSection/BG.png')}}" alt=""  class='min-w-[90px] min-[450px]:min-w-[120px] md:min-w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300'/>
+                @forelse ($recommended as $item)
 
+                    <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[300px] h-[200px] md:h-[250px] lg:h-[300px] ">
+                        <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                            <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
+                                <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
+                                <a href="" class="w-full text-primary ">See Details</a>
+                            </div>
+                        </div>
+                        <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='min-w-full h-full'/>
+                        <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center">
+                            <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">{{ $item->item_name }}</p>
+                            <h2 class="regular-10 md:regular-12 lg:regular-14">Rp. {{ number_format($item->item_price, 2, '.', ',') }}</h2>
+                        </div>
                     </div>
+
                 @empty
 
-                @endforelse --}}
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px] ">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden ">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>
-                <div id="slide"  class=" relative flex flex-col bg-white/20 text-white w-[120px] min-[500px]:w-[240px] lg:w-[280px] h-[200px] md:h-[300px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
-                        <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-1 bg-primary rounded-sm">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
-                        </div>
-                    </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-full h-full'/>
-                    <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full ">
-                        <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">Sweater Sport Jumper XYZ</p>
-                        <h2 class="regular-10 md:regular-12 lg:regular-14">Rp 150,000</h2>
-                    </div>
-                </div>               
+                @endforelse
+
             </div>
         </div>
     </div>

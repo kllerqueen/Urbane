@@ -14,7 +14,6 @@ class Item extends Model
         'item_name',
         'item_desc',
         'item_price',
-        'item_createTime'
     ];
 
     public function category(){
