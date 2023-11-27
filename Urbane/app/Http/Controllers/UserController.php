@@ -24,7 +24,7 @@ class UserController extends Controller
         // return $request->all(); liat request json
         $request->validate([
             'username' => ['required', 'min:5', 'max:25','unique:users'],
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users|email:dns',
             'password' => 'required|min:5|max:25',
             'phoneNumber' => 'required|min:8|max:13',
             'con-pass' => 'required_with:password|same:password'
