@@ -45,15 +45,15 @@ Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('
 
 //admin
 
-// Route::prefix('admin')->middleware('admin')->group(function(){
+// Route::prefix('/admin')->middleware('admin')->group(function(){
 
-//     Route::get('dashboard', [AdminController::class, 'index'])->name('adminPage');
+//     Route::get('/dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
 
-//     Route::post('add-item', [AdminController::class, 'addItem']);
+//     Route::post('/add-item', [AdminController::class, 'addItem'])->name('addItem');
 
-//     Route::delete('delete-item/{item:id}', [AdminController::class, 'deleteItem']);
+//     Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem'])->name('deleteItem');
 
-    // Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+    // Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
 // });
 
