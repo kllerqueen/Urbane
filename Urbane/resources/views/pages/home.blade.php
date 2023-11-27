@@ -78,7 +78,7 @@
                     <img src="{{ url('assets/home/FirstSection/HeroMan.png')}}" alt="" class=" w-[28px] md:w-[35px] lg:w-[50px]">
                     <h1 class="regular-12 md:regular-16 lg:regular-20">Man</h1>
                 </div>
-                <a href="" class="flex flex-row items-center justify-between w-full rounded-lg shadow-2xl p-1 min-[460px]:p-2 bg-primary regular-10 md:regular-14 lg:regular-16 ">
+                <a href="/discover  " class="flex flex-row items-center justify-between w-full rounded-lg shadow-2xl p-1 min-[460px]:p-2 bg-primary regular-10 md:regular-14 lg:regular-16 ">
                     <h1>Shop Now</h1>
                     <div class="p-1 bg-white flex flexCenter rounded-full"><i class='bx bx-right-arrow-alt text-primary'></i></div>
                 </a>
@@ -364,6 +364,7 @@
         });
 
     </script>
+
 </div>
 
 
