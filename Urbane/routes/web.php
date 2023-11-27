@@ -65,4 +65,7 @@ Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name
 Route::get('/addproduct', function () {
     return view('pages.adminAddProduct');
 });
+Route::get('/info', function () {
+    return view('pages.adminInfo');
+});
 Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');

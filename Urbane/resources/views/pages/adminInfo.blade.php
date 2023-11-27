@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <form class="w-full max-w-[1200px] flex flex-col" method="POST">
+            <form class="w-full max-w-[1200px] flex flex-col">
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
                     {{-- Product Img Upload --}}
                     <div class="flex flex-col bg-primary/30 p-4 row-span-2 md:row-span-5 gap-2">
@@ -97,11 +97,7 @@
     </div>
     
 
-    <script>
-        function triggerFileInput(index) {
-            let fileInputs = document.querySelectorAll('#fileInput');
-            fileInputs[index].click();
-        }
+    <script>     
         function handleFileUpload() {
             let uploadTriggers = document.querySelectorAll('#uploadTrigger');
             let fileInputs = document.querySelectorAll('#fileInput');
@@ -122,6 +118,7 @@
                 } 
             });
         }
+
       </script>
     
     {{-- <a href="{{ route('logoutAdminPage') }}">
