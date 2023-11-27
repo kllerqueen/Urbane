@@ -51,4 +51,23 @@ class DiscoverController extends Controller
         return $items;
     }
 
+    public function discoverPage($category_name) {
+
+        $category_name = ucfirst(strtolower($category_name));
+
+        if($category_name == "All") {
+            $items = $this->getAllItem();
+
+        } else if($category_name == "New") {
+            $items = $this->getNewArrival();
+
+        } else {
+            $categoryId = Category::where('category_name', $category_name)->pluck('id')->first();
+
+            $items = $this->getItemByCategory($categoryId);
+        }
+
+        return view('pages.item-detail', compact('items'));
+    }
+
 }

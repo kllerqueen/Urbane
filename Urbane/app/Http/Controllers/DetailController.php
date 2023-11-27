@@ -11,6 +11,6 @@ class DetailController extends Controller
 
         $item = Item::where('id', $id)->get();
 
-        return view('/item', compact('item'));
+        return view('pages.itemDetail', compact('item'));
     }
 }

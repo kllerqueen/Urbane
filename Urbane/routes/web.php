@@ -41,7 +41,7 @@ Route::post('/register-user', [UserController::class, 'register']);
 
 Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');
 
-Route::get('/item/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
+Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
 //admin
 
