@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <form class="w-full max-w-[1100px] flex flex-col">
+            <form class="w-full max-w-[1200px] flex flex-col">
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
                     {{-- Product Img Upload --}}
                     <div class="flex flex-col bg-primary/30 p-4 row-span-2 md:row-span-5 gap-2">
