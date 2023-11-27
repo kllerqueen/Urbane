@@ -6,17 +6,17 @@
 
 ::-webkit-scrollbar {
     width: 100%; 
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background-color: #4f4f4f;
-  }
-  
-  /* For Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #4f4f4f #f3f3f3; 
-  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 *{
     margin: 0;
