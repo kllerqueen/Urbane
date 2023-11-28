@@ -62,7 +62,9 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem'])->name('deleteItem');
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
-
+    Route::get('/editproduct', function () {
+        return view('pages.admin.adminEditProduct');
+    });
 });
 
 // Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');

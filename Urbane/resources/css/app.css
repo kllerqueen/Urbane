@@ -238,7 +238,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .sidebar-container.active{
     width: 80px;
 }
-
+@media only screen and (max-width: 768px) {
+    .sidebar-container{
+        position: absolute;
+        width: 350px;
+    }
+    .sidebar-container.active{
+        width: 0px;
+        position: absolute;
+    }
+}
 .sidebar.active{
     width: 80px;
     transition:0.5s;

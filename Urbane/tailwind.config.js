@@ -27,6 +27,9 @@ export default {
       },
       gridTemplateColumns: {
         '7Admin': '60px, repeat(6, minmax(100px, 220px))',
+      },
+      gridTemplateRows: {
+        '7grid': 'repeat(7, minmax(100px, 220px))',
       }
     },
 
