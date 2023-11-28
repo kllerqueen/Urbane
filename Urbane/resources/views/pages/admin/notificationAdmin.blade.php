@@ -11,6 +11,10 @@
             </div>
             <img src="{{ url('assets/admin/BubbleBigLeftBottom.png')}}" alt="" class="absolute bottom-0 left-0 hidden md:block">
             <img src="{{ url('assets/admin/BubbleBigRightTop.png')}}" alt="" class="absolute h-full top-0 right-[-40px] md:right-0">
+            <a href="/admin/dashboard/All" class="absolute top-4 right-4 bg-white text-black p-2 rounded-full z-50 flex items-center justify-center">
+                <i class='bx bx-x text-[30px] '></i>
+            </a>
+            
         </div>
     </body>
 </html>
