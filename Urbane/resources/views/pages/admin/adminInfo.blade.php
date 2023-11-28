@@ -6,16 +6,10 @@
     <div class="px-2 md:px-8 py-2 md:py-4 w-full">
 
         <div class="flex flex-col gap-[10px] mb-[50px] text-primary">
+            <h1 class="bold-24 md:bold-32">
+                Information
+            </h1>
 
-            <div class=" flex items-center bold-24 md:bold-32">
-                <h1 class="">
-                    Dashboard 
-                </h1>
-                <div class="flex items-center">
-                    <i class='bx bx-chevron-right' ></i> 
-                    <h1>Add Product</h1>
-                </div>
-            </div>
 
             <form class="w-full max-w-[1200px] flex flex-col">
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">

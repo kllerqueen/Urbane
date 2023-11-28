@@ -63,9 +63,15 @@ Route::get('/discover',function(){
 
 Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
 Route::get('/addproduct', function () {
-    return view('pages.adminAddProduct');
+    return view('pages.admin.adminAddProduct');
 });
 Route::get('/info', function () {
-    return view('pages.adminInfo');
+    return view('pages.admin.adminInfo');
+});
+Route::get('/help', function () {
+    return view('pages.admin.adminHelp');
+});
+Route::get('/adminprofile', function () {
+    return view('pages.admin.adminProfile');
 });
 Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');

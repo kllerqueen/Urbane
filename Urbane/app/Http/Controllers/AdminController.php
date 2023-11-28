@@ -65,7 +65,7 @@ class AdminController extends Controller
 
         $categories = $this->getAllCategories();
 
-        return view('pages.adminPage', compact('items', 'categories'));
+        return view('pages.admin.adminPage', compact('items', 'categories'));
     }
 
     public function addItem(Request $request){
