@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('item_name');
             $table->text('item_desc');
             $table->integer('item_price');
+            $table->integer('qty');
             $table->timestamps();
         });
     }

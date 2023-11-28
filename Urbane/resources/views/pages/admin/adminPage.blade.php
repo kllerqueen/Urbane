@@ -11,7 +11,7 @@
 
             <div class="flex flex-col min-[400px]:flex-row w-full md:items-center gap-4 ">
 
-                <a href="/" class="flex items-center justify-between bg-primary px-4 py-2  rounded-md gap-4 max-w-[200px] w-full">
+                <a href="{{ route('addProductPage') }}" class="flex items-center justify-between bg-primary px-4 py-2  rounded-md gap-4 max-w-[200px] w-full">
                     <h1 class="text-white bold-16 lg:bold-20 text-start  py-1">Add Product</h1>
                     <div class=" shadow-xl rounded-full p-2 flex justify-center items-center  bg-white w-8 h-8">
                         <h1 class="bold-20">+</h1>
@@ -38,23 +38,24 @@
         </div>
 
         <div class="flex flex-col gap-[10px] text-white overflow-x-auto ">
-            <div class="grid grid-cols-7Admin gap-2 items-center p-4 bg-primary rounded-md w-fit">
+            <div class="grid grid-cols-7Admin gap-8 items-center p-4 bg-primary rounded-md w-fit">
                 <p>Id</p>
                 <p>Name</p>
-                <p>Description</p>
+                <p class="col-span-2">Description</p>
                 <p>Price</p>
-                <p>Total Qty</p>
+                <p>Qty</p>
                 <p>Action</p>
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-2">
                 @forelse ($items as $item)
-                    <div class="grid grid-cols-7Admin gap-2 items-center  px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
+                    <div class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
                         <p>{{ $item->id }}</p>
-                        <p>{{ $item->item_name }}</p>
-                        <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $item->item_desc }}</p>
+                        <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $item->item_name }}</p>
+                        <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $item->item_desc }}</p>
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
-                        <div class="flex items-center absolute top-[50%] right-1 translate-y-[-50%] gap-2">
+                        <p>{{ $item->qty }}</p>
+                        <div class="flex items-center gap-2">
                             <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')
@@ -62,7 +63,7 @@
                                     <i class='bx bx-edit text-white'></i>
                                 </button>
                             </form>
-                            <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
+                            <form action="{{ route('deleteItem',  $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
