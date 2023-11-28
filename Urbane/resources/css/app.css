@@ -230,8 +230,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .sidebar ul li {
     width: 100%;
 }
+
+.sidebar-container{
+    width: 350px;
+}
+
+.sidebar-container.active{
+    width: 80px;
+}
+
 .sidebar.active{
-    position: relative;
     width: 80px;
     transition:0.5s;
     justify-content: left;
@@ -239,6 +247,7 @@ input[type="number"]::-webkit-outer-spin-button {
     overflow: hidden;
     left: 0px;
 }
+
 @media only screen and (max-width: 768px) {
     .sidebar.active{
         left: -80px;
@@ -268,6 +277,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: black;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    border: none;
 
 }
  .sidebar ul li.active::before{
@@ -278,8 +288,9 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 20px;
     height: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 5px 5px 0 5px black;
+    box-shadow: 5px 5px 0 0px black;
     background-color: transparent;
+    border: none;
 }
 .sidebar ul li.active::after{
     content:'';
@@ -289,8 +300,9 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 20px;
     height: 20px;
     border-top-right-radius: 20px;
-    box-shadow: 5px -5px 0 5px black;
+    box-shadow: 5px -5px 0 0px black;
     background-color: transparent;
+    border: none;
 }
 .sidebar.active .logo img{
     width:50px;
@@ -305,7 +317,5 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .sidebar.active .logo .profile-name{
     color: transparent;
-
-
 }
 
