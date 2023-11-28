@@ -42,7 +42,7 @@
             </div>
             <div class="bottom absolute bottom-0 w-full">
                 <li>
-                    <a href="#" id="nav-link">
+                    <a href="/admin/admin-logout" id="nav-link">
                         <i class='bx bx-log-out' ></i>
                         <div class="text">Log Out</div>
                     </a>
