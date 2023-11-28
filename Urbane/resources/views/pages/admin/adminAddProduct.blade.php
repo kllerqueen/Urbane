@@ -9,7 +9,7 @@
 
             <div class=" flex items-center bold-24 md:bold-32">
                 <h1 class="">
-                    Dashboard
+                    <a href="{{ route('adminPage', 'All') }}">Dashboard</a>
                 </h1>
                 <div class="flex items-center">
                     <i class='bx bx-chevron-right' ></i>
@@ -18,6 +18,7 @@
             </div>
 
             <form class="w-full max-w-[1200px] flex flex-col" method="POST" action="{{ route('addItem') }}">
+                @csrf
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
                     {{-- Product Img Upload --}}
                     <div class="flex flex-col bg-primary/30 p-4 row-span-2 md:row-span-5 gap-2">
@@ -34,7 +35,7 @@
                                     <h1 class="bold-12 md:bold-14 lg:bold-16">Maximum picture is 500 x 500px</h1>
                                     <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
                                 </div>
-                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                 <img onclick="triggerFileInput(0)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                             </div>
 
@@ -43,21 +44,21 @@
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(1)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                                 <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(2)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                                 <div id="uploadTrigger" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(3)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                             </div>
@@ -70,19 +71,23 @@
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Name product<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12 ">The name has maximum 150 words</p>
-                                <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3"/>
+                                <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_name"/>
+                            </div>
+                            <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
+                                <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Price<span class="text-red-500">*</span></h1>
+                                <p class="text-gray-500 regular-12">Add the product Price</p>
+                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="price"/>
                             </div>
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Quantity<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product quantity</p>
-                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3"/>
+                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="qty"/>
                             </div>
                         </div>
                         <div class="bg-primary/30 p-4 flex flex-col gap-1">
                             <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Description product<span class="text-red-500">*</span></h1>
                             <p class="text-gray-500">Maximum words in description is 1000 words</p>
-                            <textarea name="" id="" cols="30" rows="10" class="bg-white regular-16 focus:outline-none rounded-md p-3 text-grey-500" placeholder="Input your description">
-                            </textarea>
+                            <textarea name="item_desc" id="" cols="30" rows="10" class="bg-white regular-16 focus:outline-none rounded-md p-3 text-grey-500" placeholder="Input your description"></textarea>
                         </div>
                     </div>
 
