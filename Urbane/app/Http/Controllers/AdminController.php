@@ -77,10 +77,10 @@ class AdminController extends Controller
             'item_price' => 'required|numeric',
             'qty' => 'required|integer',
             'category_name' => 'required|string|in:Man,Woman,Unisex,Accessory',
-            'image0' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'image3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $item = new Item;
@@ -93,17 +93,25 @@ class AdminController extends Controller
 
         $maxImages = 4;
 
-        for($i = 0; $i < $maxImages; $i++) {
-            $imageName = "image{$i}";
-
-            if ($request->hasFile($imageName)) {
-                $imagePath = $request->file($imageName)->store('item', 'public');
-
+        if($request->hasFile('image')){
+            foreach($request->file('image') as $image){
+                $imagePath = $image->store('item_pictures');
                 $item->pictures()->create([
-                    'picture_url' => $imagePath,
+                    'picture_url' => $imagePath
                 ]);
             }
         }
+        // for($i = 0; $i < $maxImages; $i++) {
+        //     $imageName = "image{$i}";
+
+        //     if ($request->hasFile($imageName)) {
+        //         $imagePath = $request->file($imageName)->store('item', 'public');
+
+        //         $item->pictures()->create([
+        //             'picture_url' => $imagePath,
+        //         ]);
+        //     }
+        // }
 
         return redirect()->route('adminPage', 'All');
     }
@@ -113,7 +121,7 @@ class AdminController extends Controller
         $itemPictures = Picture::where('item_id', $item->id)->get();
 
         foreach($itemPictures as $pict) {
-            $imagePath = 'assets/item' . $pict->picture_url;
+            $imagePath = 'storage/item' . $pict->picture_url;
 
             Storage::disk('public')->delete($imagePath);
         }
