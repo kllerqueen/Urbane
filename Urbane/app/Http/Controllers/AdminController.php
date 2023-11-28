@@ -113,7 +113,7 @@ class AdminController extends Controller
         $itemPictures = Picture::where('item_id', $item->id)->get();
 
         foreach($itemPictures as $pict) {
-            $imagePath = 'assets/item' . $pict->picture_url;
+            $imagePath = 'storage/item' . $pict->picture_url;
 
             Storage::disk('public')->delete($imagePath);
         }
