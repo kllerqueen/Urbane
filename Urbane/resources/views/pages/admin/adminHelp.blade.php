@@ -3,10 +3,10 @@
 
 @section('body')
 
-    <div class="px-2 md:px-8 py-2 md:py-4 w-full h-screen">
+    <div class="px-2 md:px-8 py-2 md:py-4 w-full h-screen relative">
 
-        <div class="flex flex-col gap-[10px] mb-[50px] text-primary max-w-[1300px] relative h-full">
-            <h1 class="bold-24 md:bold-32">
+        <div class="flex flex-col gap-[10px] mb-[50px] text-primary max-w-[1300px] h-full">
+            <h1 class="bold-24 md:bold-32 w-fit">
                 Help
             </h1>
             <div class="flex flex-col justify-between h-full  w-full text-white">
@@ -83,25 +83,20 @@
     
 
     <script>
-        function showSlide(index){
-            let slides = document.querySelectorAll("#slide")
-            let modals = document.querySelectorAll("#modal")
+        function showSlide(index) {
+            let modals = document.querySelectorAll("#modal");
 
-            if(modals[index].classList.contains('h-0')){
-                modals[index].classList.remove('h-0');
-                modals[index].classList.add( 'p-4', 'pt-6');
-                slides.forEach((slide, ind) => {
-                    if(index != ind){
-                        modals[ind].classList.add('h-0');
-                        modals[ind].classList.remove( 'p-4', 'pt-6');
-                    }
-                });
-            }else{
-                modals[index].classList.add('h-0');
-                modals[index].classList.remove( 'p-4', 'pt-6');
-            }
+            modals.forEach((modal, ind) => {
+                if (index == ind) {
+                    modal.classList.toggle('h-0');
+                    modal.classList.toggle('p-4');
+                    modal.classList.toggle('pt-6');
+                } else {
+                    modal.classList.add('h-0');
+                    modal.classList.remove('p-4', 'pt-6');
+                }
+            });
         }
-
     </script>
     {{-- <a href="{{ route('logoutAdminPage') }}">
         <button type="button">Logout Admin</button>

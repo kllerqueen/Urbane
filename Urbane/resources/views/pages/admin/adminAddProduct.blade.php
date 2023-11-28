@@ -98,13 +98,13 @@
     
 
     <script>
+        let fileInputs = document.querySelectorAll('#fileInput');
+        
         function triggerFileInput(index) {
-            let fileInputs = document.querySelectorAll('#fileInput');
             fileInputs[index].click();
         }
         function handleFileUpload() {
             let uploadTriggers = document.querySelectorAll('#uploadTrigger');
-            let fileInputs = document.querySelectorAll('#fileInput');
             let uploadedImages = document.querySelectorAll('#uploadedImage');
 
             fileInputs.forEach((fileInput, index) => {

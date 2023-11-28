@@ -74,4 +74,7 @@ Route::get('/help', function () {
 Route::get('/adminprofile', function () {
     return view('pages.admin.adminProfile');
 });
+Route::get('/notification', function () {
+    return view('pages.admin.notificationAdmin');
+});
 Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
