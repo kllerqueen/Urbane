@@ -76,12 +76,15 @@ class AdminController extends Controller
             'item_desc' => 'required|string',
             'item_price' => 'required|numeric',
             'qty' => 'required|integer',
-            'categoryName' => 'required|string',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category_name' => 'required|string|in:Man,Woman,Unisex,Accessory',
+            'image0' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $item = new Item;
-        $item->category_id = Category::firstWhere('category_name', $request->categoryName)->id;
+        $item->category_id = Category::firstWhere('category_name', $request->category_name)->id;
         $item->item_name = $request->input('item_name');
         $item->item_desc = $request->input('item_desc');
         $item->item_price = $request->input('item_price');
@@ -90,20 +93,19 @@ class AdminController extends Controller
 
         $maxImages = 4;
 
-        for($i = 1; $i <= $maxImages; $i++) {
+        for($i = 0; $i < $maxImages; $i++) {
             $imageName = "image{$i}";
 
             if ($request->hasFile($imageName)) {
-                $imagePath = $request->file($imageName)->store('assets/item', 'public');
+                $imagePath = $request->file($imageName)->store('item', 'public');
 
-                // Save image data in the ItemPicture model
                 $item->pictures()->create([
                     'picture_url' => $imagePath,
                 ]);
             }
         }
 
-        return redirect()->route('/admin/dashboard/All');
+        return redirect()->route('adminPage', 'All');
     }
 
     public function deleteItem(Item $item){

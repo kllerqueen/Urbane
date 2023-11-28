@@ -10,7 +10,8 @@ class Picture extends Model
     use HasFactory;
 
     protected $fillables = [
-        'item_id'
+        'item_id',
+        'picture_url'
     ];
 
     public function item() {

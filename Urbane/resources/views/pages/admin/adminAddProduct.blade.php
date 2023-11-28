@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <form class="w-full max-w-[1200px] flex flex-col" method="POST" action="{{ route('addItem') }}">
+            <form class="w-full max-w-[1200px] flex flex-col" method="POST" action="{{ route('addItem') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
                     {{-- Product Img Upload --}}
@@ -28,37 +28,37 @@
                         </h1>
                         <div class=" grid grid-rows-6 gap-2 w-full h-full">
                             <div class=" row-span-4 relative">
-                                <div id="uploadTrigger" onclick="triggerFileInput(0)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black">
+                                <div id="image0" onclick="triggerFileInput(0)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
                                     <h1 class="bold-12 md:bold-14 lg:bold-16">Maximum picture is 500 x 500px</h1>
                                     <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
                                 </div>
-                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
+                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image0">
                                 <img onclick="triggerFileInput(0)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                             </div>
 
                             <div class="row-span-2 grid grid-cols-3 w-full h-full gap-2">
-                                <div id="uploadTrigger" onclick="triggerFileInput(1)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="image1" onclick="triggerFileInput(1)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image1">
                                     <img onclick="triggerFileInput(1)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="image2" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image2">
                                     <img onclick="triggerFileInput(2)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="image3" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image3">
                                     <img onclick="triggerFileInput(3)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                             </div>
@@ -74,14 +74,19 @@
                                 <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_name"/>
                             </div>
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
+                                <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
+                                <p class="text-gray-500 regular-12">Add the product category</p>
+                                <input type="text" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="category_name"/>
+                            </div>
+                            <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Price<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product Price</p>
-                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="price"/>
+                                <input type="number" id="value" placeholder="Input the product’s Price " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_price"/>
                             </div>
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Quantity<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product quantity</p>
-                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="qty"/>
+                                <input type="number" id="value2" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="qty"/>
                             </div>
                         </div>
                         <div class="bg-primary/30 p-4 flex flex-col gap-1">
@@ -104,12 +109,11 @@
 
     <script>
         let fileInputs = document.querySelectorAll('#fileInput');
-        
+
         function triggerFileInput(index) {
             fileInputs[index].click();
         }
         function handleFileUpload() {
-            let uploadTriggers = document.querySelectorAll('#uploadTrigger');
             let uploadedImages = document.querySelectorAll('#uploadedImage');
 
             fileInputs.forEach((fileInput, index) => {
