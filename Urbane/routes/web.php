@@ -49,32 +49,33 @@ Route::get('/discover',function(){
 
 //admin
 
-// Route::prefix('/admin')->middleware('admin')->group(function(){
+Route::prefix('/admin')->middleware('admin')->group(function(){
 
-//     Route::get('/dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
+    Route::get('/dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
 
-//     Route::post('/add-item', [AdminController::class, 'addItem'])->name('addItem');
+    Route::get('/add-item', function() {
+        return view('pages.admin.adminAddProduct');
+    })->name('addProductPage');
 
-//     Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem'])->name('deleteItem');
+    Route::post('/add-item', [AdminController::class, 'addItem'])->name('addItem');
 
-    // Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+    Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem'])->name('deleteItem');
 
+    Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+
+});
+
+// Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
+// Route::get('/addproduct', function () {
+//     return view('pages.admin.adminAddProduct');
 // });
-
-Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
-Route::get('/addproduct', function () {
-    return view('pages.admin.adminAddProduct');
-});
-Route::get('/info', function () {
-    return view('pages.admin.adminInfo');
-});
-Route::get('/help', function () {
-    return view('pages.admin.adminHelp');
-});
-Route::get('/adminprofile', function () {
-    return view('pages.admin.adminProfile');
-});
-Route::get('/notification', function () {
-    return view('pages.admin.notificationAdmin');
-});
-Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+// Route::get('/info', function () {
+//     return view('pages.admin.adminInfo');
+// });
+// Route::get('/help', function () {
+//     return view('pages.admin.adminHelp');
+// });
+// Route::get('/adminprofile', function () {
+//     return view('pages.admin.adminProfile');
+// });
+// Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');

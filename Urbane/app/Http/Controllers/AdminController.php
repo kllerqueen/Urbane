@@ -78,7 +78,7 @@ class AdminController extends Controller
         $item->item_createTime = now();
         $item->save();
 
-        return redirect();
+        return redirect()->route('/admin/dashboard/All');
     }
 
     public function deleteItem(Item $item){
