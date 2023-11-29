@@ -63,13 +63,13 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
-    // Routing Sementara
-    Route::get('/help', function () {
-        return view('pages.admin.adminHelp');
-    });
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
     });
+
+    Route::get('/help', function() {
+        return view('pages.admin.adminHelp');
+    })->name('helpPage');
 });
 
 // Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');

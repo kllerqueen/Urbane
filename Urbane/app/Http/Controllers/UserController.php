@@ -90,7 +90,7 @@ class UserController extends Controller
         $request->session()->flush();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect("/home");
+        return redirect("/login");
     }
 
 }

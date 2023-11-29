@@ -15,8 +15,8 @@
             </div>
             <div class="flex flex-col gap-2">
                 {{-- active --}}
-                <li class="relative">
-                    <a href="/admin/dashboard/all" id="nav-link">
+                <li class="relative active">
+                    <a href="{{ route('adminPage', "All") }}" id="nav-link">
                         <i class='bx bxs-home'></i>
                         <div class="text">Dashboard</div>
                     </a>
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/help" id="nav-link">
+                    <a href="{{ route('helpPage') }}" id="nav-link">
                         <i class='bx bxs-help-circle' ></i>
                         <div class="text">Help</div>
                     </a>
@@ -42,7 +42,7 @@
             </div>
             <div class="bottom absolute bottom-0 w-full">
                 <li>
-                    <a href="#" id="nav-link">
+                    <a href="{{ route('logoutAdminPage') }}" id="nav-link">
                         <i class='bx bx-log-out' ></i>
                         <div class="text">Log Out</div>
                     </a>
