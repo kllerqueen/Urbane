@@ -82,8 +82,9 @@
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product category</p>
-                                <div class="select">
-                                    <select class="px-3 text-gray-400">
+                                <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
+                                    <select class="px-3 text-gray-400
+                                    outline-none border-none bg-white w-full cursor-pointer ">
                                         <option value="category1">Man</option>
                                         <option value="category2">Woman</option>
                                         <option value="category3">Unisex</option>
@@ -137,27 +138,14 @@
             -webkit-appearance:none;
             -moz-appearance:none;
             -ms-appearance:none;
-            appearance:none;
-            outline:0;
-            border:0!important;
-            background: #ffffff;
-            width: 100%;
-            cursor:pointer;
         }
 
-        .select {
-            position: relative;
-            display: flex;
-            width: 100%;
-            height: 3em;
-            line-height: 3;
-            overflow: hidden;
-            border-radius: .25em;
-        }
+
         .select::after {
             content: '\25BC';
             position: absolute;
-            top: 0;
+            top: 50%;
+            transform: translate(0,-50%);
             right: 0;
             padding: 0 1em;
             cursor:pointer;

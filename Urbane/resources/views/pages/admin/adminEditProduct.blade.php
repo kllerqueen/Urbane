@@ -12,8 +12,8 @@
 
 
             <form class="w-full max-w-[1200px] flex flex-col">
-                <<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-4  gap-2 text-white">
-                    <div class="bg-primary/30 p-4 flex flex-row w-full items-center  gap-4 col-span-1 row-span-1">
+                <<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-5 md:grid-rows-4  gap-2 text-white">
+                    <div class="bg-primary/30 p-4 flex flex-row w-full items-center  gap-4 col-span-1 row-span-1 col-start-1 row-start-1">
                         <img src="{{url('assets/admin/widgets.png')}}" alt="" class="w-10 h-10 p-1 bg-black rounded-full flex items-center justify-center">
                         <div class="flex-col">
                             <p class="regular-12 md:regular-14 lg:regular-16">Product ID</p>
@@ -21,7 +21,7 @@
                         </div> 
                     </div>
                     {{-- Product Img Upload --}}
-                    <div class="flex flex-col bg-primary/30 p-4 row-span-3  gap-2 col-span-1 col-start-1 row-start-2">
+                    <div class="flex flex-col bg-primary/30 p-4 row-span-4 md:row-span-2 lg:row-span-3  gap-2 col-span-1 col-start-1 row-start-2">
                         <h1 class="text-white regular-16 md:regular-20 lg:regular-24">
                             Picture
                         </h1>
@@ -64,19 +64,46 @@
                         </div> 
                     </div>   
                     
-                    <div class=" bg-primary/30 w-full flex items-center px-4 lg:col-span-2 md:col-start-2">
+                    <div class=" bg-primary/30 w-full flex items-center px-4 lg:col-span-2 md:col-start-2 row-start-1 row-span-1">
                         <img src="{{ url('assets/admin/AdminProfile.png')}}" alt="" class=" w-14 h-14">
                         <h1 class="pl-4 bold-14 md:bold-18 lg:bold-24">HI, Admin Girlys 👋 !</h1>
                     </div>
 
-                    <div class="lg:col-span-2 row-span-1 bg-primary/30 w-fullflex items-center px-4">
-                        <h1 class="pl-4 bold-14 md:bold-18 lg:bold-24">HI, Admin Girlys 👋 !</h1>
+                    <div class="lg:col-span-2 row-span-3 md:row-span-2 bg-primary/30 w-full flex flex-col  gap-4 p-4 ">
+                        <div class="flex w-full justify-between items-center">
+                            <div class="flex flex-col gap-2 ">
+                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name product</h1>
+                                <h1>Oversized shirt popelin bias mode white</h1>
+                            </div>
+                            <button class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300">Edit Button</button>
+                        </div>
+                        <div class="flex w-full justify-between items-center">
+                            <div class="flex flex-col gap-2 ">
+                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name product</h1>
+                                <h1>Oversized shirt popelin bias mode white</h1>
+                            </div>
+                            <button class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300">Edit Button</button>
+                        </div>
+                        <div class="flex w-full justify-between items-center">
+                            <div class="flex flex-col gap-2 ">
+                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name product</h1>
+                                <h1>Oversized shirt popelin bias mode white</h1>
+                            </div>
+                            <button class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300">Edit Button</button>
+                        </div>
+                        <div class="flex w-full justify-between items-center">
+                            <div class="flex flex-col gap-2 ">
+                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name product</h1>
+                                <h1>Oversized shirt popelin bias mode white</h1>
+                            </div>
+                            <button class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300 ">Edit Button</button>
+                        </div>
                     </div>
 
-                    <div class="lg:col-span-2 row-span-1 bg-primary/30 w-full flex flex-col px-4 py-2">
+                    <div class="lg:col-span-2 row-span-1 bg-primary/30 w-full flex flex-col px-4 py-2 md:col-start-2">
                         <h1 class="regular-12 md:regular-14 lg:regular-16">Description</h1>
                         <p class="bold-14 md:bold-16 ">The oversized silhouette of this shirt provides a relaxed fit, allowing for easy movement and a casually cool vibe. The poplin fabric adds a touch of refinement, ensuring that you not only feel great but also look effortlessly chic.</p>
-                        <button class="self-end px-12 py-2 bg-black border border-white rounded-md">Edit Button</button>
+                        <button class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300 mt-2">Edit Button</button>
                     </div>
                 </div>
 
