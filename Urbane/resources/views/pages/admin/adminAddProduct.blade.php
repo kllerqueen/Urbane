@@ -72,8 +72,8 @@
                                 <p class="text-gray-500 regular-12 ">The name has maximum 150 words</p>
                                 <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_name"/>
                             </div>
-                           
-                        
+
+
 
                             @error('item_name')
                                 <div>{{$message}}</div>
@@ -84,11 +84,11 @@
                                 <p class="text-gray-500 regular-12">Add the product category</p>
                                 <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
                                     <select class="px-3 text-gray-400
-                                    outline-none border-none bg-white w-full cursor-pointer ">
-                                        <option value="category1">Man</option>
-                                        <option value="category2">Woman</option>
-                                        <option value="category3">Unisex</option>
-                                        <option value="category3">Accessories</option>
+                                    outline-none border-none bg-white w-full cursor-pointer" name="category_name">
+                                        <option value="Man">Man</option>
+                                        <option value="Woman">Woman</option>
+                                        <option value="Unisex">Unisex</option>
+                                        <option value="Accessory">Accessories</option>
                                     </select>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
             cursor:pointer;
             pointer-events:none;
         }
-        
+
     </style>
     <script>
         let fileInputs = document.querySelectorAll('#fileInput');
