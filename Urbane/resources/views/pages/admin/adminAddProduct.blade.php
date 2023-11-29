@@ -82,7 +82,14 @@
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product category</p>
-                                <input type="text" id="value" placeholder="Input the product’s category " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="category_name"/>
+                                <div class="select">
+                                    <select class="">
+                                        <option value="category1">Man</option>
+                                        <option value="category2">Woman</option>
+                                        <option value="category3">Unisex</option>
+                                        <option value="category3">Accessories</option>
+                                    </select>
+                                </div>
                             </div>
 
                             @error('category_name')
@@ -125,7 +132,49 @@
 
     </div>
 
-
+    <style>
+        select {
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            -ms-appearance:none;
+            appearance:none;
+            outline:0;
+            border:0!important;
+            background: #ffffff;
+            background-image: none;
+            flex: 1;
+            padding: 0 .5em;
+            color:#2f2f2f;
+            cursor:pointer;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        .select {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 3em;
+            line-height: 3;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            cursor:pointer;
+            pointer-events:none;
+            transition:.25s all ease;
+        }
+        .select:hover::after {
+            color: #d0d0d0;
+        }
+    </style>
     <script>
         let fileInputs = document.querySelectorAll('#fileInput');
 
