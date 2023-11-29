@@ -3,19 +3,19 @@
     <div class="sidebar active fixed  flex w-[300px] h-screen bg-gradient-to-r from-primary to-emerald-600 duration-500 py-4 overflow-hidden rounded-e-[40px] z-50 left-0" id="sidebar">
         <ul class="relative h-full w-full">
             <div class="logo mb-6 ">
-                <div class='flex justify-center gap-2  mb-2'>
-                    <img src="{{ url('assets/admin/LogoWhite.png')}}" alt="" class=" max-w-[150px] w-full">
-                </div>
+                <a class='flex justify-center gap-2  mb-2'>
+                    <img src="{{ url('assets/admin/LogoWhite.png')}}" alt="" class=" max-w-[150px] w-full ">
+                </a>
             </div>
             <div class="logo ">
-                <a href='' class='flex gap-2  mb-2 flex-col items-center '>
-                    <img src="{{ url('assets/admin/AdminProfile.png')}}" alt="" class=" max-w-[80px] max-h-[80px] h-full w-full">
+                <a href='' class='flex gap-2  mb-2 flex-col items-center duration-500'>
+                    <img src="{{ url('assets/admin/AdminProfile.png')}}" alt="" class=" max-w-[80px] max-h-[80px] h-full w-full duration-500">
                     <h1 class="regular-16 md:regular-18 lg:regular-20 text-white profile-name">Jonathan</h1>
                 </a>
             </div>
             <div class="flex flex-col gap-2">
                 {{-- active --}}
-                <li class="relative active">
+                <li class="relative">
                     <a href="{{ route('adminPage', "All") }}" id="nav-link">
                         <i class='bx bxs-home'></i>
                         <div class="text">Dashboard</div>

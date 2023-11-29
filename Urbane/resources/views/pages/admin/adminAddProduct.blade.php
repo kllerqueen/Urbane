@@ -83,7 +83,7 @@
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product category</p>
                                 <div class="select">
-                                    <select class="">
+                                    <select class="px-3 text-gray-400">
                                         <option value="category1">Man</option>
                                         <option value="category2">Woman</option>
                                         <option value="category3">Unisex</option>
@@ -141,17 +141,10 @@
             outline:0;
             border:0!important;
             background: #ffffff;
-            background-image: none;
-            flex: 1;
-            padding: 0 .5em;
-            color:#2f2f2f;
+            width: 100%;
             cursor:pointer;
-            font-size: 1em;
-            font-family: 'Open Sans', sans-serif;
         }
-        select::-ms-expand {
-            display: none;
-        }
+
         .select {
             position: relative;
             display: flex;
@@ -169,11 +162,8 @@
             padding: 0 1em;
             cursor:pointer;
             pointer-events:none;
-            transition:.25s all ease;
         }
-        .select:hover::after {
-            color: #d0d0d0;
-        }
+        
     </style>
     <script>
         let fileInputs = document.querySelectorAll('#fileInput');

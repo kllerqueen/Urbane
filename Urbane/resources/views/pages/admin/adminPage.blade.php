@@ -85,8 +85,15 @@
     <script>
         window.onload = function() {
             const navLinks = document.querySelectorAll('#nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active')
+                    });
+                    link.parentElement.classList.add('active');
+                });
+            });
             navLinks[0].parentElement.classList.add('active')
-            console.log(navLinks)
         }
 
     </script>
