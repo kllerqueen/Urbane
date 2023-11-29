@@ -62,6 +62,11 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::delete('/delete-item/{item:id}', [AdminController::class, 'deleteItem'])->name('deleteItem');
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+
+    // Routing Sementara
+    Route::get('/help', function () {
+        return view('pages.admin.adminHelp');
+    });
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
     });

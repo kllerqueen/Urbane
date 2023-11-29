@@ -9,12 +9,8 @@
 
             <div class=" flex items-center bold-24 md:bold-32">
                 <h1 class="">
-                    <a href="{{ route('adminPage', 'All') }}">Dashboard</a>
+                    <a href="{{ route('adminPage', 'All') }}">Dashboard <span class="font-vina">> </span> Add Product</a>
                 </h1>
-                <div class="flex items-center">
-                    <i class='bx bx-chevron-right' ></i>
-                    <h1>Add Product</h1>
-                </div>
             </div>
 
             <form class="w-full max-w-[1200px] flex flex-col" method="POST" action="{{ route('addItem') }}" enctype="multipart/form-data">

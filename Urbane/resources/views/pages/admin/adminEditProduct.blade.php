@@ -7,7 +7,7 @@
 
         <div class="flex flex-col gap-[10px] mb-[50px] text-primary">
             <h1 class="bold-24 md:bold-32">
-                Dashboard > Edit Products
+                Dashboard <span class="font-vina">></span> Edit Products
             </h1>
 
 
@@ -110,6 +110,7 @@
                 } 
             });
         }
+        
 
       </script>
     

@@ -83,6 +83,11 @@
     
 
     <script>
+        window.onload = function() {
+            const navLinks = document.querySelectorAll('#nav-link');
+            navLinks[2].parentElement.classList.add('active')
+            console.log(navLinks)
+        }
         function showSlide(index) {
             let modals = document.querySelectorAll("#modal");
 

@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         'urbanist': ['Urbanist', 'sans-serif'],
-        'dancing': ['Dancing Script', 'cursive']
+        'dancing': ['Dancing Script', 'cursive'],
+        'vina': ['Vina Sans', 'sans-serif']
       },
       colors: {
         'primary': '#00457D',

@@ -83,7 +83,11 @@
     </div>
 
     <script>
-
+        window.onload = function() {
+            const navLinks = document.querySelectorAll('#nav-link');
+            navLinks[0].parentElement.classList.add('active')
+            console.log(navLinks)
+        }
 
     </script>
 
