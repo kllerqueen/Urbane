@@ -63,32 +63,16 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
+
+    // Sementara
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
     });
-
+    Route::get('/profile', function () {
+        return view('pages.admin.adminProfile');
+    })->name('profilePage');
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
     })->name('helpPage');
 });
 
-// Route::get('dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');
-// Route::get('/addproduct', function () {
-//     return view('pages.admin.adminAddProduct');
-// });
-// Route::get('/info', function () {
-//     return view('pages.admin.adminInfo');
-// });
-// Route::get('/help', function () {
-//     return view('pages.admin.adminHelp');
-// });
-// Route::get('/adminprofile', function () {
-//     return view('pages.admin.adminProfile');
-// });
-// Route::get('/notification', function () {
-//     return view('pages.admin.notificationAdmin');
-// });
-// Route::get('/editproduct', function () {
-//     return view('pages.admin.adminEditProduct');
-// });
-// Route::get('admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');

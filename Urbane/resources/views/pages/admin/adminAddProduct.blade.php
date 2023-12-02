@@ -82,8 +82,8 @@
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product category</p>
-                                <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
-                                    <select class="px-3 text-gray-400
+                                <div class="select relative flex w-full  overflow-hidden rounded-md ">
+                                    <select class="px-3 py-3 text-gray-400
                                     outline-none border-none bg-white w-full cursor-pointer ">
                                         <option value="category1">Man</option>
                                         <option value="category2">Woman</option>
@@ -154,6 +154,19 @@
         
     </style>
     <script>
+        window.onload = function() {
+            const navLinks = document.querySelectorAll('#nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active')
+                    });
+                    link.parentElement.classList.add('active');
+                });
+            });
+            navLinks[0].parentElement.classList.add('active')
+        }
+        
         let fileInputs = document.querySelectorAll('#fileInput');
 
         function triggerFileInput(index) {

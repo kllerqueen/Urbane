@@ -93,7 +93,7 @@
                     link.parentElement.classList.add('active');
                 });
             });
-            navLinks[0].parentElement.classList.add('active')
+            navLinks[0].parentElement.classList.add('active');
         }
 
     </script>

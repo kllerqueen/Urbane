@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-link">
+                    <a href="{{route('profilePage')}}" id="nav-link">
                         <i class='bx bxs-user-circle'></i>
                         <div class="text">Profile</div>
                     </a>
