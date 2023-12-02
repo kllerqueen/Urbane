@@ -17,7 +17,7 @@
                 @csrf
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
                     {{-- Product Img Upload --}}
-                    <div class="flex flex-col bg-primary/30 p-4 row-span-2 md:row-span-5 gap-2">
+                    <div class="flex flex-col bg-primary/30 p-4 row-span-1 min-[460px]:row-span-2 md:row-span-5 gap-2">
                         <h1 class="text-white regular-16 md:regular-20 lg:regular-24 col-span-3 row-span-1">
                             Picture
                             <span class="text-red-500">*</span>
