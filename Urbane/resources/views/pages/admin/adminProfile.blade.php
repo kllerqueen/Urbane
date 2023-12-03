@@ -2,11 +2,11 @@
 
 
 @section('body')
-    
+
     <div class="w-full min-h-screen">
         <img src="{{url('assets/admin/ProfilePageBG.png')}}" alt="" class="absolute w-[50%] h-screen bottom-0 right-0 z-[-1]">
         <div class="flex flex-col gap-[30px] mb-[50px] text-primary max-w-[1000px] w-full px-4 md:px-8 py-2 md:py-4 ">
-            
+
             <h1 class="bold-24 md:bold-32 lg:bold-40">Profile</h1>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 gap-4 text-white ">
@@ -17,14 +17,14 @@
                     <div class="flex flex-col text-secondary w-full gap-6 md:gap-8">
                         <div class="flex flex-row items-center w-full justify-between border-b-2 border-gray-600 px-2 py-1">
                             <h1 class="regular-14 md:regular-16">
-                                Admin Girlys
+                                Admin {{ $admin->username }}
                             </h1>
                             <h1 class="regular-14 md:regular-16">
-                                +62 857 7789 3147
+                                +62 {{ substr($admin->phoneNumber, 1) }}
                             </h1>
                         </div>
                         <h1 class="regular-14 md:regular-16 border-b-2 border-gray-600 px-2 py-1">
-                            girlys.adm@urbane.co.id
+                            {{ $admin->email }}
                         </h1>
                     </div>
                     <div class="flex flex-row items-center gap-2 justify-start w-full py-2">
@@ -41,7 +41,7 @@
                             <p class="bold-14 md:bold-16 lg:bold-20">November</p>
                             <h1 class="bold-64 md:bold-80 lg:bold-96">28</h1>
                             <p class="regular-12 md:regular-14 lg:regular-16">2023</p>
-                        </div>  
+                        </div>
                     </div>
                     <div class="bg-primary/30 w-full backdrop-blur-xl p-4 flex flex-row gap-2 items-center">
                         <i class='bx bxs-chat text-white text-[40px]' ></i>

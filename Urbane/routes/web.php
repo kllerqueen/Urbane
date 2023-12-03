@@ -63,14 +63,12 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
+    Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profilePage');
 
     // Sementara
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
     });
-    Route::get('/profile', function () {
-        return view('pages.admin.adminProfile');
-    })->name('profilePage');
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
     })->name('helpPage');
