@@ -68,7 +68,8 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     // Sementara
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
-    });
+    })->name('editProductPage');
+
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
     })->name('helpPage');

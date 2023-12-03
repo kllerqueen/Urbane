@@ -56,7 +56,7 @@
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
                         <p>{{ $item->qty }}</p>
                         <div class="flex items-center gap-2">
-                            <form action="{{ url('admin/delete-item/' . $item->id) }}" method="POST" class="">
+                            <form action="{{ url('editProductPage', $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
