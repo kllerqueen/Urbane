@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->security = '';
         $user->save();
 
-        return redirect('loginPage');
+        return redirect('login');
     }
 
     public function login(Request $request){
