@@ -153,6 +153,7 @@
         }
 
     </style>
+
     <script>
         window.onload = function() {
             const navLinks = document.querySelectorAll('#nav-link');
@@ -166,7 +167,7 @@
             });
             navLinks[0].parentElement.classList.add('active')
         }
-        
+
         let fileInputs = document.querySelectorAll('#fileInput');
 
         function triggerFileInput(index) {
@@ -191,9 +192,5 @@
             });
         }
       </script>
-
-    {{-- <a href="{{ route('logoutAdminPage') }}">
-        <button type="button">Logout Admin</button>
-    </a> --}}
 
 @endsection

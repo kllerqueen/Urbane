@@ -35,9 +35,9 @@ Route::get('/forget-password', function(){
 
 Route::get('/home', [HomeController::class, 'showHome'])->name('homePage')->middleware('customer');
 
-Route::post('/login-user', [UserController::class, 'login']);
+Route::post('/login-user', [UserController::class, 'login'])->name('login');
 
-Route::post('/register-user', [UserController::class, 'register']);
+Route::post('/register-user', [UserController::class, 'register'])->name('register');
 
 Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');
 
