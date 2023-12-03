@@ -39,9 +39,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full py-3 pr-3">
+                    <div class="w-full h-[250px] min-[460px]:h-full py-3 pr-3">
                         <div class="bg-primary/30 rounded-md h-full w-full  p-2">
-                            <canvas id="lineChart" class=" w-full max-w-full h-full md:min-h-full " ></canvas>
+                            <canvas id="lineChart" class=" w-full max-w-full min-h-full " ></canvas>
                         </div>
                     </div>
                 </div>

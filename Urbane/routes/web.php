@@ -43,9 +43,14 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
+// Sementara
 Route::get('/discover',function(){
     return view('pages.discover');
 });
+
+Route::get('/security', function() {
+    return view('pages.securityQuestion');
+})->name('securityQuestion');
 
 //admin
 
