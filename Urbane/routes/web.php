@@ -42,17 +42,21 @@ Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('
 
 // Sementara
 
-Route::get('/register-securityQ', function(){
+Route::get('/register-security', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');
 })->name('securityQuestion');
 
-Route::get('/fill-securityQ', function(){
+Route::get('/fill-security', function(){
     return view('pages.forgetPassword.securityQuestion');
 })->name('securityQuestion');
 
 Route::get('/forget-password', function(){
     return view('pages.forgetPassword.forgetPasswordForm');
 })->name('securityQuestion');
+
+Route::get('/register-security-success',function(){
+    return view('pages.forgetPassword.registerSecurityQuestionNotification');
+});
 
 Route::get('/discover',function(){
     return view('pages.discover');

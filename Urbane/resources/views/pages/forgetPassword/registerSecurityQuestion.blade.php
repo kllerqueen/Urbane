@@ -1,10 +1,10 @@
 @extends('template.forgetTemplate')
 
 @section('body')
-<div class="flex flex-col justify-between h-[350px] gap-2 items-center">
+<div class="flex flex-col justify-between h-[400px] gap-2 items-center w-full backdrop-blur-xl bg-white/50 p-10 rounded-md">
     <div class="flex flex-col">
-        <h1 class="text-primary text-3xl font-bold">Security Question</h1>
-        <h2 class="text-secondary text-1xl font-light">Fill the security question</h2>
+        <h1 class="text-primary bold-28 md:bold-32 lg:bold-40">Security Question</h1>
+        <h2 class="text-secondary regular-12 md:regular-16 lg:regular-20">Fill the security question</h2>
     </div>
     
     <div class="flex w-full h-auto border-solid flex-col ">
