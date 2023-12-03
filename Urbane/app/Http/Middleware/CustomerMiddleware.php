@@ -20,7 +20,7 @@ class CustomerMiddleware
             return $next($request);
         }
         if (Auth::check() && Auth::user()->role === 'admin') {
-            return redirect('/admin/dashboard');
+            return redirect('/admin/dashboard/All');
         }
 
         return $next($request);
