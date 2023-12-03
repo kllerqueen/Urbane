@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-link">
+                    <a href="{{route('infoPage')}}" id="nav-link">
                         <i class='bx bxs-info-circle' ></i>
                         <div class="text">Info</div>
                     </a>

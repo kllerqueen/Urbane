@@ -68,6 +68,11 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
     });
+    
+    Route::get('/info', function () {
+        return view('pages.admin.adminInfo');
+    })->name('infoPage');
+
     Route::get('/profile', function () {
         return view('pages.admin.adminProfile');
     })->name('profilePage');

@@ -9,114 +9,142 @@
             <h1 class="bold-24 md:bold-32">
                 Information
             </h1>
-
-
-            <form class="w-full max-w-[1200px] flex flex-col">
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-6 gap-2">
-                    {{-- Product Img Upload --}}
-                    <div class="flex flex-col bg-primary/30 p-4 row-span-2 md:row-span-5 gap-2">
-                        <h1 class="text-white regular-16 md:regular-20 lg:regular-24 col-span-3 row-span-1">
-                            Picture
-                            <span class="text-red-500">*</span>
-                        </h1>
-                        <div class=" grid grid-rows-6 gap-2 w-full h-full">
-                            <div class=" row-span-4 relative">
-                                <div id="uploadTrigger" onclick="triggerFileInput(0)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <h1 class="bold-12 md:bold-14 lg:bold-16">Maximum picture is 500 x 500px</h1>
-                                    <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
+            <div class="flex max-w-[1000px] w-full flex-col text-white">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div class="flex flex-col w-full">
+                        <div class="flex flex-row gap-2 p-3 rounded-md w-full ">
+                            <div class="flex flex-row items-center bg-primary/30 p-3 rounded-md w-full gap-2">
+                                <div class="bg-black p-3 rounded-full"> 
+                                    <img src="{{url('assets/admin/boxInfo.png')}}" alt="" class="w-[30px] h-[30px]">
                                 </div>
-                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
-                                <img onclick="triggerFileInput(0)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
-                            </div>
-                            
-                            <div class="row-span-2 grid grid-cols-3 w-full h-full gap-2">
-                                <div id="uploadTrigger" onclick="triggerFileInput(1)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
-                                    <img onclick="triggerFileInput(1)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
-                                </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
-                                    <img onclick="triggerFileInput(2)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
-                                </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
-                                    <img onclick="triggerFileInput(3)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
+                                <div class="flex flex-col h-full justify-between">
+                                    <h1 class="regular-12 md:regular-14 lg:regular-16">Total Products</h1>
+                                    <p class="bold-14 md:bold-20 lg:bold-24">1024</p>
                                 </div>
                             </div>
-                        </div> 
-                    </div>
-    
-                    {{-- Insert Product Info --}}
-                    <div class="flex flex-col w-full gap-2  row-span-2 md:row-span-6">
-                        <div class="grid grid-cols-2 w-full gap-2">
-                            <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
-                                <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Name product<span class="text-red-500">*</span></h1>
-                                <p class="text-gray-500 regular-12 ">The name has maximum 150 words</p>
-                                <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3"/>    
-                            </div>
-                            <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
-                                <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Quantity<span class="text-red-500">*</span></h1>
-                                <p class="text-gray-500 regular-12">Add the product quantity</p>
-                                <input type="number" id="value" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3"/>    
+                            <div class="flex flex-row items-center bg-primary/30 p-3 rounded-md w-full gap-2">
+                                <div class="bg-black p-3 rounded-full flex items-center justify-center"> 
+                                    <i class='bx bxs-user text-[28px]'></i>
+                                </div>
+                                <div class="flex flex-col h-full justify-between">
+                                    <h1 class="regular-12 md:regular-14 lg:regular-16">Total Users</h1>
+                                    <p class="bold-14 md:bold-20 lg:bold-24">500</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-primary/30 p-4 flex flex-col gap-1">
-                            <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Description product<span class="text-red-500">*</span></h1>
-                            <p class="text-gray-500">Maximum words in description is 1000 words</p>
-                            <textarea name="" id="" cols="30" rows="10" class="bg-white regular-16 focus:outline-none rounded-md p-3 text-grey-500" placeholder="Input your description">
-                            </textarea>    
+
+                        <div class="w-full h-[300px] px-3 pb-3">    
+                            <div class="bg-primary/30 rounded-md w-full h-full ">
+                                <canvas id="transactionChart" class=" max-w-full max-h-full  p-2 " ></canvas>
+                            </div>
                         </div>
                     </div>
-                   
+                    <div class="w-full py-3 pr-3">
+                        <div class="bg-primary/30 rounded-md h-full w-full  p-2">
+                            <canvas id="lineChart" class=" w-full max-w-full h-full md:min-h-full " ></canvas>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="w-full flex justify-center pt-8">
-                    <button type="submit" class="px-16 py-3 bg-primary rounded-md text-white bold-14 md:bold-16 lg:bold-20 m-auto self-center w-fit">Submit</button>
-                </div>
-            </form>
+            
         </div>
 
     </div>
     
 
-    <script>     
-        function handleFileUpload() {
-            let uploadTriggers = document.querySelectorAll('#uploadTrigger');
-            let fileInputs = document.querySelectorAll('#fileInput');
-            let uploadedImages = document.querySelectorAll('#uploadedImage');
-
-            fileInputs.forEach((fileInput, index) => {
-                let selectedFiles = fileInput.files;
-
-                if (selectedFiles.length > 0) {
-                    let selectedFile = selectedFiles[0];
-                    let srcImage = new FileReader();
-
-                    srcImage.onload = function (e) {
-                        uploadedImages[index].src = e.target.result;
-                        uploadedImages[index].classList.remove('hidden');
-                    };
-                    srcImage.readAsDataURL(selectedFile);
-                } 
+    <script>
+        window.onload = function() {
+            const navLinks = document.querySelectorAll('#nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active')
+                    });
+                    link.parentElement.classList.add('active');
+                });
             });
+            navLinks[1].parentElement.classList.add('active')
         }
 
-      </script>
-    
-    {{-- <a href="{{ route('logoutAdminPage') }}">
-        <button type="button">Logout Admin</button>
-    </a> --}}
+        const transactionChart = document.getElementById('transactionChart');
+
+        new Chart(transactionChart, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow' ],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        display: false
+                    },
+                    y: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        
+                    },
+                    title: {
+                        display: true,
+                        text: 'Transaction Sales',
+                        color: 'white',
+                        position: 'top',
+                        fontSize: 20 
+                    }
+                }
+            }
+        });
+
+        const lineChart = document.getElementById('lineChart');
+
+        new Chart(lineChart, {
+            type: 'line',
+            data: {
+                labels: ['1', '2', '3' , '4', '5' , '6'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 12 , 35, 12],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            color:'white'
+                        }  
+                    },
+                    y: {
+                        grid: {
+                            color:'white'
+                        }    
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend:{
+                        display:false
+                    },
+                    title: {
+                        display: true,
+                        text: 'User Growth',
+                        color:'white'
+                    }
+                }
+            },
+        });
+    </script>
+
+       
 
 @endsection
