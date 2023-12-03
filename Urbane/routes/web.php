@@ -57,6 +57,10 @@ Route::get('/forget-password', function(){
 Route::get('/register-security-success',function(){
     return view('pages.forgetPassword.registerSecurityQuestionNotification');
 });
+Route::get('/change-password-success',function(){
+    return view('pages.forgetPassword.securityNotification');
+});
+
 
 Route::get('/discover',function(){
     return view('pages.discover');
