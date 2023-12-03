@@ -77,9 +77,6 @@
                 @endforelse
             </div>
         </div>
-
-
-
     </div>
 
     <script>

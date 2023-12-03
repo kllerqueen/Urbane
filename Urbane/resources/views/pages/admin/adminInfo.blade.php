@@ -45,6 +45,49 @@
                         </div>
                     </div>
                 </div>
+                <div class="flex flex-col gap-[10px] text-white overflow-x-auto ">
+                    <div class="grid grid-cols-4Admin gap-8 items-center p-4 bg-primary rounded-md w-fit">
+                        <p>Name</p>
+                        <p>Action</p>
+                        <p>Date</p>
+                        <p>Time</p>
+                    </div>
+        
+                    <div class="flex flex-col gap-2">
+                        <div class="grid grid-cols-4Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                        </div>
+                        <div class="grid grid-cols-4Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                        </div>
+                        <div class="grid grid-cols-4Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                        </div>
+                        <div class="grid grid-cols-4Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                        </div>
+                        <div class="grid grid-cols-4Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                            <h1>Something</h1>
+                        </div>
+
+                    </div>
+                </div>
+        
             </div>
 
             

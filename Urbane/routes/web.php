@@ -73,5 +73,9 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
     })->name('helpPage');
+
+    Route::get('/info', function() {
+        return view('pages.admin.adminInfo');
+    })->name('infoPage');
 });
 
