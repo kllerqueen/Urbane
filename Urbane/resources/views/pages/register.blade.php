@@ -5,13 +5,13 @@
         <h1 class="text-primary text-3xl font-bold ">Register</h1>
         <h2 class="text-secondary text-xl mb-8">Be a part of Urbanist!</h2>
 
-        <form method="POST" class="flex flex-col gap-4" action="/register-user">
+        <form method="POST" class="flex flex-col gap-4" action="{{ route('register') }}">
             @csrf
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-envelope bx-sm pl-1 pr-2'></i>
                 <input type="text" name="email" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('email') bg-black @enderror" placeholder="Email" value="{{ old('email') }}">
 
-               
+
             </div>
 
             @error('email')
@@ -32,7 +32,7 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-phone bx-sm pl-1 pr-2'></i>
-                <input type="text" name="phoneNumber" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary" 
+                <input type="text" name="phoneNumber" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary"
                 placeholder="(+62) Phone Number" @error('phoneNumber') is-invalid @enderror value="{{ old('phoneNumber') }}">
             </div>
 

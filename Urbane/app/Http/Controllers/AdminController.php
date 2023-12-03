@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
 use App\Models\Picture;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -114,5 +115,12 @@ class AdminController extends Controller
         Picture::where('item_id', $item->id)->delete();
         $item->delete();
         return redirect()->back();
+    }
+
+    public function adminProfile(Request $request) {
+
+        $admin = User::where('id', $request->user()->id)->first();
+
+        return view('pages.admin.adminProfile', compact('admin'));
     }
 }

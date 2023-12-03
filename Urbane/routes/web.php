@@ -35,9 +35,9 @@ Route::get('/forget-password', function(){
 
 Route::get('/home', [HomeController::class, 'showHome'])->name('homePage')->middleware('customer');
 
-Route::post('/login-user', [UserController::class, 'login']);
+Route::post('/login-user', [UserController::class, 'login'])->name('login');
 
-Route::post('/register-user', [UserController::class, 'register']);
+Route::post('/register-user', [UserController::class, 'register'])->name('register');
 
 Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');
 
@@ -63,19 +63,13 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 
+    Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profilePage');
 
     // Sementara
     Route::get('/editproduct', function () {
         return view('pages.admin.adminEditProduct');
-    });
-    
-    Route::get('/info', function () {
-        return view('pages.admin.adminInfo');
-    })->name('infoPage');
+    })->name('editProductPage');
 
-    Route::get('/profile', function () {
-        return view('pages.admin.adminProfile');
-    })->name('profilePage');
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
     })->name('helpPage');

@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->security = '';
         $user->save();
 
-        return redirect('/login');
+        return redirect('loginPage');
     }
 
     public function login(Request $request){
@@ -57,9 +57,9 @@ class UserController extends Controller
             $request->session()->regenerate();
             if(auth()->user()->role == 'admin'){
 
-                return redirect()->intended('/admin/dashboard/All');
+                return redirect()->route('adminPage', 'All');
             }else{
-                return redirect()->intended('/home');
+                return redirect()->route('homePage');
             }
 
 
@@ -83,14 +83,12 @@ class UserController extends Controller
         // }
     }
 
-
-
     public function logout(Request $request){
         Auth::logout();
         $request->session()->flush();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect("/login");
+        return redirect()->route('loginPage');
     }
 
 }
