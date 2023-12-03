@@ -29,9 +29,6 @@ Route::get('/register', function () {
     return view('pages.register');
 })->name('registerPage')->middleware('guest');
 
-Route::get('/forget-password', function(){
-    return view('pages.forget');
-})->name('forgetPassword');
 
 Route::get('/home', [HomeController::class, 'showHome'])->name('homePage')->middleware('customer');
 
@@ -44,13 +41,23 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
 // Sementara
+
+Route::get('/register-securityQ', function(){
+    return view('pages.forgetPassword.registerSecurityQuestion');
+})->name('securityQuestion');
+
+Route::get('/fill-securityQ', function(){
+    return view('pages.forgetPassword.securityQuestion');
+})->name('securityQuestion');
+
+Route::get('/forget-password', function(){
+    return view('pages.forgetPassword.forgetPasswordForm');
+})->name('securityQuestion');
+
 Route::get('/discover',function(){
     return view('pages.discover');
 });
 
-Route::get('/security', function() {
-    return view('pages.securityQuestion');
-})->name('securityQuestion');
 
 //admin
 
