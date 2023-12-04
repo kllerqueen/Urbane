@@ -75,28 +75,36 @@
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name</h1>
                                 <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" disabled >
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInputState('input1')">Edit Button</button>
+                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input1')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Category</h1>
-                                <input type="text" placeholder="{{ $item->category->category_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input2" disabled >
+                                <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
+                                    <select class="input py-2 px-3 text-gray-400
+                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name" disabled>
+                                        <option value="Man">Man</option>
+                                        <option value="Woman">Woman</option>
+                                        <option value="Unisex">Unisex</option>
+                                        <option value="Accessory">Accessories</option>
+                                    </select>
+                                </div>
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInputState('input2')">Edit Button</button>
+                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input2')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Price</h1>
                                 <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" disabled >
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInputState('input3')">Edit Button</button>
+                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input3')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Quantity</h1>
                                 <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" disabled >
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInputState('input4')">Edit Button</button>
+                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input4')">Edit Button</button>
                         </div>
                     </div>
 
@@ -108,9 +116,9 @@
                             id="input5"
                             cols="30"
                             rows="10"
-                            class="w-full h-[80px] bg-transparent focus:outline-none text-gray-600 overflow-y-auto"
+                            class="input w-full h-[80px] bg-transparent focus:outline-none text-gray-600 overflow-y-auto"
                             placeholder="{{ $item->item_desc }}"></textarea>
-                        <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300 mt-2"onclick="toggleInputState('input5')">Edit Button</button>
+                        <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300 mt-2"onclick="toggleInput('input5')">Edit Button</button>
                     </div>
                 </div>
 
@@ -127,19 +135,18 @@
         let inputForm = document.querySelectorAll('.input');
         let inputButton = document.querySelectorAll('#edit-button');
 
-        function toggleInputState(ID) {
+        function toggleInput(ID) {
             var inputElement = document.getElementById(ID);
 
-            inputForm.forEach(input => {
-                input.setAttribute('disabled', 'true');
-                input.classList.remove('bg-white')
-            })
-
             if (inputElement.hasAttribute('disabled')) {
-                inputElement.removeAttribute('disabled');
+                inputForm.forEach(input => {
+                    input.disabled = true;
+                    input.classList.remove('bg-white')
+                })
+                inputElement.disabled = false;
                 inputElement.classList.add('bg-white')
             } else {
-                inputElement.setAttribute('disabled', 'true');
+                inputElement.disabled = true;
                 inputElement.classList.remove('bg-white');
             }
         }
