@@ -56,13 +56,18 @@
                         <p>Rp. {{ number_format($item->item_price, 2, '.', ',') }}</p>
                         <p>{{ $item->qty }}</p>
                         <div class="flex items-center gap-2">
-                            <form action="{{ url('editProductPage', $item->id) }}" method="POST" class="">
+                            <a href="{{ route('editProductPage', $item->id) }}">
+                                <button class="btn btn-danger">
+                                    <i class='bx bx-edit text-white'></i>
+                                </button>
+                            </a>
+                            {{-- <form action="{{ url('editProductPage', $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">
                                     <i class='bx bx-edit text-white'></i>
                                 </button>
-                            </form>
+                            </form> --}}
                             <form action="{{ route('deleteItem',  $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')

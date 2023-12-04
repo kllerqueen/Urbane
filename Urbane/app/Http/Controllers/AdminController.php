@@ -123,4 +123,11 @@ class AdminController extends Controller
 
         return view('pages.admin.adminProfile', compact('admin'));
     }
+
+    public function updatePage(Request $request, $id) {
+        $admin = User::where('id', $request->user()->id)->first();
+        $item = Item::where('id', $id)->first();
+
+        return view('pages.admin.adminEditProduct', compact('admin', 'item'));
+    }
 }
