@@ -90,10 +90,9 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/profile', [AdminController::class, 'adminProfile'])->name('profilePage');
 
+    Route::get('/editproduct/{id}', [AdminController::class, 'updatePage'])->name('editProductPage');
+
     // Sementara
-    Route::get('/editproduct', function () {
-        return view('pages.admin.adminEditProduct');
-    })->name('editProductPage');
 
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
