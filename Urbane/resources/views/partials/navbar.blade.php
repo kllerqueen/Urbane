@@ -3,6 +3,9 @@
         <div class="container flex items-center justify-between py-2 text-white">
             <h1 class="font-dancing bold-20 ">Urbane</h1>
             <div class=" flexCenter gap-4">
+                {{-- <a href="/profile">
+                    <img src="{{url('assets/PhotoProfile.png')}}" alt="" class="w-[50px] h-[50px]">
+                </a> --}}
                 @auth
                     <button class=" rounded-md h-fit ">Welcome, {{ Auth::user()->username }}</button>
                     <a href="{{ route('logoutPage') }}"><button class="underline text-white px-0 md:px-2 ">Logout</button></a>
@@ -15,6 +18,9 @@
     </div>
     <div class="container w-full flex flex-row items-center justify-between gap-2 md:gap-4 px-2 py-1">
         <div class="flex-row gap-2 items-center hidden lg:flex">
+            {{-- <a href="/profile">
+                <img src="{{url('assets/PhotoProfile.png')}}" alt="" class="w-[70px] h-[70px]">
+            </a> --}}
              @auth
                 <a href="#"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Welcome,{{ Auth::user()->username }} </button></a>
                 <a href="{{ route('logoutPage') }}"><button class="underline text-primary px-0 md:px-2 ">Logouts</button></a>

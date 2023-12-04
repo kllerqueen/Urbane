@@ -40,7 +40,7 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
-// Sementara
+// Sementara buat forgot password page
 
 Route::get('/register-security-form', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');
@@ -66,11 +66,13 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
-
+//user sementara
 Route::get('/discover',function(){
     return view('pages.discover');
 });
-
+Route::get('/profile',function(){
+    return view('pages.profile.userProfile');
+});
 
 //admin
 
