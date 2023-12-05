@@ -7,12 +7,14 @@
 
         <div class="flex flex-col gap-[10px] mb-[50px] text-primary">
             <h1 class="bold-24 md:bold-32">
-                Dashboard <span class="font-vina">></span> Edit Products
+                <a href="{{ route('adminPage', 'All') }}">Dashboard <span class="font-vina">></span> Edit Products
             </h1>
 
 
-            <form class="w-full max-w-[1200px] flex flex-col">
-                <<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-4  gap-2 text-white">
+            <form class="w-full max-w-[1200px] flex flex-col" action="{{ route('editItem', ['id' => $item->id]) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-4  gap-2 text-white">
                     <div class="bg-primary/30 p-4 flex flex-row w-full items-center  gap-4 col-span-1 row-span-1 md:col-start-1 md:row-start-1">
                         <img src="{{url('assets/admin/widgets.png')}}" alt="" class="w-10 h-10 p-1 bg-black rounded-full flex items-center justify-center">
                         <div class="flex-col">
@@ -34,7 +36,7 @@
                                     <h1 class="bold-12 md:bold-14 lg:bold-16">Maximum picture is 500 x 500px</h1>
                                     <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
                                 </div>
-                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                 <img onclick="triggerFileInput(0)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                             </div>
 
@@ -43,21 +45,21 @@
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(1)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                                 <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(2)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                                 <div id="uploadTrigger" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden">
+                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img onclick="triggerFileInput(3)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
                                 </div>
                             </div>
@@ -72,8 +74,8 @@
                     <div class="lg:col-span-2 row-span-4 md:row-span-2 bg-primary/30 w-full flex flex-col  gap-4 p-4 ">
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
-                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name</h1>
-                                <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1">
+                                <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Product name</h1>
+                                <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" name="item_name" disabled >
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
@@ -81,11 +83,11 @@
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Category</h1>
                                 <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
                                     <select class="input py-2 px-3 text-gray-400
-                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name">
-                                        <option value="Man">Man</option>
-                                        <option value="Woman">Woman</option>
-                                        <option value="Unisex">Unisex</option>
-                                        <option value="Accessory">Accessories</option>
+                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name" disabled>
+                                        <option value="Man" {{ $item->category->category_name == 'Man' ? 'selected' : ''}}>Man</option>
+                                        <option value="Woman" {{ $item->category->category_name == 'Woman' ? 'selected' : ''}}>Woman</option>
+                                        <option value="Unisex" {{ $item->category->category_name == 'Unisex' ? 'selected' : ''}}>Unisex</option>
+                                        <option value="Accessory" {{ $item->category->category_name == 'Accessory' ? 'selected' : ''}}>Accessories</option>
                                     </select>
                                 </div>
                             </div>
@@ -93,13 +95,13 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Price</h1>
-                                <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3">
+                                <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" name="item_price" disabled >
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Quantity</h1>
-                                <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" >
+                                <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" name="qty" disabled >
                             </div>
                         </div>
                     </div>
@@ -107,7 +109,8 @@
                     <div class="lg:col-span-2 row-span-1 bg-primary/30 w-full flex flex-col px-4 py-2 md:col-start-2">
                         <h1 class="regular-12 md:regular-14 lg:regular-16">Description</h1>
                         <textarea
-                            name=""
+                            disabled
+                            name="item_desc"
                             id="input5"
                             cols="30"
                             rows="10"
