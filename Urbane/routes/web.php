@@ -83,6 +83,10 @@ Route::get('/cart',function(){
     return view('pages.user.cart');
 });
 
+Route::get('/favourite',function(){
+    return view('pages.user.favourite');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){

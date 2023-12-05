@@ -13,6 +13,7 @@ export default {
       },
       colors: {
         'primary': '#00457D',
+        'lightblue': '#56ACD8',
         'secondary': '#595959',
         'txtclr': '#121111',
         'bgcolor': '#EEF7FF',
