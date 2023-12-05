@@ -67,6 +67,9 @@ Route::get('/change-password-form',function(){
 });
 
 //user sementara
+Route::get('/discover-more',function(){
+    return view('pages.discoverMore');
+});
 Route::get('/discover',function(){
     return view('pages.discover');
 });
