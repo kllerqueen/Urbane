@@ -32,6 +32,8 @@ export default {
       },
       gridTemplateRows: {
         '7grid': 'repeat(7, minmax(100px, 220px))',
+        '1grid': 'repeat(1, minmax(100px, 400px))',
+        '2grid': 'repeat(2, minmax(100px, 300px))',
       }
     },
 

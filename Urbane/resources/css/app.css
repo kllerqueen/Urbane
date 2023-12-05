@@ -137,6 +137,9 @@ input[type="number"]::-webkit-outer-spin-button {
     .bold-10 {
         @apply text-[10px] font-[700];
     }
+    .bold-8 {
+        @apply text-[8px] font-[700];
+    }
 }
 
 .rotate-first {
