@@ -68,16 +68,19 @@ Route::get('/change-password-form',function(){
 
 //user sementara
 Route::get('/discover',function(){
-    return view('pages.discover');
+    return view('pages.user.discover');
 })->name('discover');
 Route::get('/discover/all-items',function(){
-    return view('pages.discoverMore');
+    return view('pages.user.discoverMore');
 })->name('all-items');
 Route::get('/discover/new-arrival',function(){
-    return view('pages.newArrival');
+    return view('pages.user.newArrival');
 })->name('new-arrival');
 Route::get('/profile',function(){
     return view('pages.profile.userProfile');
+});
+Route::get('/cart',function(){
+    return view('pages.user.cart');
 });
 
 //admin
