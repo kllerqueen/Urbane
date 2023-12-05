@@ -109,7 +109,7 @@
     {{-- First Catalog Section --}}
     <div class="max-w-[1200px] mx-auto w-full relative h-full overflow-hidden py-4 text-center px-2 flex flex-col gap-2">
         {{-- First Section --}}
-        <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
+        {{-- <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
             <div class="flex flex-col h-full">
                 <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -122,14 +122,14 @@
                     <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class=" h-full min-w-[50%]">
                     <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
                         <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
-                        <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
+                        <p class="regular-8 md:regular-16 lg:regular-20">Rp 120,000</p>
                     </div>
                 </div>
                 <div class="flex flex-row  ">
                     <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" h-full min-w-[50%]">
                     <div class="flex flex-col justify-center  bg-secondary/10 py-1 h-full">
                         <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
-                        <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
+                        <p class="regular-8 md:regular-16 lg:regular-20">Rp 130,000</p>
                     </div>
                 </div>
             </div>
@@ -140,10 +140,10 @@
                     <p class="regular-14 md:regular-16 lg:regular-20">Rp 150,000</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- Second Section --}}
-        <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
+        {{-- <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
 
             <div class="grid grid-rows-2 gap-2 h-full">
                 <div class="flex flex-row  h-full">
@@ -186,7 +186,53 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
+
+        @php
+            $current = ['b', 'k', 'b', 'k', 'b', 'k'];
+            $jumlahdatadaridatabase = 9;
+        @endphp
+
+        @for ($i = 0, $j = 0; $i < $jumlahdatadaridatabase; $i++) 
+            @if ($i % 4 == 0)
+                <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
+            @endif
+
+            @if ($current[$j] == 'b')
+                <div class="flex flex-col h-full">
+                    <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
+                    <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
+                        <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
+                        <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
+                    </div>
+                </div>
+                @php
+                    $j = $j + 1 == count($current) ? 0 : $j + 1;
+                @endphp
+            @elseif ($current[$j] == 'k')
+                <div class="grid grid-rows-2 gap-2 h-full">
+                    @php
+                        $loopCount = ($i + 1 < $jumlahdatadaridatabase ) ? 2 : 1;
+                        $i = $loopCount == 2 ? $i + 1 : $i;
+                        // dump($loopCount, $i); // $i = 7 < 8
+                        $j = $j + 1 == count($current) ? 0 : $j + 1;
+                    @endphp
+
+                    @for ($k = 0; $k < $loopCount; $k++)
+                        <div class="flex flex-row  h-full">
+                            <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class=" h-full min-w-[50%]">
+                            <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
+                                <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
+                                <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+            @endif
+            @if ($i % 4 == 3 || $i == $jumlahdatadaridatabase - 1)
+                </div>
+            @endif
+        @endfor
     </div>
 
     <img src="{{url('assets/discover/FirstCatalog.png')}}" alt="" class="min-w-[1000px] md:min-w-full md:w-full h-[50vh]">
@@ -225,6 +271,7 @@
                 </div>
             </div>
         </div>
+
 
         {{-- Second Section --}}
         <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
