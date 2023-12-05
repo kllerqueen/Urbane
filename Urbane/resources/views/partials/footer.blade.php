@@ -1,4 +1,4 @@
-<footer class='w-full flexCenter flex-col '>
+<footer class='w-full flexCenter flex-col bg-white'>
     <div class="w-full bg-primary py-2 flex flex-row ">
         <div class="container flexBetween text-white px-2 lg:px-0">
             <h1 class="regular-9 lg:regular-16 hidden md:block">Urbane</h1>
@@ -10,7 +10,7 @@
             <h1 class="regular-9 lg:regular-16 hidden md:block">Urbane</h1>
         </div>
     </div>
-    <div class='container flex w-full flex-col gap-14 px-2'>
+    <div class='container flex w-full flex-col gap-14 px-2 '>
         <div class='flex items-start justify-center gap-[10%] flex-col  min-[500px]:flex-row py-2'>
             <div class="flex flex-col  mb-10">
                 <a href='' class='flex items-center gap-2  mb-2'>

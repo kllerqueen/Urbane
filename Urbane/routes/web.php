@@ -87,6 +87,10 @@ Route::get('/favourite',function(){
     return view('pages.user.favourite');
 });
 
+Route::get('/product-detail',function(){
+    return view('pages.product.productDetail');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){
