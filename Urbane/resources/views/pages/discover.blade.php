@@ -3,23 +3,24 @@
 @section('body')
 <div class="flex flex-col justify-center items-center overflow-hidden">
     {{-- Filter  Selection --}}
-    <div class="flex container w-full py-2 md:py-4  bg-[#00457D] m-5 px-2 md:px-10 justify-between items-center rounded-[50px]">
-        <div class="flex bg-[#FFFFFF] p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button text-[#00457D] bold-12 sm:bold-16 md:bold-24" id="cat">All items</a>
+    <div class="flex container w-full py-2 md:py-4 text-white bg-primary m-5 px-2 md:px-10 justify-between items-center rounded-[50px]">
+        <div class="flex p-1 md:px-3 rounded-[50px]">
+            <a href="{{route('all-items')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">All items </a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button text-white bold-12 sm:bold-16 md:bold-24" id="cat">New Arrival</a>
+            <a href="{{route('new-arrival')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">New Arrival</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button text-white bold-12 sm:bold-16 md:bold-24" id="cat">Man</a>
+            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Man</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button text-white bold-12 sm:bold-16 md:bold-24" id="cat">Woman</a>
+            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Woman</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button text-white bold-12 md:bold-24" id="cat">Apparel</a>
+            <a href="" class="filter-button bold-12 md:bold-24">Apparel</a>
         </div>
     </div>
+
     {{-- infinite text slide --}}
     <div class="relative block w-[100%] h-[80px] font-bold">
         <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-black h-[50px]">

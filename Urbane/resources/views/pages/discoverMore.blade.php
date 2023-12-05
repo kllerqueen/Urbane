@@ -3,21 +3,21 @@
 @section('body')
 <div class="flex flex-col justify-center items-center">
     {{-- Filter  Selection --}}
-    <div class="flex container w-full py-2 md:py-4  bg-[#00457D] m-5 px-2 md:px-10 justify-between items-center rounded-[50px]">
-        <div class="flex bg-[#FFFFFF] p-1 md:px-3 rounded-[50px]">
-            <button class="filter-button text-[#00457D] bold-12 sm:bold-16 md:bold-24">🛍 All items 🛍</button>
+    <div class="flex container w-full py-2 md:py-4 text-white bg-primary m-5 px-2 md:px-10 justify-between items-center rounded-[50px]">
+        <div class="flex p-1 md:px-3 rounded-[50px] bg-white text-primary ">
+            <a href="{{route('all-items')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">🛍 All items 🛍</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <button class="filter-button text-white bold-12 sm:bold-16 md:bold-24">New Arrival</button>
+            <a href="{{route('new-arrival')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">New Arrival</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <button class="filter-button text-white bold-12 sm:bold-16 md:bold-24">Man</button>
+            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Man</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <button class="filter-button text-white bold-12 sm:bold-16 md:bold-24">Woman</button>
+            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Woman</a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <button class="filter-button text-white bold-12 md:bold-24">Apparel</button>
+            <a href="" class="filter-button bold-12 md:bold-24">Apparel</a>
         </div>
     </div>
 

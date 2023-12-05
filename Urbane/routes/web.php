@@ -67,12 +67,15 @@ Route::get('/change-password-form',function(){
 });
 
 //user sementara
-Route::get('/discover-more',function(){
-    return view('pages.discoverMore');
-});
 Route::get('/discover',function(){
     return view('pages.discover');
 });
+Route::get('/discover/all-items',function(){
+    return view('pages.discoverMore');
+})->name('all-items');
+Route::get('/discover/new-arrival',function(){
+    return view('pages.newArrival');
+})->name('new-arrival');
 Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });

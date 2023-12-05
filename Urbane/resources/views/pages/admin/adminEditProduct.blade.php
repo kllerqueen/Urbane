@@ -73,16 +73,15 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Name</h1>
-                                <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" disabled >
+                                <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1">
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input1')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Category</h1>
                                 <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
                                     <select class="input py-2 px-3 text-gray-400
-                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name" disabled>
+                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name">
                                         <option value="Man">Man</option>
                                         <option value="Woman">Woman</option>
                                         <option value="Unisex">Unisex</option>
@@ -90,35 +89,30 @@
                                     </select>
                                 </div>
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input2')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Price</h1>
-                                <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" disabled >
+                                <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3">
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input3')">Edit Button</button>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Quantity</h1>
-                                <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" disabled >
+                                <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" >
                             </div>
-                            <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300" id="edit-button" onclick="toggleInput('input4')">Edit Button</button>
                         </div>
                     </div>
 
                     <div class="lg:col-span-2 row-span-1 bg-primary/30 w-full flex flex-col px-4 py-2 md:col-start-2">
                         <h1 class="regular-12 md:regular-14 lg:regular-16">Description</h1>
                         <textarea
-                            disabled
                             name=""
                             id="input5"
                             cols="30"
                             rows="10"
                             class="input w-full h-[80px] bg-transparent focus:outline-none text-gray-600 overflow-y-auto"
                             placeholder="{{ $item->item_desc }}"></textarea>
-                        <button type="button" class="self-end px-12 py-2 bg-black border border-white rounded-md hover:scale-105 transition-all duration-300 mt-2"onclick="toggleInput('input5')">Edit Button</button>
                     </div>
                 </div>
 
@@ -132,24 +126,6 @@
 
 
     <script>
-        let inputForm = document.querySelectorAll('.input');
-        let inputButton = document.querySelectorAll('#edit-button');
-
-        function toggleInput(ID) {
-            var inputElement = document.getElementById(ID);
-
-            if (inputElement.hasAttribute('disabled')) {
-                inputForm.forEach(input => {
-                    input.disabled = true;
-                    input.classList.remove('bg-white')
-                })
-                inputElement.disabled = false;
-                inputElement.classList.add('bg-white')
-            } else {
-                inputElement.disabled = true;
-                inputElement.classList.remove('bg-white');
-            }
-        }
 
         window.onload = function() {
             const navLinks = document.querySelectorAll('#nav-link');
