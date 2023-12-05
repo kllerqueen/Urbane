@@ -69,7 +69,7 @@ Route::get('/change-password-form',function(){
 //user sementara
 Route::get('/discover',function(){
     return view('pages.discover');
-});
+})->name('discover');
 Route::get('/discover/all-items',function(){
     return view('pages.discoverMore');
 })->name('all-items');

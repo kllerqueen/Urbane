@@ -7,7 +7,7 @@
 
         <div class="flex flex-col gap-[10px] mb-[50px] text-primary">
             <h1 class="bold-24 md:bold-32">
-                <a href="{{ route('adminPage', 'All') }}">Dashboard</a> <span class="font-vina">></span> Edit Products
+                <a href="{{ route('adminPage', 'All') }}">Dashboard</a> <span class="font-vina">></span> Edit Products</a>
             </h1>
 
 
@@ -75,7 +75,7 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Product name</h1>
-                                <input  type="text" value="{{ old('item_name', $item->item_name) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" name="item_name">
+                                <input  type="text" value="{{ old('item_name', $item->item_name) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none bg-white text-primary" id="input1" name="item_name">
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
@@ -95,13 +95,13 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Price</h1>
-                                <input type="text" value="{{ old('item_price', $item->item_price) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" name="item_price">
+                                <input type="text" value="{{ old('item_price', $item->item_price) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none bg-white text-primary" id="input3" name="item_price">
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Quantity</h1>
-                                <input type="text" value="{{ old('qty', $item->qty) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" name="qty">
+                                <input type="text" value="{{ old('qty', $item->qty) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none bg-white text-primary" id="input4" name="qty">
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             id="input5"
                             cols="30"
                             rows="10"
-                            class="input w-full h-[80px] bg-transparent focus:outline-none text-gray-600 overflow-y-auto"
+                            class="input w-full h-[120px] bg-transparent focus:outline-none overflow-y-auto bg-white text-primary rounded-md mt-2"
                             value="{{ old('item_desc', $item->item_desc) }}">{{ old('item_desc', $item->item_desc) }}</textarea>
                     </div>
                 </div>
