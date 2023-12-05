@@ -94,6 +94,8 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/editproduct/{id}', [AdminController::class, 'updatePage'])->name('editProductPage');
 
+    Route::put('/edit-item', [AdminController::class, 'editItem'])->name('editItem');
+
     // Sementara
 
     Route::get('/help', function() {

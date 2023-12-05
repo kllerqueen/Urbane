@@ -130,4 +130,36 @@ class AdminController extends Controller
 
         return view('pages.admin.adminEditProduct', compact('admin', 'item'));
     }
+
+    public function editItem(Request $request) {
+
+        $request->validate([
+            'item_name' => 'required|string',
+            'item_desc' => 'required|string',
+            'item_price' => 'required|numeric',
+            'qty' => 'required|integer',
+            'category_name' => 'required|string|in:Man,Woman,Unisex,Accessory',
+            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $itemId = $request->id;
+        $itemName = $request->input('item_name');
+        $categoryId = Category::firstWhere('category_name', $request->category_name)->id;
+        $itemName = $request->input('item_name');
+        $itemDesc = $request->input('item_desc');
+        $itemPrice = $request->input('item_price');
+        $itemQty = $request->input('qty');
+
+        $item = Item::findOrFail($itemId);
+
+        $item->item_name = $itemName;
+        $item->category_id = $categoryId;
+        $item->item_desc = $itemDesc;
+        $item->item_price = $itemPrice;
+        $item->qty = $itemQty;
+
+        $item->save();
+
+        return redirect()->route('adminPage', 'All');
+    }
 }
