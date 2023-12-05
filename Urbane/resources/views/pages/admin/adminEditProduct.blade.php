@@ -7,7 +7,7 @@
 
         <div class="flex flex-col gap-[10px] mb-[50px] text-primary">
             <h1 class="bold-24 md:bold-32">
-                <a href="{{ route('adminPage', 'All') }}">Dashboard <span class="font-vina">></span> Edit Products
+                <a href="{{ route('adminPage', 'All') }}">Dashboard</a> <span class="font-vina">></span> Edit Products
             </h1>
 
 
@@ -75,7 +75,7 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Product name</h1>
-                                <input  type="text" placeholder="{{ $item->item_name }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" name="item_name" disabled >
+                                <input  type="text" value="{{ old('item_name', $item->item_name) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input1" name="item_name">
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
@@ -83,7 +83,7 @@
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Category</h1>
                                 <div class="select relative flex w-full h-full overflow-hidden rounded-sm ">
                                     <select class="input py-2 px-3 text-gray-400
-                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name" disabled>
+                                    outline-none border-none  w-full cursor-pointer" id="input2" name="category_name">
                                         <option value="Man" {{ $item->category->category_name == 'Man' ? 'selected' : ''}}>Man</option>
                                         <option value="Woman" {{ $item->category->category_name == 'Woman' ? 'selected' : ''}}>Woman</option>
                                         <option value="Unisex" {{ $item->category->category_name == 'Unisex' ? 'selected' : ''}}>Unisex</option>
@@ -95,13 +95,13 @@
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Price</h1>
-                                <input type="text" placeholder="Rp {{ number_format($item->item_price, 2, '.', ',') }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" name="item_price" disabled >
+                                <input type="text" value="{{ old('item_price', $item->item_price) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input3" name="item_price">
                             </div>
                         </div>
                         <div class="flex w-full justify-between items-center">
                             <div class="flex flex-col gap-2 md:w-1/2">
                                 <h1 class="text-white-70 bold-14 md:bold-16 lg:bold-20">Quantity</h1>
-                                <input type="text" placeholder="{{ $item->qty }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" name="qty" disabled >
+                                <input type="text" value="{{ old('qty', $item->qty) }}" class="input px-2 py-2 rounded-md w-full bg-transparent focus:outline-none" id="input4" name="qty">
                             </div>
                         </div>
                     </div>
@@ -109,13 +109,12 @@
                     <div class="lg:col-span-2 row-span-1 bg-primary/30 w-full flex flex-col px-4 py-2 md:col-start-2">
                         <h1 class="regular-12 md:regular-14 lg:regular-16">Description</h1>
                         <textarea
-                            disabled
                             name="item_desc"
                             id="input5"
                             cols="30"
                             rows="10"
                             class="input w-full h-[80px] bg-transparent focus:outline-none text-gray-600 overflow-y-auto"
-                            placeholder="{{ $item->item_desc }}"></textarea>
+                            value="{{ old('item_desc', $item->item_desc) }}">{{ old('item_desc', $item->item_desc) }}</textarea>
                     </div>
                 </div>
 
