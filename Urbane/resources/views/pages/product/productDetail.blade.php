@@ -31,8 +31,8 @@
                         <i class='bx bx-heart text-[30px]'></i>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 max-w-[30%] md:max-w-[25%] lg:max-w-[35%]">
-                    <div class="col-span-1 lg:row-span-3 lg:col-start-2 flex lg:flex-col gap-2">
+                <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
+                    <div class="col-span-1 lg:row-span-3 lg:col-start-2 gap-2 grid grid-cols-3 lg:grid-cols-none lg:grid-rows-3 ">
                         <img src="{{url('assets/product/Dummy 2.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(0)">
                         <img src="{{url('assets/product/Dummy 3.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(1)">
                         <img src="{{url('assets/product/Dummy 4.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(2)">

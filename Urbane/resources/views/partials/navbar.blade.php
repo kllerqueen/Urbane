@@ -34,9 +34,9 @@
             <input type="text" class=" outline-none w-full px-2 regular-12 md:regular-16" placeholder="Search Any Product">
         </div>
         <div class="flex flex-row items-center gap-2">
-            <i class='bx bxs-heart text-red-700 bg-white p-1 rounded-full border shadow-md text-[25px]' ></i>
-            <i class='bx bxs-shopping-bag text-green-700 bg-white p-1 rounded-full border shadow-md text-[25px]'></i>
-            <i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]'></i>
+            <a href=""><i class='bx bxs-heart text-red-700 bg-white p-1 rounded-full border shadow-md text-[25px]' ></i></a>
+            <a href=""><i class='bx bxs-shopping-bag text-green-700 bg-white p-1 rounded-full border shadow-md text-[25px]'></i></a>
+            <a href=""><i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]'></i></a>
             <a href="{{ route('homePage') }}"><img src="{{ url('assets/Logo.png')}}" alt="" class="h-[60px] hidden lg:flex"></a>
         </div>
     </div>
