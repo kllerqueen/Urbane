@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         'urbanist': ['Urbanist', 'sans-serif'],
         'dancing': ['Dancing Script', 'cursive'],
-        'vina': ['Vina Sans', 'sans-serif']
+        'vina': ['Vina Sans', 'sans-serif'],
+        'alfa': ['Alfa Slab One', 'serif']
       },
       colors: {
         'primary': '#00457D',
