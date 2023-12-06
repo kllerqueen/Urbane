@@ -104,6 +104,24 @@
         </div>
     </div>
 
+    <div class="max-w-[1200px] mx-auto w-full relative h-full overflow-hidden py-4 text-center px-2 flex flex-col gap-2">
+        {{-- First Section --}}
+        <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
+
+            @forelse ($items as $item)
+                <div class="flex flex-col h-full">
+                    <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
+                    <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
+                        <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">{{ $item->item_name }}</h1>
+                        <p class="regular-8 md:regular-16 lg:regular-20">Rp {{ number_format($item->item_price, 2, '.', ',') }}</p>
+                    </div>
+                </div>
+            @empty
+
+            @endforelse
+        </div>
+    </div>
+
     {{-- First Catalog Section --}}
     <div class="max-w-[1200px] mx-auto w-full relative h-full overflow-hidden py-4 text-center px-2 flex flex-col gap-2">
         {{-- First Section --}}
