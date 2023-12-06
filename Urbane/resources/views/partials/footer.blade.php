@@ -49,7 +49,7 @@
                         <a href='/'>
                             FAQ
                         </a>
-                        <a href='/'>
+                        <a href='/returns'>
                             Returns
                         </a>
                         <a href='/'>

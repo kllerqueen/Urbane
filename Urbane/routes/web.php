@@ -94,6 +94,10 @@ Route::get('/product-detail',function(){
     return view('pages.product.productDetail');
 });
 
+Route::get('/returns', function(){
+    return view('pages.returns');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){
