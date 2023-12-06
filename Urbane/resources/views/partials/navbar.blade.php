@@ -37,7 +37,7 @@
             <i class='bx bxs-heart text-red-700 bg-white p-1 rounded-full border shadow-md text-[25px]' ></i>
             <i class='bx bxs-shopping-bag text-green-700 bg-white p-1 rounded-full border shadow-md text-[25px]'></i>
             <i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]'></i>
-            <img src="{{ url('assets/Logo.png')}}" alt="" class="h-[60px] hidden lg:flex">
+            <a href="{{ route('homePage') }}"><img src="{{ url('assets/Logo.png')}}" alt="" class="h-[60px] hidden lg:flex"></a>
         </div>
     </div>
 </div>

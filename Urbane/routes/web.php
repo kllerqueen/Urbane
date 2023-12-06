@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DiscoverController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Session;
 /*
@@ -67,25 +69,26 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
-//user sementara
 Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
+
+Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
+
+Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
+
+//user sementara
 
 Route::get('/discover/all-items',function(){
     return view('pages.user.discoverMore');
 })->name('all-items');
+
 Route::get('/discover/new-arrival',function(){
     return view('pages.user.newArrival');
 })->name('new-arrival');
+
 Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });
-Route::get('/cart',function(){
-    return view('pages.user.cart');
-});
 
-Route::get('/favourite',function(){
-    return view('pages.user.favourite');
-});
 
 Route::get('/product-detail',function(){
     return view('pages.product.productDetail');
@@ -112,8 +115,6 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/editproduct/{id}', [AdminController::class, 'updatePage'])->name('editProductPage');
 
     Route::put('/edit-item', [AdminController::class, 'editItem'])->name('editItem');
-
-    // Sementara
 
     Route::get('/help', function() {
         return view('pages.admin.adminHelp');
