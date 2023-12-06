@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Session;
 /*
@@ -67,9 +68,8 @@ Route::get('/change-password-form',function(){
 });
 
 //user sementara
-Route::get('/discover',function(){
-    return view('pages.user.discover');
-})->name('discover');
+Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
+
 Route::get('/discover/all-items',function(){
     return view('pages.user.discoverMore');
 })->name('all-items');
