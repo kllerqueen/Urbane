@@ -5,20 +5,18 @@
     {{-- Filter  Selection --}}
     <div class="flex container w-full py-2 md:py-4 text-white bg-primary m-5 px-2 md:px-10 justify-between items-center rounded-[50px]">
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="{{route('all-items')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">All items </a>
+            <a href="{{route('discover', 'All')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">All items </a>
         </div>
         <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="{{route('new-arrival')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">New Arrival</a>
+            <a href="{{route('discover', 'New')}}" class="filter-button bold-12 sm:bold-16 md:bold-24">New Arrival</a>
         </div>
-        <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Man</a>
-        </div>
-        <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">Woman</a>
-        </div>
-        <div class="flex p-1 md:px-3 rounded-[50px]">
-            <a href="" class="filter-button bold-12 md:bold-24">Apparel</a>
-        </div>
+        @forelse ($categories as $ctg)
+            <div class="flex p-1 md:px-3 rounded-[50px]">
+                <a href="" class="filter-button bold-12 sm:bold-16 md:bold-24">{{ $ctg->category_name }}</a>
+            </div>
+        @empty
+
+        @endforelse
     </div>
 
     {{-- infinite text slide --}}
@@ -106,6 +104,24 @@
         </div>
     </div>
 
+    <div class="max-w-[1200px] mx-auto w-full relative h-full overflow-hidden py-4 text-center px-2 flex flex-col gap-2">
+        {{-- First Section --}}
+        <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
+
+            @forelse ($items as $item)
+                <div class="flex flex-col h-full">
+                    <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
+                    <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
+                        <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">{{ $item->item_name }}</h1>
+                        <p class="regular-8 md:regular-16 lg:regular-20">Rp {{ number_format($item->item_price, 2, '.', ',') }}</p>
+                    </div>
+                </div>
+            @empty
+
+            @endforelse
+        </div>
+    </div>
+
     {{-- First Catalog Section --}}
     <div class="max-w-[1200px] mx-auto w-full relative h-full overflow-hidden py-4 text-center px-2 flex flex-col gap-2">
         {{-- First Section --}}
@@ -161,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col h-full ">
                 <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -193,7 +209,7 @@
             $jumlahdatadaridatabase = 9;
         @endphp
 
-        @for ($i = 0, $j = 0; $i < $jumlahdatadaridatabase; $i++) 
+        @for ($i = 0, $j = 0; $i < $jumlahdatadaridatabase; $i++)
             @if ($i % 4 == 0)
                 <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center grid-rows-2grid md:grid-rows-1grid">
             @endif
@@ -292,7 +308,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col h-full ">
                 <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -318,7 +334,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
     <img src="{{url('assets/discover/SecondCatalog.png')}}" alt="" class="min-w-[1000px] md:min-w-full md:w-full h-[50vh]">
 
@@ -377,7 +393,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col h-full ">
                 <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -403,7 +419,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
     <img src="{{url('assets/discover/ThirdCatalog.png')}}" alt="" class="min-w-[1000px] md:min-w-full md:w-full h-[50vh]">
 
@@ -462,7 +478,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col h-full ">
                 <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -492,7 +508,7 @@
 </div>
 
     <script>
-        
+
     </script>
 
 @endsection

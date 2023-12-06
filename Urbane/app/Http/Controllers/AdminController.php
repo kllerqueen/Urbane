@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    public function getUser() {
+        $user = auth()->user();
+
+        return $user;
+    }
 
     public function getAllCategories() {
         $categories = Category::whereNotIn('category_name', ['Unisex'])->get();
@@ -117,9 +122,9 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function adminProfile(Request $request) {
+    public function adminProfile() {
 
-        $admin = User::where('id', $request->user()->id)->first();
+        $admin = $this->getUser();
 
         return view('pages.admin.adminProfile', compact('admin'));
     }

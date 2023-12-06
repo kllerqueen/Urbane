@@ -24,4 +24,12 @@ class Item extends Model
     public function pictures(){
         return $this->hasMany(Picture::class);
     }
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function favorites() {
+        return $this->hasMany(Favorite::class);
+    }
 }
