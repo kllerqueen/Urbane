@@ -5,7 +5,7 @@
     {{-- hero --}}
     <div class="container py-8  flex flex-col-reverse md:flex-row justify-center items-center px-2 md:px-12 gap-4 relative">
         <img src="{{ url('assets/home/FirstSection/HeroPendant.png')}}" alt="" class="w-[300px] md:w-[400px] absolute top-0 left-0 z-1">
-        <div class="flex flex-col max-w-[550px] z-10">
+        <div class="flex flex-col max-w-[550px] z-10 mt-4">
             <p class="bold-20 lg:bold-32">Update Your Models Be</p>
             <h1 class="bold-32 md:bold-52 lg:bold-80 text-primary md:leading-[50px] lg:leading-[90px]">
                 Fashionable

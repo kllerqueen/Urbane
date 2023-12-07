@@ -2,11 +2,11 @@
 
 @section('body')
 <div class="flex flex-col justify-center items-center md:items-start overflow-hidden">
-    <img src="{{url('assets/product/productDetailBackground.png')}}" alt="" class="z-[-1] w-full h-[330px] lg:h-[400px] absolute top-24 lg:top-16">
+    <img src="{{url('assets/product/productDetailBackground.png')}}" alt="" class="z-[-1] w-full h-[250px] lg:h-[310px] absolute top-24 lg:top-16">
     <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10 text-white mt-3">
         <a href="{{ route('discover', 'All') }}">
             <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
-            <i class='bx bx-chevron-left text-[30px] text-black'></i>
+                <i class='bx bx-chevron-left text-[30px] text-black'></i>
             </div>
         </a>
         <h1 class="bold-14 md:bold-18 lg:bold-24">Products</h1>
@@ -29,8 +29,13 @@
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
                     <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-full h-full rounded-lg" id="main-image">
-                    <div class="p-2 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border">
-                        <i class='bx bx-heart text-[30px]'></i>
+                    <div class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
+                        <div onclick="changeHeart()" id="heartLine" class="flex items-center justify-center">
+                            <i class='bx bx-heart text-[30px]' ></i>
+                        </div>
+                        <div href="#" onclick="changeHeart()" id="heartFill" class="hidden items-center justify-center">
+                            <i class='bx bxs-heart text-[30px]' ></i>
+                        </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
@@ -79,6 +84,23 @@
 </div>
 
     <script>
+
+        function changeHeart(){
+            let heartLine = document.getElementById('heartLine');
+            let heartFill = document.getElementById('heartFill');
+
+            if(heartLine.classList.contains('hidden')){
+                heartFill.classList.add('hidden');
+                heartFill.classList.remove('flex');
+                heartLine.classList.remove('hidden');
+                heartLine.classList.add('flex');
+            }else if(heartFill.classList.contains('hidden')){
+                heartLine.classList.add('hidden');
+                heartLine.classList.remove('flex');
+                heartFill.classList.remove('hidden');
+                heartFill.classList.add('flex');
+            }
+        }
         function swapImage(index){
             let mainImage = document.getElementById('main-image');
             let images = document.querySelectorAll('#image');
