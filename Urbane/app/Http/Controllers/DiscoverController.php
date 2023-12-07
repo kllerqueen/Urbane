@@ -69,7 +69,7 @@ class DiscoverController extends Controller
 
         $categories = $this->getAllCategories();
 
-        return view('pages.user.discover', compact('items', 'categories'));
+        return view('pages.user.discover', compact('items', 'categories', 'category_name'));
     }
 
 }
