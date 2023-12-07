@@ -1,9 +1,9 @@
 @extends('template.template')
 
 @section('body')
-<div class="flex flex-col justify-center">
+<div class="flex flex-col justify-center" onclick="print('1')">
     {{-- hero --}}
-    <div class="container py-8  flex flex-col-reverse md:flex-row justify-center items-center px-2 md:px-12 gap-4 relative z-[-1]">
+    <div class="container py-8  flex flex-col-reverse md:flex-row justify-center items-center px-2 md:px-12 gap-4 relative">
         <img src="{{ url('assets/home/FirstSection/HeroPendant.png')}}" alt="" class="w-[300px] md:w-[400px] absolute top-0 left-0 z-1">
         <div class="flex flex-col max-w-[550px] z-10">
             <p class="bold-20 lg:bold-32">Update Your Models Be</p>
@@ -14,12 +14,12 @@
             </h1>
             <p class="bold-20 lg:bold-32">Deserve various models and trendy</p>
             <div class="lg:pl-12 lg:pr-24">
-                <div class="flex justify-between w-full bg-primary px-4 py-2 mt-6 lg:mt-12 rounded-3xl">
-                    <button class="text-white bold-16 lg:bold-20 md:bold-28 w-full text-start  py-2">Discover More</button>
+                <a href="/home" class="flex justify-between w-full bg-primary px-4 py-2 mt-6 lg:mt-12 rounded-3xl cursor">
+                    <h1 class="text-white bold-16 lg:bold-20 md:bold-28 w-full text-start  py-2">Discover More</h1>
                     <div class=" shadow-xl rounded-full p-1 flex items-center m-auto bg-white/30">
                         <img src="{{ url('assets/home/FirstSection/DiscoverIcons.png')}}" alt="" class=" w-[35px] md:w-[50px]">
                     </div>
-                </div>
+                </a>
             </div>
             <div class="w-fit flex flex-row items-center text-center mt-8 md:mt-12 lg:mt-16 self-center z-10">
                 <div class="border-r-2 border-black px-2 md:px-4 leading-[25px]">
@@ -334,8 +334,11 @@
         </div>
     </div>
     <script>
-        const sliderBox = document.querySelector("#slider-box"),
-        slides = sliderBox.querySelectorAll("#slide"),
+        const sliderBox = document.querySelector("#slider-box");
+        function print(string){
+            console.log(string)
+        }
+        slides = sliderBox.querySelectorAll("#slide");
         arrowIcons = document.querySelectorAll(".icon i");
         let isDrag = false;
 

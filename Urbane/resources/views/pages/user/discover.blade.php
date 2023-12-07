@@ -3,21 +3,21 @@
 @section('body')
 <div class="flex flex-col justify-center items-center overflow-hidden">
     {{-- Filter  Selection --}}
-    <div class="flex container w-full py-2 md:py-4 text-white bg-primary m-5 px-2 md:px-10 justify-between items-center gap-2 rounded-[50px] ">
+    <div class="flex container w-full py-2  text-white bg-primary m-5 px-2 md:px-10 justify-between items-center gap-2 rounded-[50px] ">
 
         <div class="flex p-1 md:px-3 rounded-[50px] {{ $category_name == 'All' ? 'bg-white text-primary' : '' }}  w-full justify-center">
-            <a href="{{route('discover', 'All')}}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">All items </a>
+            <a href="{{route('discover', 'All')}}" class="filter-button bold-8 sm:bold-16 md:bold-20">All items </a>
         </div>
 
         <div class="flex p-1 md:px-3 rounded-[50px] {{ $category_name == 'New' ? 'bg-white text-primary' : '' }} w-full justify-center">
-            <a href="{{route('discover', 'New')}}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">New Arrival</a>
+            <a href="{{route('discover', 'New')}}" class="filter-button bold-8 sm:bold-16 md:bold-20">New Arrival</a>
         </div>
 
         @forelse ($categories as $ctg)
             {{-- Kalo category nya sama --}}
 
             <div class="flex p-1 md:px-3 rounded-[50px] {{ $ctg->category_name == $category_name ? 'bg-white text-primary' : '' }} w-full justify-center">
-                <a href="{{ route('discover', $ctg->category_name) }}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">{{ $ctg->category_name }}</a>
+                <a href="{{ route('discover', $ctg->category_name) }}" class="filter-button bold-8 sm:bold-16 md:bold-20">{{ $ctg->category_name }}</a>
             </div>
         @empty
 
@@ -90,7 +90,7 @@
     {{-- buat new-arrival --}}
 
     @if ($category_name == 'New')
-        <div class="w-full relative h-[85vh] m-2">
+        <div class="w-full relative h-[75vh] m-2">
             <img src="{{url('assets/discover/newArrival.png')}}" alt="" class="absolute w-full h-full">
 
             <div class="absolute top-[5%] right-[5%]">

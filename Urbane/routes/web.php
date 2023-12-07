@@ -77,18 +77,13 @@ Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite
 
 //user sementara
 
-Route::get('/discover/all-items',function(){
-    return view('pages.user.discoverMore');
-})->name('all-items');
-
-Route::get('/discover/new-arrival',function(){
-    return view('pages.user.newArrival');
-})->name('new-arrival');
-
 Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });
 
+Route::get('/checkout',function(){
+    return view('pages.payment.CheckoutForm');
+});
 
 Route::get('/product-detail',function(){
     return view('pages.product.productDetail');
