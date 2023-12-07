@@ -98,6 +98,10 @@ Route::get('/returns', function(){
     return view('pages.returns');
 });
 
+Route::get('/delivery', function(){
+    return view('pages.delivery');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){

@@ -55,7 +55,7 @@
                         <a href='/'>
                             Media
                         </a>
-                        <a href='/'>
+                        <a href='/delivery'>
                             Delivery
                         </a>
                     </ul>
