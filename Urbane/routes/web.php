@@ -75,7 +75,10 @@ Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
 Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
+Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
+
 Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
+
 
 //user sementara
 
