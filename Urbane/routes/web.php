@@ -102,6 +102,10 @@ Route::get('/delivery', function(){
     return view('pages.delivery');
 });
 
+Route::get('/privacy_and_policy', function(){
+    return view('pages.policy');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){
