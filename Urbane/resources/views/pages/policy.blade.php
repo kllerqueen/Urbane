@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('body')
-    <div class="flex flex-col items-center bg-cover w-screen h-auto" style="background-image: url('{{ url('assets/privacypolicy/BubbleBG.png') }}')">
+    <div class="flex flex-col items-center bg-cover w-screen h-auto mb-5" style="background-image: url('{{ url('assets/privacypolicy/BubbleBG.png') }}')">
         <h1 class="bold-32 md:bold-52 text-primary mb-5">PRIVACY & POLICY</h1>
         
         <div class="w-[1338px] px-10 regular-14 mb-5">

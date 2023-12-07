@@ -38,7 +38,7 @@
                         <a href='/'>
                             Terms & Conditions
                         </a>
-                        <a href='/'>
+                        <a href='/location'>
                             Store Location
                         </a>
                     </ul>
