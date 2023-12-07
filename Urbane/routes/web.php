@@ -75,6 +75,8 @@ Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
 Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
+Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
+
 //user sementara
 
 Route::get('/discover/all-items',function(){
@@ -90,9 +92,6 @@ Route::get('/profile',function(){
 });
 
 
-Route::get('/product-detail',function(){
-    return view('pages.product.productDetail');
-});
 
 Route::get('/returns', function(){
     return view('pages.returns');

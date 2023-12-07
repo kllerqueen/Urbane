@@ -135,7 +135,7 @@
                     <div id="modal" class="absolute w-full h-full bg-black/80 hidden">
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
                             <a href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</a>
-                            <a href="" class="w-full text-primary ">See Details</a>
+                            <a href="{{ route('detailPage', $item->id) }}" class="w-full text-primary ">See Details</a>
                         </div>
                     </div>
                 </div>
