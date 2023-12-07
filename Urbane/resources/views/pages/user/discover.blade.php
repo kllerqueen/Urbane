@@ -6,18 +6,18 @@
     <div class="flex container w-full py-2 md:py-4 text-white bg-primary m-5 px-2 md:px-10 justify-between items-center gap-2 rounded-[50px] ">
 
         <div class="flex p-1 md:px-3 rounded-[50px] {{ $category_name == 'All' ? 'bg-white text-primary' : '' }}  w-full justify-center">
-            <a href="{{route('discover', 'All')}}" class="filter-button bold-12 sm:bold-16 md:bold-24 ">All items </a>
+            <a href="{{route('discover', 'All')}}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">All items </a>
         </div>
 
         <div class="flex p-1 md:px-3 rounded-[50px] {{ $category_name == 'New' ? 'bg-white text-primary' : '' }} w-full justify-center">
-            <a href="{{route('discover', 'New')}}" class="filter-button bold-12 sm:bold-16 md:bold-24 ">New Arrival</a>
+            <a href="{{route('discover', 'New')}}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">New Arrival</a>
         </div>
 
         @forelse ($categories as $ctg)
             {{-- Kalo category nya sama --}}
 
             <div class="flex p-1 md:px-3 rounded-[50px] {{ $ctg->category_name == $category_name ? 'bg-white text-primary' : '' }} w-full justify-center">
-                <a href="{{ route('discover', $ctg->category_name) }}" class="filter-button bold-12 sm:bold-16 md:bold-24">{{ $ctg->category_name }}</a>
+                <a href="{{ route('discover', $ctg->category_name) }}" class="filter-button bold-8 sm:bold-16 md:bold-20 lg:bold-24">{{ $ctg->category_name }}</a>
             </div>
         @empty
 
@@ -125,7 +125,7 @@
                     @if ($item->pictures->first())
                         <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class=" min-h-[80%] w-full">
                     @else
-                        <img src="{{ url('assets/product/Dummy 1.png') }}" alt="" class=" min-h-[80%] w-full">
+                        <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="h-[150px] min-[500px]:h-[200px] lg:h-[350px]  w-full">
                     @endif
 
                     <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
@@ -145,7 +145,7 @@
 
             {{-- kalau mw di foreach pakai ini aja
             <div class="flex flex-col h-full relative" id="slide">
-                <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class=" min-h-[80%] w-full">
+                <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="h-[150px] min-[500px]:h-[200px] lg:h-[350px]  w-full">
                 <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
                     <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
                     <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
