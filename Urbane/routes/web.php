@@ -75,6 +75,11 @@ Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
 Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
+Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
+
+Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
+
+
 //user sementara
 
 Route::get('/profile',function(){
@@ -85,9 +90,6 @@ Route::get('/checkout',function(){
     return view('pages.payment.CheckoutForm');
 });
 
-Route::get('/product-detail',function(){
-    return view('pages.product.productDetail');
-});
 
 Route::get('/returns', function(){
     return view('pages.returns');
@@ -95,6 +97,14 @@ Route::get('/returns', function(){
 
 Route::get('/delivery', function(){
     return view('pages.delivery');
+});
+
+Route::get('/privacy_and_policy', function(){
+    return view('pages.policy');
+});
+
+Route::get('/location', function(){
+    return view('pages.location');
 });
 
 //admin

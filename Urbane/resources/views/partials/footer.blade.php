@@ -32,13 +32,13 @@
                         <a href='/'>
                             Our Partners
                         </a>
-                        <a href='/'>
+                        <a href='/privacy_and_policy'>
                             Privacy Policy
                         </a>
                         <a href='/'>
                             Terms & Conditions
                         </a>
-                        <a href='/'>
+                        <a href='/location'>
                             Store Location
                         </a>
                     </ul>
