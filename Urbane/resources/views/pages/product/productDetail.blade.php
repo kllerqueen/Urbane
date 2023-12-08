@@ -44,9 +44,9 @@
                 </div>
                 <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
                     <div class="col-span-1 lg:row-span-3 lg:col-start-2 gap-2 grid grid-cols-3 lg:grid-cols-none lg:grid-rows-3 ">
-                        <img src="{{url('assets/product/Dummy 2.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(0)">
-                        <img src="{{url('assets/product/Dummy 3.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(1)">
-                        <img src="{{url('assets/product/Dummy 4.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage(2)">
+                        <img src="{{url('assets/product/Dummy 2.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage()">
+                        <img src="{{url('assets/product/Dummy 3.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage()">
+                        <img src="{{url('assets/product/Dummy 4.png')}}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage()">
                     </div>
                 </div>
             </div>
@@ -88,14 +88,17 @@
 </div>
 
     <script>
+        let mainImage = document.getElementById('main-image');
+        let images = document.querySelectorAll('#image');
 
-        function swapImage(index){
-            let mainImage = document.getElementById('main-image');
-            let images = document.querySelectorAll('#image');
-            let temp = images[index].src;
-            images[index].src = mainImage.src;
-            mainImage.src = temp;
-        }
+        images.forEach(image => {
+            image.addEventListener("click", function(){
+                let temp = image.src;
+                image.src = mainImage.src;
+                mainImage.src = temp;
+            })
+        })
+
         const sliderBox = document.querySelector("#slider-box"),
         slides = sliderBox.querySelectorAll("#recommended-slide"),
         arrowIcons = document.querySelectorAll(".icon i");
