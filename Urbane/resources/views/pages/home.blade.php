@@ -14,7 +14,7 @@
             </h1>
             <p class="bold-20 lg:bold-32">Deserve various models and trendy</p>
             <div class="lg:pl-12 lg:pr-24">
-                <a href="/home" class="flex justify-between w-full bg-primary px-4 py-2 mt-6 lg:mt-12 rounded-3xl cursor">
+                <a href="{{ route('discover', 'All') }}" class="flex justify-between w-full bg-primary px-4 py-2 mt-6 lg:mt-12 rounded-3xl cursor">
                     <h1 class="text-white bold-16 lg:bold-20 md:bold-28 w-full text-start  py-2">Discover More</h1>
                     <div class=" shadow-xl rounded-full p-1 flex items-center m-auto bg-white/30">
                         <img src="{{ url('assets/home/FirstSection/DiscoverIcons.png')}}" alt="" class=" w-[35px] md:w-[50px]">

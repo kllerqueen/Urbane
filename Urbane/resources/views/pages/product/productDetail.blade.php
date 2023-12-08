@@ -28,7 +28,7 @@
             </div>
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
-                    <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-full h-full rounded-lg" id="main-image">
+                    <img src="{{url('storage/' . $item->pictures->first()->picture_url)}}" alt="" class="w-full h-full rounded-lg" id="main-image">
                     <div class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
                         <div onclick="changeHeart()" id="heartLine" class="flex items-center justify-center">
                             <i class='bx bx-heart text-[30px]' ></i>
