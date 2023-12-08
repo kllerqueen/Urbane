@@ -10,13 +10,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #4f4f4f;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    background-color: #00457D;
 }
 
 *{
@@ -147,24 +141,14 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
-.rotate-first {
-    --tw-rotate: -4deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
-}
-.rotate-second {
-    --tw-rotate: 4deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
-}
-
-
-.marquee span {
+.sliding span {
     line-height: 140px;
-    animation: marquee 8s linear infinite;
+    animation: sliding 8s linear infinite;
 }
 
-.marquee1 span {
+.sliding1 span {
     line-height: 140px;
-    animation: marquee1 10s linear infinite;
+    animation: sliding1 10s linear infinite;
 }
 .arrival-animate{
     animation: movearrivaltext 2s linear infinite;
@@ -181,7 +165,7 @@ input[type="number"]::-webkit-outer-spin-button {
         transform: translate(0, 0);
     }
 }
-@keyframes marquee {
+@keyframes sliding {
     0% {
         transform: translate(0, 0);
     }
@@ -189,7 +173,7 @@ input[type="number"]::-webkit-outer-spin-button {
         transform: translate(-150%, 0);
     }
 }
-@keyframes marquee1 {
+@keyframes sliding1 {
     0% {
         transform: translate(0, 0);
     }

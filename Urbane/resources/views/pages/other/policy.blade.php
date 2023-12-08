@@ -4,7 +4,7 @@
     <div class="flex flex-col bg-cover w-screen h-auto mb-5 px-10" style="background-image: url('{{ url('assets/privacypolicy/BubbleBG.png') }}')">
         <h1 class="flex bold-32 md:bold-64 text-primary mb-5 justify-center">PRIVACY & POLICY</h1>
         
-        <div class="w-auto regular-14 mb-5">
+        <div class="w-full regular-14 mb-5">
             <p class="mb-2">The confidentiality and security of your Personal Data are important to us. We are committed to offering you personalized services while respecting your privacy and choices.</p>
             <p class="mb-2">The purpose of this Privacy Policy <strong>(“Privacy Policy”)</strong> is to inform you in a transparent, simple and complete manner about the processing of the Personal Data that you provide or that we collect through the different touchpoints you use to interact with us (e.g. in store, Customer Department, Urbane’s website, social media, digital apps, events) including how we will collect, store, use, retain, transfer, disclose and protect your Personal Data. This Privacy Policy also informs you of the possible transfer of your Personal Data to third parties as well as your rights and options to control your Personal Data and protect your privacy.</p>
             <p class="mb-2">By registering your account to Urbane’s website and using our apps, you acknowledge that you have read this Privacy Policy and understand its content and consequences, and you agree and give consent to us to collect, use, disclose and process your Personal Data in accordance with this Privacy Policy.</p>
@@ -27,7 +27,7 @@
             <p>Please read this Privacy Policy thoroughly to make sure that you understand it. Unless otherwise defined, capitalized terms used in this Privacy Policy shall have the same meanings ascribed to them here.</p>
         </div>
 
-        <div class="w-[1338px] regular-14 mb-5">
+        <div class="w-full max-w-[1338px] regular-14 mb-5">
             <p class="bold-16 mb-2">WHO are we?</p>
             <p>When we say <strong>"Urbane"</strong>, <strong>"us"</strong>, <strong>"our"</strong> or <strong>"we"</strong>, we refer to, depending on whom you share your data with as further described in this Privacy Policy:</p>
         </div>

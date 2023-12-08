@@ -5,10 +5,7 @@
     <div class="container flex flex-col gap-2 my-6 px-2">
         <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">Cart</h1>
         <div class="flex flex-col md:flex-row gap-2">
-            {{-- Item Card Section--}}
-            
-                
-            
+            {{-- Item Card Section--}}               
             <div class="max-w-[850px] w-full  flex flex-col gap-2">
                 
                 <div class="flex  items-center p-4 bg-[#008DFF]/30 rounded-md gap-4 relative max-h-[220px]">

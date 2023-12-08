@@ -55,19 +55,23 @@ Route::get('/profile',function(){
 
 
 Route::get('/returns', function(){
-    return view('pages.returns');
+    return view('pages.other.returns');
 });
 
 Route::get('/delivery', function(){
-    return view('pages.delivery');
+    return view('pages.other.delivery');
 });
 
 Route::get('/privacy_and_policy', function(){
-    return view('pages.policy');
+    return view('pages.other.policy');
 });
 
 Route::get('/location', function(){
-    return view('pages.location');
+    return view('pages.other.location');
+});
+
+Route::get('/about_us', function(){
+    return view('pages.other.about');
 });
 
 // Sementara buat forgot password page
@@ -93,10 +97,6 @@ Route::get('/change-password-success',function(){
 
 Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
-});
-
-Route::get('/about_us', function(){
-    return view('pages.about');
 });
 
 //customer routing

@@ -1,5 +1,5 @@
 <div class="relative block w-[100%] h-[80px] font-bold">
-    <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-black h-[50px]">
+    <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full sliding1 md:sliding bg-black h-[50px]">
         <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
             <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
                 SHOP NOW!! GET THEM FAST!
