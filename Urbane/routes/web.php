@@ -170,6 +170,6 @@ Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(
         return view('pages.courier.courierPage');
     })->name('courierPage');
 
-    Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+    // Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 });
 
