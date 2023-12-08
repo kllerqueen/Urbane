@@ -22,7 +22,11 @@
                 <h1 class="mt-4 regular-14 md:regular-20 lg:regular-24">Description</h1>
                 <h1 class="regular-8 md:regular-12 lg:regular-14">{{ $item->item_desc }}</h1>
                 <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
-                    <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button>
+                    <form method="post" action="{{route('cart.addToCart', $item->id)}}">
+                        @csrf
+                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button>
+                    </form>
+                    {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
                     <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Buy Now</button>
                 </div>
             </div>
@@ -70,11 +74,14 @@
                 <div id="recommended-slide"  class="relative flex flex-row items-center min-w-[200px] md:min-w-[400px]  h-[150px] md:h-[250px]">
                     <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <a href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</a>
+                            <form method="post" action="{{route('cart.addToCart', $rec->id)}}">
+                                @csrf
+                                <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</button>
+                            </form>
                             <a href="" class="w-full text-primary ">See Details</a>
                         </div>
                     </div>
-                    <img src="{{ url('assets/home/ThirdSection/ProductPhoto.png')}}" alt=""  class='w-[50%] h-full'/>
+                    <img src="{{ asset('storage/' . $rec->pictures->first()->picture_url) }}" alt=""  class='w-[50%] h-full'/>
 
                     <div class="flex flex-col justify-center items-center py-3 px-1 md:px-2 w-[50%] text-center bg-secondary/10 h-full max-h-[250px]">
                         <p class="regular-12 md:regular-14 lg:bold-16 text-ellipsis overflow-hidden">{{ $rec->item_name }}</p>

@@ -7,6 +7,7 @@
             <a href="{{ route('homePage') }}" class="self-center">
                 <img src="{{ url('assets/Logo.png')}}" alt="" class="h-[80px]  hidden lg:flex">
             </a>
+            
             <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10">
                 <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
                     <i class='bx bx-chevron-left text-[30px] text-black'></i>
@@ -153,6 +154,7 @@
 
                 </div>
             </div>
+
         </form>
         
         
@@ -193,15 +195,17 @@
             
                 @php
                     $subtotal = 0;
+                    $total = $subtotal + 10000;
                 @endphp
 
                 @foreach ($lists as $CartItem)
                     @php
                         $subtotal += $list->item->item_price * $list->qty;
-                        $total = $subtotal + 10000;
                     @endphp
                 @endforeach
-
+                @php
+                    $total = $subtotal + 10000;
+                @endphp
                 
                   
             <div class="py-4 px-8 bg-primary flex-col regular-8 md:regular-12 lg:regular-14 text-white">

@@ -61,9 +61,12 @@
                             <form action="{{route('update.cart.qty', ['item_id' => $CartItem->item_id])}}" method="post">
                                 @csrf
                                 <input type="hidden" name="_method" value="PATCH">
-                                <button type="submit" value="decrease">-</button>
-                                <h1 id="qty-display" class="bold-8 md:bold-16 lg:bold-20 text-secondary">qty :  {{$CartItem->qty}}</h1>
-                                <button type="submit" value="increase">+</button>
+                                <div class="d-flex gap-10 items-center space-x-2">
+                                    <span>Qty  </span>
+                                    <button type="submit" name="operation" value="decrease" class="bg-white text-black font-bold py-1 px-2 rounded">-</button>
+                                    <span id="qty-display" class="bold-8 md:bold-16 lg:bold-20 text-secondary">{{ $CartItem->qty }}</span>
+                                    <button type="submit" name="operation" value="increase" class="bg-black text-white font-bold py-1 px-2 rounded">+</button>
+                                </div>
                             </form>
                             
                         </div>
@@ -114,7 +117,7 @@
                     <h1 class="bold-12 md:bold-16 lg:bold-20 ">Estimated Total</h1>
                     <h1>Rp {{ number_format($total, 0, ',', '.') }}</h1>
                 </div>
-                <a href="{{ route('checkout.form') }}"><button type="submit" class="mt-12 w-full py-2 bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Checkouts</button></a>
+                <a href="{{ route('checkout.form') }}"><button type="submit" class="mt-12 w-full py-2 bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Checkout</button></a>
             </div>
         </div>
     </div>

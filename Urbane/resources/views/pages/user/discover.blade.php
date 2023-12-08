@@ -121,8 +121,12 @@
         <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center">
 
             @forelse ($items as $item)
+           
                 <div class="flex flex-col h-full relative" id="slide">
                     @if ($item->pictures->first())
+                        @php
+                            $imageUrl = url('storage/' . $item->pictures->first()->picture_url);
+                        @endphp
                         <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class=" min-h-[80%] w-full">
                     @else
                         <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="h-[150px] min-[500px]:h-[200px] lg:h-[350px]  w-full">
