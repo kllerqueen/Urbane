@@ -55,7 +55,7 @@
                         <div class="flex flex-col py-2">
                             <h1 class="bold-12 md:bold-20 lg:bold-24">{{$CartItem->item->item_name}}</h1>
                             <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">ID: {{$CartItem->item->id}}</h1>
-                            <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp {{$CartItem->item->item_price}}</h1>
+                            <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp {{ number_format($CartItem->item->item_price, 0, ',', '.') }}</h1>
                             
                             {{-- qty increment dec --}}
                             <form action="{{route('update.cart.qty', ['item_id' => $CartItem->item_id])}}" method="post">
@@ -80,19 +80,34 @@
             
             {{-- Order Summary Section --}}
             <div class="max-w-[450px] bg-secondary/30 w-full p-4 rounded-md flex flex-col shadow-2xl border-2">
+                @php
+                    $subtotal = 0;
+                @endphp
+
+                @foreach ($lists as $CartItem)
+                    @php
+                        $subtotal += $CartItem->item->item_price * $CartItem->qty;
+                    @endphp
+                @endforeach
+
                 <h1 class="bold-16 md:bold-24">Order Summary</h1>
                 <div class="w-full flex justify-between mt-2">
                     <h1 class="regular-12 md:regular-14 lg:regular-16">Subtotal</h1>
-                    <h1>Rp 0</h1>
+                    <h1>Rp {{ number_format($subtotal, 0, ',', '.') }}</h1>
                 </div>
                 <div class="w-full flex justify-between mt-2">
                     <h1 class="regular-12 md:regular-14 lg:regular-16">Estimated Shipping Payment</h1>
-                    <h1>Rp 0</h1>
+                    <h1>Rp {{ number_format(10000, 0, ',', '.') }}</h1>
                 </div>
+
+                @php
+                    $total = $subtotal + 10000; 
+                @endphp
+
                 <hr class="h-[3px] w-full bg-black mt-2 ">
                 <div class="w-full flex justify-between mt-2 text-secondary/80 ">
                     <h1 class="bold-12 md:bold-16 lg:bold-20 ">Estimated Total</h1>
-                    <h1>Rp 0</h1>
+                    <h1>Rp {{ number_format($total, 0, ',', '.') }}</h1>
                 </div>
                 <button class="mt-12 w-full py-2 bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md"> Checkout</button>
             </div>
