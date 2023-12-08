@@ -52,4 +52,8 @@ class CartController extends Controller
         return view('pages.payment.CheckoutForm', compact('lists'));
     }
     
+    public function updateQty(){
+        dd("testing");
+    }
+
 }
