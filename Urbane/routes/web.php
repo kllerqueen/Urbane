@@ -51,7 +51,6 @@ Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });
 
-
 Route::get('/returns', function(){
     return view('pages.other.returns');
 });
@@ -62,6 +61,14 @@ Route::get('/delivery', function(){
 
 Route::get('/privacy_and_policy', function(){
     return view('pages.other.policy');
+});
+
+Route::get('/terms_and_conditions', function(){
+    return view('pages.other.terms');
+});
+
+Route::get('/media', function(){
+    return view('pages.other.media');
 });
 
 Route::get('/location', function(){
@@ -122,13 +129,6 @@ Route::middleware('customer')->group(function(){
 
 });
 
-Route::get('/terms_and_conditions', function(){
-    return view('pages.terms');
-});
-
-Route::get('/media', function(){
-    return view('pages.media');
-});
 
 //admin
 Route::prefix('/admin')->middleware('admin')->group(function(){
