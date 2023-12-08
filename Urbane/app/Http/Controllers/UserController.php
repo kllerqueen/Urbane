@@ -58,29 +58,17 @@ class UserController extends Controller
             if(auth()->user()->role == 'admin'){
 
                 return redirect()->route('adminPage', 'All');
-            }else{
+            }
+            else if(auth()->user()->role == 'courier'){
+                return redirect()->route('courierPage');
+            }
+            else{
                 return redirect()->route('homePage');
             }
-
-
         }
 
         return back()->with('error', 'User Not Found, Login Failed!');
 
-        // $email = $request->input('email');
-        // $password = $request->input('password');
-
-        // $user = User::where('email', $email)->first();
-
-        // if ($user && Hash::check($password, $user->password)) {
-        //     // localStorage.setItem('user', JSON.stringify(user));
-        //     Session::put('user', $user);
-        //     return redirect("/home");
-        // } else {
-        //     // alert error msg -> user tidak ditemukan (sementara)
-        //     Session::flash('error', 'User not found or incorrect password');
-        //     return redirect('/login');
-        // }
     }
 
     public function logout(Request $request){

@@ -9,7 +9,10 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\CourierMiddleware;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Session;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -126,6 +129,7 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
+    Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
 });
 
@@ -158,5 +162,14 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/info', function() {
         return view('pages.admin.adminInfo');
     })->name('infoPage');
+});
+
+//courier
+Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
+    Route::get('/dashboardCourier', function(){
+        return view('pages.courier.courierPage');
+    })->name('courierPage');
+
+    // Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 });
 

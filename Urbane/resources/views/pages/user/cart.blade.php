@@ -52,7 +52,7 @@
                         <div class="flex flex-col py-2">
                             <h1 class="bold-12 md:bold-20 lg:bold-24">{{$CartItem->item->item_name}}</h1>
                             <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">ID: {{$CartItem->item->id}}</h1>
-                            <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp {{ number_format($CartItem->item->item_price, 0, ',', '.') }}</h1>
+                            <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp {{ number_format($CartItem->item->item_price * $CartItem->qty, 0, ',', '.') }}</h1>
                             
                             {{-- qty increment dec --}}
                             <form action="{{route('update.cart.qty', ['item_id' => $CartItem->item_id])}}" method="post">

@@ -42,6 +42,15 @@ class DatabaseSeeder extends Seeder
             'security' => 'bola',
         ]);
 
+        User::factory()->create([
+            'username' => 'courier',
+            'email' => 'courier@urbane.com',
+            'password' => 'courier',
+            'role' => 'courier',
+            'phoneNumber' => '081313131313',
+            'security' => 'tidur',
+        ]);
+
         $this->call(CategorySeeder::class);
         Item::factory(5)->create();
         Picture::factory(10)->create();
