@@ -10,8 +10,6 @@
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-envelope bx-sm pl-1 pr-2'></i>
                 <input type="text" name="email" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('email') bg-black @enderror" placeholder="Email" value="{{ old('email') }}">
-
-
             </div>
 
             @error('email')

@@ -110,7 +110,7 @@
 
     {{-- infinite text slide --}}
     <div class="relative block w-[100%] h-[150px] font-bold mt-14">
-        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-[#47008E] rotate-first h-[50px] rotate-[-8deg] md:rotate-[-4deg]">
+        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full sliding1 md:sliding bg-[#47008E] rotate-first h-[50px] rotate-[-8deg] md:rotate-[-4deg]">
             <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
                 <h1 class="regular-9 lg:regular-16 bg-[#47008E] text-yellow-500 ">
                     SHOP NOW!! GET THEM FAST!
@@ -192,7 +192,7 @@
 
             </span>
         </div>
-        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full marquee1 md:marquee bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
+        <div class="absolute block m-auto whitespace-nowrap overflow-hidden w-full sliding1 md:sliding bg-black h-[50px] rotate-[8deg] md:rotate-[4deg]">
             <span class=" flex flex-row items-center pl-[100%] text-center whitespace-nowrap w-full h-full gap-4">
                 <h1 class="regular-9 lg:regular-16 bg-black text-yellow-500">
                     SHOP NOW!! GET THEM FAST!
@@ -322,7 +322,8 @@
                                 <a href="{{ route('detailPage', $item->id) }}" class="w-full py-1 bg-primary rounded-sm">See Details</a>
                             </div>
                         </div>
-                        <img src="{{ asset('storage/' . $item->pictures->first()->picture_url) }}" alt=""  class='w-full h-[150px] md:h-[250px]'/>
+                        
+                        <img src="{{ asset('storage/' . optional($item->pictures->first())->picture_url) }}" alt=""  class='w-full h-[150px] md:h-[250px]'/>
                         <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center ">
                             <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden">{{ $item->item_name }}</p>
                             <h2 class="regular-10 md:regular-12 lg:regular-14">Rp. {{ number_format($item->item_price, 2, '.', ',') }}</h2>

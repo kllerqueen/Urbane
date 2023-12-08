@@ -93,8 +93,7 @@ class AdminController extends Controller
         $item->item_price = $request->input('item_price');
         $item->qty = $request->input('qty');
         $item->save();
-
-        $maxImages = 4;
+        
 
         if($request->hasFile('image')){
             foreach($request->file('image') as $image){
