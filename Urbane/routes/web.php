@@ -106,15 +106,15 @@ Route::middleware('customer')->group(function(){
 
     Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
-<<<<<<< HEAD
+
     Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
 
     Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
-=======
-Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
-Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
->>>>>>> f3596658cd3e0cd2cf62f216c5c5b3b67643a1e3
+    Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
+
+    Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
+
 
 });
 
