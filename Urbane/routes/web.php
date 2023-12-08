@@ -9,6 +9,7 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\CourierMiddleware;
 use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
@@ -158,5 +159,14 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/info', function() {
         return view('pages.admin.adminInfo');
     })->name('infoPage');
+});
+
+//courier
+Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
+    Route::get('/dashboardCourier', function(){
+        return view('pages.courier.courierPage');
+    })->name('courierPage');
+
+    Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
 });
 
