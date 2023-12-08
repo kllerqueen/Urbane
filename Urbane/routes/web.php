@@ -9,7 +9,9 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Session;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,6 +121,7 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
+    Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
 });
 

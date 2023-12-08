@@ -18,7 +18,11 @@ class CartController extends Controller
         \DB::table('carts')
         ->updateOrInsert(
             ['user_id' => auth()->id(), 'item_id' => $itemId],
-            ['qty' => \DB::raw('qty + 1')]
+            [
+                'qty' => \DB::raw('qty + 1'),
+                'created_at' => now(), 
+                'updated_at' => now()
+            ]
         );
 
         return redirect()->back();

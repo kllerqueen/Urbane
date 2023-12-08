@@ -3,11 +3,24 @@
     <img src="{{url('assets/purchase/PurchaseSplash1.png')}}" alt="" class="bottom-0 left-0 absolute w-[100px] md:w-[200px] lg:w-[300px]">
     <img src="{{url('assets/purchase/PurchaseSplash2.png')}}" alt="" class="top-0 right-[-100px] lg:right-[30%] absolute z-[-1] w-[250px] md:w-[200px] lg:w-[300px]">
     <div class="self-center w-full flex flex-row min-h-screen justify-center relative">
-        <form method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
+        {{-- {{route('add.order', ['listItem' => $lists]))}} --}}
+
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+        <form action="{{route('add.order')}}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
+            @csrf
             <a href="{{ route('homePage') }}" class="self-center">
                 <img src="{{ url('assets/Logo.png')}}" alt="" class="h-[80px]  hidden lg:flex">
             </a>
-            
+           
             <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10">
                 <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
                     <i class='bx bx-chevron-left text-[30px] text-black'></i>
@@ -57,30 +70,30 @@
                     <div class="flex flex-col min-[500px]:flex-row w-full min-[500px]:justify-between gap-8 min-[500px]:gap-4">
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full ">
                             <i class='bx bxs-user px-2 text-[20px]'></i>
-                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="First name*" name="">
+                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="First name*" name="first_name">
                         </div>
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                             <i class='bx bxs-user px-2 text-[20px]'></i>
-                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="Last name*" name="">
+                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="Last name*" name="last_name">
                         </div>
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                         <i class='bx bxs-map px-2 text-[20px]'></i>
-                        <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Address*" name="">
+                        <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Address*" name="address">
                     </div>
                     <div class="flex flex-col min-[500px]:flex-row w-full min-[500px]:justify-between gap-8 min-[500px]:gap-4">
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full ">
                             <img src="{{url('assets/checkout/Mailbox.png')}}" alt="" class="px-2 w-[40px] h-[20px]">
-                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Postal code*" name="">
+                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Postal code*" name="postal">
                         </div>
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                             <i class='bx bxs-phone px-2 text-[20px]'></i>
-                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Phone Number" name="">
+                            <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Phone Number" name="phone">
                         </div>
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                         <i class='bx bxs-note px-2 text-[20px]' ></i>
-                        <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Notes" name="">
+                        <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Notes" name="notes">
                     </div>
                 </div>
 
@@ -175,7 +188,7 @@
                                 <h1 class="bold-8 md:bold-12 lg:bold-16">{{$list->item->item_name}}</h1>
                                 <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{$list->qty}} pcs</p>
                             </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($list->item->item_price, 0, ',', '.') }}</h1>
+                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($list->item->item_price * $list->qty, 0, ',', '.') }}</h1>
                         </div>
                     </div>
                     @endforeach
@@ -195,16 +208,17 @@
             
                 @php
                     $subtotal = 0;
-                    $total = $subtotal + 10000;
+                    
                 @endphp
 
                 @foreach ($lists as $CartItem)
                     @php
-                        $subtotal += $list->item->item_price * $list->qty;
+                        $subtotal += $CartItem->item->item_price * $CartItem->qty;
                     @endphp
                 @endforeach
                 @php
                     $total = $subtotal + 10000;
+                    session(['total' => $total]);
                 @endphp
                 
                   
