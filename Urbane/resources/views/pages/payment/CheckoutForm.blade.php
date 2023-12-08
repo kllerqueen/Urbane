@@ -137,12 +137,12 @@
             
                 @php
                     $subtotal = 0;
+                    $total = $subtotal + 10000;
                 @endphp
 
                 @foreach ($lists as $CartItem)
                     @php
                         $subtotal += $list->item->item_price * $list->qty;
-                        $total = $subtotal + 10000;
                     @endphp
                 @endforeach
 
