@@ -141,14 +141,14 @@
     }
 }
 
-.marquee span {
+.sliding span {
     line-height: 140px;
-    animation: marquee 8s linear infinite;
+    animation: sliding 8s linear infinite;
 }
 
-.marquee1 span {
+.sliding1 span {
     line-height: 140px;
-    animation: marquee1 10s linear infinite;
+    animation: sliding1 10s linear infinite;
 }
 .arrival-animate{
     animation: movearrivaltext 2s linear infinite;
@@ -165,7 +165,7 @@
         transform: translate(0, 0);
     }
 }
-@keyframes marquee {
+@keyframes sliding {
     0% {
         transform: translate(0, 0);
     }
@@ -173,7 +173,7 @@
         transform: translate(-150%, 0);
     }
 }
-@keyframes marquee1 {
+@keyframes sliding1 {
     0% {
         transform: translate(0, 0);
     }

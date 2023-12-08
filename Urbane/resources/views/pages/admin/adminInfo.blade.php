@@ -155,7 +155,7 @@
             data: {
                 labels: ['1', '2', '3' , '4', '5' , '6'],
                 datasets: [{
-                    label: '# of Votes',
+                    label: 'User Growth',
                     data: [12, 19, 3, 12 , 35, 12],
                     borderWidth: 1
                 }]
