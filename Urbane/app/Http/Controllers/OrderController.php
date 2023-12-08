@@ -41,8 +41,9 @@ class OrderController extends Controller
                 'item_id' => $item->item_id, 
                 
             ]);
+           
         }
-        
+        Cart::where('user_id',auth()->id())->delete();
         return redirect()->route('homePage');
   
     }

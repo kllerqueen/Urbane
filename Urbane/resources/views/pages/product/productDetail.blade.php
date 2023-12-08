@@ -81,7 +81,7 @@
                             <a href="" class="w-full text-primary ">See Details</a>
                         </div>
                     </div>
-                    <img src="{{ asset('storage/' . $rec->pictures->first()->picture_url) }}" alt=""  class='w-[50%] h-full'/>
+                    <img src="{{ asset('storage/' . optional($rec->pictures->first())->picture_url) }}" alt=""  class='w-[50%] h-full'/>
 
                     <div class="flex flex-col justify-center items-center py-3 px-1 md:px-2 w-[50%] text-center bg-secondary/10 h-full max-h-[250px]">
                         <p class="regular-12 md:regular-14 lg:bold-16 text-ellipsis overflow-hidden">{{ $rec->item_name }}</p>
