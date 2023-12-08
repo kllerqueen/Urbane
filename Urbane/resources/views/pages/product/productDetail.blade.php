@@ -30,12 +30,12 @@
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
                     <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-full h-full rounded-lg" id="main-image">
                     <div class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
-                        <div onclick="changeHeart()" id="heartLine" class="flex items-center justify-center">
+                        @if (true)
                             <i class='bx bx-heart text-[30px]' ></i>
-                        </div>
-                        <div href="#" onclick="changeHeart()" id="heartFill" class="hidden items-center justify-center">
-                            <i class='bx bxs-heart text-[30px]' ></i>
-                        </div>
+                        @else
+                            <i class='bx bxs-heart text-[30px] text-red-500' ></i>
+                        @endif
+                        
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
@@ -85,22 +85,6 @@
 
     <script>
 
-        function changeHeart(){
-            let heartLine = document.getElementById('heartLine');
-            let heartFill = document.getElementById('heartFill');
-
-            if(heartLine.classList.contains('hidden')){
-                heartFill.classList.add('hidden');
-                heartFill.classList.remove('flex');
-                heartLine.classList.remove('hidden');
-                heartLine.classList.add('flex');
-            }else if(heartFill.classList.contains('hidden')){
-                heartLine.classList.add('hidden');
-                heartLine.classList.remove('flex');
-                heartFill.classList.remove('hidden');
-                heartFill.classList.add('flex');
-            }
-        }
         function swapImage(index){
             let mainImage = document.getElementById('main-image');
             let images = document.querySelectorAll('#image');
