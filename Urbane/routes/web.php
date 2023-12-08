@@ -93,6 +93,10 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
+Route::get('/about_us', function(){
+    return view('pages.about');
+});
+
 //customer routing
 Route::middleware('customer')->group(function(){
     
@@ -116,6 +120,14 @@ Route::middleware('customer')->group(function(){
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
 
+});
+
+Route::get('/terms_and_conditions', function(){
+    return view('pages.terms');
+});
+
+Route::get('/media', function(){
+    return view('pages.media');
 });
 
 //admin
