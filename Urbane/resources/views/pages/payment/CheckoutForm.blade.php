@@ -18,6 +18,7 @@
                     <div class="flex flex-col items-center">
                         <div class="p-4 md:p-8 bg-white border-2 shadow-xl bold-12 md:bold-16 lg:bold-20 flex items-center justify-center rounded-full w-fit relative"> 
                             <h1 class="absolute">1</h1>
+                            {{-- Check --}}
                             <div class="w-full h-full absolute bg-black/70 rounded-full flexCenter" id="check">
                                 <i class='bx bx-check text-[30px] md:text-[50px] text-green-600'></i>
                             </div>
@@ -25,14 +26,22 @@
                         <h1 class="bold-8 md:bold-10 lg:bold-12 text-primary">Customer Details</h1>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="p-4 md:p-8  bg-gray-300 border-2 shadow-xl bold-12 md:bold-16 lg:bold-20 flex items-center justify-center rounded-full w-fit"> 
+                        <div class="p-4 md:p-8  bg-gray-300 border-2 shadow-xl bold-12 md:bold-16 lg:bold-20 flex items-center justify-center rounded-full w-fit relative"> 
                             <h1 class="absolute">2</h1>
+                            {{-- Check --}}
+                            <div class="w-full h-full absolute bg-black/70 rounded-full flexCenter" id="check">
+                                <i class='bx bx-check text-[30px] md:text-[50px] text-green-600'></i>
+                            </div>
                         </div>
                         <h1 class="bold-8 md:bold-10 lg:bold-12 text-primary">Payment Method</h1>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="p-4 md:p-8 bg-gray-300 border-2 shadow-xl bold-12 md:bold-16 lg:bold-20 flex items-center justify-center rounded-full w-fit"> 
+                        <div class="p-4 md:p-8 bg-gray-300 border-2 shadow-xl bold-12 md:bold-16 lg:bold-20 flex items-center justify-center rounded-full w-fit relative"> 
                             <h1 class="absolute">3</h1>
+                            {{-- Check --}}
+                            <div class="w-full h-full absolute bg-black/70 rounded-full flexCenter" id="check">
+                                <i class='bx bx-check text-[30px] md:text-[50px] text-green-600'></i>
+                            </div>
                         </div>
                         <h1 class="bold-8 md:bold-10 lg:bold-12 text-primary">Confirmation</h1>
                     </div>
@@ -42,6 +51,7 @@
             </div>
 
             <div class="max-w-[700px] w-full flex flex-col items-center">
+                {{-- Customer Detail Container --}}
                 <div class="bg-white p-4 md:p-6 lg:p-8 shadow-xl border-2 w-full mt-4 flex flex-col gap-8 rounded-3xl text-secondary">
                     <div class="flex flex-col min-[500px]:flex-row w-full min-[500px]:justify-between gap-8 min-[500px]:gap-4">
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full ">
@@ -68,10 +78,17 @@
                         </div>
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
-                        <i class='bx bxs-note' ></i>
+                        <i class='bx bxs-note px-2 text-[20px]' ></i>
                         <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Notes">
                     </div>
                 </div>
+
+                {{-- Payment Method Container --}}
+                <div class="p-4 md:p-6 lg:p-8 w-full mt-4 grid grid-cols-2 grid-rows-2 gap-8  text-secondary ">
+                    <div class="">
+
+                    </div>
+                </div>  
                 <div class="flex flex-row items-center mt-8 gap-6">
                     <button class="self-center w-fit m-auto  bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md py-2 px-12 md:px-20 ">
                         Continue
