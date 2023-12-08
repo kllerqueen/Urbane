@@ -114,9 +114,7 @@
                     <h1 class="bold-12 md:bold-16 lg:bold-20 ">Estimated Total</h1>
                     <h1>Rp {{ number_format($total, 0, ',', '.') }}</h1>
                 </div>
-                <form action="POST" action="">
-                    <button type="submit" class="mt-12 w-full py-2 bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Checkout</button>
-                </form>
+                <a href="{{ route('checkout.form') }}"><button type="submit" class="mt-12 w-full py-2 bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Checkouts</button></a>
             </div>
         </div>
     </div>
