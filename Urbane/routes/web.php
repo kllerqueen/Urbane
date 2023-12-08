@@ -73,6 +73,12 @@ Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPag
 
 Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
+Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
+
+Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
+
+Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
+
 Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
 Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
