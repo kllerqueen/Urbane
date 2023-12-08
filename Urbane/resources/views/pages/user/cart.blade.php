@@ -48,7 +48,7 @@
                     </div>
                   
                     <div class="w-[30%] min-[400px]:w-[20%] md:w-[30%] lg:w-[20%] h-[100px] md:h-[180px]">
-                        <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class="w-full h-full">
+                        <img src="{{ asset('storage/' . $CartItem->item->pictures->first()->picture_url) }}" alt="" class="w-full h-full">
                     </div>
                     
                    <div class="flex flex-col justify-between h-full">
@@ -72,7 +72,12 @@
                             <h1 class="bold-12 md:bold-16">Wishlist</h1>
                         </div>
                    </div>
-                    <i class='bx bx-x text-[35px] absolute top-2 right-2'></i>
+                   <form method="POST" action="{{ route('cart.delete', ['item_id' => $CartItem->item_id]) }}">
+                        @csrf
+                        <button type="submit" class="absolute top-2 right-2">
+                            <i class='bx bx-x text-[35px] '></i>
+                        </button>
+                   </form>
                 </div>
                 @endforeach
             </div>

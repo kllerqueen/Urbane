@@ -77,6 +77,8 @@ Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])
 
 Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
+Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
+
 Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
 Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');

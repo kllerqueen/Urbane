@@ -23,6 +23,20 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function RemoveCart($item_id){
+        
+        // $cart = Cart::where('user_id', auth()->id())->where('item_id',$item_id)->first();
+
+        // dump($cart);
+        // $cart->delete();
+        $user_id = auth()->id();
+        \DB::table('carts')
+        ->where('user_id', $user_id)
+        ->where('item_id', $item_id)
+        ->delete();
+        return redirect()->back();
+    }
+
     public function getUser() {
         $user = auth()->user();
 
