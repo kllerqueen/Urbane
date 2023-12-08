@@ -6,14 +6,14 @@
         {{-- {{route('add.order', ['listItem' => $lists]))}} --}}
 
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <form action="{{route('add.order')}}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
             @csrf

@@ -39,12 +39,11 @@ class OrderController extends Controller
             OrderDetail::create([
                 'order_id' => $order->id,
                 'item_id' => $item->item_id, 
-                
+                'qty' => $item->qty
             ]);
-           
         }
+
         Cart::where('user_id',auth()->id())->delete();
         return redirect()->route('homePage');
-  
     }
 }
