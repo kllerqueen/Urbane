@@ -79,9 +79,9 @@ Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name(
 
 Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
-Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
+Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
-Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
+Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
 Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
 
