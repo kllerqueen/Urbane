@@ -10,14 +10,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #4f4f4f;
+    background-color: #00457D;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
+
 
 *{
     margin: 0;
@@ -146,16 +142,6 @@ input[type="number"]::-webkit-outer-spin-button {
         @apply text-[8px] font-[700];
     }
 }
-
-.rotate-first {
-    --tw-rotate: -4deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
-}
-.rotate-second {
-    --tw-rotate: 4deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); 
-}
-
 
 .marquee span {
     line-height: 140px;
