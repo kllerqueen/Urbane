@@ -52,8 +52,28 @@ class CartController extends Controller
         return view('pages.payment.CheckoutForm', compact('lists'));
     }
     
-    public function updateQty(){
-        dd("testing");
+    public function updateQty($item_id){
+        $operation = request('operation');
+        $qtyChange = ($operation === 'increase') ? 1 : -1;
+
+        if ($operation === 'decrease') {
+            $currentQty = \DB::table('carts')
+                ->where('user_id', auth()->id())
+                ->where('item_id', $item_id)
+                ->value('qty');
+
+            // Memastikan qty tidak berkurang di bawah 0
+            if ($currentQty <= 0) {
+                return redirect()->back()->with('error', 'Qty already at minimum');
+            }
+        }
+
+        \DB::table('carts')
+        ->where('user_id', auth()->id())
+        ->where('item_id', $item_id)
+        ->update(['qty' => \DB::raw('qty + ' . $qtyChange)]);
+
+        return redirect()->back();
     }
 
 }

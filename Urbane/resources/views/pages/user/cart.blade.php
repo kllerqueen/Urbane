@@ -63,9 +63,9 @@
                                 <input type="hidden" name="_method" value="PATCH">
                                 <div class="d-flex gap-10 items-center space-x-2">
                                     <span>Qty  </span>
-                                    <button type="submit" value="decrease" class="bg-white text-black font-bold py-1 px-2 rounded">-</button>
-                                    <span id="qty-display" class="bold-8 md:bold-16 lg:bold-20 text-secondary">{{$CartItem->qty}}</span>
-                                    <button type="submit" value="increase" class="bg-black text-white font-bold py-1 px-2 rounded">+</button>
+                                    <button type="submit" name="operation" value="decrease" class="bg-white text-black font-bold py-1 px-2 rounded">-</button>
+                                    <span id="qty-display" class="bold-8 md:bold-16 lg:bold-20 text-secondary">{{ $CartItem->qty }}</span>
+                                    <button type="submit" name="operation" value="increase" class="bg-black text-white font-bold py-1 px-2 rounded">+</button>
                                 </div>
                             </form>
                             
