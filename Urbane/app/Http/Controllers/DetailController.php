@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favorite;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -20,11 +21,12 @@ class DetailController extends Controller
         return $latestItem;
     }
 
-    public function itemDetail($id) {
+    public function itemDetail(Request $request, $id) {
 
         $item = Item::where('id', $id)->first();
         $reccomended = $this->getReccomendedItem();
+        $fav = Favorite::where('user_id', $request->user()->id)->where('item_id', $id)->first();
 
-        return view('pages.product.productDetail', compact('item', 'reccomended'));
+        return view('pages.product.productDetail', compact('item', 'reccomended', 'fav'));
     }
 }
