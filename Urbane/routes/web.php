@@ -113,6 +113,14 @@ Route::get('/location', function(){
     return view('pages.location');
 });
 
+Route::get('/terms_and_conditions', function(){
+    return view('pages.terms');
+});
+
+Route::get('/media', function(){
+    return view('pages.media');
+});
+
 //admin
 
 Route::prefix('/admin')->middleware('admin')->group(function(){

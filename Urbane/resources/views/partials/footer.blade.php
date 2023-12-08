@@ -35,7 +35,7 @@
                         <a href='/privacy_and_policy'>
                             Privacy Policy
                         </a>
-                        <a href='/'>
+                        <a href='/terms_and_conditions'>
                             Terms & Conditions
                         </a>
                         <a href='/location'>
@@ -52,7 +52,7 @@
                         <a href='/returns'>
                             Returns
                         </a>
-                        <a href='/'>
+                        <a href='/media'>
                             Media
                         </a>
                         <a href='/delivery'>
