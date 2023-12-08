@@ -32,8 +32,7 @@ Route::get('/register', function () {
     return view('pages.register');
 })->name('registerPage')->middleware('guest');
 
-
-Route::get('/home', [HomeController::class, 'showHome'])->name('homePage')->middleware('customer');
+Route::get('/home', [HomeController::class, 'showHome'])->name('homePage');
 
 Route::post('/login-user', [UserController::class, 'login'])->name('login');
 
@@ -43,8 +42,33 @@ Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage'
 
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
-// Sementara buat forgot password page
+Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
 
+Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
+
+//user sementara
+Route::get('/profile',function(){
+    return view('pages.profile.userProfile');
+});
+
+
+Route::get('/returns', function(){
+    return view('pages.returns');
+});
+
+Route::get('/delivery', function(){
+    return view('pages.delivery');
+});
+
+Route::get('/privacy_and_policy', function(){
+    return view('pages.policy');
+});
+
+Route::get('/location', function(){
+    return view('pages.location');
+});
+
+// Sementara buat forgot password page
 Route::get('/register-security-form', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');
 });
@@ -69,48 +93,29 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
-Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
+//customer routing
+Route::middleware('customer')->group(function(){
+    
+    Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
-Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
+    Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
 
-Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
+    Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
-Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
+    Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
-Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
-
-Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
-
-Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
-
-Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
+    Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
 
-//user sementara
+    Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
 
-Route::get('/profile',function(){
-    return view('pages.profile.userProfile');
-});
+    Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
 
-Route::get('/checkout',function(){
-    return view('pages.payment.CheckoutForm');
-});
+    Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
+
+    Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
 
-Route::get('/returns', function(){
-    return view('pages.returns');
-});
-
-Route::get('/delivery', function(){
-    return view('pages.delivery');
-});
-
-Route::get('/privacy_and_policy', function(){
-    return view('pages.policy');
-});
-
-Route::get('/location', function(){
-    return view('pages.location');
 });
 
 Route::get('/terms_and_conditions', function(){
@@ -122,7 +127,6 @@ Route::get('/media', function(){
 });
 
 //admin
-
 Route::prefix('/admin')->middleware('admin')->group(function(){
 
     Route::get('/dashboard/{category_name}', [AdminController::class, 'index'])->name('adminPage');

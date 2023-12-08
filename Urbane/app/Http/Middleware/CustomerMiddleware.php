@@ -19,11 +19,11 @@ class CustomerMiddleware
         if(Auth::check() && Auth::user()->role == 'customer'){
             return $next($request);
         }
+
         if (Auth::check() && Auth::user()->role === 'admin') {
             return redirect('/admin/dashboard/All');
         }
 
-        return $next($request);
-        
+        return redirect()->route('homePage')->with('alert', 'Please Login As Customer.');        
     }
 }
