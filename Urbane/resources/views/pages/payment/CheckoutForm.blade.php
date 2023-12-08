@@ -155,12 +155,30 @@
             </div>
         </form>
         
+        
+        
         <div class="w-full h-full bg-black/10 absolute hidden " id="bg-popup"></div>
 
         <div class="hidden absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:translate-x-0 lg:translate-y-0 lg:left-0 lg:top-0 lg:relative lg:flex w-[90%] lg:w-[35%] bg-stroke flex-col justify-between overflow-y-auto" id="popup" onclick="showPopup()">
             <div class="flex flex-col gap-2 py-4 px-8">
                 <h1 class="bold-12 md:bold-16 lg:bold-20 py-2 border-b-2 border-black">Your Item</h1>
-                <div class="flex flex-col w-full gap-2 overflow-y-scroll h-[75vh]">
+                <div class="flex flex-col w-full gap-2 overflow-y-scroll h-[65vh]">
+
+                    {{-- item card --}}
+                    @foreach ($lists as $list)
+                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
+                        <img src="{{ asset('storage/' . $list->item->pictures->first()->picture_url) }}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
+                        <div class="flex flex-col justify-between">
+                            <div class="flex flex-col">
+                                <h1 class="bold-8 md:bold-12 lg:bold-16">{{$list->item->item_name}}</h1>
+                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{$list->qty}} pcs</p>
+                            </div>
+                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($list->item->item_price, 0, ',', '.') }}</h1>
+                        </div>
+                    </div>
+                    @endforeach
+                    
+                    {{-- dummy item wt --}}
                     <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
                         <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
                         <div class="flex flex-col justify-between">
@@ -171,70 +189,33 @@
                             <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
                         </div>
                     </div>
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
-                        <div class="flex flex-col justify-between">
-                            <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">Oversized shirt popelin bias mode white</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: 1pcs</p>
-                            </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
-                        </div>
-                    </div>
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
-                        <div class="flex flex-col justify-between">
-                            <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">Oversized shirt popelin bias mode white</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: 1pcs</p>
-                            </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
-                        </div>
-                    </div>
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
-                        <div class="flex flex-col justify-between">
-                            <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">Oversized shirt popelin bias mode white</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: 1pcs</p>
-                            </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
-                        </div>
-                    </div>
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
-                        <div class="flex flex-col justify-between">
-                            <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">Oversized shirt popelin bias mode white</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: 1pcs</p>
-                            </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
-                        </div>
-                    </div>
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
-                        <div class="flex flex-col justify-between">
-                            <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">Oversized shirt popelin bias mode white</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: 1pcs</p>
-                            </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                 
+            
+                @php
+                    $subtotal = 0;
+                @endphp
+
+                @foreach ($lists as $CartItem)
+                    @php
+                        $subtotal += $list->item->item_price * $list->qty;
+                        $total = $subtotal + 10000;
+                    @endphp
+                @endforeach
+
+                
+                  
             <div class="py-4 px-8 bg-primary flex-col regular-8 md:regular-12 lg:regular-14 text-white">
                 <div class="flex flex-row justify-between ">
                     <h1 class="">Product Price</h1>
-                    <h1>198.000</h1>
+                    <h1>Rp {{ number_format($subtotal, 0, ',', '.') }}</h1>
                 </div>
                 <div class="flex flex-row justify-between ">
-                    <h1 class="">Product Price</h1>
-                    <h1>198.000</h1>
+                    <h1 class="">Shipping Price</h1>
+                    <h1>Rp 10.000</h1>
                 </div>
                 <div class="flex flex-row justify-between bold-12 md:bold-16 lg:bold-20 mt-8">
-                    <h1 class="">Product Price</h1>
-                    <h1>198.000</h1>
+                    <h1 class="">Total Price</h1>
+                    <h1>Rp. {{ number_format($total, 0, ',', '.') }}</h1>
                 </div>
             </div>
             

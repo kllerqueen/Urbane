@@ -24,11 +24,6 @@ class CartController extends Controller
     }
 
     public function RemoveCart($item_id){
-        
-        // $cart = Cart::where('user_id', auth()->id())->where('item_id',$item_id)->first();
-
-        // dump($cart);
-        // $cart->delete();
         $user_id = auth()->id();
         \DB::table('carts')
         ->where('user_id', $user_id)
@@ -39,7 +34,6 @@ class CartController extends Controller
 
     public function getUser() {
         $user = auth()->user();
-
         return $user;
     }
 
@@ -50,5 +44,11 @@ class CartController extends Controller
         return view('pages.user.cart', compact('lists'));
     }
 
+    public function CheckOutForm(){
+        $user = $this->getUser();
+
+        $lists = Cart::where('user_id', $user->id)->get();
+        return view('pages.payment.CheckoutForm', compact('lists'));
+    }
     
 }

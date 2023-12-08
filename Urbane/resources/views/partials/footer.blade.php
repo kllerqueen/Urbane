@@ -26,7 +26,7 @@
                 <div class="flex flex-col gap-2">
                     <h1 class="font-bold bold-14 md:bold-18">Business</h1>
                     <ul class='regular-14 flex flex-col text-gray-30'>
-                        <a href='/'>
+                        <a href='/about_us'>
                             About Us
                         </a>
                         <a href='/'>
@@ -35,7 +35,7 @@
                         <a href='/privacy_and_policy'>
                             Privacy Policy
                         </a>
-                        <a href='/'>
+                        <a href='/terms_and_conditions'>
                             Terms & Conditions
                         </a>
                         <a href='/location'>
@@ -52,7 +52,7 @@
                         <a href='/returns'>
                             Returns
                         </a>
-                        <a href='/'>
+                        <a href='/media'>
                             Media
                         </a>
                         <a href='/delivery'>

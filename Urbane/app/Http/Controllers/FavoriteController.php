@@ -13,25 +13,26 @@ class FavoriteController extends Controller
 
         $lists = Favorite::where('user_id', $request->user()->id)->get();
 
-        return view('pages.user.favourite', compact('lists'));
+        return view('pages.user.wishlist', compact('lists'));
     }
 
-    public function addToWishlist(Request $request, $id) {
+    public function toggleWishlist(Request $request, $id) {
 
-        $fav = new Favorite();
-        $fav->user_id = $request->user()->id;
-        $fav->item_id = $id;
-        $fav->save();
+        $uId = $request->user()->id;
+
+        $fav = Favorite::where('user_id', $uId)->where('item_id', $id)->first();
+
+        if($fav) {
+            $fav->delete();
+        } else {
+            Favorite::create([
+                'user_id' => $uId,
+                'item_id' => $id,
+            ]);
+        }
 
         return redirect()->back();
 
     }
 
-    public function removeWishlist(Request $request, $id) {
-
-        $fav = Favorite::where('user_id', $request->user()->id)->where('item_id', $id)->first();
-        $fav->delete();
-
-        return redirect()->back();
-    }
 }
