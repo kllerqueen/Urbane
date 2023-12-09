@@ -121,13 +121,13 @@ Route::middleware('customer')->group(function(){
     
     Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
-    Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
+    Route::patch('/update-cart-qty/{item_id}/{color}/{size}', [CartController::class, 'updateQty'])->name('update.cart.qty');
 
     Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
     Route::post('/addTo-cart2/{itemId}', [CartController::class, 'addToCart2'])->name('cart.addToCart2');
 
-    Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
+    Route::post('/cart-delete/{item_id}/{color}/{size}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
     Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
@@ -141,6 +141,12 @@ Route::middleware('customer')->group(function(){
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
+
+    Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
+
+    Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
+    
+    Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
 
 });
 

@@ -15,7 +15,7 @@
             </div>
         @endif --}}
 
-        <form action="{{route('add.order')}}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
+        <form action="{{ isset($id) ? route('add.buynow.order', ['id' => $id]) : route('add.order') }}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
             @csrf
             <a href="{{ route('homePage') }}" class="self-center">
                 <img src="{{ url('assets/Logo.png')}}" alt="" class="h-[80px]  hidden lg:flex">
@@ -203,15 +203,15 @@
                 <div class="flex flex-col w-full gap-2 overflow-y-scroll h-[65vh]">
 
                     {{-- item card --}}
-                    @foreach ($lists as $list)
+                    @foreach ($items as $item)
                     <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{ asset('storage/' . $list->item->pictures->first()->picture_url) }}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
+                        <img src="{{ asset('storage/' . $item->pictures->first()->picture_url) }}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
                         <div class="flex flex-col justify-between">
                             <div class="flex flex-col">
-                                <h1 class="bold-8 md:bold-12 lg:bold-16">{{$list->item->item_name}}</h1>
-                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{$list->qty}} pcs</p>
+                                <h1 class="bold-8 md:bold-12 lg:bold-16">{{$item->item_name}}</h1>
+                                <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{ $item->qty }} pcs</p>
                             </div>
-                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($list->item->item_price * $list->qty, 0, ',', '.') }}</h1>
+                            <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($item->item_price * $item->qty, 0, ',', '.') }}</h1>
                         </div>
                     </div>
                     @endforeach
@@ -229,14 +229,14 @@
                     </div>
                  
             
-                @php
+                 @php
                     $subtotal = 0;
                     
                 @endphp
 
-                @foreach ($lists as $CartItem)
+                @foreach ($items as $item)
                     @php
-                        $subtotal += $CartItem->item->item_price * $CartItem->qty;
+                        $subtotal += $item->item_price * $item->qty;
                     @endphp
                 @endforeach
                 @php

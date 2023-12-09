@@ -73,9 +73,7 @@
                     </div>
                 </form>
                 <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
-                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
-                        Buy Now
-                    </button>
+                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md"><a href="{{ route('checkout.buynow.form', ['id' => $item->id]) }}">Buy Now</a></button>
                 </div>
 
                 

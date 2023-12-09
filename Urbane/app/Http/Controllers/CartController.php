@@ -45,11 +45,13 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    public function RemoveCart($item_id){
+    public function RemoveCart($item_id, $color, $size){
         $user_id = auth()->id();
         \DB::table('carts')
         ->where('user_id', $user_id)
         ->where('item_id', $item_id)
+        ->where('color', $color)
+        ->where('size', $size)
         ->delete();
         return redirect()->back();
     }
@@ -69,15 +71,38 @@ class CartController extends Controller
     public function CheckOutForm(){
 
         $user = $this->getUser();
-
         $lists = Cart::where('user_id', $user->id)->get();
+
         if($lists->isEmpty()){
             return redirect()->back()->with('NoItem', 'There is no item in your Cart');
         }
-        return view('pages.payment.CheckoutForm', compact('lists'));
+
+        $items = collect();
+        foreach ($lists as $list) {
+            $item = $list->item; 
+            $item->qty = $list->qty; 
+            $items->push($item); 
+        }
+
+        // dump($items, $lists);
+
+        return view('pages.payment.CheckoutForm', compact('items'));
+    }
+
+
+    public function CheckOutBuyNow($id){
+
+        // dd($id);
+        $items = Item::where('id', $id)->get(); 
+        if($items->isEmpty()){
+            return redirect()->back()->with('NoItem', 'There is no item in your Cart');
+        }
+        $item = $items->first(); 
+        $item->qty = 1; 
+        return view('pages.payment.CheckoutForm', compact('items', 'id'));
     }
     
-    public function updateQty($item_id){
+    public function updateQty($item_id, $color, $size){
         $operation = request('operation');
         $qtyChange = ($operation === 'increase') ? 1 : -1;
 
@@ -85,6 +110,8 @@ class CartController extends Controller
             $currentQty = \DB::table('carts')
                 ->where('user_id', auth()->id())
                 ->where('item_id', $item_id)
+                ->where('size', $size)
+                ->where('color', $color)
                 ->value('qty');
 
             // Memastikan qty tidak berkurang di bawah 0
@@ -96,6 +123,8 @@ class CartController extends Controller
         \DB::table('carts')
         ->where('user_id', auth()->id())
         ->where('item_id', $item_id)
+        ->where('size', $size)
+        ->where('color', $color)
         ->update(['qty' => \DB::raw('qty + ' . $qtyChange)]);
 
         return redirect()->back();
