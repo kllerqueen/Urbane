@@ -56,7 +56,9 @@ Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPag
 Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });
-
+Route::get('/faq',function(){
+    return view('pages.other.faq');
+});
 Route::get('/returns', function(){
     return view('pages.other.returns');
 });
