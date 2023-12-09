@@ -1,4 +1,4 @@
-@php
+pppppppp@php
     // dd($listOrderComplete, $listOrderUnComplete)
 @endphp
 @extends('template.courierTemplate')
@@ -24,22 +24,23 @@
 
             <div class="flex flex-col gap-2">
                 @forelse ($listOrderComplete as $orderComplete)
-                    <form action="{{ route('update.status.order', ['order_id' => $orderComplete->id ]) }}" method="POST" class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
-                        @csrf
-                        <p>{{ $orderComplete->id }}</p>
-                        <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderComplete->customer_id }} </p>
-                        <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $orderComplete->address }}</p>
-                        <p>{{ $orderComplete->postal_Code }}</p>
-                        <select name="status" id="" class="text-white outline-none bg-black border-none w-fit">
-                        <option value="Complete" @if($orderComplete->status === 'Complete') selected @endif>Complete</option>
-                        <option value="OnProcess" @if($orderComplete->status === 'OnProcess') selected @endif>On Process</option>
-                        <option value="Failed" @if($orderComplete->status === 'Failed') selected @endif>Failed</option>
-                        </select>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit">Save</button>
-                    </form>
-                </div>
-                 @empty
+                <form action="{{ route('update.status.order', ['order_id' => $orderComplete->id ]) }}" method="POST">
+                    <div class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">
+                            <p>{{ $orderComplete->id }}</p>
+                            <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderComplete->customer_id }} </p>
+                            <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $orderComplete->address }}</p>
+                            <p>{{ $orderComplete->postal_Code }}</p>
+                                @csrf
+                                <select name="status" id="" class="text-white outline-none bg-black border-none">
+                                <option value="Complete" @if($orderComplete->status === 'Complete') selected @endif>Complete</option>
+                                <option value="OnProcess" @if($orderComplete->status === 'OnProcess') selected @endif>On Process</option>
+                                <option value="Failed" @if($orderComplete->status === 'Failed') selected @endif>Failed</option>
+                            </select>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit">Save</button>
+                    </div>
+                    @empty
                     <p>No items available</p>
+                </form>
                 @endforelse
                 
             </div>
@@ -56,23 +57,24 @@
             </div>
 
             <div class="flex flex-col gap-2">
-                 @forelse ($listOrderUnComplete as $orderUnComplete)
-                    <form action="{{ route('update.status.order', ['order_id' => $orderUnComplete->id ]) }}" method="POST" class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative"> 
-                        @csrf  
-                        <p>{{ $orderUnComplete->id }}</p>
-                        <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderUnComplete->customer_id }} </p>
-                        <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $orderUnComplete->address }}</p>
-                        <p>{{ $orderUnComplete->postal_Code }}</p>
-                        <select name="status" class="text-white outline-none bg-black border-none w-fit">
-                            <option value="Complete" @if($orderUnComplete->status === 'Complete') selected @endif>Complete</option>
-                            <option value="OnProcess" @if($orderUnComplete->status === 'OnProcess') selected @endif>On Process</option>
-                            <option value="Failed" @if($orderUnComplete->status === 'Failed') selected @endif>Failed</option>
-                        </select>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit">Save</button>        
-                    </form>
-                </div>
-                 @empty
-                    <p>No items available</p>
+                @forelse ($listOrderUnComplete as $orderUnComplete)
+                <form action="{{ route('update.status.order', ['order_id' => $orderUnComplete->id ]) }}" method="POST">
+                    <div class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">   
+                                <p>{{ $orderUnComplete->id }}</p>
+                                <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderUnComplete->customer_id }} </p>
+                                <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $orderUnComplete->address }}</p>
+                                <p>{{ $orderUnComplete->postal_Code }}</p>
+                                    @csrf <!-- Pastikan untuk menyertakan csrf token -->
+                                    <select name="status" class="text-white outline-none bg-black border-none">
+                                        <option value="Complete" @if($orderUnComplete->status === 'Complete') selected @endif>Complete</option>
+                                        <option value="OnProcess" @if($orderUnComplete->status === 'OnProcess') selected @endif>On Process</option>
+                                        <option value="Failed" @if($orderUnComplete->status === 'Failed') selected @endif>Failed</option>
+                                    </select>
+                                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-fit">Save</button>
+                            </div>
+                            @empty
+                            <p>No items available</p>
+                        </form>
                 @endforelse
             </div>
         </div>
