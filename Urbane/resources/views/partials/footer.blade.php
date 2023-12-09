@@ -29,7 +29,7 @@
                         <a href='/about_us'>
                             About Us
                         </a>
-                        <a href='/'>
+                        <a href='/our_partners'>
                             Our Partners
                         </a>
                         <a href='/privacy_and_policy'>
