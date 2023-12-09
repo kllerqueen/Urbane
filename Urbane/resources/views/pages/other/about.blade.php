@@ -24,7 +24,7 @@
                 </div>
             </div>
             <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                Urbane retains the right, at any moment and without notice, to alter or modify these terms and conditions. It is your duty to examine these conditions on a regular basis.
+                About Urbane Urbane was founded on a common desire for fusing current trends with classic style. The concept began as a final project for a web programming course and the delight of people when purchasing online. We envisioned Urbane as more than simply a platform; we envisioned it as a fashion-forward community where every click brings you closer to the right outfit.
             </h1>
             </div>
 
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                        Urbane retains the right, at any moment and without notice, to alter or modify these terms and conditions. It is your duty to examine these conditions on a regular basis.
+                        Our purpose at Urbane is to inspire people to express themselves through fashion. We believe that style is a powerful form of self-expression, and we curate our collections accordingly. The cornerstones of Urbane's dedication to our valued consumers are quality, diversity, and the delight of discovery.
                     </h1>
             </div>
 
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    Urbane retains the right, at any moment and without notice, to alter or modify these terms and conditions. It is your duty to examine these conditions on a regular basis.
+                    What distinguishes Urbane is our unwavering commitment to creating an unrivaled shopping experience. Our crew scours the fashion scene for curated apparel, accessories, and lifestyle products. We believe that every object has a story to tell, and we want Urbane to be the canvas for your own.
                 </h1>
             </div>
 
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    Urbane retains the right, at any moment and without notice, to alter or modify these terms and conditions. It is your duty to examine these conditions on a regular basis.
+                    A team of fashion enthusiasts, trend analysts, and customer experience champions power Urbane. We're real individuals who care as much about what we do as you do about what you wear. Meet the people behind Urbane and get to know the personalities that drive our dedication to style and satisfaction.
                 </h1>
             </div>
 
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    Urbane retains the right, at any moment and without notice, to alter or modify these terms and conditions. It is your duty to examine these conditions on a regular basis.
+                    As we move forward, Urbane hopes to become your go-to spot for all things sleek and trendy. We strive to constantly evolve in order to stay up with the ever-changing fashion world. Our vision is to create a society in which style knows no bounds and every purchase is a step toward self-discovery.
                 </h1>
             </div>
         </div>
