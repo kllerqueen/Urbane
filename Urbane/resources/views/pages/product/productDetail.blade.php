@@ -23,11 +23,12 @@
                 <h1 class="regular-8 md:regular-12 lg:regular-14">{{ $item->item_desc }}</h1>
 
                 {{-- form buat color dan size --}}
-                <form action="" class="flex flex-col gap-2">
+                <form method="post" action="{{route('cart.addToCart', $item->id)}}" class="flex flex-col gap-2">
+                    @csrf
                     {{-- buat Size --}}
-                    <input type="text" class="hidden" name="" id="size">
+                    <input type="text" class="hidden" name="size" id="size">
                     {{-- Buat Color --}}
-                    <input type="text" class="hidden" name="" id="color">
+                    <input type="text" class="hidden" name="color" id="color">
                     <div class="grid grid-cols-4 gap-2 w-fit text-center" id="size-container">
                         <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">S</h1>
                         <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">M</h1>
@@ -48,20 +49,20 @@
                             <h1>Black</h1>
                         </div>
                     </div>
-                    <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
-                        <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
-                            Buy Now
-                        </button>
+
+                    <div class="w-full flex flex-col items-center gap-2 mt-2">
+                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6">Add To Cart</button>
+                        {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
                     </div>
                 </form>
-                
-                <div class="w-full flex flex-col items-center gap-2 mt-2">
-                    <form method="post" action="{{route('cart.addToCart', $item->id)}}">
-                        @csrf
-                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6">Add To Cart</button>
-                    </form>
-                    {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
+
+                <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
+                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
+                        Buy Now
+                    </button>
                 </div>
+
+                
             </div>
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">

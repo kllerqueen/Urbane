@@ -14,34 +14,40 @@
         <div class="container flex flex-col">
             {{-- Container 1 --}}
             <div class="w-full flex flex-col p-4 gap-4">
-            <div class="flex flex-row justify-between w-full items-center  border-b-4 border-primary p-2">
-                <h1 class=" bold-16 md:bold-20 lg:bold-24  ">Urbane’s Story</h1>
-                <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 hidden" id="down">
-                    <i class='bx bx-chevron-down text-[25px] md:text-[40px]'></i>
+                <div class="flex flex-row justify-between w-full items-center  border-b-4 border-primary p-2">
+                    <h1 class=" bold-16 md:bold-20 lg:bold-24  ">Urbane’s Story</h1>
+                    <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 hidden" id="down">
+                        <i class='bx bx-chevron-down text-[25px] md:text-[40px]'></i>
+                    </div>
+                    <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 " id="up">
+                        <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
+                    </div>
                 </div>
-                <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 " id="up">
-                    <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
+                <div id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300 flex flex-col items-center">
+                    <img src="{{url('assets/aboutUs/About1.png')}}" alt="">
+                    <h1 class="pt-2">
+                        About Urbane Urbane was founded on a common desire for fusing current trends with classic style. The concept began as a final project for a web programming course and the delight of people when purchasing online. We envisioned Urbane as more than simply a platform; we envisioned it as a fashion-forward community where every click brings you closer to the right outfit.
+                    </h1>
                 </div>
-            </div>
-            <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                About Urbane Urbane was founded on a common desire for fusing current trends with classic style. The concept began as a final project for a web programming course and the delight of people when purchasing online. We envisioned Urbane as more than simply a platform; we envisioned it as a fashion-forward community where every click brings you closer to the right outfit.
-            </h1>
             </div>
 
             {{-- Container 2 --}}
             <div class="w-full flex flex-col p-4 gap-4">
-                    <div class="flex flex-row justify-between w-full items-center  border-b-4 border-primary p-2">
-                        <h1 class=" bold-16 md:bold-20 lg:bold-24  ">Urbane’s Mission</h1>
-                        <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 hidden" id="down">
-                            <i class='bx bx-chevron-down text-[25px] md:text-[40px]'></i>
-                        </div>
-                        <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 " id="up">
-                            <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
-                        </div>
+                <div class="flex flex-row justify-between w-full items-center  border-b-4 border-primary p-2">
+                    <h1 class=" bold-16 md:bold-20 lg:bold-24  ">Urbane’s Mission</h1>
+                    <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 hidden" id="down">
+                        <i class='bx bx-chevron-down text-[25px] md:text-[40px]'></i>
                     </div>
-                    <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
+                    <div class="rounded-full border-2 border-secondary bg-white shadow-md flex items-center justify-center p-2 " id="up">
+                        <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
+                    </div>
+                </div>
+                <div id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300 flex flex-col items-center">
+                    <img src="{{url('assets/aboutUs/About2.png')}}" alt="">
+                    <h1 class="pt-2">
                         Our purpose at Urbane is to inspire people to express themselves through fashion. We believe that style is a powerful form of self-expression, and we curate our collections accordingly. The cornerstones of Urbane's dedication to our valued consumers are quality, diversity, and the delight of discovery.
                     </h1>
+                </div>
             </div>
 
             {{-- Container 3 --}}
@@ -55,9 +61,12 @@
                         <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
                     </div>
                 </div>
-                <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    What distinguishes Urbane is our unwavering commitment to creating an unrivaled shopping experience. Our crew scours the fashion scene for curated apparel, accessories, and lifestyle products. We believe that every object has a story to tell, and we want Urbane to be the canvas for your own.
-                </h1>
+                <div id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300 flex flex-col items-center">
+                    <img src="{{url('assets/aboutUs/About3.png')}}" alt="">
+                    <h1 class="pt-2">
+                        What distinguishes Urbane is our unwavering commitment to creating an unrivaled shopping experience. Our crew scours the fashion scene for curated apparel, accessories, and lifestyle products. We believe that every object has a story to tell, and we want Urbane to be the canvas for your own.
+                    </h1>
+                </div>
             </div>
 
             {{-- Container 4 --}}
@@ -71,9 +80,12 @@
                         <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
                     </div>
                 </div>
-                <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    A team of fashion enthusiasts, trend analysts, and customer experience champions power Urbane. We're real individuals who care as much about what we do as you do about what you wear. Meet the people behind Urbane and get to know the personalities that drive our dedication to style and satisfaction.
-                </h1>
+                <div id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300 flex flex-col items-center">
+                    <img src="{{url('assets/aboutUs/About4.png')}}" alt="">
+                    <h1 class="pt-2">
+                        A team of fashion enthusiasts, trend analysts, and customer experience champions power Urbane. We're real individuals who care as much about what we do as you do about what you wear. Meet the people behind Urbane and get to know the personalities that drive our dedication to style and satisfaction.
+                    </h1>
+                </div>
             </div>
 
             {{-- Container 5 --}}
@@ -87,9 +99,12 @@
                         <i class='bx bx-chevron-up text-[25px] md:text-[40px]'></i>
                     </div>
                 </div>
-                <h1 id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300">
-                    As we move forward, Urbane hopes to become your go-to spot for all things sleek and trendy. We strive to constantly evolve in order to stay up with the ever-changing fashion world. Our vision is to create a society in which style knows no bounds and every purchase is a step toward self-discovery.
-                </h1>
+                <div id="dropdown" class="regular-12 md:regular-16 lg:regular-20 overflow-hidden transition-all duration-300 flex flex-col items-center">
+                    <img src="{{url('assets/aboutUs/About5.png')}}" alt="">
+                    <h1 class="pt-2">
+                        As we move forward, Urbane hopes to become your go-to spot for all things sleek and trendy. We strive to constantly evolve in order to stay up with the ever-changing fashion world. Our vision is to create a society in which style knows no bounds and every purchase is a step toward self-discovery.
+                    </h1>
+                </div>
             </div>
         </div>
     </div>

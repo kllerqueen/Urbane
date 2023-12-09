@@ -8,26 +8,34 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function addToCart($itemId){
+    public function addToCart(Request $request, $itemId){
         $item = Item::find($itemId);
 
         if(!$item){
             return redurect()->back()->with('error', 'Product Not Found');
         }
-      
-        \DB::table('carts')
-            ->updateOrInsert(
-                [
-                    'user_id' => auth()->id(), 
-                    'item_id' => $itemId
-                ],
-                [
-                    'qty' => \DB::raw('qty + 1'),
-                    'created_at' => now(), 
-                    'updated_at' => now()
-                ]
-            );
 
+        $cartItem = \DB::table('carts')->where('user_id',auth()->id())->where('item_id',$itemId)->where('size',  $request->input('size'))->where('color',$request->input('color'))->first();
+
+        if($cartItem){
+            \DB::table('carts')->where('user_id', auth()->id())->where('item_id', $itemId)->where('size', $request->input('size'))->where('color', $request->input('color'))->update([
+                'qty' => \DB::raw('qty + 1'),
+                'updated_at' => now(),
+            ]);
+        }else{
+
+            \DB::table('carts')
+            ->insert([
+                'user_id' => auth()->id(),
+                'item_id' => $itemId,
+                'qty' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'size' => $request->input('size'),
+                'color' => $request->input('color'),
+            ]);
+
+        }
 
         return redirect()->back();
     }
@@ -88,4 +96,38 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+
+    public function addToCart2(Request $request, $itemId){
+        $item = Item::find($itemId);
+        $color = "red";
+        $size = "S";
+
+        if(!$item){
+            return redirect()->back()->with('error', 'Product Not Found');
+        }
+
+        $cartItem = \DB::table('carts')->where('user_id',auth()->id())->where('item_id',$itemId)->where('size', $size)->where('color',$color)->first();
+       
+        if($cartItem){
+            \DB::table('carts')->where('user_id', auth()->id())->where('item_id', $itemId)->where('size', $size)->where('color', $color)->update([
+                'qty' => \DB::raw('qty + 1'),
+                'updated_at' => now(),
+            ]);
+        }else{
+
+            \DB::table('carts')
+            ->insert([
+                'user_id' => auth()->id(),
+                'item_id' => $itemId,
+                'qty' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'size' => $size,
+                'color' => $color,
+            ]);
+
+        }
+
+        return redirect()->back();
+    }
 }

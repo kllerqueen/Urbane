@@ -40,8 +40,8 @@ class OrderController extends Controller
                 'order_id' => $order->id,
                 'item_id' => $item->item_id, 
                 'qty' => $item->qty,
-                'size' => "XL",
-                'color' => "Red"
+                'size' => $item->size,
+                'color' => $item->color
             ]);
         }
 

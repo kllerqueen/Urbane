@@ -315,7 +315,7 @@
                     <div id="slide"  class=" relative flex flex-col bg-white/20 text-white min-w-[140px] min-[500px]:min-w-[200px] lg:min-w-[250px] min-h-[160px] md:min-h-[240px] lg:min-h-[300px] ">
                         <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
                             <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                                <form method="post" action="{{route('cart.addToCart', $item->id)}}">
+                                <form method="post" action="{{route('cart.addToCart2', $item->id)}}">
                                     @csrf
                                     <button type="submit" href="" class="w-full text-primary ">Add To Cart</button>
                                 </form>
