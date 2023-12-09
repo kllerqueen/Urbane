@@ -1,6 +1,13 @@
 @extends('template.template')
 
 @section('body')
+{{-- @if($errors->any())
+    @foreach ($errors->all() as $error)
+        <div class="bg-red-500 text-white p-4 mb-4">
+            {{ $error }}
+        </div>
+    @endforeach
+@endif --}}
 <div class="flex flex-col justify-center items-center md:items-start overflow-hidden">
     <img src="{{url('assets/product/productDetailBackground.png')}}" alt="" class="z-[-1] w-full h-[250px] lg:h-[310px] absolute top-24 lg:top-16">
     <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10 text-white mt-3">
@@ -35,6 +42,11 @@
                         <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">L</h1>
                         <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">XL</h1>
                     </div>
+                    @error('size')
+                        <div class="invalid-feedback text-red-600 text-sm">
+                            {{$message}}
+                        </div>
+                    @enderror
                     <div class="flex flex-wrap gap-2 w-fit text-center" id="color-container">
                         <div class="bold-10 md:bold-12 lg:bold-14 border-2 px-4 py-1 rounded-md flex gap-1 items-center">
                             <div class="w-4 h-4 bg-blue-600"></div>
@@ -49,13 +61,17 @@
                             <h1>Black</h1>
                         </div>
                     </div>
+                    @error('color')
+                        <div class="invalid-feedback text-red-600 text-sm">
+                            {{$message}}
+                        </div>
+                    @enderror
 
                     <div class="w-full flex flex-col items-center gap-2 mt-2">
                         <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6">Add To Cart</button>
                         {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
                     </div>
                 </form>
-
                 <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
                     <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
                         Buy Now
