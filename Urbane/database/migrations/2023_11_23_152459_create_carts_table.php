@@ -22,7 +22,8 @@ return new class extends Migration
                 ->on('items');
 
             $table->integer('qty');
-
+            $table->string('size');
+            $table->string('color');
             $table->timestamps();
         });
     }

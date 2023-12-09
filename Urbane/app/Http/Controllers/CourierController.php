@@ -41,8 +41,8 @@ class CourierController extends Controller
                     'transaction_id' => $th->id,
                     'item_id' => $item->item_id, 
                     'qty' => $item->qty,
-                    'size' => "XL",
-                    'color' => "Red"
+                    'size' => $item->size,
+                    'color' => $item->color
                 ]);
                 $itemModel = Item::find($item->item_id); 
                 if ($itemModel) {
