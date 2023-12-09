@@ -91,10 +91,6 @@ Route::get('/about_us', function(){
     return view('pages.other.about');
 });
 
-Route::get('/FAQ', function(){
-    return view('pages.other.frequent');
-});
-
 // Sementara buat forgot password page
 Route::get('/register-security-form', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');

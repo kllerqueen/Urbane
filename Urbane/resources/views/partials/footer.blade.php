@@ -46,7 +46,7 @@
                 <div class="flex flex-col gap-2">
                     <h1 class="font-bold bold-14 md:bold-18">Help</h1>
                     <ul class='regular-14 flex flex-col text-gray-30'>
-                        <a href='/FAQ'>
+                        <a href='/faq'>
                             FAQ
                         </a>
                         <a href='/returns'>

@@ -5,35 +5,35 @@
         <h1 class="bold-24 md:bold-32 lg:bold-40 text-primary">Frequently Asked Question</h1>
         <div class="flex flex-col md:flex-row justify-between gap-8 container py-4 items-center md:items-start w-full">
             <div class="flex flex-wrap md:flex-col gap-2  h-fit max-w-[500px] items-center md:items-start justify-center md:justify-start">
-                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm shadow-xl border-l-4 border-primary" onclick="showContent(0)" id="cat">
+                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm shadow-xl border-l-4 border-primary cursor-pointer" onclick="showContent(0)" id="cat">
                     <img src="{{url('assets/FAQ/FAQ1.png')}}" alt="" class="w-[50px] h-[50px]">
                     <div class="hidden md:flex flex-col">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">Product Information</h1>
                         <p class="regular-12 md:regular-14 lg:regular-16 text-secondary">Need help to know about product? Check here</p>
                     </div>
                 </div>
-                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm" onclick="showContent(1)" id="cat">
+                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm cursor-pointer" onclick="showContent(1)" id="cat">
                     <img src="{{url('assets/FAQ/FAQ2.png')}}" alt="" class="w-[50px] h-[50px]">
                     <div class="flex-col hidden sm:flex">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">Ordering & Payment</h1>
                         <p class="regular-12 md:regular-14 lg:regular-16 text-secondary">Need help to know about product? Check here</p>
                     </div>
                 </div>
-                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm" onclick="showContent(2)" id="cat">
+                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm cursor-pointer" onclick="showContent(2)" id="cat">
                     <img src="{{url('assets/FAQ/FAQ3.png')}}" alt="" class="w-[50px] h-[50px]">
                     <div class="hidden sm:flex flex-col">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">Shipping</h1>
                         <p class="regular-12 md:regular-14 lg:regular-16 text-secondary">Need help to know about product? Check here</p>
                     </div>
                 </div>
-                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm" onclick="showContent(3)" id="cat">
+                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm cursor-pointer" onclick="showContent(3)" id="cat">
                     <img src="{{url('assets/FAQ/FAQ4.png')}}" alt="" class="w-[50px] h-[50px]">
                     <div class="hidden sm:flex flex-col">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">Account & Registration</h1>
                         <p class="regular-12 md:regular-14 lg:regular-16 text-secondary">Need help to know about product? Check here</p>
                     </div>
                 </div>
-                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm" onclick="showContent(4)" id="cat">
+                <div class="bg-bgcolor p-4 flex items-center gap-4 rounded-sm cursor-pointer" onclick="showContent(4)" id="cat">
                     <img src="{{url('assets/FAQ/FAQ5.png')}}" alt="" class="w-[50px] h-[50px]">
                     <div class="hidden sm:flex flex-col">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">Security & Privacy</h1>
