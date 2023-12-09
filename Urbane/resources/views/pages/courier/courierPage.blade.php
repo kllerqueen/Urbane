@@ -11,7 +11,7 @@
             <h1 class="bold-24 md:bold-32">Dashboard</h1>
         </div>
         <div class="flex flex-col space-y-5">
-            <h1 class="text-white">Order Complete</h1>
+            <h1 class="text-white pb-4 bold-16 md:bold-20 lg:bold-24">Order Complete</h1>
             <div class="flex flex-col gap-[10px] text-white overflow-x-auto ">
             <div class="grid grid-cols-7Admin gap-8 items-center p-4 bg-primary rounded-md w-fit">
                 <p>Id</p>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="flex flex-col gap-[10px] text-white overflow-x-auto ">
-            <h1 class="text-white">Order UnComplete</h1>
+            <h1 class="text-white py-4 bold-16 md:bold-20 lg:bold-24">Order Incomplete</h1>
             <div class="grid grid-cols-7Admin gap-8 items-center p-4 bg-primary rounded-md w-fit">
                 <p>Id</p>
                 <p>Customer Id</p>
