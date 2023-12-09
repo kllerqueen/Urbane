@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_details', function (Blueprint $table) {
-            $table->foreignid('order_id')->references('id')->on('orders');
+        Schema::create('transaction_details', function (Blueprint $table) {
+            $table->foreignid('transaction_id')->references('id')->on('transaction_headers');
             $table->foreignid('item_id')->references('id')->on('items');
             $table->integer('qty');
             $table->string('size');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_details');
+        Schema::dropIfExists('transaction_details');
     }
 };

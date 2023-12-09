@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Cart;
-use APP\Models\Order;
+
 
 class OrderController extends Controller
 {
@@ -40,7 +40,9 @@ class OrderController extends Controller
             OrderDetail::create([
                 'order_id' => $order->id,
                 'item_id' => $item->item_id, 
-                'qty' => $item->qty
+                'qty' => $item->qty,
+                'size' => "XL",
+                'color' => "Red"
             ]);
         }
 
