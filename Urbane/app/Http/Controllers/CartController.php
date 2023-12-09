@@ -11,8 +11,13 @@ class CartController extends Controller
     public function addToCart(Request $request, $itemId){
         $item = Item::find($itemId);
 
+        $request->validate([
+            'size' => 'required',
+            'color' => 'required'
+        ]);
+
         if(!$item){
-            return redurect()->back()->with('error', 'Product Not Found');
+            return redirect()->back()->with('error', 'Product Not Found');
         }
 
         $cartItem = \DB::table('carts')->where('user_id',auth()->id())->where('item_id',$itemId)->where('size',  $request->input('size'))->where('color',$request->input('color'))->first();
