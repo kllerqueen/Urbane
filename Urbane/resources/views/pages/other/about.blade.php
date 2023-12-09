@@ -8,7 +8,7 @@
             <div class="max-w-[700px] w-full">
                 <p class="regular-16 md:regular-24 lg:regular-28 text-black md:text-white">Welcome to Urbane, an online shopping destination where style meets convenience. Our journey began with a simple concept: to create a location where fashion aficionados and trendsetters could discover curated collections that reflected their own preferences.</p>
             </div>
-            <img src="{{ url('assets/aboutUs/AboutUs1.png') }}" alt="" class="h-[500px]" onclick="changeImage(event)" id="image">
+            <img src="{{ url('assets/aboutUs/AboutUs1.png') }}" alt="" class="h-[500px] cursor-pointer" onclick="changeImage(event)" id="image">
         </div>
 
         <div class="container flex flex-col">

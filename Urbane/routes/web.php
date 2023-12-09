@@ -91,6 +91,10 @@ Route::get('/about_us', function(){
     return view('pages.other.about');
 });
 
+Route::get('/FAQ', function(){
+    return view('pages.other.frequent');
+});
+
 // Sementara buat forgot password page
 Route::get('/register-security-form', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');
@@ -124,6 +128,8 @@ Route::middleware('customer')->group(function(){
     Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
 
     Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
+
+    Route::post('/addTo-cart2/{itemId}', [CartController::class, 'addToCart2'])->name('cart.addToCart2');
 
     Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
@@ -175,7 +181,6 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
 //courier
 Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
-
     Route::get('/dashboard-courier', [CourierController::class, 'getAllOrder'])->name('courierPage');
     Route::post('/update-order/{order_id}', [CourierController::class, 'updateStatusOrder'])->name('update.status.order');
     Route::get('/courier-logout', [UserController::class, 'logout'])->name('logoutCourierPage');
