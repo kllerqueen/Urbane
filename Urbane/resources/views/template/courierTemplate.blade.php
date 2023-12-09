@@ -3,7 +3,7 @@
     @include('partials.head')
 
     <body class="w-full font-urbanist flex relative bg-black">
-        @include('partials.courierSidebar')
+        @include('partials.CourierSideBar')
         @yield('body')
     </body>
 </html>

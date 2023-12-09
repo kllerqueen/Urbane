@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CourierController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DiscoverController;
 use App\Http\Controllers\FavoriteController;
@@ -166,10 +169,9 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
 //courier
 Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
-    Route::get('/dashboardCourier', function(){
-        return view('pages.courier.courierPage');
-    })->name('courierPage');
 
-    // Route::get('/admin-logout', [UserController::class, 'logout'])->name('logoutAdminPage');
+    Route::get('/dashboard-courier', [CourierController::class, 'getAllOrder'])->name('courierPage');
+    Route::post('/update-order/{order_id}', [CourierController::class, 'updateStatusOrder'])->name('update.status.order');
+    Route::get('/courier-logout', [UserController::class, 'logout'])->name('logoutCourierPage');
 });
 

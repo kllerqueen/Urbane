@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Cart;
+use APP\Models\Order;
 
 class OrderController extends Controller
 {
@@ -45,5 +46,11 @@ class OrderController extends Controller
 
         Cart::where('user_id',auth()->id())->delete();
         return redirect()->route('homePage');
+    }
+
+    public function getAllOrder(){
+        return view('pages.courier.courierPage', [
+            'listOrder' => Order::all()
+        ]);
     }
 }
