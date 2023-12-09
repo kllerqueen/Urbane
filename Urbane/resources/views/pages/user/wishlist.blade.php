@@ -5,10 +5,11 @@
     <div class="container flex flex-col gap-2 my-6 px-2">
         <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">Favourite</h1>
         <div class="flex flex-row  flex-wrap gap-2">
+
             {{-- Card Section --}}
             @forelse ($lists as $fav)
                 <div class="w-[150px] md:w-[250px] h-[240px] md:h-[300px] lg:h-[400px] bg-lightblue p-4 rounded-md">
-                    <img src="{{url('assets/discover/ProductPhoto.png')}}" alt="" class="w-full h-[60%] lg:h-[70%]">
+                    <img src="{{ asset('storage/' . optional($fav->item->pictures->first())->picture_url) }}" alt="" class="w-full h-[60%] lg:h-[70%]">
                     <div class="flex flex-col gap-3 py-2 justify-between ">
                         <div class="flex flex-col">
                             <h1 class="bold-12 md:bold-16 lg:bold-20">{{ $fav->item->item_name }}</h1>

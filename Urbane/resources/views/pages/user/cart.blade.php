@@ -1,6 +1,11 @@
 @extends('template.template')
 
 @section('body')
+@if(session('NoItem'))
+    <div class="bg-red-500 text-white p-4 mb-4">
+        {{ session('NoItem') }}
+    </div>
+@endif
 <div class="flex flex-col justify-center items-center overflow-hidden">
     <div class="container flex flex-col gap-2 my-6 px-2">
         <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">Cart</h1>
@@ -82,6 +87,11 @@
                 @endforeach
             </div>
             
+            <div class="text-red-500">
+                @if($errors->has('error'))
+                    {{ $errors->first('error') }}
+                @endif
+            </div>
             
             {{-- Order Summary Section --}}
             <div class="max-w-[450px] bg-secondary/30 w-full p-4 rounded-md flex flex-col shadow-2xl border-2">

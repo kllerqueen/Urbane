@@ -42,7 +42,7 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
-                <input type="text" name="password" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" >
+                <input type="password" name="password" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" >
             </div>
             @error('password')
             <div class="invalid-feedback text-red-600 text-sm">
@@ -52,7 +52,7 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
-                <input type="text" name="con-pass" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password">
+                <input type="password" name="con-pass" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password">
             </div>
             @error('con-pass')
             <div class="invalid-feedback text-red-600 text-sm">
