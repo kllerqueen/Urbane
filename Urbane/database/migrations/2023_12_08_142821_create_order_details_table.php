@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('order_details', function (Blueprint $table) {
             $table->foreignid('order_id')->references('id')->on('orders');
             $table->foreignid('item_id')->references('id')->on('items');
+            $table->integer('qty');
             $table->timestamps();
         });
     }
