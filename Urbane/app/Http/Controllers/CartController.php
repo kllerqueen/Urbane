@@ -99,15 +99,15 @@ class CartController extends Controller
 
     public function addToCart2(Request $request, $itemId){
         $item = Item::find($itemId);
-        $color = "Red";
+        $color = "red";
         $size = "S";
 
         if(!$item){
-            return redurect()->back()->with('error', 'Product Not Found');
+            return redirect()->back()->with('error', 'Product Not Found');
         }
 
         $cartItem = \DB::table('carts')->where('user_id',auth()->id())->where('item_id',$itemId)->where('size', $size)->where('color',$color)->first();
-
+       
         if($cartItem){
             \DB::table('carts')->where('user_id', auth()->id())->where('item_id', $itemId)->where('size', $size)->where('color', $color)->update([
                 'qty' => \DB::raw('qty + 1'),
@@ -122,8 +122,8 @@ class CartController extends Controller
                 'qty' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'size' => $color,
-                'color' => $size,
+                'size' => $size,
+                'color' => $color,
             ]);
 
         }
