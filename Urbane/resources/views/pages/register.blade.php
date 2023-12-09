@@ -42,7 +42,9 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
-                <input type="password" name="password" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" >
+                <input type="password" name="password" class="w-full border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" id="passwordInput">
+                <ion-icon name="eye-outline" class="text-[30px] mr-2 text-secondary " id="eye-open" onclick="hidePassword(0)"></ion-icon>
+                <ion-icon name="eye-off-outline" class="text-[30px] mr-2 text-secondary hidden" id="eye-closed" onclick="hidePassword(0)"></ion-icon>
             </div>
             @error('password')
             <div class="invalid-feedback text-red-600 text-sm">
@@ -52,7 +54,9 @@
 
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2">
                 <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
-                <input type="password" name="con-pass" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password">
+                <input type="password" name="con-pass" class="w-full border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password" id="passwordInput">
+                <ion-icon name="eye-outline" class="text-[30px] mr-2 text-secondary " id="eye-open" onclick="hidePassword(1)"></ion-icon>
+                <ion-icon name="eye-off-outline" class="text-[30px] mr-2 text-secondary hidden" id="eye-closed" onclick="hidePassword(1)"></ion-icon>
             </div>
             @error('con-pass')
             <div class="invalid-feedback text-red-600 text-sm">
@@ -61,8 +65,26 @@
             @enderror
 
             <p class="text-secondary text-sm">By registering your account, you indicate your agreement with the <span class="text-black font-bold">terms and conditions</span> that apply to our website's policy</p>
-            <button class="w-full py-2 bg-primary text-lg text-highlight rounded-md mt-4" type="submit">Register</button>
+            <button class="w-full py-2 bg-primary text-lg text-highlight rounded-md mt-4 font-bold" type="submit">Register</button>
             <p class="self-center text-secondary text-sm">Already have an account? <span><a href="/login" class="font-bold ">Login here</a></span></p>
         </form>
     </div>
+    <script>
+        let eyeOpen = document.querySelectorAll('#eye-open');
+        let eyeClosed = document.querySelectorAll('#eye-closed');
+        let passwordInput = document.querySelectorAll('#passwordInput');
+
+
+        function hidePassword(index){
+            if(passwordInput[index].type === 'text'){
+                passwordInput[index].type = 'password'
+                eyeClosed[index].classList.add('hidden');
+                eyeOpen[index].classList.remove('hidden');
+            }else{
+                passwordInput[index].type = 'text'
+                eyeOpen[index].classList.add('hidden');
+                eyeClosed[index].classList.remove('hidden');
+            }
+        }
+    </script>
 @endsection
