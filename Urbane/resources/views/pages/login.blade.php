@@ -52,8 +52,8 @@
                 <button class="text-2xl font-bold text-highlight bg-primary w-full rounded-lg py-2" type="submit">Login</button>
             </form>
 
-            <div class="flex flex-col justify-center items-center gap-4">
-                <p>Don't have an account ? <span class="text-primary font-semibold"><a href="{{ route('registerPage') }}">Register here</a></span></p>
+            <div class="flex flex-col justify-center items-center gap-4 text-primary text-sm">
+                <p>Don't have an account ? <span class="font-semibold"><a href="{{ route('registerPage') }}">Register here</a></span></p>
             </div>
         </div>
     </div>
