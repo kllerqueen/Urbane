@@ -59,6 +59,10 @@ Route::get('/profile',function(){
 Route::get('/faq',function(){
     return view('pages.other.faq');
 });
+
+Route::get('/our_partners',function(){
+    return view('pages.other.ourPartners');
+});
 Route::get('/returns', function(){
     return view('pages.other.returns');
 });

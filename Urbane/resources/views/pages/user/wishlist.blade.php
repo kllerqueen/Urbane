@@ -3,7 +3,7 @@
 @section('body')
 <div class="flex flex-col justify-center items-center overflow-hidden">
     <div class="container flex flex-col gap-2 my-6 px-2">
-        <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">Favourite</h1>
+        <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">Wishlist</h1>
         <div class="flex flex-row  flex-wrap gap-2">
 
             {{-- Card Section --}}
