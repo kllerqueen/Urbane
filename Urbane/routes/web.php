@@ -57,6 +57,7 @@ Route::get('/profile',function(){
     return view('pages.profile.userProfile');
 });
 
+// Page other
 Route::get('/returns', function(){
     return view('pages.other.returns');
 });
@@ -83,6 +84,10 @@ Route::get('/location', function(){
 
 Route::get('/about_us', function(){
     return view('pages.other.about');
+});
+
+Route::get('/FAQ', function(){
+    return view('pages.other.frequent');
 });
 
 // Sementara buat forgot password page
