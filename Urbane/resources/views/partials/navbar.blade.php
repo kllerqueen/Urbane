@@ -23,7 +23,8 @@
             </a> --}}
              @auth
                 <a href="#"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Welcome,{{ Auth::user()->username }} </button></a>
-                <a href="{{ route('logoutPage') }}"><button class="underline text-primary px-0 md:px-2 ">Logouts</button></a>
+                <a href="{{ route('logoutPage') }}" class="bg-red-500 text-white px-8 py-2 rounded-md hover:bg-red-600 hover:text-white">Logout</a>
+
             @else
                 <a href="{{ route('loginPage') }}"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Login</button></a>
                 <a href="{{ route('registerPage') }}"><button class="underline text-primary px-0 md:px-2 ">Register</button></a>
