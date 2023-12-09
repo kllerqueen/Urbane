@@ -17,17 +17,50 @@
             {{ $item->item_name }}
         </h1>
         <div class="flex flex-col-reverse md:flex-row w-full gap-2 max-h-[25%] items-center md:items-start">
-            <div class="flex flex-col max-w-[400px] gap-2">
+            <div class="flex flex-col max-w-[450px] gap-2">
                 <h1 class="bold-32 md:bold-40 lg:bold-52 md:text-white">Rp {{ number_format($item->item_price, 2, '.', ',') }}</h1>
                 <h1 class="mt-4 regular-14 md:regular-20 lg:regular-24">Description</h1>
                 <h1 class="regular-8 md:regular-12 lg:regular-14">{{ $item->item_desc }}</h1>
-                <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
+
+                {{-- form buat color dan size --}}
+                <form action="" class="flex flex-col gap-2">
+                    {{-- buat Size --}}
+                    <input type="text" class="hidden" name="" id="size">
+                    {{-- Buat Color --}}
+                    <input type="text" class="hidden" name="" id="color">
+                    <div class="grid grid-cols-4 gap-2 w-fit text-center" id="size-container">
+                        <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">S</h1>
+                        <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">M</h1>
+                        <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">L</h1>
+                        <h1 class="bold-16 md:bold-20 lg:bold-28 border-2 p-2 rounded-md">XL</h1>
+                    </div>
+                    <div class="flex flex-wrap gap-2 w-fit text-center" id="color-container">
+                        <div class="bold-10 md:bold-12 lg:bold-14 border-2 px-4 py-1 rounded-md flex gap-1 items-center">
+                            <div class="w-4 h-4 bg-blue-600"></div>
+                            <h1>Blue</h1>
+                        </div>
+                        <div class="bold-10 md:bold-12 lg:bold-14 border-2 px-4 py-1 rounded-md flex gap-1 items-center">
+                            <div class="w-4 h-4 bg-red-600"></div>
+                            <h1>Red</h1>
+                        </div>
+                        <div class="bold-10 md:bold-12 lg:bold-14 border-2 px-4 py-1 rounded-md flex gap-1 items-center">
+                            <div class="w-4 h-4 bg-black"></div>
+                            <h1>Black</h1>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
+                        <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
+                            Buy Now
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="w-full flex flex-col items-center gap-2 mt-2">
                     <form method="post" action="{{route('cart.addToCart', $item->id)}}">
                         @csrf
-                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button>
+                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6">Add To Cart</button>
                     </form>
                     {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
-                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">Buy Now</button>
                 </div>
             </div>
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
@@ -69,14 +102,16 @@
             <p class="regular-16 md:regular-18 lg:regular-20">Choose the matching sylist and get the hype</p>
         </div>
 
-        <div id="slider-box" class='relative flex items-center w-full h-full overflow-y-hidden overflow-x-auto  gap-4'>
+        <div id="slider-box" class='relative flex items-center w-full h-full overflow-y-hidden overflow-x-auto  gap-4 scal'>
             @forelse ($reccomended as $rec)
                 <div id="recommended-slide"  class="relative flex flex-row items-center min-w-[200px] md:min-w-[400px]  h-[150px] md:h-[250px]">
-                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden">
+                    <div id="modal" class="absolute w-full h-full bg-black/70 hidden ">
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
                             <form method="post" action="{{route('cart.addToCart', $rec->id)}}">
                                 @csrf
-                                <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</button>
+                                <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white px-6">
+                                    Add To Cart
+                                </button>
                             </form>
                             <a href="" class="w-full text-primary ">See Details</a>
                         </div>
@@ -97,6 +132,40 @@
 </div>
 
     <script>
+        let sizeContainer = document.getElementById('size-container');
+        let colorContainer = document.getElementById('color-container');
+        let sizeInput = document.getElementById('size')
+        let colorInput = document.getElementById('color')
+
+        let sizeArray = ['S', 'M', 'L', 'XL'];
+        let colorArray = ['blue', 'red', 'black'];
+        let sizes = Array.from(sizeContainer.children);
+        let colors = Array.from(colorContainer.children);
+
+        sizes.forEach((size,index) => {
+            size.addEventListener("click", function(){
+                sizes.forEach((s,i) => {
+                    s.classList.remove("shadow-2xl", "bg-primary/50", "text-white"); 
+                })
+                size.classList.add("shadow-2xl", "bg-primary/50", "text-white");
+                sizeInput.value = sizeArray[index];
+                console.log(sizeInput.value)
+            })
+        })
+
+        colors.forEach((color,index) => {
+            color.addEventListener("click", function(){
+                colors.forEach((c,i) => {
+                    c.classList.remove("shadow-2xl", "bg-primary/50", "text-white"); 
+                })
+                color.classList.add("shadow-2xl", "bg-primary/50", "text-white");
+                colorInput.value = colorArray[index];
+                console.log(colorInput.value)
+            })
+        })
+
+
+
         let mainImage = document.getElementById('main-image');
         let images = document.querySelectorAll('#image');
 
