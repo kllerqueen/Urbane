@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaction_details', function (Blueprint $table) {
-            $table->foreignid('transaction_id')->references('id')->on('transaction_headers');
+            $table->foreignid('transaction_id')->references('id')->on('transaction_headers')->onDelete('cascade');
             $table->foreignid('item_id')->references('id')->on('items');
             $table->integer('qty');
             $table->string('size');

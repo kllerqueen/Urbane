@@ -9,7 +9,7 @@ class TransactionDetail extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'order_id',
+        'transaction_id',
         'item_id',
         'qty',
         'size',
