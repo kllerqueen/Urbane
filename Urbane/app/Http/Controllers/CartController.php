@@ -54,9 +54,13 @@ class CartController extends Controller
     }
 
     public function CheckOutForm(){
+
         $user = $this->getUser();
 
         $lists = Cart::where('user_id', $user->id)->get();
+        if($lists->isEmpty()){
+            return redirect()->back()->with('NoItem', 'There is no item in your Cart');
+        }
         return view('pages.payment.CheckoutForm', compact('lists'));
     }
     

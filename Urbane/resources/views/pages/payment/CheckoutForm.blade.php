@@ -5,7 +5,7 @@
     <div class="self-center w-full flex flex-row min-h-screen justify-center relative">
         {{-- {{route('add.order', ['listItem' => $lists]))}} --}}
 
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
         <form action="{{route('add.order')}}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
             @csrf
@@ -22,9 +22,11 @@
             </a>
            
             <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10">
-                <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
-                    <i class='bx bx-chevron-left text-[30px] text-black'></i>
-                </div>
+                <a href="{{route('cart')}}">
+                    <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
+                        <i class='bx bx-chevron-left text-[30px] text-black'></i>
+                    </div>
+                </a>
                 <h1 class="bold-14 md:bold-18 lg:bold-24 text-primary">Payments</h1>
             </div>
             <div class="flex flex-col max-w-[650px] self-center p-2 items-center relative justify-center w-full mt-12 lg:mt-0">
@@ -71,29 +73,50 @@
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full ">
                             <i class='bx bxs-user px-2 text-[20px]'></i>
                             <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="First name*" name="first_name">
+                            @error('first_name')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
+                      
+
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                             <i class='bx bxs-user px-2 text-[20px]'></i>
                             <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4 w-full" placeholder="Last name*" name="last_name">
+                            @error('last_name')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
+                       
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                         <i class='bx bxs-map px-2 text-[20px]'></i>
                         <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Address*" name="address">
+                        @error('address')
+                            <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="flex flex-col min-[500px]:flex-row w-full min-[500px]:justify-between gap-8 min-[500px]:gap-4">
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full ">
                             <img src="{{url('assets/checkout/Mailbox.png')}}" alt="" class="px-2 w-[40px] h-[20px]">
                             <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Postal code*" name="postal">
+                            @error('postal')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                             <i class='bx bxs-phone px-2 text-[20px]'></i>
                             <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4  w-full" placeholder="Phone Number" name="phone">
+                            @error('phone')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                         <i class='bx bxs-note px-2 text-[20px]' ></i>
                         <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Notes" name="notes">
+                        @error('notes')
+                                <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 

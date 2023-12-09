@@ -22,6 +22,9 @@
                             Picture
                             <span class="text-red-500">*</span>
                         </h1>
+                        @error('image')
+                            <div class="text-red-500">{{ $message }}</div>
+                        @enderror
                         <div class=" grid grid-rows-6 gap-2 w-full h-full">
                             <div class=" row-span-4 relative">
                                 <div id="image0" onclick="triggerFileInput(0)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black">
@@ -60,9 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    @error('image')
-                        <div>{{$message}}</div>
-                    @enderror
+                 
 
                     {{-- Insert Product Info --}}
                     <div class="flex flex-col w-full gap-2  row-span-2 md:row-span-6">
@@ -71,11 +72,11 @@
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Product name<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12 ">The name has maximum 150 words</p>
                                 <input type="text" placeholder="Input the product’s name " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_name"/>
+                                @error('item_name')
+                                    <div class="text-red-500">{{ $message }}</div>
+                                @enderror
                             </div>
 
-                            @error('item_name')
-                                <div>{{$message}}</div>
-                            @enderror
 
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Category<span class="text-red-500">*</span></h1>
@@ -89,35 +90,37 @@
                                         <option value="Accessory">Accessories</option>
                                     </select>
                                 </div>
+                                @error('category_name')
+                                    <div class="text-red-500">{{ $message }}</div>
+                                @enderror
                             </div>
-
-                            @error('category_name')
-                                <div>{{$message}}</div>
-                            @enderror
 
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Price<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product Price</p>
                                 <input type="number" id="value" placeholder="Input the product’s Price " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="item_price"/>
+                                @error('item_name')
+                                    <div class="text-red-500">{{ $message }}</div>
+                                @enderror
                             </div>
-
-                            @error('item_name')
-                                <div>{{$message}}</div>
-                            @enderror
 
                             <div class="bg-primary/30 p-4 flex flex-col gap-1 w-full justify-between">
                                 <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Quantity<span class="text-red-500">*</span></h1>
                                 <p class="text-gray-500 regular-12">Add the product quantity</p>
                                 <input type="number" id="value2" placeholder="Input the product’s quantity " class="bg-white regular-12 lg:regular-16 focus:outline-none rounded-md p-3" name="qty"/>
+                                @error('qty')
+                                    <div class="text-red-500">{{ $message }}</div>
+                                @enderror
                             </div>
-                            @error('qty')
-                                <div>{{$message}}</div>
-                            @enderror
+
                         </div>
                         <div class="bg-primary/30 p-4 flex flex-col gap-1">
                             <h1 class="text-white regular-16 md:regular-20 lg:regular-24">Description product<span class="text-red-500">*</span></h1>
                             <p class="text-gray-500">Maximum words in description is 1000 words</p>
                             <textarea name="item_desc" id="" cols="30" rows="10" class="bg-white regular-16 focus:outline-none rounded-md p-3 text-grey-500" placeholder="Input your description"></textarea>
+                            @error('item_desc')
+                                <div class="text-red-500">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
