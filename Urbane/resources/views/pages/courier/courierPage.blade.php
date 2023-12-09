@@ -1,4 +1,4 @@
-pppppppp@php
+@php
     // dd($listOrderComplete, $listOrderUnComplete)
 @endphp
 @extends('template.courierTemplate')
@@ -56,7 +56,7 @@ pppppppp@php
                                 <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderUnComplete->customer_id }} </p>
                                 <p class="whitespace-nowrap overflow-hidden text-ellipsis col-span-2">{{ $orderUnComplete->address }}</p>
                                 <p>{{ $orderUnComplete->postal_Code }}</p>
-                                    @csrf <!-- Pastikan untuk menyertakan csrf token -->
+                                    @csrf
                                     <select name="status" class="text-white outline-none bg-black border-none">
                                         <option value="Complete" @if($orderUnComplete->status === 'Complete') selected @endif>Complete</option>
                                         <option value="OnProcess" @if($orderUnComplete->status === 'OnProcess') selected @endif>On Process</option>

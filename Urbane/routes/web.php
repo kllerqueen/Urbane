@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Session;
 */
 Route::get('/', function () {
     return view('pages.login');
-});
+})->middleware('guest');;
 
 Route::get('/login', function () {
     return view('pages.login');

@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\TransactionHeader;
 use App\Models\TransactionDetail;
 use App\Models\OrderDetail;
+use App\Models\Item;
 
 class CourierController extends Controller
 {
@@ -19,6 +20,7 @@ class CourierController extends Controller
 
     public function updateStatusOrder(Request $request, $order_id){
         $order = Order::findOrFail($order_id);
+        
         if($request->input('status') === "Complete"){
             $th = new TransactionHeader;
             $th->customer_id = $order->customer_id;
@@ -30,8 +32,8 @@ class CourierController extends Controller
             $th->paymentMethod = $order->paymentMethod;;
             $th->total_price = $order->total_price;
             $th->save();
-
-            // dd($th->id);
+            
+            
             $listItem = OrderDetail::where('order_id', $order_id)->get();
 
             foreach ($listItem as $item) {
@@ -42,6 +44,10 @@ class CourierController extends Controller
                     'size' => "XL",
                     'color' => "Red"
                 ]);
+                $itemModel = Item::find($item->item_id); 
+                if ($itemModel) {
+                    $itemModel->decrement('qty', $item->qty);
+                }
             }
             
             Order::where('id',$order_id)->delete();
