@@ -116,7 +116,7 @@
                     {{-- Jika Tidak ada Item--}}
                         <div class="flex flex-col items-center py-6">
                             <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
-                            <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any successful transaction</h1>
+                            <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any On Process Order</h1>
                         </div>  
                     @endif
                     

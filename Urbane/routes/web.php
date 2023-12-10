@@ -136,6 +136,7 @@ Route::middleware('customer')->group(function(){
     Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
+    Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
