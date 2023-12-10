@@ -16,6 +16,23 @@
                 @error('email')
                 <div class="invalid-feedback text-red-600 text-sm">
                     {{$message}}
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "error",
+                            title: "Register information incorrect"
+                        });
+                    </script>
                 </div>
                 @enderror
             </div>
@@ -28,6 +45,23 @@
                 @error('username')
                 <div class="invalid-feedback text-red-600 text-sm">
                     {{$message}}
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "error",
+                            title: "Register information incorrect"
+                        });
+                    </script>
                 </div>
                 @enderror
            </div>
@@ -42,6 +76,23 @@
                 @error('phoneNumber')
                 <div class="invalid-feedback text-red-600 text-sm">
                     {{$message}}
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "error",
+                            title: "Register information incorrect"
+                        });
+                    </script>
                 </div>
                 @enderror
             </div>
@@ -54,9 +105,26 @@
                     <ion-icon name="eye-off-outline" class="text-[30px] mr-2 text-secondary hidden" id="eye-closed" onclick="hidePassword(0)"></ion-icon>
                 </div>
                 @error('password')
-                <div class="invalid-feedback text-red-600 text-sm">
-                    {{$message}}
-                </div>
+                    <div class="invalid-feedback text-red-600 text-sm">
+                        {{$message}}
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                }
+                            });
+                            Toast.fire({
+                                icon: "error",
+                                title: "Register information incorrect"
+                            });
+                        </script>
+                    </div>
                 @enderror
             </div>
 
@@ -70,6 +138,23 @@
                 @error('con-pass')
                 <div class="invalid-feedback text-red-600 text-sm">
                     {{$message}}
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "error",
+                            title: "Register information incorrect"
+                        });
+                    </script>
                 </div>
                 @enderror
             </div>

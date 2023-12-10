@@ -31,6 +31,24 @@
                     </div>
                     @error('email')
                         <div class="text-red-500">{{ $message }}</div>
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                }
+
+                            });
+                            Toast.fire({
+                                icon: "error",
+                                title: "Login information incorrect"
+                            });
+                        </script>
                     @enderror 
                 </div> 
 
@@ -43,6 +61,23 @@
                     </div>
                     @error('password')
                         <div class="text-red-500">{{ $message }}</div>
+                        <script>
+                            const Toast = Swal.mixin({
+                                toast: true,
+                                position: "top-end",
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.onmouseenter = Swal.stopTimer;
+                                    toast.onmouseleave = Swal.resumeTimer;
+                                }
+                            });
+                            Toast.fire({
+                                icon: "error",
+                                title: "Login information incorrect"
+                            });
+                        </script>
                     @enderror
                 </div>
                 
@@ -88,5 +123,6 @@
                 console.log("masuk")
             })
         });
+        
     </script>
 @endsection
