@@ -139,8 +139,6 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
-    Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
-
     Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
 
     Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');

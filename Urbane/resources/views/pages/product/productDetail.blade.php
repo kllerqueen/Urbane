@@ -128,7 +128,7 @@
                                     Add To Cart
                                 </button>
                             </form>
-                            <a href="" class="w-full text-primary ">See Details</a>
+                            <a href="{{ route('detailPage', ["id" => $rec->id]) }}" class="w-full text-primary ">See Details</a>
                         </div>
                     </div>
                     <img src="{{ asset('storage/' . optional($rec->pictures->first())->picture_url) }}" alt=""  class='w-[50%] h-full'/>
