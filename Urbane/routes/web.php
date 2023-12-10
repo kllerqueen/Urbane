@@ -53,9 +53,7 @@ Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name
 Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
 
 //user sementara
-Route::get('/profile',function(){
-    return view('pages.profile.userProfile');
-});
+
 Route::get('/faq',function(){
     return view('pages.other.faq');
 });
@@ -116,21 +114,20 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
-//customer routing
+//customer
 Route::middleware('customer')->group(function(){
     
     Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
-    Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
+    Route::patch('/update-cart-qty/{item_id}/{color}/{size}', [CartController::class, 'updateQty'])->name('update.cart.qty');
 
     Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
     Route::post('/addTo-cart2/{itemId}', [CartController::class, 'addToCart2'])->name('cart.addToCart2');
 
-    Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
+    Route::post('/cart-delete/{item_id}/{color}/{size}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
     Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
-
 
     Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
 
@@ -139,8 +136,13 @@ Route::middleware('customer')->group(function(){
     Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
+    Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
+
+    Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
+
+    Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
 
 });
 
@@ -177,8 +179,12 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
 //courier
 Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
+
     Route::get('/dashboard-courier', [CourierController::class, 'getAllOrder'])->name('courierPage');
+
     Route::post('/update-order/{order_id}', [CourierController::class, 'updateStatusOrder'])->name('update.status.order');
+
     Route::get('/courier-logout', [UserController::class, 'logout'])->name('logoutCourierPage');
+
 });
 

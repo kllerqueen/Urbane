@@ -73,9 +73,7 @@
                     </div>
                 </form>
                 <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
-                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md">
-                        Buy Now
-                    </button>
+                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md"><a href="{{ route('checkout.buynow.form', ['id' => $item->id]) }}">Buy Now</a></button>
                 </div>
 
                 
@@ -124,13 +122,13 @@
                 <div id="recommended-slide"  class="relative flex flex-row items-center min-w-[200px] md:min-w-[400px]  h-[150px] md:h-[250px]">
                     <div id="modal" class="absolute w-full h-full bg-black/70 hidden ">
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <form method="post" action="{{route('cart.addToCart', $rec->id)}}">
+                            <form method="post" action="{{route('cart.addToCart2', $rec->id)}}">
                                 @csrf
                                 <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white px-6">
                                     Add To Cart
                                 </button>
                             </form>
-                            <a href="" class="w-full text-primary ">See Details</a>
+                            <a href="{{ route('detailPage', ["id" => $rec->id]) }}" class="w-full text-primary ">See Details</a>
                         </div>
                     </div>
                     <img src="{{ asset('storage/' . optional($rec->pictures->first())->picture_url) }}" alt=""  class='w-[50%] h-full'/>

@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -77,6 +77,42 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('loginPage');
+    }
+
+    public function viewAllTransaction(){
+        $user = auth()->user();
+
+        $completeTransactions = DB::table('transaction_headers')
+        ->join('transaction_details', 'transaction_headers.id', '=', 'transaction_details.transaction_id')
+        ->join('items', 'transaction_details.item_id', '=', 'items.id')
+        ->join('pictures','items.id','=','pictures.item_id')
+        ->select('transaction_headers.*', 'transaction_details.*', 'items.item_name', 'pictures.picture_url')
+        ->where('transaction_headers.customer_id', $user->id)
+        ->get();
+
+        $onProcessOrders = DB::table('orders')
+            ->join('order_details', 'orders.id','=','order_details.order_id')
+            ->join('items', 'order_details.item_id','=','items.id')
+            ->join('pictures','items.id','=','pictures.item_id')
+            ->select('orders.*','order_details.*', 'items.item_name', 'pictures.picture_url')
+            ->where('customer_id', $user->id)
+            ->where('status', 'OnProcess')
+            ->get();
+
+        $failedOrders = DB::table('orders')
+            ->join('order_details', 'orders.id','=','order_details.order_id')
+            ->join('items', 'order_details.item_id','=','items.id')
+            ->join('pictures','items.id','=','pictures.item_id')
+            ->select('orders.*','order_details.*', 'items.item_name', 'pictures.picture_url')
+            ->where('customer_id', $user->id)
+            ->where('status', 'Failed')
+            ->get();
+
+        // dd($completeTransactions);
+        // dd($onProcessOrders);
+        // dd($failedOrders);
+
+        return view('pages.profile.userProfile', compact('completeTransactions', 'onProcessOrders', 'failedOrders'));
     }
 
 }

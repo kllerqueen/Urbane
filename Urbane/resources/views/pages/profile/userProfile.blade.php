@@ -39,21 +39,21 @@
             <div class="flex flex-col py-8 md:py-0">
                 <div class="grid grid-cols-3 h-fit gap-2">
                     <div class="flex flex-row gap-2 items-center py-2 px-4  shadow-xl rounded-md border-2 text-green-600 bg-[#00143B]" id="grid">
-                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">0</h1>
+                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">{{$completeTransactions->pluck('id')->unique()->count();}}</h1>
                         <div class="flex flex-col">
                             <i class='bx bxs-bar-chart-alt-2 text-[35px] md:text-[50px]'></i>
                             <p class=" bold-12 md:bold-16 lg:bold-24 ">Successful</p>
                         </div>
                     </div>
                     <div class="flex flex-row gap-2 items-center py-2 px-4  shadow-xl rounded-md border-2 text-orange-600" id="grid">
-                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">0</h1>
+                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">{{$onProcessOrders->pluck('id')->unique()->count();}}</h1>
                         <div class="flex flex-col">
                             <i class='bx bxs-bar-chart-alt-2 text-[35px] md:text-[50px]'></i>
                             <p class=" bold-12 md:bold-16 lg:bold-24 ">On Process</p>
                         </div>
                     </div>
                     <div class="flex flex-row gap-2 items-center py-2 px-4 lg:px-8 shadow-xl rounded-md border-2 text-red-600" id="grid">
-                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">0</h1>
+                        <h1 class="bold-16 min-[350px]:bold-24 md:bold-28 lg:bold-64">{{$failedOrders->pluck('id')->unique()->count();}}</h1>
                         <div class="flex flex-col">
                             <i class='bx bxs-bar-chart-alt-2 text-[35px] md:text-[50px]'></i>
                             <p class=" bold-12 md:bold-16 lg:bold-24 ">Failed</p>
@@ -64,75 +64,91 @@
                 {{-- Successful container --}}
                 <div class="flex flex-col mt-4">
                     {{-- Jika ada item --}}
-                    <div class="flex flex-row h-[150px]  gap-4 border-2 p-2 rounded-md">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[80px] md:w-[120px] md:h-full">
-                        <div class="flex flex-col h-full justify-between w-full">
-                            <div class="flex flex-col">
-                                <h1 class="bold-12 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Status: You’ve been received the order</h1>
-                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Arrived on: 1st December 2023</h1>
-                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Qty: 1</h1>
+                    @if (!$completeTransactions->isEmpty())
+                        @foreach ($completeTransactions as $item)
+                        <div class="flex flex-row h-[150px]  gap-4 border-2 p-2 rounded-md">
+                            <img src="{{ asset('storage/' . $item->picture_url) }}" alt="" class="w-[80px] md:w-[120px] md:h-full">
+                            <div class="flex flex-col h-full justify-between w-full">
+                                <div class="flex flex-col">
+                                    <h1 class="bold-12 md:bold-16 lg:bold-20">{{$item->item_name}}</h1>
+                                    <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Status: You’ve been received the order</h1>
+                                    <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Arrived on: {{$item->updated_at}}</h1>
+                                    <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">Qty: {{$item->qty}}</h1>
+                                </div>
+                                <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp. {{ number_format($item->total_price, 2, '.', ',') }}</h1>
                             </div>
-                            <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp 188,900</h1>
                         </div>
-                    </div>
+                        @endforeach
+                        
+                    @else
+                    {{-- Jika Tidak ada Item--}}
+                        <div class="flex flex-col items-center py-6">
+                            <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
+                            <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any successful transaction</h1>
+                        </div>  
+                    @endif
 
-                {{-- Jika Tidak ada Item--}}
-                {{--
-                    <div class="flex flex-col items-center py-6">
-                        <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
-                        <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any successful transaction</h1>
-                    </div> 
-                --}}
+               
                 </div>
+
+
 
                 {{-- On proccess container --}}
                 <div class="flex flex-col mt-4">
                     {{-- Jika ada item --}}
+                    @if (!$onProcessOrders->isEmpty())
+                    @foreach ($onProcessOrders as $order)
                     <div class="flex flex-row h-[150px]  gap-4 border-2 p-2 rounded-md">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[80px] md:w-[120px] md:h-full">
+                        <img src="{{ asset('storage/' . $order->picture_url) }}" alt="" class="w-[80px] md:w-[120px] md:h-full">
                         <div class="flex flex-col h-full justify-between w-full">
                             <div class="flex flex-col">
-                                <h1 class="bold-12 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
+                                <h1 class="bold-12 md:bold-16 lg:bold-20">{{$order->item_name}}</h1>
                                 <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">Status: Order will be put on shipping express</h1>
-                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">ETA: 1st December 2023</h1>
-                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">Qty: 1</h1>
+                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">ETA: {{$order->created_at}}</h1>
+                                <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">Qty: {{$order->qty}}</h1>
                             </div>
-                            <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp 188,900</h1>
+                            <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp. {{ number_format($order->total_price, 2, '.', ',') }}</h1>
+                            </div>
                         </div>
-                    </div>
-
-                {{-- Jika Tidak ada Item--}}
-                {{-- 
-                    <div class="flex flex-col items-center py-6">
-                        <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
-                        <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any successful transaction</h1>
-                    </div> 
-                --}}
+                    @endforeach
+                        
+                    @else
+                    {{-- Jika Tidak ada Item--}}
+                        <div class="flex flex-col items-center py-6">
+                            <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
+                            <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any On Process Order</h1>
+                        </div>  
+                    @endif
+                    
                 </div>
 
                 {{-- Failed container --}}
                 <div class="flex flex-col mt-4">
                     {{-- Jika ada item --}}
+                    @if (!$failedOrders->isEmpty())
+                    @foreach ($failedOrders as $order)
                     <div class="flex flex-row h-[150px]  gap-4 border-2 p-2 rounded-md">
-                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[80px] md:w-[120px] md:h-full">
+                        <img src="{{ asset('storage/' . $order->picture_url) }}" alt="" class="w-[80px] md:w-[120px] md:h-full">
                         <div class="flex flex-col h-full justify-between w-full">
                             <div class="flex flex-col">
-                                <h1 class="bold-12 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
+                                <h1 class="bold-12 md:bold-16 lg:bold-20">{{$order->item_name}}</h1>
                                 <h1 class="bold-10 md:bold-12 lg:bold-14 text-red-600">Status: You’ve not paid the payment</h1>
                             </div>
-                            <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp 188,900</h1>
+                            <h1 class="self-end bold-12 md:bold-14 lg:bold-16">Total : Rp. {{ number_format($order->total_price, 2, '.', ',') }}</h1>
                         </div>
                     </div>
-
-                {{-- Jika Tidak ada Item --}}
-                {{-- 
-                    <div class="flex flex-col items-center py-6">
-                        <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
-                        <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any failed transaction</h1>
-                    </div> 
-                --}}
+                    @endforeach
+                    
+                    @else
+                    {{-- Jika Tidak ada Item --}}
+                        <div class="flex flex-col items-center py-6">
+                            <img src="{{url('assets/profile/EmptyOrder.png')}}" alt="">
+                            <h1 class="text-center bold-12 md:bold-16 lg:bold-20 text-secondary/40">You don’t have any failed transaction</h1>
+                        </div> 
+                        
+                    @endif
                 </div>
+
             </div>
         </div>
     </div>
