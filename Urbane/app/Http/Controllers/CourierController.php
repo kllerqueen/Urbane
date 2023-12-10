@@ -20,7 +20,7 @@ class CourierController extends Controller
 
     public function updateStatusOrder(Request $request, $order_id){
         $order = Order::findOrFail($order_id);
-        
+        dd($order_id, $request->input('status'));
         if($request->input('status') === "Complete"){
             $th = new TransactionHeader;
             $th->customer_id = $order->customer_id;

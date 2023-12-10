@@ -136,13 +136,12 @@ Route::middleware('customer')->group(function(){
     Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
-    Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
-    Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
+    Route::post('/add-buynow-order/{id}/{size}/{color}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
 
-    Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
+    Route::post('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
 
 });
 

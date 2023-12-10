@@ -51,6 +51,7 @@
             <div class="flex flex-col gap-2">
                 @forelse ($listOrderUnComplete as $orderUnComplete)
                 <form action="{{ route('update.status.order', ['order_id' => $orderUnComplete->id ]) }}" method="POST">
+                    @csrf
                     <div class="grid grid-cols-7Admin gap-8 items-center px-4 border-2 border-solid border-white py-1 rounded-md w-fit relative">   
                                 <p>{{ $orderUnComplete->id }}</p>
                                 <p class="whitespace-nowrap overflow-hidden text-ellipsis">{{ $orderUnComplete->customer_id }} </p>

@@ -15,7 +15,7 @@
             </div>
         @endif --}}
 
-        <form action="{{ isset($id) ? route('add.buynow.order', ['id' => $id]) : route('add.order') }}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
+        <form action="{{ isset($id) ? route('add.buynow.order', ['id' => $id, 'size' => $size, 'color' => $color]) : route('add.order') }}" method="POST" class="flex flex-col px-4 md:max-w-[65%] w-full py-4 relative items-center">
             @csrf
             <a href="{{ route('homePage') }}" class="self-center">
                 <img src="{{ url('assets/Logo.png')}}" alt="" class="h-[80px]  hidden lg:flex">

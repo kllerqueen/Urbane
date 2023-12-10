@@ -90,8 +90,16 @@ class CartController extends Controller
     }
 
 
-    public function CheckOutBuyNow($id){
+    public function CheckOutBuyNow(Request $request, $id){
+        $item = Item::find($id);
 
+        $request->validate([
+            'size' => 'required',
+            'color' => 'required'
+        ]);
+        if(!$item){
+            return redirect()->back()->with('error', 'Product Not Found');
+        }
         // dd($id);
         $items = Item::where('id', $id)->get(); 
         if($items->isEmpty()){
@@ -99,7 +107,9 @@ class CartController extends Controller
         }
         $item = $items->first(); 
         $item->qty = 1; 
-        return view('pages.payment.CheckoutForm', compact('items', 'id'));
+        $color = $request->input('color');
+        $size = $request->input('size');
+        return view('pages.payment.CheckoutForm', compact('items', 'id', 'color', 'size'));
     }
     
     public function updateQty($item_id, $color, $size){
