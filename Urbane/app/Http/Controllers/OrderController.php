@@ -49,6 +49,40 @@ class OrderController extends Controller
         return redirect()->route('homePage');
     }
 
+    public function addNewBuyNowOrder(Request $request, $id){
+        $request->validate([
+            'first_name' => ['required','min:3', 'max:12'],
+            'last_name' => 'required|min:5|max:15',
+            'address' => 'required|min:8|max:250',
+            'postal' => 'required|numeric',
+            'phone' => 'required|numeric',
+            'notes' => 'required'
+        ]);
+       
+        $order = new Order;
+        $order->customer_id = auth()->id();
+        $order->address = $request->input('address');
+        $order->postal_Code = $request->input('postal');
+        $order->status = "OnProcess";
+        $order->name = $request->input('first_name') . ' ' . $request->input('last_name');
+        $order->phone = $request->input('phone');
+        $order->notes = $request->input('notes');
+        $order->paymentMethod = "COD";
+        $order->total_price = session()->pull('total');
+        $order->save();
+        
+
+        OrderDetail::create([
+            'order_id' => $order->id,
+            'item_id' => $id, 
+            'qty' => 1,
+            'size' => "XL",
+            'color' => "Red"
+        ]);
+        
+        return redirect()->route('homePage');
+    }
+
     public function getAllOrder(){
         return view('pages.courier.courierPage', [
             'listOrder' => Order::all()

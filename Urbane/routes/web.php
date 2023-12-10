@@ -89,10 +89,6 @@ Route::get('/about_us', function(){
     return view('pages.other.about');
 });
 
-Route::get('/FAQ', function(){
-    return view('pages.other.frequent');
-});
-
 // Sementara buat forgot password page
 Route::get('/register-security-form', function(){
     return view('pages.forgetPassword.registerSecurityQuestion');
@@ -123,13 +119,13 @@ Route::middleware('customer')->group(function(){
     
     Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
-    Route::patch('/update-cart-qty/{item_id}', [CartController::class, 'updateQty'])->name('update.cart.qty');
+    Route::patch('/update-cart-qty/{item_id}/{color}/{size}', [CartController::class, 'updateQty'])->name('update.cart.qty');
 
     Route::post('/addTo-cart/{itemId}', [CartController::class, 'addToCart'])->name('cart.addToCart');
 
     Route::post('/addTo-cart2/{itemId}', [CartController::class, 'addToCart2'])->name('cart.addToCart2');
 
-    Route::post('/cart-delete/{item_id}', [CartController::class, 'RemoveCart'])->name('cart.delete');
+    Route::post('/cart-delete/{item_id}/{color}/{size}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
     Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
@@ -144,8 +140,6 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
-    Route::get('/profile', [UserController::class, 'viewAllTransaction'])->name('user.profile');
-    
 });
 
 

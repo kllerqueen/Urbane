@@ -60,8 +60,9 @@
                             <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp {{ number_format($CartItem->item->item_price * $CartItem->qty, 0, ',', '.') }}</h1>
                             
                             {{-- qty increment dec --}}
-                            <form action="{{route('update.cart.qty', ['item_id' => $CartItem->item_id])}}" method="post">
+                            <form action="{{route('update.cart.qty', ['item_id' => $CartItem->item_id, 'size' => $CartItem->size, 'color' => $CartItem->color])}}" method="post">
                                 @csrf
+                                @method("PATCH")
                                 <input type="hidden" name="_method" value="PATCH">
                                 <div class="d-flex gap-10 items-center space-x-2">
                                     <span>Qty  </span>
@@ -77,7 +78,7 @@
                             <h1 class="bold-12 md:bold-16">Wishlist</h1>
                         </div>
                    </div>
-                   <form method="POST" action="{{ route('cart.delete', ['item_id' => $CartItem->item_id]) }}">
+                   <form method="POST" action="{{ route('cart.delete', ['item_id' => $CartItem->item_id, 'size' => $CartItem->size, 'color' => $CartItem->color]) }}">
                         @csrf
                         <button type="submit" class="absolute top-2 right-2">
                             <i class='bx bx-x text-[35px] '></i>
