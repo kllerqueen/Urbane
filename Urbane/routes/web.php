@@ -178,10 +178,8 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
         return view('pages.admin.adminHelp');
     })->name('helpPage');
 
-    Route::get('/info', function() {
-        return view('pages.admin.adminInfo');
-    })->name('infoPage');
-    
+    Route::get('/info', [AdminController::class, 'showChart'])->name('infoPage');
+
 });
 
 //courier
