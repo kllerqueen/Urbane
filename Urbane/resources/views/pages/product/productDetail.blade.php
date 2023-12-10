@@ -122,7 +122,7 @@
                 <div id="recommended-slide"  class="relative flex flex-row items-center min-w-[200px] md:min-w-[400px]  h-[150px] md:h-[250px]">
                     <div id="modal" class="absolute w-full h-full bg-black/70 hidden ">
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                            <form method="post" action="{{route('cart.addToCart', $rec->id)}}">
+                            <form method="post" action="{{route('cart.addToCart2', $rec->id)}}">
                                 @csrf
                                 <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white px-6">
                                     Add To Cart
