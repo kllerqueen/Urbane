@@ -13,6 +13,7 @@ class CourierController extends Controller
 {
     public function getAllOrder(){
         $listOrderComplete = TransactionHeader::all();
+        // dd($listOrderComplete);
         $listOrderUnComplete =  Order::whereIn('status', ['OnProcess', 'Failed'])->get();
 
         return view('pages.courier.courierPage', compact('listOrderComplete', 'listOrderUnComplete'));
@@ -20,8 +21,8 @@ class CourierController extends Controller
 
     public function updateStatusOrder(Request $request, $order_id){
         $order = Order::findOrFail($order_id);
-        
-        if($request->input('status') === "Complete"){
+        $status = $request->input('status_' . $order_id);
+        if($status === "Complete"){
             $th = new TransactionHeader;
             $th->customer_id = $order->customer_id;
             $th->address = $order->address;
@@ -52,7 +53,7 @@ class CourierController extends Controller
             
             Order::where('id',$order_id)->delete();
         }else{
-            $order->update(['status' => $request->input('status')]);
+            $order->update(['status' => $status]);
         }
         return redirect()->route('courierPage');
     }

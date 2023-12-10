@@ -49,7 +49,7 @@ class OrderController extends Controller
         return redirect()->route('homePage');
     }
 
-    public function addNewBuyNowOrder(Request $request, $id){
+    public function addNewBuyNowOrder(Request $request, $id, $size, $color){
         $request->validate([
             'first_name' => ['required','min:3', 'max:12'],
             'last_name' => 'required|min:5|max:15',
@@ -58,6 +58,7 @@ class OrderController extends Controller
             'phone' => 'required|numeric',
             'notes' => 'required'
         ]);
+
        
         $order = new Order;
         $order->customer_id = auth()->id();
@@ -76,8 +77,8 @@ class OrderController extends Controller
             'order_id' => $order->id,
             'item_id' => $id, 
             'qty' => 1,
-            'size' => "XL",
-            'color' => "Red"
+            'size' => $size,
+            'color' => $color
         ]);
         
         return redirect()->route('homePage');

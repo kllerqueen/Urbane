@@ -30,7 +30,7 @@
                 <h1 class="regular-8 md:regular-12 lg:regular-14">{{ $item->item_desc }}</h1>
 
                 {{-- form buat color dan size --}}
-                <form method="post" action="{{route('cart.addToCart', $item->id)}}" class="flex flex-col gap-2">
+                <form method="post" class="flex flex-col gap-2" id="product-form" >
                     @csrf
                     {{-- buat Size --}}
                     <input type="text" class="hidden" name="size" id="size">
@@ -68,13 +68,15 @@
                     @enderror
 
                     <div class="w-full flex flex-col items-center gap-2 mt-2">
-                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6">Add To Cart</button>
+                        <button type="submit" class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md px-6" id="addToCartBtn">Add To Cart</button>
                         {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
                     </div>
-                </form>
-                <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
-                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md"><a href="{{ route('checkout.buynow.form', ['id' => $item->id]) }}">Buy Now</a></button>
+
+                     <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
+                    <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md" type="submit" id="buyNowBtn">Buy Now</button>
                 </div>
+                </form>
+               
 
                 
             </div>
@@ -147,6 +149,7 @@
 </div>
 
     <script>
+
         let sizeContainer = document.getElementById('size-container');
         let colorContainer = document.getElementById('color-container');
         let sizeInput = document.getElementById('size')
@@ -219,6 +222,26 @@
             slide.addEventListener('mouseleave', () => {
                 modals[index].classList.add('hidden');
             });
+        });
+
+        // buat soalnya ada dua button add to cart sama buy now dia action routenya beda
+        // {{route('cart.addToCart', $item->id)}}"
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const buyNowBtn = document.getElementById('buyNowBtn');
+        const productForm = document.getElementById('product-form');
+        
+        const itemId = "{{ $item->id }}"; // Pastikan variabel $item->id ada di dalam view Anda
+
+        addToCartBtn.addEventListener('click', function(e) {
+            console.log(itemId);
+            productForm.setAttribute('action', "{{ route('cart.addToCart', $item->id) }}");
+            productForm.submit();
+        });
+
+        buyNowBtn.addEventListener('click', function(e) {
+            // {{ route('checkout.buynow.form', ['id' => $item->id]) }}  
+            productForm.setAttribute('action', "{{ route('checkout.buynow.form', $item->id) }}");
+            productForm.submit();
         });
     </script>
 

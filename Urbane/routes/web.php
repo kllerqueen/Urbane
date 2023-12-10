@@ -143,9 +143,9 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
-    Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
+    Route::post('/add-buynow-order/{id}/{size}/{color}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
 
-    Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
+    Route::post('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
 
     //profile
     Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
@@ -178,10 +178,8 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
         return view('pages.admin.adminHelp');
     })->name('helpPage');
 
-    Route::get('/info', function() {
-        return view('pages.admin.adminInfo');
-    })->name('infoPage');
-    
+    Route::get('/info', [AdminController::class, 'showChart'])->name('infoPage');
+
 });
 
 //courier

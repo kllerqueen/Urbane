@@ -14,26 +14,26 @@
                     <div class="flex flex-col w-full">
                         <div class="flex flex-row gap-2 p-3 rounded-md w-full ">
                             <div class="flex flex-row items-center bg-primary/30 p-3 rounded-md w-full gap-2">
-                                <div class="bg-black p-3 rounded-full"> 
+                                <div class="bg-black p-3 rounded-full">
                                     <img src="{{url('assets/admin/boxInfo.png')}}" alt="" class="w-[30px] h-[30px]">
                                 </div>
                                 <div class="flex flex-col h-full justify-between">
                                     <h1 class="regular-12 md:regular-14 lg:regular-16">Total Products</h1>
-                                    <p class="bold-14 md:bold-20 lg:bold-24">1024</p>
+                                    <p class="bold-14 md:bold-20 lg:bold-24">{{ $products }}</p>
                                 </div>
                             </div>
                             <div class="flex flex-row items-center bg-primary/30 p-3 rounded-md w-full gap-2">
-                                <div class="bg-black p-3 rounded-full flex items-center justify-center"> 
+                                <div class="bg-black p-3 rounded-full flex items-center justify-center">
                                     <i class='bx bxs-user text-[28px]'></i>
                                 </div>
                                 <div class="flex flex-col h-full justify-between">
                                     <h1 class="regular-12 md:regular-14 lg:regular-16">Total Users</h1>
-                                    <p class="bold-14 md:bold-20 lg:bold-24">500</p>
+                                    <p class="bold-14 md:bold-20 lg:bold-24">{{ $users }}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="w-full h-[300px] px-3 pb-3">    
+                        <div class="w-full h-[300px] px-3 pb-3">
                             <div class="bg-primary/30 rounded-md w-full h-full ">
                                 <canvas id="transactionChart" class=" max-w-full max-h-full  p-2 " ></canvas>
                             </div>
@@ -51,44 +51,28 @@
                         <p>Action</p>
                         <p>DateTime</p>
                     </div>
-        
+
                     <div class="flex flex-col gap-2">
-                        <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                        </div>
-                        <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                        </div>
-                        <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                        </div>
-                        <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                        </div>
-                        <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                            <h1>Something</h1>
-                        </div>
+                        @forelse ($history as $item)
+                            <div class="grid grid-cols-3Admin gap-8 items-center border-2 border-white p-1 rounded-md w-fit">
+                                <h1>{{ $item->admin_name }}</h1>
+                                <h1>{{ $item->action }}</h1>
+                                <h1>{{ \Carbon\Carbon::parse($item->datetime)->timezone('Asia/Jakarta')->format('d F Y H:i:s') }}</h1>
+                            </div>
+                        @empty
+                            <h1 class="text-center">No history</h1>
+                        @endforelse
 
                     </div>
                 </div>
-        
+
             </div>
 
-            
+
         </div>
 
     </div>
-    
+
 
     <script>
         window.onload = function() {
@@ -109,10 +93,10 @@
         new Chart(transactionChart, {
             type: 'doughnut',
             data: {
-                labels: ['Red', 'Blue', 'Yellow' ],
+                labels: ['Completed', 'Failed', 'On process' ],
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3],
+                    data: [{{ $completed }}, {{ $failed }}, {{ $process }}],
                     borderWidth: 1
                 }]
             },
@@ -129,14 +113,14 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        
+
                     },
                     title: {
                         display: true,
                         text: 'Transaction Sales',
                         color: 'white',
                         position: 'top',
-                        fontSize: 20 
+                        fontSize: 20
                     }
                 }
             }
@@ -159,12 +143,12 @@
                     x: {
                         grid: {
                             color:'white'
-                        }  
+                        }
                     },
                     y: {
                         grid: {
                             color:'white'
-                        }    
+                        }
                     }
                 },
                 responsive: true,
@@ -182,6 +166,6 @@
         });
     </script>
 
-       
+
 
 @endsection
