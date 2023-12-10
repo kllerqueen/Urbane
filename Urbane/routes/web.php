@@ -114,7 +114,7 @@ Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
 });
 
-//customer routing
+//customer
 Route::middleware('customer')->group(function(){
     
     Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
@@ -129,7 +129,6 @@ Route::middleware('customer')->group(function(){
 
     Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
 
-
     Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
 
     Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
@@ -139,6 +138,12 @@ Route::middleware('customer')->group(function(){
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
+
+    Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
+
+    Route::post('/add-buynow-order/{id}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
+
+    Route::get('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
 
 });
 
@@ -175,8 +180,12 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
 
 //courier
 Route::prefix('/courier')->middleware(CourierMiddleware::class)->group(function(){
+
     Route::get('/dashboard-courier', [CourierController::class, 'getAllOrder'])->name('courierPage');
+
     Route::post('/update-order/{order_id}', [CourierController::class, 'updateStatusOrder'])->name('update.status.order');
+
     Route::get('/courier-logout', [UserController::class, 'logout'])->name('logoutCourierPage');
+
 });
 
