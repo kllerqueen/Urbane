@@ -130,7 +130,7 @@ class AdminController extends Controller
         ProductHistory::create([
             'admin_name' => $request->user()->username,
             'action' => 'Delete Product',
-            'datetime' => now()->timezone('Asia/Bangkok')
+            'datetime' => now()
         ]);
 
         return redirect()->back();
@@ -196,9 +196,9 @@ class AdminController extends Controller
         $products = Item::count();
         $users = User::where('role', 'customer')->count();
 
-        $history = ProductHistory::all();
+        $history = ProductHistory::latest()->get();
 
-        return view('pages.admin.adminInfo', compact('completed', 'failed', 'process', 'prodcuts', 'users', 'history'));
+        return view('pages.admin.adminInfo', compact('completed', 'failed', 'process', 'products', 'users', 'history'));
 
     }
 }
