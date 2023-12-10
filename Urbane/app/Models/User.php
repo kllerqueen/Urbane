@@ -55,10 +55,10 @@ class User extends Authenticatable
     }
 
     public function Order(){
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Order::class, 'customer_id');
     }
 
     public function TransactionHeader(){
-        return $this->hasMany(TransactionHeader::class);
+        return $this->hasMany(TransactionHeader::class, 'customer_id');
     }
 }

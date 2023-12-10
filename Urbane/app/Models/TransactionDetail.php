@@ -18,4 +18,7 @@ class TransactionDetail extends Model
     public function transactionHeader(){
         return $this->belongsTo(TransactionHeader::class);
     }
+    public function item(){
+        return $this->belongsTo(Item::class, 'item_id');
+    }
 }

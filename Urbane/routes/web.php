@@ -53,9 +53,7 @@ Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name
 Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
 
 //user sementara
-Route::get('/profile',function(){
-    return view('pages.profile.userProfile');
-});
+
 Route::get('/faq',function(){
     return view('pages.other.faq');
 });
@@ -146,6 +144,8 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
+    Route::get('/profile', [UserController::class, 'viewAllTransaction'])->name('user.profile');
+    
 });
 
 
