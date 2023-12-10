@@ -49,7 +49,7 @@
                     <div class="grid grid-cols-3Admin gap-8 items-center p-4 bg-primary rounded-md w-fit">
                         <p>Name</p>
                         <p>Action</p>
-                        <p>Date</p>
+                        <p>DateTime</p>
                     </div>
         
                     <div class="flex flex-col gap-2">
