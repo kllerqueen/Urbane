@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Picture;
+use App\Models\ProductHistory;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
@@ -93,7 +95,7 @@ class AdminController extends Controller
         $item->item_price = $request->input('item_price');
         $item->qty = $request->input('qty');
         $item->save();
-        
+
 
         if($request->hasFile('image')){
             foreach($request->file('image') as $image){
@@ -104,10 +106,16 @@ class AdminController extends Controller
             }
         }
 
+        ProductHistory::create([
+            'admin_name' => $request->user()->username,
+            'action' => 'Add Product',
+            'datetime' => $item->created_at
+        ]);
+
         return redirect()->route('adminPage', 'All');
     }
 
-    public function deleteItem(Item $item){
+    public function deleteItem(Request $request, Item $item){
 
         $itemPictures = Picture::where('item_id', $item->id)->get();
 
@@ -118,6 +126,13 @@ class AdminController extends Controller
 
         Picture::where('item_id', $item->id)->delete();
         $item->delete();
+
+        ProductHistory::create([
+            'admin_name' => $request->user()->username,
+            'action' => 'Delete Product',
+            'datetime' => now()->timezone('Asia/Bangkok')
+        ]);
+
         return redirect()->back();
     }
 
@@ -164,6 +179,26 @@ class AdminController extends Controller
 
         $item->save();
 
+        ProductHistory::create([
+            'admin_name' => $request->user()->username,
+            'action' => 'Update Product',
+            'datetime' => $item->updated_at
+        ]);
+
         return redirect()->route('adminPage', 'All');
+    }
+
+    public function showChart() {
+
+        $completed = Order::where('status', 'Complete')->count();
+        $failed = Order::where('status', 'Failed')->count();
+        $process = Order::where('status', 'OnProcess')->count();
+        $products = Item::count();
+        $users = User::where('role', 'customer')->count();
+
+        $history = ProductHistory::all();
+
+        return view('pages.admin.adminInfo', compact('completed', 'failed', 'process', 'prodcuts', 'users', 'history'));
+
     }
 }

@@ -26,6 +26,8 @@ use Illuminate\Support\Facades\Session;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//login-register
 Route::get('/', function () {
     return view('pages.login');
 })->middleware('guest');;
@@ -46,14 +48,14 @@ Route::post('/register-user', [UserController::class, 'register'])->name('regist
 
 Route::get('/logout-user', [UserController::class, 'logout'])->name('logoutPage');
 
+//show item
 Route::get('/item/detail/{id}', [DetailController::class, 'itemDetail'])->name('detailPage');
 
 Route::get('/product-detail/{id}',[DetailController::class, 'itemDetail'])->name('detailPage');
 
 Route::get('/discover/{category_name}', [DiscoverController::class, 'discoverPage'])->name('discover');
 
-//user sementara
-
+//static-footer
 Route::get('/faq',function(){
     return view('pages.other.faq');
 });
@@ -116,7 +118,8 @@ Route::get('/change-password-form',function(){
 
 //customer
 Route::middleware('customer')->group(function(){
-    
+
+    //cart
     Route::get('/cart', [CartController::class, 'cartItem'])->name('cart');
 
     Route::patch('/update-cart-qty/{item_id}/{color}/{size}', [CartController::class, 'updateQty'])->name('update.cart.qty');
@@ -127,21 +130,25 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/cart-delete/{item_id}/{color}/{size}', [CartController::class, 'RemoveCart'])->name('cart.delete');
 
-    Route::get('/favorite', [FavoriteController::class, 'wishlist'])->name('favorite');
+    //wishlist
+    Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
 
     Route::post('/add-wishlist/{id}', [FavoriteController::class, 'addToWishlist'])->name('addFav');
 
-    Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
-
-    Route::get('/wishlist', [FavoriteController::class, 'wishlist'])->name('wishlist');
-
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
+
+
+    //order
+    Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
 
     Route::post('/add-order', [OrderController::class, 'addNewOrder'])->name('add.order');
 
     Route::post('/add-buynow-order/{id}/{size}/{color}', [OrderController::class, 'addNewBuyNowOrder'])->name('add.buynow.order');
 
     Route::post('/buynow/{id}', [CartController::class, 'CheckOutBuyNow'])->name('checkout.buynow.form');
+
+    //profile
+    Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
 
 });
 
@@ -174,6 +181,7 @@ Route::prefix('/admin')->middleware('admin')->group(function(){
     Route::get('/info', function() {
         return view('pages.admin.adminInfo');
     })->name('infoPage');
+    
 });
 
 //courier

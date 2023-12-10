@@ -8,7 +8,7 @@
         <form method="POST" class="flex flex-col gap-4" action="{{ route('register') }} ">
             @csrf
             <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('email') border-red-500 @enderror">
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('email') !border-red-500 @enderror">
                     <i class='bx bxs-envelope bx-sm pl-1 pr-2'></i>
                     <input type="text" name="email" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('email') bg-black @enderror" placeholder="Email" value="{{ old('email') }}">
                 </div>
@@ -21,7 +21,7 @@
             </div>
 
             <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('username') border-red-500 @enderror">
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('username') !border-red-500 @enderror">
                     <i class='bx bxs-user bx-sm pl-1 pr-2'></i>
                     <input type="text" name="username" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}">
                 </div>
@@ -33,7 +33,7 @@
            </div>
 
             <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('phoneNumber') border-red-500 @enderror">
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('phoneNumber') !border-red-500 @enderror">
                     <i class='bx bxs-phone bx-sm pl-1 pr-2'></i>
                     <input type="text" name="phoneNumber" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('phoneNumber') is-invalid @enderror"
                     placeholder="(+62) Phone Number"  value="{{ old('phoneNumber') }}">
@@ -47,7 +47,7 @@
             </div>
 
             <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('password') border-red-500 @enderror">
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('password') !border-red-500 @enderror">
                     <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
                     <input type="password" name="password" class="input w-full border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('password') is-invalid @enderror" placeholder="password" id="passwordInput">
                     <ion-icon name="eye-outline" class="text-[30px] mr-2 text-secondary " id="eye-open" onclick="hidePassword(0)"></ion-icon>
@@ -61,7 +61,7 @@
             </div>
 
             <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('con-pass') border-red-500 @enderror">
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('con-pass') !border-red-500 @enderror">
                     <i class='bx bxs-lock bx-sm pl-1 pr-2'></i>
                     <input type="password" name="con-pass" class="input w-full border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('con-pass') is-invalid @enderror"  placeholder="Confirm Password" id="passwordInput">
                     <ion-icon name="eye-outline" class="text-[30px] mr-2 text-secondary " id="eye-open" onclick="hidePassword(1)"></ion-icon>
