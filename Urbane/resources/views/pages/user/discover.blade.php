@@ -121,7 +121,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 h-full gap-2 justify-center">
 
             @forelse ($items as $item)
-           
+
                 <div class="flex flex-col h-full relative" id="slide">
                     @if ($item->pictures->first())
                         @php
@@ -150,21 +150,6 @@
             @empty
 
             @endforelse
-
-            {{-- kalau mw di foreach pakai ini aja
-            <div class="flex flex-col h-full relative" id="slide">
-                <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="h-[150px] min-[500px]:h-[200px] lg:h-[350px]  w-full">
-                <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">
-                    <h1 class="bold-10 min-[380px]:bold-14 md:bold-20 lg:bold-24 ">Sweater Sport Jumper XYZ</h1>
-                    <p class="regular-8 md:regular-16 lg:regular-20">Rp 150,000</p>
-                </div>
-                <div id="modal" class="absolute w-full h-full bg-black/80 hidden">
-                    <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
-                        <a href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</a>
-                        <a href="" class="w-full text-primary ">See Details</a>
-                    </div>
-                </div>
-            </div> --}}
 
         </div>
     </div>
