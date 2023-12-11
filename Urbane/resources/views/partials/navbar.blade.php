@@ -49,7 +49,7 @@
                     </div> 
 
                     {{-- Transaction Container --}}
-                    <div class="" id="container" >
+                    <div class="" id="notif-container" >
                         <h1 class="bold-12 md:bold-16 ">For You</h1>
                         {{-- Transaction Detail --}}
                         <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 rounded-md" id="transaction-detail " >
@@ -66,7 +66,7 @@
                     </div> 
 
                     {{-- Update Container --}}
-                    <div class="hidden" id="container">
+                    <div class="hidden" id="notif-container">
                         {{-- Update Detail --}}
                         <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 " id="update-detail">
                             <div class=" flex mt-2" >
@@ -84,7 +84,7 @@
         </div>
     </div>
     <script>
-        let containers = document.querySelectorAll('#container')
+        let notifContainers = document.querySelectorAll('#notif-container')
         let transactions = document.querySelectorAll('#transaction-detail')
         let updates = document.querySelectorAll('#update-detail')
         let tIcons = document.querySelectorAll('#transaction-icon')
@@ -101,11 +101,11 @@
                 button.classList.remove('bg-primary', 'text-white');
             })
 
-            containers.forEach(container => {
+            notifContainers.forEach(container => {
                 container.classList.add('hidden')
             });
             buttons[index].classList.add('bg-primary', 'text-white')
-            containers[index].classList.remove('hidden')
+            notifContainers[index].classList.remove('hidden')
         }
 
     </script>
