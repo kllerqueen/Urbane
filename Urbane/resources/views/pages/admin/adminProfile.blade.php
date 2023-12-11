@@ -38,9 +38,9 @@
                     <div class="h-3/4 relative flex justify-center items-center p-16">
                         <img src="{{url('assets/admin/Calendera.png')}}" alt="" class="w-full h-full rounded-3xl absolute top-0 ">
                         <div class="bg-primary/30 backdrop-blur-xl text-center p-4 w-full h-full rounded-3xl mt-4" >
-                            <p class="bold-14 md:bold-16 lg:bold-20">November</p>
-                            <h1 class="bold-64 md:bold-80 lg:bold-96">28</h1>
-                            <p class="regular-12 md:regular-14 lg:regular-16">2023</p>
+                            <p class="bold-14 md:bold-16 lg:bold-20">{{ now()->tz('Asia/Jakarta')->format('F') }}</p>
+                            <h1 class="bold-64 md:bold-80 lg:bold-96">{{ now()->tz('Asia/Jakarta')->format('d') }}</h1>
+                            <p class="regular-12 md:regular-14 lg:regular-16">{{ now()->tz('Asia/Jakarta')->format('Y') }}</p>
                         </div>
                     </div>
                     <div class="bg-primary/30 w-full backdrop-blur-xl p-4 flex flex-row gap-2 items-center">
