@@ -115,4 +115,18 @@ class UserController extends Controller
         return view('pages.profile.userProfile', compact('completeTransactions', 'onProcessOrders', 'failedOrders'));
     }
 
+    public function updateProfile(Request $request){
+        $user = auth()->user();
+        $request->validate([
+            'username' => ['required', 'min:5', 'max:25','unique:users'],
+            'email' => 'required|email|unique:users|email:dns',
+            'password' => 'required|min:5|max:25',
+        ]);
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->save();
+        
+        return redirect()->back();
+    }
 }

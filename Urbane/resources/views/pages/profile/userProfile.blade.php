@@ -10,27 +10,94 @@
                     <div class="bg-white text-secondary p-2 rounded-full flexCenter absolute top-1 right-[-15px] shadow-xl border">
                         <i class='bx bxs-pencil text-[25px]' ></i>
                     </div>
-                    <h1 class="bold-16 md:bold-20 lg:bold-24">Jay Mansieur</h1>
+                    <h1 class="bold-16 md:bold-20 lg:bold-24">{{ Auth::user()->username }}</h1>
                     <p class="pt-2 regular-12 md:regular-14 lg:regular-16 text-primary">Member</p>
                 </div>
                 <div class="p-2 w-full bg-primary rounded-md mt-4 text-center">
                     <p class=" bold-12 md:bold-14 lg:bold-16 text-white">Edit Profile</p>
                 </div>
 
-                <form action="" class="flex flex-col w-full pt-2 gap-2">
+                <form action="{{ route('user.update.profile') }}" class="flex flex-col w-full pt-2 gap-2" method="POST">
+                    @csrf
                     <div class="flex flex-col p-3 bg-white rounded-md shadow-xl w-full gap-3 border-2">
-                        <p class="regular-12 md:regular-14 lg:regular-16 text-primary ">Email</p>
-                        <input type="text" class=" bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2 " placeholder="Edit Profile"/>
-                    </div>
-                    <div class="flex flex-col p-3 bg-white rounded-md shadow-xl w-full gap-3 border-2">
-                        <p class="regular-12 md:regular-14 lg:regular-16 text-primary">Gender</p>
-                        <input type="text" class=" bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2" placeholder="Edit Profile"/>
+                        <p class="regular-12 md:regular-14 lg:regular-16 text-primary ">Username</p>
+                        <input type="text" name="username" class="bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2" placeholder="{{ Auth::user()->username }}" />
+                        @error('username')
+                        <div class="invalid-feedback text-red-600 text-sm">
+                            {{$message}}
+                            <script>
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.onmouseenter = Swal.stopTimer;
+                                        toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "Update Profile information incorrect"
+                                });
+                            </script>
+                        </div>
+                        @enderror
                     </div>
                     <div class="flex flex-col p-3 bg-white rounded-md shadow-xl w-full gap-3 border-2">
                         <p class="regular-12 md:regular-14 lg:regular-16 text-primary">Email</p>
-                        <input type="text" class=" bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2" placeholder="Edit Profile"/>
+                        <input type="text" name="email" class=" bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2" placeholder="{{ Auth::user()->email }}" />
+                        @error('email')
+                        <div class="invalid-feedback text-red-600 text-sm">
+                            {{$message}}
+                            <script>
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.onmouseenter = Swal.stopTimer;
+                                        toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "Update Profile information incorrect"
+                                });
+                            </script>
+                        </div>
+                        @enderror
                     </div>
-                    <button class="p-2 w-full border-2 border-primary rounded-md mt-4 text-center bold-12 md:bold-14 lg:bold-16 text-primary">
+                    <div class="flex flex-col p-3 bg-white rounded-md shadow-xl w-full gap-3 border-2">
+                        <p class="regular-12 md:regular-14 lg:regular-16 text-primary">Password</p>
+                        <input type="text" name="password" class=" bold-14 md:bold-16 lg:bold-18 text-primary focus:outline-none border-b-2" placeholder="********"/>
+                        @error('password')
+                        <div class="invalid-feedback text-red-600 text-sm">
+                            {{$message}}
+                            <script>
+                                const Toast = Swal.mixin({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.onmouseenter = Swal.stopTimer;
+                                        toast.onmouseleave = Swal.resumeTimer;
+                                    }
+                                });
+                                Toast.fire({
+                                    icon: "error",
+                                    title: "Update Profile information incorrect"
+                                });
+                            </script>
+                        </div>
+                        @enderror
+                    </div>
+                    <button class="p-2 w-full border-2 border-primary rounded-md mt-4 text-center bold-12 md:bold-14 lg:bold-16 text-primary" type="submit">
                         Confirm
                     </button>
                 </form>
