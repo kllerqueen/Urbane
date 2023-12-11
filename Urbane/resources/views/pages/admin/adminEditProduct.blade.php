@@ -46,7 +46,7 @@
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img onclick="triggerFileInput(1)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 hidden rounded-md">
+                                    <img onclick="triggerFileInput(1)" src="{{url('assets/product/Dummy 1.png')}}" id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 hidden rounded-md">
                                 </div>
                                 <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
@@ -128,7 +128,6 @@
 
 
     <script>
-
         window.onload = function() {
             const navLinks = document.querySelectorAll('#nav-link');
             navLinks.forEach(link => {
@@ -140,6 +139,11 @@
                 });
             });
             navLinks[0].parentElement.classList.add('active')
+        }
+
+        let fileInputs = document.querySelectorAll('#fileInput');
+        function triggerFileInput(index) {
+            fileInputs[index].click();
         }
         function handleFileUpload() {
             let uploadTriggers = document.querySelectorAll('#uploadTrigger');
