@@ -145,23 +145,14 @@
         }
 
         let fileInputs = document.querySelectorAll('#fileInput');
-        let uploadTriggers = document.querySelectorAll('#uploadTrigger');
         let uploadedImages = document.querySelectorAll('#uploadedImage');
 
-        uploadTriggers.forEach((uploadTrigger,index) => {
-            console.log("masuk")
-            uploadTrigger.addEventListener("click", function(){
-                fileInputs[index].click();
-            })
-        })
         uploadedImages.forEach((uploadedImage, index) => {
             uploadedImage.addEventListener("click", function(){
                 fileInputs[index].click();
             })
         })
         function handleFileUpload() {
-        
-
             fileInputs.forEach((fileInput, index) => {
                 let selectedFiles = fileInput.files;
 
