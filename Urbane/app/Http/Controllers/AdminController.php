@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Picture;
 use App\Models\ProductHistory;
 use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -96,6 +97,12 @@ class AdminController extends Controller
         $item->qty = $request->input('qty');
         $item->save();
 
+        $notif = new Notification;
+        $notif->user_id = auth()->id();
+        $notif->title = "New Product!";
+        $notif->desc = "Urbane just lauch new item : $item->item_name, Go Check out now!";
+        $notif->type = "NewProduct";
+        $notif->save();
 
         if($request->hasFile('image')){
             foreach($request->file('image') as $image){
