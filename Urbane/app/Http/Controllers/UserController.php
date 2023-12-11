@@ -85,15 +85,26 @@ class UserController extends Controller
         $completeTransactions = DB::table('transaction_headers')
         ->join('transaction_details', 'transaction_headers.id', '=', 'transaction_details.transaction_id')
         ->join('items', 'transaction_details.item_id', '=', 'items.id')
-        ->join('pictures','items.id','=','pictures.item_id')
-        ->select('transaction_headers.*', 'transaction_details.*', 'items.item_name', 'pictures.picture_url')
+        ->join('pictures', function ($join) {
+            $join->on('items.id', '=', 'pictures.item_id')
+                ->whereRaw('pictures.id = (SELECT MIN(id) FROM pictures WHERE item_id = items.id)');
+        })
+        ->select(
+            'transaction_headers.*',
+            'transaction_details.*',
+            'items.item_name',
+            'pictures.picture_url'
+        )
         ->where('transaction_headers.customer_id', $user->id)
         ->get();
 
         $onProcessOrders = DB::table('orders')
             ->join('order_details', 'orders.id','=','order_details.order_id')
             ->join('items', 'order_details.item_id','=','items.id')
-            ->join('pictures','items.id','=','pictures.item_id')
+            ->join('pictures', function ($join) {
+                $join->on('items.id', '=', 'pictures.item_id')
+                    ->whereRaw('pictures.id = (SELECT MIN(id) FROM pictures WHERE item_id = items.id)');
+            })
             ->select('orders.*','order_details.*', 'items.item_name', 'pictures.picture_url')
             ->where('customer_id', $user->id)
             ->where('status', 'OnProcess')
@@ -102,7 +113,10 @@ class UserController extends Controller
         $failedOrders = DB::table('orders')
             ->join('order_details', 'orders.id','=','order_details.order_id')
             ->join('items', 'order_details.item_id','=','items.id')
-            ->join('pictures','items.id','=','pictures.item_id')
+            ->join('pictures', function ($join) {
+                $join->on('items.id', '=', 'pictures.item_id')
+                    ->whereRaw('pictures.id = (SELECT MIN(id) FROM pictures WHERE item_id = items.id)');
+            })
             ->select('orders.*','order_details.*', 'items.item_name', 'pictures.picture_url')
             ->where('customer_id', $user->id)
             ->where('status', 'Failed')
