@@ -28,8 +28,10 @@
                             Picture
                         </h1>
                         <div class=" grid grid-rows-6 gap-2 w-full h-full">
+
+                            {{-- Main Image --}}
                             <div class=" row-span-4 relative">
-                                <div id="uploadTrigger" onclick="triggerFileInput(0)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black text-center">
+                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black text-center">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
@@ -37,30 +39,31 @@
                                     <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
                                 </div>
                                 <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                <img onclick="triggerFileInput(0)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
+                                <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
                             </div>
 
+                            {{-- Three Small Image --}}
                             <div class="row-span-2 grid grid-cols-3 w-full h-full gap-2">
-                                <div id="uploadTrigger" onclick="triggerFileInput(1)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img onclick="triggerFileInput(1)" src="{{url('assets/product/Dummy 1.png')}}" id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 rounded-md">
+                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 rounded-md">
                                 </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(2)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img onclick="triggerFileInput(2)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
+                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
                                 </div>
-                                <div id="uploadTrigger" onclick="triggerFileInput(3)" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
                                     </div>
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img onclick="triggerFileInput(3)" id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
+                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
                                 </div>
                             </div>
                         </div>
@@ -142,14 +145,14 @@
         }
 
         let fileInputs = document.querySelectorAll('#fileInput');
-        function triggerFileInput(index) {
-            fileInputs[index].click();
-        }
-        function handleFileUpload() {
-            let uploadTriggers = document.querySelectorAll('#uploadTrigger');
-            let fileInputs = document.querySelectorAll('#fileInput');
-            let uploadedImages = document.querySelectorAll('#uploadedImage');
+        let uploadedImages = document.querySelectorAll('#uploadedImage');
 
+        uploadedImages.forEach((uploadedImage, index) => {
+            uploadedImage.addEventListener("click", function(){
+                fileInputs[index].click();
+            })
+        })
+        function handleFileUpload() {
             fileInputs.forEach((fileInput, index) => {
                 let selectedFiles = fileInput.files;
 
