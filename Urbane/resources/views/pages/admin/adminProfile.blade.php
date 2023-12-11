@@ -43,13 +43,13 @@
                             <p class="regular-12 md:regular-14 lg:regular-16">{{ now()->tz('Asia/Jakarta')->format('Y') }}</p>
                         </div>
                     </div>
-                    <div class="bg-primary/30 w-full backdrop-blur-xl p-4 flex flex-row gap-2 items-center">
+                    <a href="{{route('helpPage')}}" class="bg-primary/30 w-full backdrop-blur-xl p-4 flex flex-row gap-2 items-center">
                         <i class='bx bxs-chat text-white text-[40px]' ></i>
                         <div>
                             <h1>Help and information</h1>
-                            <p>Need</p>
+                            <p>Need Help ?</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>

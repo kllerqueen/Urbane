@@ -122,14 +122,14 @@
 
             @forelse ($items as $item)
 
-                <div class="flex flex-col h-full relative" id="slide">
+                <div class="flex flex-col relative h-[200px] min-[500px]:h-[250px] lg:h-[400px]  w-full" id="slide">
                     @if ($item->pictures->first())
                         @php
                             $imageUrl = url('storage/' . $item->pictures->first()->picture_url);
                         @endphp
                         <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class=" min-h-[80%] w-full">
                     @else
-                        <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="h-[150px] min-[500px]:h-[200px] lg:h-[350px]  w-full">
+                        <img src="{{url('assets/discover/ProductPhoto2.png')}}" alt="" class="w-ful h-[80%]">
                     @endif
 
                     <div class="flex flex-col justify-center bg-secondary/10 py-1 h-full">

@@ -61,4 +61,8 @@ class User extends Authenticatable
     public function TransactionHeader(){
         return $this->hasMany(TransactionHeader::class, 'customer_id');
     }
+
+    public function notification(){
+        return $this->hasMany(Notification::class, 'user_id');
+    }
 }

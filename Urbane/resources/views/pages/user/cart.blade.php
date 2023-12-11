@@ -12,7 +12,6 @@
         <div class="flex flex-col md:flex-row gap-2">
             {{-- Item Card Section--}}
             <div class="max-w-[850px] w-full  flex flex-col gap-2">
-
                 @foreach ($lists as $CartItem)
                 <div class="flex  items-center p-4 bg-[#008DFF]/30 rounded-md gap-4 relative max-h-[220px]">
                     <div class="h-full flex items-center gap-2 ">
@@ -102,7 +101,14 @@
 </div>
 
     <script>
+        let checkBtns = document.querySelectorAll('#check-button');
+        let checkBoxes = document.querySelectorAll('#check-box')
 
+        checkBtns.forEach((checkBtn,index) => {
+            checkBtn.addEventListener("click", function(){
+                checkBoxes[index].classList.toggle('hidden')
+            })
+        });
     </script>
 
 @endsection

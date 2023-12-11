@@ -20,54 +20,54 @@
                             </div>
                         </div>
                         <h1 class="  mt-[-20px] bg-primary/60 z-[-1] rounded-md overflow-hidden h-0 transition-all duration-300" id="modal"> 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            To add a new product, navigate to the "Dashboard" section in the admin dashboard. Click on "Add Product," fill in the required details, and save the changes.
                         </h1>
                     </div>
 
                     <div class="flex flex-col mt-[40px]">
                         <div class="w-full flex justify-between items-center bg-primary px-4 md:px-6 py-2 rounded-full">
-                            <h1 class="regular-12 md:regular-16 lg:regular-20">How do I add a new product to the online shop?</h1>
+                            <h1 class="regular-12 md:regular-16 lg:regular-20">Can I edit product information after it's been added?</h1>
                             <div class="p-1 bg-white flex items-center justify-center rounded-full" id="slide" onclick="showSlide(1)">
                                 <i class='bx bx-chevron-down text-black text-[25px] md:text-[30px] '></i>
                             </div>
                         </div>
                         <h1 class="  mt-[-20px] bg-primary/60 z-[-1] rounded-md overflow-hidden h-0 transition-all duration-300" id="modal"> 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Yes, you can edit product details at any time. Simply go to the "Dashboard" section, find the product you want to edit, and click on the "Update" button.
                         </h1>
                     </div>
 
                     <div class="flex flex-col mt-[40px]">
                         <div class="w-full flex justify-between items-center bg-primary px-4 md:px-6 py-2 rounded-full">
-                            <h1 class="regular-12 md:regular-16 lg:regular-20">How do I add a new product to the online shop?</h1>
+                            <h1 class="regular-12 md:regular-16 lg:regular-20">What should I do if I encounter a technical issue?</h1>
                             <div class="p-1 bg-white flex items-center justify-center rounded-full" id="slide" onclick="showSlide(2)">
                                 <i class='bx bx-chevron-down text-black text-[25px] md:text-[30px] '></i>
                             </div>
                         </div>
                         <h1 class="  mt-[-20px] bg-primary/60 z-[-1] rounded-md overflow-hidden h-0 transition-all duration-300" id="modal"> 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            If you experience technical difficulties, please contact our support team at support@example.com for prompt assistance. Be sure to include details about the issue you're facing.
                         </h1>
                     </div>
 
                     <div class="flex flex-col mt-[40px]">
                         <div class="w-full flex justify-between items-center bg-primary px-4 md:px-6 py-2 rounded-full">
-                            <h1 class="regular-12 md:regular-16 lg:regular-20">How do I add a new product to the online shop?</h1>
+                            <h1 class="regular-12 md:regular-16 lg:regular-20">What browsers are supported?</h1>
                             <div class="p-1 bg-white flex items-center justify-center rounded-full" id="slide" onclick="showSlide(3)">
                                 <i class='bx bx-chevron-down text-black text-[25px] md:text-[30px] '></i>
                             </div>
                         </div>
                         <h1 class="  mt-[-20px] bg-primary/60 z-[-1] rounded-md overflow-hidden h-0 transition-all duration-300" id="modal"> 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Our platform is optimized for the latest versions of Google Chrome, Mozilla Firefox, Safari, except Microsoft Edge. Please make sure your browser is up to date for the best user experience.
                         </h1>
                     </div>
                     <div class="flex flex-col mt-[40px]">
                         <div class="w-full flex justify-between items-center bg-primary px-4 md:px-6 py-2 rounded-full">
-                            <h1 class="regular-12 md:regular-16 lg:regular-20">How do I add a new product to the online shop?</h1>
+                            <h1 class="regular-12 md:regular-16 lg:regular-20">How often is the system updated?</h1>
                             <div class="p-1 bg-white flex items-center justify-center rounded-full" id="slide" onclick="showSlide(4)">
                                 <i class='bx bx-chevron-down text-black text-[25px] md:text-[30px] '></i>
                             </div>
                         </div>
                         <h1 class="  mt-[-20px] bg-primary/60 z-[-1] rounded-md overflow-hidden h-0 transition-all duration-300" id="modal"> 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            We regularly release updates to improve performance, fix bugs, and introduce new features. Keep an eye on our release notes for information on the latest updates.
                         </h1>
                     </div>
                 </div>

@@ -243,6 +243,7 @@
         position: absolute;
     }
 }
+
 .sidebar.active{
     width: 80px;
     transition:0.5s;
