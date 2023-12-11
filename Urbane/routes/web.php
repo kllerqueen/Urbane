@@ -140,7 +140,6 @@ Route::middleware('customer')->group(function(){
 
     Route::post('/toggle-wishlist/{id}', [FavoriteController::class, 'toggleWishlist'])->name('toggleFav');
 
-
     //order
     Route::get('/checkout', [CartController::class, 'CheckOutForm'])->name('checkout.form');
 
@@ -152,6 +151,7 @@ Route::middleware('customer')->group(function(){
 
     //profile
     Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
+    
     Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
 });
