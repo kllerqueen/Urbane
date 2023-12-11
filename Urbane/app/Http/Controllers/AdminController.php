@@ -186,17 +186,21 @@ class AdminController extends Controller
 
         $item->save();
 
-        // if($request->hasFile('image')){
-        //     foreach($request->file('image') as $image){
+        $uploadedImages = $request->file('image');
 
+        $currentPictures = $item->pictures;
 
-
-        //         $imagePath = $image->store('item', 'public');
-        //         $item->pictures()->update([
-        //             'picture_url' => $imagePath
-        //         ]);
-        //     }
-        // }
+        if ($uploadedImages) {
+            foreach ($currentPictures as $index => $picture) {
+                if (isset($uploadedImages[$index])) {
+                    $image = $uploadedImages[$index];
+                    $imagePath = $image->store('item', 'public');
+                    $picture->update([
+                        'picture_url' => $imagePath
+                    ]);
+                }
+            }
+        }
 
         ProductHistory::create([
             'admin_name' => $request->user()->username,

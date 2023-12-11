@@ -11,7 +11,7 @@
             </h1>
 
 
-            <form class="w-full max-w-[1200px] flex flex-col" action="{{ route('editItem', ['id' => $item->id]) }}" method="POST">
+            <form class="w-full max-w-[1200px] flex flex-col" action="{{ route('editItem', ['id' => $item->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-4  gap-2 text-white">
