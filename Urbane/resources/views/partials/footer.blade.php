@@ -63,9 +63,9 @@
                 <div class="flex flex-col gap-2">
                     <h1 class="font-bold bold-14 md:bold-18">Others</h1>
                     <ul class='regular-14 flex flex-col text-gray-30'>
-                        <li href='/'>
+                        <a href='mailto:admin@urbane.com'>
                             Email: admin@urbane.com
-                        </li>
+                        </a>                        
                         <li href='/'>
                             Phone: 0822 7823 2763
                         </li>
