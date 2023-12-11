@@ -7,7 +7,7 @@
                     <img src="{{url('assets/PhotoProfile.png')}}" alt="" class="w-[50px] h-[50px]">
                 </a> --}}
                 @auth
-                    <button class=" rounded-md h-fit ">Welcome, {{ Auth::user()->username }}</button>
+                    <a href="{{ route('user.profile') }}"><button class=" rounded-md h-fit ">Welcome, {{ Auth::user()->username }}</button></a>
                     <a href="{{ route('logoutPage') }}"><button class="underline text-white px-0 md:px-2 ">Logout</button></a>
                 @else
                     <a href="{{ route('loginPage') }}"><button class="text-white px-0 md:px-2 decoration-none">Login</button></a>
@@ -22,7 +22,7 @@
                 <img src="{{url('assets/PhotoProfile.png')}}" alt="" class="w-[70px] h-[70px]">
             </a> --}}
              @auth
-                <a href="#"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Welcome,{{ Auth::user()->username }} </button></a>
+                <a href="{{ route('user.profile') }}"><button class="px-8 py-2 bg-primary text-white rounded-md h-fit ">Welcome,{{ Auth::user()->username }} </button></a>
                 <a href="{{ route('logoutPage') }}" class="bg-red-500 text-white px-8 py-2 rounded-md hover:bg-red-600 hover:text-white">Logout</a>
 
             @else
