@@ -141,10 +141,10 @@
             {{-- content 3--}}
             <div class="flex flex-col max-w-[800px] w-full hidden" id="container">
                 <div class=" p-4 flex items-center gap-4 rounded-sm">
-                    <img src="{{url('assets/FAQ/FAQ3.png')}}" alt="" class="w-[50px] h-[50px]">
-                    <div class="flex flex-col">  
+                    <img src="{{url('assets/FAQ/FAQ2.png')}}" alt="" class="w-[50px] h-[50px]">
+                    <div class="flex-col hidden sm:flex">  
                         <h1 class="bold-16 md:bold-20 lg:bold-24">
-                            Shipping
+                            Ordering & Payment
                         </h1>
                         <p class="regular-12 md:regular-14 lg:regular-16 text-secondary">
                             Need help to know about product? Check here
