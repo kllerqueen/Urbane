@@ -64,7 +64,7 @@
                     <h1 class="font-bold bold-14 md:bold-18">Others</h1>
                     <ul class='regular-14 flex flex-col text-gray-30'>
                         <li href='/'>
-                            Email: urbane@gmail.com
+                            Email: admin@urbane.com
                         </li>
                         <li href='/'>
                             Phone: 0822 7823 2763

@@ -32,7 +32,17 @@
                             <h1 class="bold-8 md:bold-16 lg:bold-20 text-secondary">Rp 478,000</h1>
                         </div>
                         <div class="flex items-center gap-2">
-                            <i class='bx bx-heart text-[12px] md:text-[20px]' ></i>
+                            {{-- wishlist button --}}
+                            {{-- <form action="{{ route('toggleFav', $item->id) }}" method="POST">
+                                @csrf
+                                <button class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
+                                    @if ($fav)
+                                        <i class='bx bxs-heart text-[30px] text-red-500' ></i>
+                                    @else
+                                        <i class='bx bx-heart text-[30px]' ></i>
+                                    @endif
+                                </button>
+                            </form> --}}
                             <h1 class="bold-12 md:bold-16">Wishlist</h1>
                         </div>
                    </div>

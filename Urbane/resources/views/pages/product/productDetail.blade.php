@@ -72,7 +72,7 @@
                         {{-- <button class="py-2 max-w-[200px] w-full border-2 border-primary text-primary bold-12 md:bold-16 lg:bold-20 rounded-md">Add To Cart</button> --}}
                     </div>
 
-                     <div class="w-full flex flex-col items-center gap-2 mt-6 md:mt-12 lg:mt-16">
+                     <div class="w-full flex flex-col items-center gap-2 mt-2">
                     <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md" type="submit" id="buyNowBtn">Buy Now</button>
                 </div>
                 </form>
