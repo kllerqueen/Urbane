@@ -149,6 +149,7 @@ Route::middleware('customer')->group(function(){
 
     //profile
     Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
+    Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
 });
 
