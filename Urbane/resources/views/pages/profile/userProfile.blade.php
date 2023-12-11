@@ -129,36 +129,36 @@
                 </div>
                 <h1 class="bold-16 md:bold-24 lg:bold-32 mt-4">History</h1>
                 {{-- Successful container --}}
-                <div class="flex flex-col mt-4" id="container">
+                <div class="flex flex-col mt-4 gap-10" id="container">
                     {{-- Jika ada item --}}
                     @if (!$completeTransactions->isEmpty())
+                        @php
+                            $prevId1 = null;
+                        @endphp
                         @foreach ($completeTransactions as $item)
-                            <div class="flex flex-col gap-2">
-                                <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/29/10/23</h1>
+                        @if ($item->id !== $prevId1)
+                            <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
+                                <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$item->created_at}}/{{$item->id}}</h1>
 
                                 {{-- foreach container product detail disini --}}
+                                @foreach ($completeTransactions as $itemDetail)
+                                @if ($itemDetail->id === $item->id)
                                 <div class="flex flex-row gap-2 md:gap-4">
                                     <div class="flex flex-row items-center gap-2">
-                                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
+                                        <img src="{{ asset('storage/' . $itemDetail->picture_url) }}" alt="" class="w-[65px] h-[80px]">
+                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x {{$itemDetail->qty}}</h1>
                                     </div>
                                     <div class="flex flex-col h-full justify-center">
-                                        <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
+                                        <h1 class="bold-14 md:bold-16 lg:bold-20">{{$itemDetail->item_name}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : {{$itemDetail->color}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : {{$itemDetail->size}}</h1>
                                     </div>
                                 </div>
-                                <div class="flex flex-row gap-2 md:gap-4">
-                                    <div class="flex flex-row items-center gap-2">
-                                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
-                                    </div>
-                                    <div class="flex flex-col h-full justify-center">
-                                        <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
-                                    </div>
-                                </div>
+                                @endif
+                                @endforeach
+                                @php
+                                    $prevId1 = $item->id;
+                                @endphp
                                 
                                 <div class="flex flex-col">
                                     <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">
@@ -166,13 +166,14 @@
                                     </h1>
 
                                     <h1 class="bold-10 md:bold-12 lg:bold-14 text-green-600">
-                                        Arrived On : 3rd December 2023
+                                        Arrived On : {{$item->created_at}}
                                     </h1>
                                     <h1 class="bold-12 md:bold-14 lg:bold-16 text-right w-full">
-                                        Total : Rp 198.000
+                                        Total : Rp. {{ number_format($item->total_price, 0, ',', '.') }}
                                     </h1>
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                     @else
                     {{-- Jika Tidak ada Item --}}
@@ -191,33 +192,32 @@
                 <div class="flex-col mt-4 hidden" id="container">
                     {{-- Jika ada item --}}
                     @if (!$onProcessOrders->isEmpty())
+                        @php
+                            $prevId = null;
+                        @endphp
                         @foreach ($onProcessOrders as $order)
-                            <div class="flex flex-col gap-2">
-                                <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/29/10/23</h1>
+                        @if ($order->id !== $prevId)
+                            <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
+                                <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$order->created_at}}/{{$order->id}}</h1>
 
                                 {{-- foreach container product detail disini --}}
+                                @foreach ($onProcessOrders as $orderDetail)
+                                @if ($orderDetail->order_id === $order->id)
                                 <div class="flex flex-row gap-2 md:gap-4">
                                     <div class="flex flex-row items-center gap-2">
-                                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
+                                        <img src="{{ asset('storage/' . $orderDetail->picture_url) }}" alt="" class="w-[65px] h-[80px]">
+                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x {{$orderDetail->qty}}</h1>
                                     </div>
                                     <div class="flex flex-col h-full justify-center">
-                                        <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
+                                        <h1 class="bold-14 md:bold-16 lg:bold-20">{{$orderDetail->item_name}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : {{$orderDetail->color}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : {{$orderDetail->size}}</h1>
                                     </div>
                                 </div>
-                                <div class="flex flex-row gap-2 md:gap-4">
-                                    <div class="flex flex-row items-center gap-2">
-                                        <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
-                                    </div>
-                                    <div class="flex flex-col h-full justify-center">
-                                        <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
-                                    </div>
-                                </div>
+                                @endif
+                                @endforeach
+                                
+                               
 
                                 <div class="flex flex-col">
                                     <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">
@@ -225,14 +225,20 @@
                                     </h1>
 
                                     <h1 class="bold-10 md:bold-12 lg:bold-14 text-orange-600">
-                                        Arrived On : 3rd December 2023
+                                        Arrived On : {{$order->updated_at}}
                                     </h1>
                                     <h1 class="bold-12 md:bold-14 lg:bold-16 text-right w-full">
-                                        Total : Rp 198.000
+                                        Total : Rp. {{ number_format($order->total_price, 0, ',', '.') }}
                                     </h1>
                                 </div>
                             </div>
+
+                            @php
+                                $prevId = $order->id;
+                            @endphp
+                            @endif
                         @endforeach
+                        
                         
                     @else
                     {{-- Jika Tidak ada Item--}}
@@ -248,48 +254,49 @@
                 <div class="flex-col mt-4 hidden" id="container">
                     {{-- Jika ada item --}}
                     @if (!$failedOrders->isEmpty())
+                    @php
+                        $prevId3 = null;
+                    @endphp
                     @foreach ($failedOrders as $order)
-                        <div class="flex flex-col gap-2">
-                            <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/29/10/23</h1>
+                    @if ($order->id !== $prevId3)
+                        <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
+                            <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$order->created_at}}/{{$order->id}}</h1>
 
                             {{-- foreach container product detail disini --}}
-                            <div class="flex flex-row gap-2 md:gap-4">
-                                <div class="flex flex-row items-center gap-2">
-                                    <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                    <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
+                            @foreach ($failedOrders as $orderDetail)
+                            @if ($orderDetail->order_id === $order->id)
+                                <div class="flex flex-row gap-2 md:gap-4">
+                                    <div class="flex flex-row items-center gap-2">
+                                        <img src="{{ asset('storage/' . $orderDetail->picture_url) }}" alt="" class="w-[65px] h-[80px]">
+                                        <h1 class="bold-12 md:bold-16 lg:bold-20">x {{$orderDetail->qty}}</h1>
+                                    </div>
+                                    <div class="flex flex-col h-full justify-center">
+                                        <h1 class="bold-14 md:bold-16 lg:bold-20">{{$orderDetail->item_name}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Color : {{$orderDetail->color}}</h1>
+                                        <h1 class="regular-10 md:regular-12 lg:regular-14">Size : {{$orderDetail->size}}</h1>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col h-full justify-center">
-                                    <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                    <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                    <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
-                                </div>
-                            </div>
-                            <div class="flex flex-row gap-2 md:gap-4">
-                                <div class="flex flex-row items-center gap-2">
-                                    <img src="{{url('assets/product/Dummy 1.png')}}" alt="" class="w-[65px] h-[80px]">
-                                    <h1 class="bold-12 md:bold-16 lg:bold-20">x 1</h1>
-                                </div>
-                                <div class="flex flex-col h-full justify-center">
-                                    <h1 class="bold-14 md:bold-16 lg:bold-20">Oversized shirt popelin bias mode white</h1>
-                                    <h1 class="regular-10 md:regular-12 lg:regular-14">Color : White</h1>
-                                    <h1 class="regular-10 md:regular-12 lg:regular-14">Size : L</h1>
-                                </div>
-                            </div>
+                             @endif
+                            @endforeach
 
+                            @php
+                                $prevId3 = $order->id;
+                            @endphp
                             <div class="flex flex-col">
                                 <h1 class="bold-10 md:bold-12 lg:bold-14 text-red-600">
                                     Status: You’ve not paid the payment
                                 </h1>
 
                                 <h1 class="bold-10 md:bold-12 lg:bold-14 text-red-600">
-                                    Arrived On : 3rd December 2023
+                                    Arrived On : {{$order->updated_at}}
                                 </h1>
                                 <h1 class="bold-12 md:bold-14 lg:bold-16 text-right w-full">
-                                    Total : Rp 198.000
+                                    Total : Rp. {{ number_format($order->total_price, 0, ',', '.') }}
                                 </h1>
                             </div>
                         </div>
-                    
+
+                        @endif
                     @endforeach
                     
                     @else

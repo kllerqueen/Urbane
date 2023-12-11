@@ -286,7 +286,7 @@
             </div>
             <div class="relative mt-12 w-fit">
                 <img src="{{ url('assets/home/SecondSection/ArrivalButtonCircle.png')}}" alt="" class="absolute min-w-[170px] md:min-w-[250px] h-[75px] md:h-[95px] top-[-20px] md:top-[-30px] right-[-50px] z-1">
-                <a href="/home" class="border-2 rounded-md px-4 md:px-8 py-1 md:py-2 border-primary text-primary bold-18 md:bold-20 lg:bold-24 z-10 relative">
+                <a href="{{ route('discover', 'New') }}" class="border-2 rounded-md px-4 md:px-8 py-1 md:py-2 border-primary text-primary bold-18 md:bold-20 lg:bold-24 z-10 relative">
                     New Arrival
                 </a>
             </div>
@@ -322,7 +322,7 @@
                                 <a href="{{ route('detailPage', $item->id) }}" class="w-full py-1 bg-primary rounded-sm">See Details</a>
                             </div>
                         </div>
-                        
+
                         <img src="{{ asset('storage/' . optional($item->pictures->first())->picture_url) }}" alt=""  class='w-full h-[150px] md:h-[250px]'/>
                         <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center ">
                             <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden">{{ $item->item_name }}</p>
