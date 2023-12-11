@@ -41,21 +41,23 @@
                 <i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]' onclick="showNotif()"></i>
 
                 {{-- notification container --}}
-                <div class="w-[250px] md:w-[300px] h-[400px] absolute top-[120%] right-0 bg-white border-2 rounded-md flex flex-col px-6 py-2 gap-1 overflow-y-scroll hidden" id="notification-container">
+                <div class="w-[250px] md:w-[300px] h-[400px] absolute top-[120%] right-0 bg-white border-2 rounded-md flex flex-col px-4 py-2 gap-1 overflow-y-scroll hidden" id="notification-container">
                     <h1 class="text-primary bold-12 md:bold-16 lg:bold-20">Notifications</h1>
                     <div class="flex border-2 rounded-3xl text-center ">
                         <h1 class="bg-primary text-white bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(0)">Transaction</h1>
                         <h1 class=" bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(1)">Update</h1>
                     </div> 
+
                     {{-- Transaction Container --}}
                     <div class="" id="container" >
                         <h1 class="bold-12 md:bold-16 ">For You</h1>
                         {{-- Transaction Detail --}}
-                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-100 rounded-md" id="transaction-detail " >
+                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 rounded-md" id="transaction-detail " >
                             <div class=" flex mt-2">
                                 <i class='bx bx-receipt text-[20px] text-primary rounded-full bg-white h-fit p-1 shadow-md' id="transaction-icon"></i>
                             </div>
                             <div>
+                                <h1 class="text-gray-500 bold-12">2:15 AM</h1>
                                 <h1 class="bold-12 md:bold-14 lg:bold-16">Transaction Successful!</h1>
                                 <p class="bold-10 md:bold-12 text-secondary">Your transaction is successful. Tap to see you're Product</p>
                             </div>
@@ -66,7 +68,7 @@
                     {{-- Update Container --}}
                     <div class="hidden" id="container">
                         {{-- Update Detail --}}
-                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit" id="update-detail">
+                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 " id="update-detail">
                             <div class=" flex mt-2" >
                                 <i class='bx bxs-bell text-primary rounded-full bg-white h-fit p-1 shadow-md' id="update-icon"></i>
                             </div>
