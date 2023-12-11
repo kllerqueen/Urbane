@@ -63,6 +63,9 @@ Route::get('/faq',function(){
 Route::get('/our_partners',function(){
     return view('pages.other.ourPartners');
 });
+Route::get('/notification',function(){
+    return view('partials.notification');
+});
 Route::get('/returns', function(){
     return view('pages.other.returns');
 });
