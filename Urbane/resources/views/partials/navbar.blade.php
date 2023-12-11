@@ -55,7 +55,7 @@
                     <div class="" id="notif-container" >
                         <h1 class="bold-12 md:bold-16 ">For You</h1>
                         {{-- Transaction Detail --}}
-                        @foreach ($notifTransactions as $notifTransaction)
+                        @forelse ($notifTransactions as $notifTransaction)
                             @php
                                 $timestamp = $notifTransaction->created_at;
                                 $createdHour = $timestamp->format('h');
@@ -78,14 +78,17 @@
                                     <p class="bold-10 md:bold-12 text-secondary">{{ $notifTransaction->desc }}</p>
                                 </div>
                             </a>
-                        @endforeach
+                        @empty
+                            <p class="text-sm font-italic">There is no transactions yet</p>
+                        @endforelse
                        
                     </div> 
 
                     {{-- Update Container --}}
                     <div class="hidden" id="notif-container">
                         {{-- Update Detail --}}
-                        @foreach ($notifUpdates as $notifUpdate)
+                        <h1 class="bold-12 md:bold-16 ">For You</h1>
+                        @forelse ($notifUpdates as $notifUpdate)
                             @php
                                 $timestamp = $notifUpdate->created_at;
                                 $createdHour = $timestamp->format('h');
@@ -108,7 +111,9 @@
                                     <p class="bold-10 md:bold-12 text-secondary">{{ $notifUpdate->desc }}</p>
                                 </div>
                             </a>
-                        @endforeach
+                        @empty
+                            <p class="text-sm font-italic">There is no updates yet</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
