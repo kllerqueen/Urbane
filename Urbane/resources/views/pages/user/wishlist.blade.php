@@ -31,8 +31,8 @@
                     </div>
                 </div>
             @empty
-                <div>
-                    <h1 class="bold-24 md:bold-40 lg:bold-52 text-center text-primary">You have no item on wishlist</h1>
+                <div class="w-full">
+                    <h1 class="bold-24 md:bold-32 lg:bold-40 text-center text-accent">You have no item on wishlist</h1>
                 </div>
             @endforelse
         </div>
