@@ -8,6 +8,7 @@ use App\Models\TransactionHeader;
 use App\Models\TransactionDetail;
 use App\Models\OrderDetail;
 use App\Models\Item;
+use App\Models\Notification;
 
 class CourierController extends Controller
 {
@@ -35,6 +36,13 @@ class CourierController extends Controller
             $th->save();
             
             
+            $notif = new Notification;
+            $notif->user_id = $order->customer_id;
+            $notif->title = "Transaction Successful!";
+            $notif->desc = "Your Transaction with ID $th->id has successful. Tap to see you're product!" ;
+            $notif->type = "Transaction";
+            $notif->save();
+            
             $listItem = OrderDetail::where('order_id', $order_id)->get();
 
             foreach ($listItem as $item) {
@@ -54,6 +62,13 @@ class CourierController extends Controller
             Order::where('id',$order_id)->delete();
         }else{
             $order->update(['status' => $status]);
+
+            $notif = new Notification;
+            $notif->user_id = $order->customer_id;
+            $notif->title = "Transaction $status!";
+            $notif->desc = "Your Transaction with ID $order->id is $status. Tap to see more info here!" ;
+            $notif->type = "Transaction";
+            $notif->save();
         }
         return redirect()->route('courierPage');
     }
