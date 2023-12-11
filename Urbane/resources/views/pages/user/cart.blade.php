@@ -15,8 +15,8 @@
                 
                 <div class="flex  items-center p-4 bg-[#008DFF]/30 rounded-md gap-4 relative max-h-[220px]">
                     <div class="h-full flex items-center gap-2 ">
-                        <div class="h-6 w-6 border-2 border-black/30 rounded-md  relative" onclick="setChecked()" id="check-button">
-                            <div class="hidden justify-center items-center bg-green-500 w-full h-full rounded-md" id="check-box">
+                        <div class="h-6 w-6 border-2 border-black/30 rounded-md overflow-hidden relative" onclick="setChecked()" id="check-button">
+                            <div class="flex hidden justify-center items-center bg-green-500 w-full h-full" id="check-box">
                                 <i class='bx bx-check text-white text-[25px]' ></i>
                             </div>
                         </div>
@@ -52,8 +52,8 @@
                 @foreach ($lists as $CartItem)
                 <div class="flex  items-center p-4 bg-[#008DFF]/30 rounded-md gap-4 relative max-h-[220px]">
                     <div class="h-full flex items-center gap-2 ">
-                        <div class="h-6 w-6 border-2 border-black/30 rounded-md  relative" onclick="setChecked()" id="check-button">
-                            <div class="hidden justify-center items-center bg-green-500 w-full h-full rounded-md" id="check-box">
+                        <div class="h-6 w-6 border-2 border-black/30 rounded-md overflow-hidden relative" onclick="setChecked()" id="check-button">
+                            <div class="flex hidden justify-center items-center bg-green-500 w-full h-full" id="check-box">
                                 <i class='bx bx-check text-white text-[25px]' ></i>
                             </div>
                         </div>
@@ -142,7 +142,14 @@
 </div>
 
     <script>
-        
+        let checkBtns = document.querySelectorAll('#check-button');
+        let checkBoxes = document.querySelectorAll('#check-box')
+
+        checkBtns.forEach((checkBtn,index) => {
+            checkBtn.addEventListener("click", function(){
+                checkBoxes[index].classList.toggle('hidden')
+            })
+        });
     </script>
 
 @endsection
