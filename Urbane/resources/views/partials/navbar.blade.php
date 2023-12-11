@@ -38,19 +38,20 @@
             <a href="{{ route('wishlist') }}"><i class='bx bxs-heart text-red-700 bg-white p-1 rounded-full border shadow-md text-[25px]' ></i></a>
             <a href="{{route('cart')}}"><i class='bx bxs-shopping-bag text-green-700 bg-white p-1 rounded-full border shadow-md text-[25px]'></i></a>
             <div href="" class="flex justify-center z-50  relative">
-                <i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]'></i>
+                <i class='bx bxs-bell text-yellow-500 bg-white p-1 rounded-full border shadow-md text-[25px]' onclick="showNotif()"></i>
+
                 {{-- notification container --}}
-                <div class="w-[250px] md:w-[300px] h-[400px] absolute top-[120%] right-0 bg-white border-2 rounded-md flex flex-col px-6 py-2 gap-1 overflow-y-scroll">
+                <div class="w-[250px] md:w-[300px] h-[400px] absolute top-[120%] right-0 bg-white border-2 rounded-md flex flex-col px-6 py-2 gap-1 overflow-y-scroll hidden" id="notification-container">
                     <h1 class="text-primary bold-12 md:bold-16 lg:bold-20">Notifications</h1>
                     <div class="flex border-2 rounded-3xl text-center ">
-                        <h1 class="bg-primary text-white bold-14 py-1 px-4 w-full rounded-3xl" onclick="showDetail(0)">Transaction</h1>
-                        <h1 class=" bold-14 py-1 px-4 w-full rounded-3xl" onclick="showDetail(1)">Update</h1>
+                        <h1 class="bg-primary text-white bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(0)">Transaction</h1>
+                        <h1 class=" bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(1)">Update</h1>
                     </div> 
                     {{-- Transaction Container --}}
-                    <div class="" id="container">
+                    <div class="" id="container" >
                         <h1 class="bold-12 md:bold-16 ">For You</h1>
                         {{-- Transaction Detail --}}
-                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit" id="transaction-detail">
+                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-100 rounded-md" id="transaction-detail " >
                             <div class=" flex mt-2">
                                 <i class='bx bx-receipt text-[20px] text-primary rounded-full bg-white h-fit p-1 shadow-md' id="transaction-icon"></i>
                             </div>
@@ -74,7 +75,6 @@
                                 <p class="bold-10 md:bold-12 text-secondary">Your transaction is successful. Tap to see you're Product</p>
                             </div>
                         </a>
-                        
                     </div>
                 </div>
             </div>
@@ -84,8 +84,27 @@
     <script>
         let containers = document.querySelectorAll('#container')
         let transactions = document.querySelectorAll('#transaction-detail')
-        let updates = document.querySelectorAll('#update-detail');
+        let updates = document.querySelectorAll('#update-detail')
         let tIcons = document.querySelectorAll('#transaction-icon')
         let uIcons = document.querySelectorAll('#update-icon')
+        let buttons = document.querySelectorAll('#button')
+        let notificationContainer = document.getElementById('notification-container')
+
+        function showNotif(){
+            notificationContainer.classList.toggle('hidden')
+        }
+
+        function showDetail(index){
+            buttons.forEach(button => {
+                button.classList.remove('bg-primary', 'text-white');
+            })
+
+            containers.forEach(container => {
+                container.classList.add('hidden')
+            });
+            buttons[index].classList.add('bg-primary', 'text-white')
+            containers[index].classList.remove('hidden')
+        }
+
     </script>
 </div>
