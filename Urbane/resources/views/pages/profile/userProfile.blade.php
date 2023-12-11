@@ -129,7 +129,7 @@
                 </div>
                 <h1 class="bold-16 md:bold-24 lg:bold-32 mt-4">History</h1>
                 {{-- Successful container --}}
-                <div class="flex flex-col mt-4" id="container">
+                <div class="flex flex-col mt-4 gap-10" id="container">
                     {{-- Jika ada item --}}
                     @if (!$completeTransactions->isEmpty())
                         @php
@@ -137,7 +137,7 @@
                         @endphp
                         @foreach ($completeTransactions as $item)
                         @if ($item->id !== $prevId1)
-                            <div class="flex flex-col gap-2">
+                            <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
                                 <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$item->created_at}}/{{$item->id}}</h1>
 
                                 {{-- foreach container product detail disini --}}
@@ -197,7 +197,7 @@
                         @endphp
                         @foreach ($onProcessOrders as $order)
                         @if ($order->id !== $prevId)
-                            <div class="flex flex-col gap-2">
+                            <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
                                 <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$order->created_at}}/{{$order->id}}</h1>
 
                                 {{-- foreach container product detail disini --}}
@@ -259,7 +259,7 @@
                     @endphp
                     @foreach ($failedOrders as $order)
                     @if ($order->id !== $prevId3)
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-3 p-4 rounded-md shadow-lg">
                             <h1 class="bold-10 md:bold-12 lg:bold-12">INVOICE ID: URBN/{{$order->created_at}}/{{$order->id}}</h1>
 
                             {{-- foreach container product detail disini --}}
