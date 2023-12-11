@@ -68,7 +68,7 @@
                         {{-- Update Detail --}}
                         <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit" id="update-detail">
                             <div class=" flex mt-2" >
-                                <i class='bx bxs-bell text-primary p-1' id="update-icon"></i>
+                                <i class='bx bxs-bell text-primary rounded-full bg-white h-fit p-1 shadow-md' id="update-icon"></i>
                             </div>
                             <div>
                                 <h1 class="bold-12 md:bold-14 lg:bold-16">Transaction Successful!</h1>
