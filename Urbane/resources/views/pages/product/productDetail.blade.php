@@ -76,13 +76,11 @@
                     <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md" type="submit" id="buyNowBtn">Buy Now</button>
                 </div>
                 </form>
-               
 
-                
             </div>
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
-                    <img src="{{url('storage/' . $item->pictures->first()->picture_url)}}" alt="" class="w-full h-full rounded-lg" id="main-image">
+                    <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class="w-full h-full rounded-lg" id="main-image">
 
                     <form action="{{ route('toggleFav', $item->id) }}" method="POST">
                         @csrf
@@ -163,7 +161,7 @@
         sizes.forEach((size,index) => {
             size.addEventListener("click", function(){
                 sizes.forEach((s,i) => {
-                    s.classList.remove("shadow-2xl", "bg-primary/50", "text-white"); 
+                    s.classList.remove("shadow-2xl", "bg-primary/50", "text-white");
                 })
                 size.classList.add("shadow-2xl", "bg-primary/50", "text-white");
                 sizeInput.value = sizeArray[index];
@@ -174,7 +172,7 @@
         colors.forEach((color,index) => {
             color.addEventListener("click", function(){
                 colors.forEach((c,i) => {
-                    c.classList.remove("shadow-2xl", "bg-primary/50", "text-white"); 
+                    c.classList.remove("shadow-2xl", "bg-primary/50", "text-white");
                 })
                 color.classList.add("shadow-2xl", "bg-primary/50", "text-white");
                 colorInput.value = colorArray[index];
@@ -229,7 +227,7 @@
         const addToCartBtn = document.getElementById('addToCartBtn');
         const buyNowBtn = document.getElementById('buyNowBtn');
         const productForm = document.getElementById('product-form');
-        
+
         const itemId = "{{ $item->id }}"; // Pastikan variabel $item->id ada di dalam view Anda
 
         addToCartBtn.addEventListener('click', function(e) {
@@ -239,7 +237,7 @@
         });
 
         buyNowBtn.addEventListener('click', function(e) {
-            // {{ route('checkout.buynow.form', ['id' => $item->id]) }}  
+            // {{ route('checkout.buynow.form', ['id' => $item->id]) }}
             productForm.setAttribute('action', "{{ route('checkout.buynow.form', $item->id) }}");
             productForm.submit();
         });

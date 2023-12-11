@@ -47,36 +47,73 @@
                         <h1 class="bg-primary text-white bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(0)">Transaction</h1>
                         <h1 class=" bold-14 py-1 px-4 w-full rounded-3xl" id="button" onclick="showDetail(1)">Update</h1>
                     </div> 
-
+                    @php
+                        $notifTransactions = \App\Models\Notification::where('user_id', auth()->user()->id)->get();
+                        $notifUpdates = \App\Models\Notification::where('user_id', 2)->get();
+                    @endphp
                     {{-- Transaction Container --}}
-                    <div class="" id="container" >
+                    <div class="" id="notif-container" >
                         <h1 class="bold-12 md:bold-16 ">For You</h1>
                         {{-- Transaction Detail --}}
-                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 rounded-md" id="transaction-detail " >
-                            <div class=" flex mt-2">
-                                <i class='bx bx-receipt text-[20px] text-primary rounded-full bg-white h-fit p-1 shadow-md' id="transaction-icon"></i>
-                            </div>
-                            <div>
-                                <h1 class="text-gray-500 bold-12">2:15 AM</h1>
-                                <h1 class="bold-12 md:bold-14 lg:bold-16">Transaction Successful!</h1>
-                                <p class="bold-10 md:bold-12 text-secondary">Your transaction is successful. Tap to see you're Product</p>
-                            </div>
-                        </a>
+                        @forelse ($notifTransactions as $notifTransaction)
+                            @php
+                                $timestamp = $notifTransaction->created_at;
+                                $createdHour = $timestamp->format('h');
+                                $createdMinute = $timestamp->format('i');
+                                $amOrPm = $timestamp->format('A');
+                            @endphp
+                            <a href="{{ route('user.profile') }}" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 rounded-md" id="transaction-detail " >
+                                <div class=" flex mt-2">
+                                    <i class='bx bx-receipt text-[20px] text-primary rounded-full bg-white h-fit p-1 shadow-md' id="transaction-icon"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-gray-500 bold-12">
+                                        @if ($createdHour >= 1 && $amOrPm === 'PM')
+                                            {{ $createdHour }}:{{ $createdMinute }} PM
+                                        @else
+                                            {{ $createdHour }}:{{ $createdMinute }} AM
+                                        @endif
+                                    </h1>
+                                    <h1 class="bold-12 md:bold-14 lg:bold-16">{{ $notifTransaction->title }}</h1>
+                                    <p class="bold-10 md:bold-12 text-secondary">{{ $notifTransaction->desc }}</p>
+                                </div>
+                            </a>
+                        @empty
+                            <p class="text-sm font-italic">There is no transactions yet</p>
+                        @endforelse
                        
                     </div> 
 
                     {{-- Update Container --}}
-                    <div class="hidden" id="container">
+                    <div class="hidden" id="notif-container">
                         {{-- Update Detail --}}
-                        <a href="" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 " id="update-detail">
-                            <div class=" flex mt-2" >
-                                <i class='bx bxs-bell text-primary rounded-full bg-white h-fit p-1 shadow-md' id="update-icon"></i>
-                            </div>
-                            <div>
-                                <h1 class="bold-12 md:bold-14 lg:bold-16">Transaction Successful!</h1>
-                                <p class="bold-10 md:bold-12 text-secondary">Your transaction is successful. Tap to see you're Product</p>
-                            </div>
-                        </a>
+                        <h1 class="bold-12 md:bold-16 ">For You</h1>
+                        @forelse ($notifUpdates as $notifUpdate)
+                            @php
+                                $timestamp = $notifUpdate->created_at;
+                                $createdHour = $timestamp->format('h');
+                                $createdMinute = $timestamp->format('i');
+                                $amOrPm = $timestamp->format('A');
+                            @endphp
+                            <a href="{{ route('discover', 'New') }}" class="flex flex-row py-2 gap-2 px-2 h-fit hover:bg-gray-200 rounded-md" id="transaction-detail " >
+                                <div class=" flex mt-2">
+                                    <i class='bx bx-receipt text-[20px] text-primary rounded-full bg-white h-fit p-1 shadow-md' id="transaction-icon"></i>
+                                </div>
+                                <div>
+                                    <h1 class="text-gray-500 bold-12">
+                                        @if ($createdHour >= 1 && $amOrPm === 'PM')
+                                            {{ $createdHour }}:{{ $createdMinute }} PM
+                                        @else
+                                            {{ $createdHour }}:{{ $createdMinute }} AM
+                                        @endif
+                                    </h1>
+                                    <h1 class="bold-12 md:bold-14 lg:bold-16">{{ $notifUpdate->title }}</h1>
+                                    <p class="bold-10 md:bold-12 text-secondary">{{ $notifUpdate->desc }}</p>
+                                </div>
+                            </a>
+                        @empty
+                            <p class="text-sm font-italic">There is no updates yet</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
@@ -84,7 +121,7 @@
         </div>
     </div>
     <script>
-        let containers = document.querySelectorAll('#container')
+        let notifContainers = document.querySelectorAll('#notif-container')
         let transactions = document.querySelectorAll('#transaction-detail')
         let updates = document.querySelectorAll('#update-detail')
         let tIcons = document.querySelectorAll('#transaction-icon')
@@ -101,11 +138,11 @@
                 button.classList.remove('bg-primary', 'text-white');
             })
 
-            containers.forEach(container => {
+            notifContainers.forEach(container => {
                 container.classList.add('hidden')
             });
             buttons[index].classList.add('bg-primary', 'text-white')
-            containers[index].classList.remove('hidden')
+            notifContainers[index].classList.remove('hidden')
         }
 
     </script>

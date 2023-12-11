@@ -165,7 +165,7 @@ class AdminController extends Controller
             'item_price' => 'required|numeric',
             'qty' => 'required|integer',
             'category_name' => 'required|string|in:Man,Woman,Unisex,Accessory',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $itemId = $request->id;
@@ -185,6 +185,22 @@ class AdminController extends Controller
         $item->qty = $itemQty;
 
         $item->save();
+
+        $uploadedImages = $request->file('image');
+
+        $currentPictures = $item->pictures;
+
+        if ($uploadedImages) {
+            foreach ($currentPictures as $index => $picture) {
+                if (isset($uploadedImages[$index])) {
+                    $image = $uploadedImages[$index];
+                    $imagePath = $image->store('item', 'public');
+                    $picture->update([
+                        'picture_url' => $imagePath
+                    ]);
+                }
+            }
+        }
 
         ProductHistory::create([
             'admin_name' => $request->user()->username,

@@ -14,7 +14,7 @@ class UserController extends Controller
     //
     public function index(Request $request){
         $user = session('user');
-        // @dd($user);
+
         return view('pages.home',[
             "user" => $user
         ]);
@@ -30,7 +30,6 @@ class UserController extends Controller
             'con-pass' => 'required_with:password|same:password'
         ]);
 
-        // dd("berhasil weh");
         $user = new User;
         $user->username = $request->input('username');
         $user->email = $request->input('email');
@@ -48,9 +47,6 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
-        // @dd("asd");
-
 
         if(Auth::attempt($credentials)){
 
@@ -122,15 +118,12 @@ class UserController extends Controller
             ->where('status', 'Failed')
             ->get();
 
-        // dd($completeTransactions);
-        // dd($onProcessOrders);
-        // dd($failedOrders);
-
         return view('pages.profile.userProfile', compact('completeTransactions', 'onProcessOrders', 'failedOrders'));
     }
 
     public function updateProfile(Request $request){
-        $user = auth()->user();
+        $user = User::where('id', $request->user->id)->first();
+
         $request->validate([
             'username' => ['required', 'min:5', 'max:25','unique:users'],
             'email' => 'required|email|unique:users|email:dns',
@@ -140,7 +133,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->save();
-        
+
         return redirect()->back();
     }
 }

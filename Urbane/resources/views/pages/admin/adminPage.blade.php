@@ -61,13 +61,6 @@
                                     <i class='bx bx-edit text-white'></i>
                                 </button>
                             </a>
-                            {{-- <form action="{{ url('editProductPage', $item->id) }}" method="POST" class="">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">
-                                    <i class='bx bx-edit text-white'></i>
-                                </button>
-                            </form> --}}
                             <form action="{{ route('deleteItem',  $item->id) }}" method="POST" class="">
                                 @csrf
                                 @method('DELETE')

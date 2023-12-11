@@ -128,8 +128,9 @@
                     </div>
                 </div>
                 <h1 class="bold-16 md:bold-24 lg:bold-32 mt-4">History</h1>
+                
                 {{-- Successful container --}}
-                <div class="flex flex-col mt-4 gap-10" id="container">
+                <div class="flex flex-col mt-4 gap-10" id="profile-container">
                     {{-- Jika ada item --}}
                     @if (!$completeTransactions->isEmpty())
                         @php
@@ -186,10 +187,8 @@
                
                 </div>
 
-
-
                 {{-- On proccess container --}}
-                <div class="flex-col mt-4 hidden" id="container">
+                <div class="flex-col mt-4 hidden" id="profile-container">
                     {{-- Jika ada item --}}
                     @if (!$onProcessOrders->isEmpty())
                         @php
@@ -251,7 +250,7 @@
                 </div>
 
                 {{-- Failed container --}}
-                <div class="flex-col mt-4 hidden" id="container">
+                <div class="flex-col mt-4 hidden" id="profile-container">
                     {{-- Jika ada item --}}
                     @if (!$failedOrders->isEmpty())
                     @php
@@ -311,25 +310,26 @@
 
             </div>
         </div>
-    </div>
-
+        
 <script>
     let grids = document.querySelectorAll('#grid');
-    let containers = document.querySelectorAll('#container');
+    let profileContainers = document.querySelectorAll('#profile-container');
     grids.forEach((grid,index) => {
         grid.addEventListener("click", function(){
             grids.forEach((g,i)=>{
                 if(i!=index){
-                    containers[i].classList.remove('flex');
-                    containers[i].classList.add('hidden');
+                    profileContainers[i].classList.remove('flex');
+                    profileContainers[i].classList.add('hidden');
                     g.classList.remove('bg-[#00143B]');
                 }
             })
-            containers[index].classList.add('flex');
-            containers[index].classList.remove('hidden')
+            profileContainers[index].classList.add('flex');
+            profileContainers[index].classList.remove('hidden')
             grid.classList.add('bg-[#00143B]');
             console.log(index)
         })
     });
 </script>
+    </div>
+
 @endsection

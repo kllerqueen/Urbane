@@ -37,8 +37,9 @@
                                 @csrf
                                 @method("PATCH")
                                 <input type="hidden" name="_method" value="PATCH">
-                                <div class="d-flex gap-10 items-center space-x-2">
-                                    <span>Qty  </span>
+                                <div class="d-flex gap-10 items-center">
+                                    <h1>size : {{ $CartItem->size }}  | color : {{ $CartItem->color }}</h1>
+                                    <span class="">Qty  </span>
                                     <button type="submit" name="operation" value="decrease" class="bg-white text-black font-bold py-1 px-2 rounded">-</button>
                                     <span id="qty-display" class="bold-8 md:bold-16 lg:bold-20 text-secondary">{{ $CartItem->qty }}</span>
                                     <button type="submit" name="operation" value="increase" class="bg-black text-white font-bold py-1 px-2 rounded">+</button>
@@ -46,19 +47,6 @@
                             </form>
 
                         </div>
-                        {{-- <div class="flex items-center gap-2">
-                            <form action="{{ route('toggleFav', $CartItem->item->id) }}" method="POST">
-                                @csrf
-                                <button class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
-                                    @if ($fav)
-                                        <i class='bx bxs-heart text-[30px] text-red-500' ></i>
-                                    @else
-                                        <i class='bx bx-heart text-[30px]' ></i>
-                                    @endif
-                                </button>
-                            </form>
-                            <h1 class="bold-12 md:bold-16">Wishlist</h1>
-                        </div> --}}
                    </div>
                    <form method="POST" action="{{ route('cart.delete', ['item_id' => $CartItem->item_id, 'size' => $CartItem->size, 'color' => $CartItem->color]) }}">
                         @csrf

@@ -209,6 +209,7 @@
                         <div class="flex flex-col justify-between">
                             <div class="flex flex-col">
                                 <h1 class="bold-8 md:bold-12 lg:bold-16">{{$item->item_name}}</h1>
+                                <h1>size : {{ $item->size }}  | color : {{ $item->color }}</h1>
                                 <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{ $item->qty }} pcs</p>
                             </div>
                             <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($item->item_price * $item->qty, 0, ',', '.') }}</h1>

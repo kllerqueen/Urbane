@@ -81,9 +81,12 @@ class CartController extends Controller
         foreach ($lists as $list) {
             $item = $list->item; 
             $item->qty = $list->qty; 
+            $item->size = $list->size;
+            $item->color = $list->color;
             $items->push($item); 
         }
 
+        // dd($items);
         // dump($items, $lists);
 
         return view('pages.payment.CheckoutForm', compact('items'));
@@ -105,10 +108,15 @@ class CartController extends Controller
         if($items->isEmpty()){
             return redirect()->back()->with('NoItem', 'There is no item in your Cart');
         }
-        $item = $items->first(); 
-        $item->qty = 1; 
+
         $color = $request->input('color');
         $size = $request->input('size');
+
+        $item = $items->first(); 
+        $item->qty = 1; 
+        $item->color = $request->input('color');
+        $item->size = $request->input('size');
+        
         return view('pages.payment.CheckoutForm', compact('items', 'id', 'color', 'size'));
     }
     
