@@ -165,7 +165,7 @@ class AdminController extends Controller
             'item_price' => 'required|numeric',
             'qty' => 'required|integer',
             'category_name' => 'required|string|in:Man,Woman,Unisex,Accessory',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $itemId = $request->id;
@@ -185,6 +185,18 @@ class AdminController extends Controller
         $item->qty = $itemQty;
 
         $item->save();
+
+        // if($request->hasFile('image')){
+        //     foreach($request->file('image') as $image){
+
+
+
+        //         $imagePath = $image->store('item', 'public');
+        //         $item->pictures()->update([
+        //             'picture_url' => $imagePath
+        //         ]);
+        //     }
+        // }
 
         ProductHistory::create([
             'admin_name' => $request->user()->username,

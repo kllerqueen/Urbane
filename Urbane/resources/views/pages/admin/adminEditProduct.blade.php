@@ -39,32 +39,22 @@
                                     <p class="regular-10 md:regular-12 lg:regular-14">Upload file in JPEG, JPG, or PNG</p>
                                 </div>
                                 <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
+                                <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md" src="{{url('storage/' . $item->pictures->first()->picture_url)}}">
                             </div>
 
                             {{-- Three Small Image --}}
                             <div class="row-span-2 grid grid-cols-3 w-full h-full gap-2">
-                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
+                                @forelse ($item->pictures->skip(1) as $pic)
+                                    <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
+                                        <div class="bg-black p-2 rounded-md flex justify-center items-center">
+                                            <i class='bx bx-plus text-[30px] text-white' ></i>
+                                        </div>
+                                        <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
+                                        <img id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 rounded-md" src="{{ url('storage', $pic->picture_url) }}">
                                     </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 rounded-md">
-                                </div>
-                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
-                                </div>
-                                <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
-                                    <div class="bg-black p-2 rounded-md flex justify-center items-center">
-                                        <i class='bx bx-plus text-[30px] text-white' ></i>
-                                    </div>
-                                    <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
-                                    <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
-                                </div>
+                                @empty
+
+                                @endforelse
                             </div>
                         </div>
                     </div>
