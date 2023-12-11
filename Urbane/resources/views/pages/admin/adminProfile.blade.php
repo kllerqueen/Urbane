@@ -47,7 +47,7 @@
                         <i class='bx bxs-chat text-white text-[40px]' ></i>
                         <div>
                             <h1>Help and information</h1>
-                            <p>Need Help</p>
+                            <p>Need Help ?</p>
                         </div>
                     </a>
                 </div>
