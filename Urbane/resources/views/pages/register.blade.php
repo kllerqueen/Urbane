@@ -159,7 +159,7 @@
                 @enderror
             </div>
 
-            <p class="text-secondary text-sm">By registering your account, you indicate your agreement with the <span class="text-black font-bold">terms and conditions</span> that apply to our website's policy</p>
+            <p class="text-secondary text-sm">By registering your account, you indicate your agreement with the <a href="/terms_and_conditions" class="text-black font-bold">terms and conditions</a> that apply to our website's policy</p>
             <button class="w-full py-2 bg-primary text-lg text-highlight rounded-md mt-4 font-bold" type="submit">Register</button>
             <p class="self-center text-primary text-sm">Already have an account? <span><a href="/login" class="font-bold ">Login here</a></span></p>
         </form>
