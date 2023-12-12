@@ -16,7 +16,10 @@
                             <h2 class="bold-10 md:bold-14 lg:bold-16">Rp {{ number_format($fav->item->item_price, 2, '.', ',') }}</h2>
                         </div>
                         <div class="flex justify-between">
-                            <button class="py-1 px-1 md:px-4 border-2 border-black rounded-md bold-10 md:bold-14 lg:bold-16">Add To Cart</button>
+                            <form method="post" action="{{route('cart.addToCart2', $fav->item->id)}}">
+                                @csrf
+                                <button type="submit" class="py-1 px-1 md:px-4 border-2 border-black rounded-md bold-10 md:bold-14 lg:bold-16">Add To Cart</button>
+                            </form>
                             <div class="flex items-center gap-2">
                                 <form action="{{ route('toggleFav', $fav->item->id) }}" method="POST" class="relative">
                                     @csrf

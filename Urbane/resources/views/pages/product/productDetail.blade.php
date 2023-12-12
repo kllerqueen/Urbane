@@ -76,11 +76,11 @@
                     <button class="py-2 max-w-[200px] w-full bg-primary text-white bold-12 md:bold-16 lg:bold-20 rounded-md" type="submit" id="buyNowBtn">Buy Now</button>
                 </div>
                 </form>
-               
+
             </div>
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
-                    <img src="{{url('storage/' . $item->pictures->first()->picture_url)}}" alt="" class="w-full h-full rounded-lg" id="main-image">
+                    <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class="w-full h-full rounded-lg" id="main-image">
 
                     <form action="{{ route('toggleFav', $item->id) }}" method="POST">
                         @csrf

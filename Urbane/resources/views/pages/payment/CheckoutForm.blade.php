@@ -90,7 +90,7 @@
                     </div>
                     <div class="p-2 flex flex-row items-center border-b-2 border-secondary/20  w-full">
                         <i class='bx bxs-map px-2 text-[20px]'></i>
-                        <input type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Address*" name="address">
+                        <input id="addInput" type="text" class="border-l-2 border-secondary/10 focus:outline-none pl-4" placeholder="Address*" name="address">
                         @error('address')
                             <div class="text-red-500">{{ $message }}</div>
                         @enderror
@@ -152,7 +152,7 @@
                                 <i class='bx bxs-home text-[40px] text-black/80'></i>
                                 <div class="flex flex-col w-full">
                                     <h1 class="bold-12 md:bold-16 lg:bold-20">Standard Shipping</h1>
-                                    <input type="text" class="regular-8 md:regular-10 lg:regular-12 focus:outline-none w-full bg-transparent rounded-md p-1" placeholder="Axel Novanic, Jl. Mabes Raya, Jakarta Barat" disabled id="input">
+                                    <input type="text" class="regular-8 md:regular-10 lg:regular-12 focus:outline-none w-full bg-transparent rounded-md p-1" placeholder="" disabled id="addOutput">Jl. Pantai Indah Kapuk , Long Beach Jakarta Utara. 14460
                                 </div>
                             </div>
                             <i class='bx bxs-pencil text-[30px]' onclick="setDisabled()"></i>
@@ -209,6 +209,7 @@
                         <div class="flex flex-col justify-between">
                             <div class="flex flex-col">
                                 <h1 class="bold-8 md:bold-12 lg:bold-16">{{$item->item_name}}</h1>
+                                <h1>size : {{ $item->size }}  | color : {{ $item->color }}</h1>
                                 <p class="regular-8 md:regular-8 lg:regular-12">Qty: {{ $item->qty }} pcs</p>
                             </div>
                             <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. {{ number_format($item->item_price * $item->qty, 0, ',', '.') }}</h1>
@@ -313,7 +314,5 @@
         }     
     }
 
-
-
-    
+   
 </script>
