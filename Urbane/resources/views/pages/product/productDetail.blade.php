@@ -25,7 +25,7 @@
         </h1>
         <div class="flex flex-col-reverse md:flex-row w-full gap-2 max-h-[25%] items-center md:items-start">
             <div class="flex flex-col max-w-[450px] gap-2">
-                <h1 class="bold-32 md:bold-40 lg:bold-52 md:text-white">Rp {{ number_format($item->item_price, 2, '.', ',') }}</h1>
+                <h1 class="bold-20 md:bold-40 lg:bold-52 md:text-white">Rp {{ number_format($item->item_price, 2, '.', ',') }}</h1>
                 <h1 class="mt-4 regular-14 md:regular-20 lg:regular-24">Description</h1>
                 <h1 class="regular-8 md:regular-12 lg:regular-14">{{ $item->item_desc }}</h1>
 
