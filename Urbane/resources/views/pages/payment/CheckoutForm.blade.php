@@ -205,7 +205,7 @@
                     {{-- item card --}}
                     @foreach ($items as $item)
                     <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
-                        <img src="{{ asset('storage/' . $item->pictures->first()->picture_url) }}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
+                        <img src="{{ asset('storage/' . optional($item->pictures->first())->picture_url) }}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
                         <div class="flex flex-col justify-between">
                             <div class="flex flex-col">
                                 <h1 class="bold-8 md:bold-12 lg:bold-16">{{$item->item_name}}</h1>

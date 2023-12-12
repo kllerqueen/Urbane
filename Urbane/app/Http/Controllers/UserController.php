@@ -27,7 +27,9 @@ class UserController extends Controller
             'email' => 'required|email|unique:users|email:dns',
             'password' => 'required|min:5|max:25',
             'phoneNumber' => 'required|min:8|max:13',
-            'con-pass' => 'required_with:password|same:password'
+            'con-pass' => 'required_with:password|same:password',
+            'securityQuestion' => 'required',
+            'securityAnswer' => 'required|min:4|max:10'
         ]);
 
         $user = new User;
@@ -35,7 +37,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->phoneNumber = $request->input('phoneNumber');
-        $user->security = '';
+        $user->security = $request->input('securityAnswer');
         $user->save();
 
         return redirect('login');
