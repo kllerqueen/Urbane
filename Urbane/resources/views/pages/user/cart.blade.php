@@ -12,7 +12,7 @@
         <div class="flex flex-col md:flex-row gap-2">
             {{-- Item Card Section--}}
             <div class="max-w-[850px] w-full  flex flex-col gap-2">
-                @foreach ($lists as $CartItem)
+                @forelse ($lists as $CartItem)
                 <div class="flex  items-center p-4 bg-[#008DFF]/30 rounded-md gap-4 relative max-h-[220px]">
                     <div class="h-full flex items-center gap-2 ">
                         <div class="h-6 w-6 border-2 border-black/30 rounded-md overflow-hidden relative" onclick="setChecked()" id="check-button">
@@ -55,7 +55,11 @@
                         </button>
                    </form>
                 </div>
-                @endforeach
+                @empty
+                    <div class="w-full">
+                        <h1 class="bold-24 md:bold-32 lg:bold-40 text-center text-accent">You have no item in cart</h1>
+                    </div>
+                @endforelse
             </div>
 
             <div class="text-red-500">
