@@ -3,7 +3,7 @@
 @section('body')
     <div class="flex flex-col items-center   px-8 relative">
         <div class="z-[-1] absolute bg-black w-full h-full top-0"></div>
-        <h1 class="bold-40 lg:bold-52 text-white my-10">OUR PARTNERS</h1>
+        <h1 class="bold-24 md:bold-32 lg:bold-52 text-white my-10">OUR PARTNERS</h1>
         <div class="flex flex-col md:flex-row items-center  justify-center gap-8">
             <iframe src="https://www.youtube.com/embed/z_WoiAkh9xo?si=5wt7XwYyZtyTB9mo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-full h-[300px]"></iframe>
             <div class="max-w-[700px] w-full">

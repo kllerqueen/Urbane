@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="flex flex-col bg-cover w-screen h-auto mb-5 px-10" style="background-image: url('{{ url('assets/privacypolicy/BubbleBG.png') }}')">
-        <h1 class="flex bold-32 md:bold-64 text-primary mb-5 justify-center">PRIVACY & POLICY</h1>
+        <h1 class="flex bold-24 md:bold-32 lg:bold-52 text-primary mb-5 justify-center">PRIVACY & POLICY</h1>
         
         <div class="w-full regular-14 mb-5">
             <p class="mb-2">The confidentiality and security of your Personal Data are important to us. We are committed to offering you personalized services while respecting your privacy and choices.</p>

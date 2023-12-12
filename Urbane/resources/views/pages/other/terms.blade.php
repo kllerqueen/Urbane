@@ -9,7 +9,7 @@
             </a>
             <h1 class="bold-14 md:bold-18 lg:bold-24 ">Back</h1>
         </div>
-        <h1 class="bold-28 md:bold-40 text-primary w-full text-center">TERMS & CONDITIONS</h1>
+        <h1 class="bold-24 md:bold-32 lg:bold-52 text-primary w-full text-center">TERMS & CONDITIONS</h1>
         <div class="container w-full flex flex-col gap-4 md:gap-8  h-fit">
             {{-- Container 1 --}}
             <div class="w-full flex flex-col p-4 gap-4">

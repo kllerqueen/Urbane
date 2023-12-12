@@ -3,7 +3,7 @@
 @section('body')
     <div class="flex flex-col items-center min-h-screen  px-8 relative">
         <div class="z-[-1] absolute bg-primary w-full h-[620px] top-0"></div>
-        <h1 class="bold-40 lg:bold-52 text-white my-10">ABOUT US</h1>
+        <h1 class="bold-24 md:bold-32 lg:bold-52 text-white my-10">ABOUT US</h1>
         <div class="flex flex-col-reverse md:flex-row items-center  justify-center gap-8">
             <div class="max-w-[700px] w-full">
                 <p class="regular-16 md:regular-24 lg:regular-28 text-black md:text-white">Welcome to Urbane, an online shopping destination where style meets convenience. Our journey began with a simple concept: to create a location where fashion aficionados and trendsetters could discover curated collections that reflected their own preferences.</p>
