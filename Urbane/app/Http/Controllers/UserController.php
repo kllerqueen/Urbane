@@ -159,7 +159,10 @@ class UserController extends Controller
         if($user->security == $request->input('security')) {
             return redirect()->route('changePassPage')->with('user', $user);
         } else {
-            return redirect()->back()->with('message', 'The asnwer is wrong');
+            return redirect()->back()->with([
+                'message' => 'The answer is wrong',
+                'user' => $user
+            ]);
         }
 
     }
