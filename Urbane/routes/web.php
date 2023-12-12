@@ -118,11 +118,14 @@ Route::get('/register-security-success',function(){
 
 Route::get('/change-password-success',function(){
     return view('pages.forgetPassword.changePasswordNotification');
-});
+})->name('passSuccess');
 
 Route::get('/change-password-form',function(){
-    return view('pages.forgetPassword.changePasswordForm');
-})->name('changePass');
+    $user = session('user');
+    return view('pages.forgetPassword.changePasswordForm', compact('user'));
+})->name('changePassPage');
+
+Route::post('/change-password', [UserController::class, 'changePass'])->name('changePass');
 
 //customer
 Route::middleware('customer')->group(function(){
