@@ -19,7 +19,7 @@
         <h1 class="bold-14 md:bold-18 lg:bold-24">Products</h1>
     </div>
 
-    <div class="container w-full px-2 flex flex-col py-4">
+    <div class="container w-full px-2 flex flex-col py-4 h-full">
         <h1 class="text-center regular-24 md:regular-32 lg:regular-40 text-white md:max-w-[600px] self-center font-alfa mb-2">
             {{ $item->item_name }}
         </h1>
@@ -81,8 +81,6 @@
             <div class="flex flex-col lg:flex-row gap-2  min-[400px]:max-w-[70%]  max-w-full max-h-[500px] h-full">
                 <div class="h-[300px] lg:h-[400px] w-full lg:w-[35vw] relative">
                     <img src="{{ url('storage/' . $item->pictures->first()->picture_url) }}" alt="" class="w-full h-full rounded-lg" id="main-image">
-
-                    <form action="{{ route('toggleFav', $item->id) }}" method="POST">
                         @csrf
                         <button class="w-12 h-12 absolute bottom-[-5px] right-[-10px] bg-white flex justify-center items-center shadow-xl rounded-full border text-center">
                             @if ($fav)
@@ -94,7 +92,7 @@
                     </form>
 
                 </div>
-                <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-[150px] lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
+                <div class="grid grid-cols-1 lg:grid-rows-3 lg:grid-cols-2 h-full lg:h-[400px] w-full gap-4 lg:max-w-[35%]">
                     <div class="col-span-1 lg:row-span-3 lg:col-start-2 gap-2 grid grid-cols-3 lg:grid-cols-none lg:grid-rows-3 ">
                         @forelse ($item->pictures->skip(1) as $pic)
                             <img src="{{ url('storage/' . $pic->picture_url) }}" alt="" class="w-full h-full rounded-lg hover:scale-105 duration-300 transition-all" id="image" onclick="swapImage()">
