@@ -7,12 +7,12 @@
         <h2 class="text-secondary regular-12 md:regular-16 lg:regular-20">Fill the security question</h2>
     </div>
 
-    <div class="flex w-full h-auto border-solid flex-col ">
+    <div class="flex w-full h-auto border-solid flex-col gap-4">
 
-        <p class="text-stroke bg-secondary/60 p-3 w-full rounded-md">Who is your best friend?</p>
+        <p class="text-white bg-secondary/60 p-3 w-full rounded-md">Insert your security token </p>
         <form action="{{ route('checkSQ', ['userId' => $user->id]) }}" method="POST" class="py-4">
             @csrf
-            <span class="flex items-center gap-2 py-2 border-b-2">
+            <span class="flex items-center gap-2 py-2 border-b-2 mb-4">
                 <i class="bx bxs-chat bx-sm text-secondary" ></i>
                 <input name="security" type="text" class="border-l-2 border-stroke bg-transparent focus:outline-none pl-4" placeholder="Answer">
             </span>

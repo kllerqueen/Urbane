@@ -157,36 +157,7 @@
                     </script>
                 </div>
                 @enderror
-            </div>
-
-            <div>
-                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('securityQuestion') !border-red-500 @enderror">
-                    <i class='bx bx-key bx-sm pl-1 pr-2'></i>
-                    <input type="text" name="securityQuestion" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('securityQuestion') is-invalid @enderror" placeholder="Security Question" value="{{ old('securityQuestion') }}">
-                </div>
-                @error('securityQuestion')
-                <div class="invalid-feedback text-red-600 text-sm">
-                    {{$message}}
-                    <script>
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: "top-end",
-                            showConfirmButton: false,
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                            }
-                        });
-                        Toast.fire({
-                            icon: "error",
-                            title: "Register information incorrect"
-                        });
-                    </script>
-                </div>
-                @enderror
-           </div>
+            </div> 
 
            <div>
             <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('securityAnswer') !border-red-500 @enderror">

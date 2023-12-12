@@ -1,7 +1,14 @@
-@extends('template.template')
+@include('partials.head')
 
-@section('body')
     <div class="flex flex-col items-center h-fit my-8">
+        <div class="relative flex items-center gap-3 self-start ml-3 md:ml-10 mt-3 text-primary">
+            <a href="{{route('registerPage')}}">
+                <div class="bg-white rounded-full p-2 flex items-center justify-center border shadow-xl w-fit">
+                    <i class='bx bx-chevron-left text-[30px] text-black'></i>
+                </div>
+            </a>
+            <h1 class="bold-14 md:bold-18 lg:bold-24 ">Back</h1>
+        </div>
         <h1 class="bold-28 md:bold-40 text-primary w-full text-center">TERMS & CONDITIONS</h1>
         <div class="container w-full flex flex-col gap-4 md:gap-8  h-fit">
             {{-- Container 1 --}}
@@ -107,4 +114,3 @@
             })
         })
     </script>
-@endsection
