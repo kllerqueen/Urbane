@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="w-[30%] min-[400px]:w-[20%] md:w-[30%] lg:w-[20%] h-[100px] md:h-[180px]">
-                        <img src="{{ asset('storage/' . $CartItem->item->pictures->first()->picture_url) }}" alt="" class="w-full h-full">
+                        <img src="{{ asset('storage/' . optional($CartItem->item->pictures->first())->picture_url) }}" alt="" class="w-full h-full">
                     </div>
 
                    <div class="flex flex-col justify-between h-full">

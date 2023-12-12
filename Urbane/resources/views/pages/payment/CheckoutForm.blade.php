@@ -218,7 +218,7 @@
                     @endforeach
                     
                     {{-- dummy item wt --}}
-                    <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
+                    {{-- <div class="h-[75px] md:h-[100px] lg:h-[140px] flex flex-row gap-4">
                         <img src="{{url('assets/product/Dummy 1.png')}}" alt=""  class="w-[40%] md:w-[25%] lg:w-[40%]">
                         <div class="flex flex-col justify-between">
                             <div class="flex flex-col">
@@ -227,7 +227,7 @@
                             </div>
                             <h1 class="self-end bold-12 md:bold-16 lg:bold-20">Rp. 198.000</h1>
                         </div>
-                    </div>
+                    </div> --}}
                  
             
                  @php

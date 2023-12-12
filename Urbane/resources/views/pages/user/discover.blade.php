@@ -140,7 +140,7 @@
                         <div class="py-3 px-4 flex flex-col gap-4 items-center justify-center bg-white/70 absolute bottom-0 w-full text-center">
                             <form method="post" action="{{route('cart.addToCart2', $item->id)}}">
                                 @csrf
-                                <button type="submit" href="" class="w-full py-2 bg-primary rounded-md text-white ">Add To Cart</button>
+                                <button type="submit" href="" class="w-full py-2 px-4 bg-primary rounded-md text-white ">Add To Cart</button>
                             </form>
 
                             <a href="{{ route('detailPage', $item->id) }}" class="w-full text-primary ">See Details</a>
