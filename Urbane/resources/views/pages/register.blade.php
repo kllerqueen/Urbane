@@ -159,6 +159,64 @@
                 @enderror
             </div>
 
+            <div>
+                <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('securityQuestion') !border-red-500 @enderror">
+                    <i class='bx bx-key bx-sm pl-1 pr-2'></i>
+                    <input type="text" name="securityQuestion" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('securityQuestion') is-invalid @enderror" placeholder="Security Question" value="{{ old('securityQuestion') }}">
+                </div>
+                @error('securityQuestion')
+                <div class="invalid-feedback text-red-600 text-sm">
+                    {{$message}}
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "error",
+                            title: "Register information incorrect"
+                        });
+                    </script>
+                </div>
+                @enderror
+           </div>
+
+           <div>
+            <div class="flex items-center gap-2 py-2 border-b-2 text-secondary border-stroke px-2 @error('securityAnswer') !border-red-500 @enderror">
+                <i class='bx bx-key bx-sm pl-1 pr-2'></i>
+                <input type="text" name="securityAnswer" class="input border-l-2 border-stroke bg-transparent focus:outline-none pl-2 placeholder:text-secondary @error('securityAnswer') is-invalid @enderror" placeholder="Security Question Answer" value="{{ old('securityAnswer') }}">
+            </div>
+            @error('securityAnswer')
+            <div class="invalid-feedback text-red-600 text-sm">
+                {{$message}}
+                <script>
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        }
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "Register information incorrect"
+                    });
+                </script>
+            </div>
+            @enderror
+       </div>
+
             <p class="text-secondary text-sm">By registering your account, you indicate your agreement with the <a href="/terms_and_conditions" class="text-black font-bold">terms and conditions</a> that apply to our website's policy</p>
             <button class="w-full py-2 bg-primary text-lg text-highlight rounded-md mt-4 font-bold" type="submit">Register</button>
             <p class="self-center text-primary text-sm">Already have an account? <span><a href="/login" class="font-bold ">Login here</a></span></p>
