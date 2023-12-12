@@ -44,6 +44,7 @@
 
                             {{-- Three Small Image --}}
                             <div class="row-span-2 grid grid-cols-3 w-full h-full gap-2">
+
                                 <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
@@ -51,6 +52,7 @@
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img id="uploadedImage" alt="Uploaded Image" class="absolute w-[full] h-full top-0 rounded-md">
                                 </div>
+
                                 <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
@@ -58,6 +60,7 @@
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
                                 </div>
+
                                 <div id="uploadTrigger" class="w-full h-full bg-white rounded-md flex flex-col gap-2 justify-center items-center text-black relative">
                                     <div class="bg-black p-2 rounded-md flex justify-center items-center">
                                         <i class='bx bx-plus text-[30px] text-white' ></i>
@@ -65,6 +68,7 @@
                                     <input type="file" id="fileInput" onchange="handleFileUpload()" class="hidden" name="image[]">
                                     <img id="uploadedImage" alt="Uploaded Image" class="absolute w-full h-full top-0 rounded-md">
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
