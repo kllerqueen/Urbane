@@ -154,12 +154,15 @@ class UserController extends Controller
 
         $user = User::where('id', $request->userId)->first();
 
-        dd($user->email);
+        // dd($user->email);
 
         if($user->security == $request->input('security')) {
             return redirect()->route('changePass')->with('user', $user);
         } else {
-            return redirect()->back()->with('message', 'The asnwer is wrong');
+            return redirect()->back()->with([
+                'message' => 'The answer is wrong',
+                'user' => $user
+            ]);
         }
 
     }
