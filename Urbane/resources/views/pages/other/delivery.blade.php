@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="flex flex-col justify-center items-center px-5">
-        <h1 class="bold-32 md:bold-64 text-primary">DELIVERY</h1>
+        <h1 class="bold-24 md:bold-32 lg:bold-52 text-primary">DELIVERY</h1>
         <div class="flex flex-col md:flex-row md:items-start items-center justify-between gap-14">
             <div class="flex flex-col w-[280px] mt-6 lg:mt-0">
                 <h1 class="bold-24 text-secondary mb-5">Various shipping methods, deadlines, and fees</h1>
