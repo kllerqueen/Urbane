@@ -325,7 +325,7 @@
 
                         <img src="{{ asset('storage/' . optional($item->pictures->first())->picture_url) }}" alt=""  class='w-full h-[150px] md:h-[250px]'/>
                         <div class="flex flex-col items-center py-3 px-1 md:px-2 w-full text-center ">
-                            <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden">{{ $item->item_name }}</p>
+                            <p class="regular-10 md:regular-14 lg:regular-18 text-ellipsis overflow-hidden w-full">{{ $item->item_name }}</p>
                             <h2 class="regular-10 md:regular-12 lg:regular-14">Rp. {{ number_format($item->item_price, 2, '.', ',') }}</h2>
                         </div>
                     </div>
