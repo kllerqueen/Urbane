@@ -49,8 +49,8 @@
                                 title: "Login information incorrect"
                             });
                         </script>
-                    @enderror 
-                </div> 
+                    @enderror
+                </div>
 
                 <div>
                     <div class="flex justify-start items-center border-b-2 py-2 border-stroke w-full @error('password') !border-red-500 @enderror">
@@ -80,9 +80,9 @@
                         </script>
                     @enderror
                 </div>
-                
 
-                <a class="font-semibold mt-[-10px] w-full text-right" href="#">Forgot password?</a>
+
+                <a class="font-semibold mt-[-10px] w-full text-right" href="{{ route('forgotPage') }}">Forgot password?</a>
 
                 <button class="text-2xl font-bold text-highlight bg-primary w-full rounded-lg py-2" type="submit">Login</button>
             </form>
@@ -123,6 +123,6 @@
                 console.log("masuk")
             })
         });
-        
+
     </script>
 @endsection

@@ -100,12 +100,17 @@ Route::get('/register-security-form', function(){
 });
 
 Route::get('/fill-security-form', function(){
-    return view('pages.forgetPassword.FillSecurityQuestion');
-});
+    $user = session('user');
+    return view('pages.forgetPassword.FillSecurityQuestion', compact('user'));
+})->name('sQForm');
+
+Route::post('/check-security-answer', [UserController::class, 'checkSQ'])->name('checkSQ');
 
 Route::get('/forget-password-form', function(){
     return view('pages.forgetPassword.forgetPasswordForm');
-});
+})->name('forgotPage');
+
+Route::post('/check-email-form', [UserController::class, 'checkEmail'])->name('checkEmail');
 
 Route::get('/register-security-success',function(){
     return view('pages.forgetPassword.registerSecurityQuestionNotification');
@@ -117,7 +122,7 @@ Route::get('/change-password-success',function(){
 
 Route::get('/change-password-form',function(){
     return view('pages.forgetPassword.changePasswordForm');
-});
+})->name('changePass');
 
 //customer
 Route::middleware('customer')->group(function(){
@@ -151,7 +156,7 @@ Route::middleware('customer')->group(function(){
 
     //profile
     Route::get('/profile', [UserController::class, 'ViewAllTransaction'])->name('user.profile');
-    
+
     Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
 });

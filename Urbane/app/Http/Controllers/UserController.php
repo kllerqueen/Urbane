@@ -136,4 +136,29 @@ class UserController extends Controller
 
         return redirect()->back();
     }
+
+    public function checkEmail(Request $request) {
+
+        $user = User::where('email', $request->input('email'))->first();
+
+        if($user) {
+            return redirect()->route('sQForm')->with('user', $user);
+        } else {
+            return redirect()->back()->with('message', 'No user found');
+        }
+    }
+
+    public function checkSQ(Request $request) {
+
+        $user = User::where('id', $request->userId)->first();
+
+        dd($user->email);
+
+        if($user->security == $request->input('security')) {
+            return redirect()->route('changePass')->with('user', $user);
+        } else {
+            return redirect()->back()->with('message', 'The asnwer is wrong');
+        }
+
+    }
 }
